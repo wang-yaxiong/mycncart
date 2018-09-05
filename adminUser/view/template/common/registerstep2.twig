@@ -153,11 +153,18 @@
 	.step2-name dl dt ,.step2-card dl dt , .step2-tel dl dt{
 		float:left;
 	} 
-	.step2-info dl dd{
-		
+	#s_name{
+		padding:0 0 0 40px;
 	}
+	#s_card{
+		padding:0 0 0 65px;
+	}
+	#s_tel{
+		padding:0 0 0 65px;
+	}
+
 	.step2-name {
-		padding:30px 160px;
+		padding:30px 173px;
 		height:80px;
 		line-height:80px;
 	}
@@ -226,27 +233,30 @@
 					<div class='step2-info'>
 						<div class='step2-name'>
 							<dl>
-							    <dt><span>用户名：</span></dt>
-							    <dd><input type="text" name=""></dd>
+							    <dt><span>姓名：</span></dt>
+							    <dd><input type="text" name="" id ='stepname'></dd>
+							    <dd><span id='s_name'></span></dd>
 							</dl>
 							
 						</div>	
 						<div class='step2-card'>
 							<dl>
 							    <dt><span>身份证号：</span></dt>
-							    <dd><input type="text" name=""></dd>
+							    <dd><input type="text" name="" id ='stepcard'></dd>
+							     <dd><span id='s_card'></span></dd>
 							</dl>
 						</div>
 						<div class='step2-tel'>
 							<dl>
 							    <dt><span>手机号：</span></dt>
-							    <dd><input type="text" name=""></dd>
+							    <dd><input type="text" name="" id = 'steptel'></dd>
+							    <dd><span id='s_tel'></span></dd>
 							</dl>
 							
 						</div>
 
 						<div class='step2-btn'>
-							<input type="button" value="下一步" >
+							<input type="button" value="下一步" id='stepbut'>
 						</div>
 					</div>	
 				</div>
@@ -254,4 +264,124 @@
 		</div>
 	</div>
 </div>
+
+<script>
+	$('#stepname').blur(function (){
+		var name = $('#stepname').val();
+
+		if(name == ''){
+			$('#stepname').css('border','2px solid red');
+			$("#s_name").html("<font color='red'>请输入姓名</font>");
+		}else{
+			if(name.length>18 || name.length<2){
+				$('#stepname').css('border','2px solid red');
+				$("#s_name").html("<font color='red'>用户名长度为2-18</font>");
+			}else{
+				 $.post("URL",{stname:name},function(result){
+				      console.log(result);
+				 });
+			}
+		}
+
+		
+	})	
+	$('#stepname').focus(function (){
+			$('#stepname').css('border','1px solid #D7D7D7');
+			$("#s_name").html("");
+	
+	})	
+	$('#stepcard').blur(function (){
+
+		var card = $('#stepcard').val();
+		
+		if(card == ''){
+			$('#stepcard').css('border','2px solid red');
+			$("#s_card").html("<font color='red'>请填写身份证号</font>");
+		}else{
+			if(card.length !=18 ){
+				$('#stepcard').css('border','2px solid red');
+				$("#s_card").html("<font color='red'>身份证格式错误</font>");
+			}
+		}
+	})	
+	$('#stepcard').focus(function (){
+
+			$('#stepcard').css('border','1px solid #D7D7D7');
+			$("#s_card").html("");
+	
+	})
+	$('#steptel').blur(function (){
+
+		var tel = $('#steptel').val();
+		
+		if(tel == ''){
+			$('#steptel').css('border','2px solid red');
+			$("#s_tel").html("<font color='red'>请输入手机号</font>");
+		}else{
+			if(tel.length !=11 || isPhoneNo(tel) == false){
+				$('#steptel').css('border','2px solid red');
+				$("#s_tel").html("<font color='red'>手机号不正确</font>");
+			}
+		}
+	})	
+	$('#steptel').focus(function (){
+			$('#steptel').css('border','1px solid #D7D7D7');
+			$("#s_tel").html("");
+	
+	})	
+	$('#stepbut').click(function(){
+		var name = $('#stepname').val();
+		var card = $('#stepcard').val();
+		var tel = $('#steptel').val();
+		if(name == ''){
+			$('#stepname').css('border','2px solid red');
+			$("#s_name").html("<font color='red'>请输入姓名</font>");
+		}else{
+			if(name.length>18 || name.length<2){
+				$('#stepname').css('border','2px solid red');
+				$("#s_name").html("<font color='red'>用户名长度为2-18</font>");
+			}
+		}
+		if(card == ''){
+			$('#stepcard').css('border','2px solid red');
+			$("#s_card").html("<font color='red'>请填写身份证号</font>");
+		}else{
+			if(card.length !=18 || isCardNo($.trim(card) == false)){
+				$('#stepcard').css('border','2px solid red');
+				$("#s_card").html("<font color='red'>身份证格式错误</font>");
+			}else{
+				 $.post("index.php?route=common/register/checkCard",{card:card},function(result){
+				     console.log(result);
+				 });		
+			}
+		}
+		if(tel == ''){
+			$('#steptel').css('border','2px solid red');
+			$("#s_tel").html("<font color='red'>请输入手机号</font>");
+		}else{
+			if(parseInt(tel.length) != 11 || isPhoneNo(tel) == false){
+				$('#steptel').css('border','2px solid red');
+				$("#s_tel").html("<font color='red'>手机号不正确</font>");
+			}else{
+				
+			}
+		}
+	})
+
+
+	// 验证手机号
+	function isPhoneNo(phone) {  
+	    var pattern = /^1[34578]\d{9}$/;  
+	    return pattern.test(phone);  
+	}
+
+	// 验证身份证 
+	function isCardNo(card) {  
+	   var pattern = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/;  
+	   return pattern.test(card); 
+	} 
+
+
+</script>
+
 {{footer}}

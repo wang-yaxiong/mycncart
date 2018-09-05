@@ -72,4 +72,7 @@ class ControllerCommonRegister extends Controller {
 
 		return !$this->error;
 	}
+	public function checkCard(){
+		
+	}
 }
