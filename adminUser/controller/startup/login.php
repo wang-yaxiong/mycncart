@@ -7,7 +7,9 @@ class ControllerStartupLogin extends Controller {
 			'common/login',
 			'common/forgotten',
 			'common/reset',
-			'common/register'
+			'common/register',
+			'common/register/check',
+			'common/register/add'
 		);
 
 		// User
@@ -25,6 +27,8 @@ class ControllerStartupLogin extends Controller {
 				'common/reset',
 				'common/cron',
 				'common/register',
+				'common/register/check',
+				'common/register/add',
 				'error/not_found',
 				'error/permission'
 			);

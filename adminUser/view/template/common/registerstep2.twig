@@ -84,7 +84,7 @@
 	.joinin-step ul{
 		width:600px;
 		height:80px;
-		margin: 20px 80px;;
+		margin: 20px 160px;;
 	}
 	.joinin-step .step1 {
 		background-position: -172px -130px;
@@ -150,7 +150,7 @@
 	.step2-info  ul li{
 		list-style:none;
 	}
-	.step2-name dl dt ,.step2-card dl dt , .step2-tel dl dt{
+	.step2-name dl dt ,.step2-card dl dt , .step2-tel dl dt,.step2-pwd dl dt,.step2-npwd dl dt{
 		float:left;
 	} 
 	#s_name{
@@ -160,15 +160,21 @@
 		padding:0 0 0 65px;
 	}
 	#s_tel{
+		padding:0 0 0 53px;
+	}
+	#s_pwd{
+		padding:0 0 0 40px;
+	}
+	#s_npwd{
 		padding:0 0 0 65px;
 	}
 
-	.step2-name {
+	.step2-name, .step2-pwd {
 		padding:30px 173px;
 		height:80px;
 		line-height:80px;
 	}
-	.step2-card {
+	.step2-card, .step2-npwd {
 		padding:30px 147px;
 		height:80px;
 		line-height:80px;
@@ -206,7 +212,6 @@
 			<div class='main-left-content'>
 				<dl><dt>签署入驻协议</dt></dl>
 				<dl><dt>商家信息提交</dt></dl>
-				<dl><dt>平台审核资质</dt></dl>
 				<dl><dt>店铺开通</dt></dl>
 			</div>
 			<div class='main-left-tel'><h5><b>平台联系方式</b></h5></div>
@@ -224,51 +229,72 @@
 				  <ul>
 					<li class="step1 current"><span>签订入驻协议</span></li>
 					<li class="step2 current"><span>商家信息提交</span></li>
-					<li class><span>平台审核资质</span></li>
 					<li class="step4"><span>店铺开通</span></li>
 			          </ul>
 			</div>
 			<div>
-				<div class="joinin-concrete">
-					<div class='step2-info'>
-						<div class='step2-name'>
-							<dl>
-							    <dt><span>姓名：</span></dt>
-							    <dd><input type="text" name="" id ='stepname'></dd>
-							    <dd><span id='s_name'></span></dd>
-							</dl>
-							
+				<form method="post" action="index.php?route=common/register/add" name='form'>			
+					<div class="joinin-concrete">
+						<div class='step2-info'>
+							<div class='step2-name'>
+								<dl>
+								    <dt><span>姓名：</span></dt>
+								    <dd><input type="text" name="sname" id ='stepname'></dd>
+								    <dd><span id='s_name'></span></dd>
+								</dl>
+								
+							</div>	
+							<div class='step2-card'>
+								<dl>
+								    <dt><span>身份证号：</span></dt>
+								    <dd><input type="text" name="scard" id ='stepcard'></dd>
+								     <dd><span id='s_card'></span></dd>
+								</dl>
+							</div>
+							<div class='step2-tel'>
+								<dl>
+								    <dt><span>手机号：</span></dt>
+								    <dd><input type="text" name="stel" id = 'steptel'></dd>
+								    <dd><span id='s_tel'></span></dd>
+								</dl>
+								
+							</div>
+							<div class='step2-pwd'>
+								<dl>
+								    <dt><span>密码：</span></dt>
+								    <dd><input type="password" name="spwd" id = 'steppwd'></dd>
+								    <dd><span id='s_pwd'></span></dd>
+								</dl>
+								
+							</div>
+							<div class='step2-npwd'>
+								<dl>
+								    <dt><span>确认密码：</span></dt>
+								    <dd><input type="password" name="snpwd" id = 'stepnpwd'></dd>
+								    <dd><span id='s_npwd'></span></dd>
+								</dl>
+								
+							</div>
+							<div class='step2-btn'>
+								<input type="button" value="下一步" id='stepbut'>
+							</div>
 						</div>	
-						<div class='step2-card'>
-							<dl>
-							    <dt><span>身份证号：</span></dt>
-							    <dd><input type="text" name="" id ='stepcard'></dd>
-							     <dd><span id='s_card'></span></dd>
-							</dl>
-						</div>
-						<div class='step2-tel'>
-							<dl>
-							    <dt><span>手机号：</span></dt>
-							    <dd><input type="text" name="" id = 'steptel'></dd>
-							    <dd><span id='s_tel'></span></dd>
-							</dl>
-							
-						</div>
-
-						<div class='step2-btn'>
-							<input type="button" value="下一步" id='stepbut'>
-						</div>
-					</div>	
-				</div>
+					</div>
+				</form>
 			</div>
 		</div>
 	</div>
 </div>
 
 <script>
+	var namebool = true;
+	var cardbool = true;
+	var telbool = true;
+	var pwdbool = true;
+	var npwdbool = true;
 	$('#stepname').blur(function (){
 		var name = $('#stepname').val();
-
+		
 		if(name == ''){
 			$('#stepname').css('border','2px solid red');
 			$("#s_name").html("<font color='red'>请输入姓名</font>");
@@ -277,9 +303,7 @@
 				$('#stepname').css('border','2px solid red');
 				$("#s_name").html("<font color='red'>用户名长度为2-18</font>");
 			}else{
-				 $.post("URL",{stname:name},function(result){
-				      console.log(result);
-				 });
+				namebool = true;
 			}
 		}
 
@@ -289,7 +313,13 @@
 			$('#stepname').css('border','1px solid #D7D7D7');
 			$("#s_name").html("");
 	
-	})	
+	})
+
+
+
+
+
+
 	$('#stepcard').blur(function (){
 
 		var card = $('#stepcard').val();
@@ -301,6 +331,20 @@
 			if(card.length !=18 ){
 				$('#stepcard').css('border','2px solid red');
 				$("#s_card").html("<font color='red'>身份证格式错误</font>");
+			}else{
+
+				 $.post(
+					"index.php?route=common/register/check",
+					{type:"card",value:card},
+					function(result){
+						 if(result != 0){
+							$('#stepcard').css('border','2px solid red');
+							$("#s_card").html("<font color='red'>身份证已注册</font>");
+						 }else{
+							 cardbool = true;
+						 }
+					}
+				 )
 			}
 		}
 	})	
@@ -310,6 +354,10 @@
 			$("#s_card").html("");
 	
 	})
+
+
+
+
 	$('#steptel').blur(function (){
 
 		var tel = $('#steptel').val();
@@ -321,7 +369,21 @@
 			if(tel.length !=11 || isPhoneNo(tel) == false){
 				$('#steptel').css('border','2px solid red');
 				$("#s_tel").html("<font color='red'>手机号不正确</font>");
+			}else{
+				 $.post(
+					"index.php?route=common/register/check",
+					{type:"tel",value:tel},
+					function(result){
+						 if(result != 0){
+							$('#steptel').css('border','2px solid red');
+							$("#s_tel").html("<font color='red'>手机号已注册</font>");
+						 }else{
+							telbool = true;
+						 }
+					}
+				 )
 			}
+
 		}
 	})	
 	$('#steptel').focus(function (){
@@ -329,43 +391,146 @@
 			$("#s_tel").html("");
 	
 	})	
+
+
+	$('#steppwd').blur(function (){
+
+		var pwd = $('#steppwd').val();
+		
+		if(pwd == ''){
+			$('#steppwd').css('border','2px solid red');
+			$("#s_pwd").html("<font color='red'>请输入密码</font>");
+		}else{
+			if(pwd.length >16 || pwd.length <6){
+				$('#steppwd').css('border','2px solid red');
+				$("#s_pwd").html("<font color='red'>密码位数6-16</font>");
+			}else{
+				 pwdbool = true;	
+			}
+		}
+	})	
+	$('#steppwd').focus(function (){
+			$('#steppwd').css('border','1px solid #D7D7D7');
+			$("#s_pwd").html("");
+	
+	})
+
+	$('#stepnpwd').blur(function (){
+		var pwd = $('#steppwd').val();
+		var npwd = $('#stepnpwd').val();
+		
+		if(npwd == ''){
+			$('#stepnpwd').css('border','2px solid red');
+			$("#s_npwd").html("<font color='red'>请输入确认密码</font>");
+		}else{
+			if(npwd !=pwd){
+				$('#stepnpwd').css('border','2px solid red');
+				$("#s_npwd").html("<font color='red'>确认密码与密码不一致</font>");
+			}else{
+				npwdbool = true;
+			}
+		}
+	})	
+	$('#stepnpwd').focus(function (){
+			$('#stepnpwd').css('border','1px solid #D7D7D7');
+			$("#s_npwd").html("");
+	
+	})
+
+	
 	$('#stepbut').click(function(){
 		var name = $('#stepname').val();
 		var card = $('#stepcard').val();
-		var tel = $('#steptel').val();
+		var tel  = $('#steptel').val();
+		var pwd  = $('#steppwd').val();
+		var npwd = $('#stepnpwd').val();
+		
 		if(name == ''){
 			$('#stepname').css('border','2px solid red');
 			$("#s_name").html("<font color='red'>请输入姓名</font>");
+			namebool = false;
 		}else{
 			if(name.length>18 || name.length<2){
 				$('#stepname').css('border','2px solid red');
 				$("#s_name").html("<font color='red'>用户名长度为2-18</font>");
-			}
+				namebool = false;
+			} 
 		}
 		if(card == ''){
 			$('#stepcard').css('border','2px solid red');
 			$("#s_card").html("<font color='red'>请填写身份证号</font>");
+			cardbool = false;
 		}else{
 			if(card.length !=18 || isCardNo($.trim(card) == false)){
 				$('#stepcard').css('border','2px solid red');
 				$("#s_card").html("<font color='red'>身份证格式错误</font>");
+				cardbool = false;
 			}else{
-				 $.post("index.php?route=common/register/checkCard",{card:card},function(result){
-				     console.log(result);
+				 $.post("index.php?route=common/register/check",{type:'card',value:card},function(result){
+					if(result != 0){
+						$('#stepcard').css('border','2px solid red');
+						$("#s_card").html("<font color='red'>身份证已注册</font>");
+						cardbool = false;
+					}else{
+						cardbool = true;	
+					}  
 				 });		
 			}
 		}
 		if(tel == ''){
 			$('#steptel').css('border','2px solid red');
 			$("#s_tel").html("<font color='red'>请输入手机号</font>");
+			telbool = false;
 		}else{
 			if(parseInt(tel.length) != 11 || isPhoneNo(tel) == false){
 				$('#steptel').css('border','2px solid red');
 				$("#s_tel").html("<font color='red'>手机号不正确</font>");
+				telbool = false;
 			}else{
-				
+				 $.post("index.php?route=common/register/check",{type:'tel',value:tel},function(result){
+					 if(result != 0){
+						$('#steptel').css('border','2px solid red');
+						$("#s_tel").html("<font color='red'>手机号已注册</font>");
+						telbool = false;
+					 }else{
+						telbool = true;
+					 } 
+				 });		
 			}
 		}
+		if(pwd == ''){
+			$('#steppwd').css('border','2px solid red');
+			$("#s_pwd").html("<font color='red'>请输入密码</font>");
+			pwdbool = false;
+		}else{
+			if(pwd.length >16 || pwd.length <6){
+				$('#steppwd').css('border','2px solid red');
+				$("#s_pwd").html("<font color='red'>密码位数6-16</font>");
+				pwdbool = false;
+			}else{
+				pwdbool = true;
+			}
+		}
+		if(npwd == ''){
+			$('#stepnpwd').css('border','2px solid red');
+			$("#s_npwd").html("<font color='red'>请输入确认密码</font>");
+			npwdbool = false;
+		}else{
+			if(npwd !=pwd){
+				$('#stepnpwd').css('border','2px solid red');
+				$("#s_npwd").html("<font color='red'>确认密码与密码不一致</font>");
+				npwdbool = false;
+			}else{
+				npwdbool = true;
+			}
+		}
+		 
+		if(namebool && cardbool && telbool && pwdbool && npwdbool){
+			$("form[name='form']").submit();
+		}else{
+			 return;
+		}
+		 
 	})
 
 

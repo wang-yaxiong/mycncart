@@ -6,7 +6,8 @@ class ControllerCommonRegister extends Controller {
 		if ($this->user->isLogged() && isset($this->request->get['user_token']) && ($this->request->get['user_token'] == $this->session->data['user_token'])) {
 			$this->response->redirect($this->url->link('common/dashboard'));
 		}
-		if ( isset($this->request->get['step']) && $this->request->get['step'] != 'step1' ) {
+		$steps = array('step2','step3');
+		if ( isset($this->request->get['step']) && $this->request->get['step'] != 'step1' &&  in_array($this->request->get['step'],$steps) ) {
 			$step = $this->request->get['step'];
 		}else{
 			$step = '';
@@ -72,7 +73,57 @@ class ControllerCommonRegister extends Controller {
 
 		return !$this->error;
 	}
-	public function checkCard(){
+	public function check(){
+		if(!isset($this->request->post['type']) || !isset($this->request->post['value']) ){
+			$this->response->redirect($this->url->link('common/login'));
+		}
+		
+		$type  = $this->request->post['type'];
+		$value = $this->request->post['value'];
+		$this->load->model('user/shop');
+		
+		$shop = $this->model_user_shop->getShop($type,$value);
+		echo $shop;
+	}
+
+	public function add(){
+		if(!isset($this->request->post['sname']) || !isset($this->request->post['scard']) || !isset($this->request->post['stel']) || !isset($this->request->post['spwd']) || !isset($this->request->post['snpwd']) ){
+			$this->response->redirect($this->url->link('common/login'));
+		}
+		$name = $this->request->post['sname'];
+		$card = $this->request->post['scard'];
+		$stel = $this->request->post['stel'];
+		$salt = $this->str_rand();
+		$pwd = md5(md5($this->request->post['spwd']).$salt);
+		$this->load->model('user/shop');
+		$data['name'] = $name;
+		$data['card'] = $card;
+		$data['stel'] = $stel;
+		$data['salt'] = $salt;
+		$data['pwd']  = $pwd; 
+		$data['status'] = '0';
+		$recard = $this->model_user_shop->getShop('card',$card);
+		$retel  = $this->model_user_shop->getShop('tel',$tel);
+		if($recard == 0 && $retel == 0 ){
+			$shop = $this->model_user_shop->addShop($data);
+			if($shop){
+				$this->response->redirect($this->url->link('common/register&step=step3'));
+			}else{
+				$this->response->redirect($this->url->link('common/register&step=step2'));
+			}
+		}else{
+			$this->response->redirect($this->url->link('common/register&step=step2'));
+		}
 		
 	}
+	private function str_rand() {
+		$length = 6;
+		$char = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+		$string = '';
+		for($i = $length; $i > 0; $i--) {
+		    $string .= $char[mt_rand(0, strlen($char) - 1)];
+		}
+ 
+		return $string;
+   }
 }
