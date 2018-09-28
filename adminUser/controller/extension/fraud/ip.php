@@ -14,10 +14,10 @@ class ControllerExtensionFraudIp extends Controller {
 
 			$this->session->data['success'] = $this->language->get('text_success');
 
-			$this->response->redirect($this->url->link('marketplace/extension', 'user_token=' . $this->session->data['user_token'] . '&type=fraud'));
+			$this->response->redirect($this->url->link('marketplace/extension', 'user_tokens=' . $this->session->data['user_tokens'] . '&type=fraud'));
 		}
 
-		$data['user_token'] = $this->session->data['user_token'];
+		$data['user_tokens'] = $this->session->data['user_tokens'];
 
 		if (isset($this->error['warning'])) {
 			$data['error_warning'] = $this->error['warning'];
@@ -29,22 +29,22 @@ class ControllerExtensionFraudIp extends Controller {
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_home'),
-			'href' => $this->url->link('common/dashboard', 'user_token=' . $this->session->data['user_token'])
+			'href' => $this->url->link('common/dashboard', 'user_tokens=' . $this->session->data['user_tokens'])
 		);
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_extension'),
-			'href' => $this->url->link('marketplace/extension', 'user_token=' . $this->session->data['user_token'] . '&type=fraud')
+			'href' => $this->url->link('marketplace/extension', 'user_tokens=' . $this->session->data['user_tokens'] . '&type=fraud')
 		);
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('heading_title'),
-			'href' => $this->url->link('extension/fraud/ip', 'user_token=' . $this->session->data['user_token'])
+			'href' => $this->url->link('extension/fraud/ip', 'user_tokens=' . $this->session->data['user_tokens'])
 		);
 
-		$data['action'] = $this->url->link('extension/fraud/ip', 'user_token=' . $this->session->data['user_token']);
+		$data['action'] = $this->url->link('extension/fraud/ip', 'user_tokens=' . $this->session->data['user_tokens']);
 
-		$data['cancel'] = $this->url->link('marketplace/extension', 'user_token=' . $this->session->data['user_token'] . '&type=fraud');
+		$data['cancel'] = $this->url->link('marketplace/extension', 'user_tokens=' . $this->session->data['user_tokens'] . '&type=fraud');
 
 		if (isset($this->request->post['fraud_ip_order_status_id'])) {
 			$data['fraud_ip_order_status_id'] = $this->request->post['fraud_ip_order_status_id'];
@@ -110,7 +110,7 @@ class ControllerExtensionFraudIp extends Controller {
 				'ip'         => $result['ip'],
 				'total'      => $this->model_customer_customer->getTotalCustomersByIp($result['ip']),
 				'date_added' => date('d/m/y', strtotime($result['date_added'])),
-				'filter_ip'  => $this->url->link('customer/customer', 'user_token=' . $this->session->data['user_token'] . '&filter_ip=' . $result['ip'])
+				'filter_ip'  => $this->url->link('customer/customer', 'user_tokens=' . $this->session->data['user_tokens'] . '&filter_ip=' . $result['ip'])
 			);
 		}
 
@@ -120,7 +120,7 @@ class ControllerExtensionFraudIp extends Controller {
 		$pagination->total = $ip_total;
 		$pagination->page = $page;
 		$pagination->limit = 10;
-		$pagination->url = $this->url->link('extension/fraud/ip/ip', 'user_token=' . $this->session->data['user_token'] . '&page={page}');
+		$pagination->url = $this->url->link('extension/fraud/ip/ip', 'user_tokens=' . $this->session->data['user_tokens'] . '&page={page}');
 
 		$data['pagination'] = $pagination->render();
 

@@ -235,6 +235,8 @@
 			<div>
 				<form method="post" action="index.php?route=common/register/add" name='form'>			
 					<div class="joinin-concrete">
+						<div style='text-align:center;font-size:18px;color:red'><span>{{error_info}}</span></div>
+						
 						<div class='step2-info'>
 							<div class='step2-name'>
 								<dl>
@@ -340,6 +342,7 @@
 						 if(result != 0){
 							$('#stepcard').css('border','2px solid red');
 							$("#s_card").html("<font color='red'>身份证已注册</font>");
+							 cardbool = false;
 						 }else{
 							 cardbool = true;
 						 }
@@ -377,6 +380,7 @@
 						 if(result != 0){
 							$('#steptel').css('border','2px solid red');
 							$("#s_tel").html("<font color='red'>手机号已注册</font>");
+							telbool = flase;
 						 }else{
 							telbool = true;
 						 }
@@ -524,11 +528,11 @@
 				npwdbool = true;
 			}
 		}
-		 
+
 		if(namebool && cardbool && telbool && pwdbool && npwdbool){
 			$("form[name='form']").submit();
 		}else{
-			 return;
+			return;
 		}
 		 
 	})

@@ -19,7 +19,7 @@ class ControllerCommonProfile extends Controller {
 
 			$this->session->data['success'] = $this->language->get('text_success');
 
-			$this->response->redirect($this->url->link('common/profile', 'user_token=' . $this->session->data['user_token']));
+			$this->response->redirect($this->url->link('common/profile', 'user_tokens=' . $this->session->data['user_tokens']));
 		}
 
 		if (isset($this->session->data['success'])) {
@@ -70,17 +70,17 @@ class ControllerCommonProfile extends Controller {
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_home'),
-			'href' => $this->url->link('common/dashboard', 'user_token=' . $this->session->data['user_token'])
+			'href' => $this->url->link('common/dashboard', 'user_tokens=' . $this->session->data['user_tokens'])
 		);
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('heading_title'),
-			'href' => $this->url->link('common/profile', 'user_token=' . $this->session->data['user_token'])
+			'href' => $this->url->link('common/profile', 'user_tokens=' . $this->session->data['user_tokens'])
 		);
 
-		$data['action'] = $this->url->link('common/profile', 'user_token=' . $this->session->data['user_token']);
+		$data['action'] = $this->url->link('common/profile', 'user_tokens=' . $this->session->data['user_tokens']);
 
-		$data['cancel'] = $this->url->link('common/dashboard', 'user_token=' . $this->session->data['user_token']);
+		$data['cancel'] = $this->url->link('common/dashboard', 'user_tokens=' . $this->session->data['user_tokens']);
 
 		if ($this->request->server['REQUEST_METHOD'] != 'POST') {
 			$user_info = $this->model_user_user->getUser($this->user->getId());

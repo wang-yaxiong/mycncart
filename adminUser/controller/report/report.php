@@ -9,15 +9,15 @@ class ControllerReportReport extends Controller {
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_home'),
-			'href' => $this->url->link('common/dashboard', 'user_token=' . $this->session->data['user_token'])
+			'href' => $this->url->link('common/dashboard', 'user_tokens=' . $this->session->data['user_tokens'])
 		);
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('heading_title'),
-			'href' => $this->url->link('report/report', 'user_token=' . $this->session->data['user_token'])
+			'href' => $this->url->link('report/report', 'user_tokens=' . $this->session->data['user_tokens'])
 		);
 
-		$data['user_token'] = $this->session->data['user_token'];
+		$data['user_tokens'] = $this->session->data['user_tokens'];
 
 		if (isset($this->request->get['code'])) {
 			$data['code'] = $this->request->get['code'];
@@ -42,7 +42,7 @@ class ControllerReportReport extends Controller {
 					'text'       => $this->language->get('extension')->get('heading_title'),
 					'code'       => $code,
 					'sort_order' => $this->config->get('report_' . $code . '_sort_order'),
-					'href'       => $this->url->link('report/report', 'user_token=' . $this->session->data['user_token'] . '&code=' . $code)
+					'href'       => $this->url->link('report/report', 'user_tokens=' . $this->session->data['user_tokens'] . '&code=' . $code)
 				);
 			}
 		}

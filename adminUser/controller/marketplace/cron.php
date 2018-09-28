@@ -40,7 +40,7 @@ class ControllerMarketplaceCron extends Controller {
 				$url .= '&page=' . $this->request->get['page'];
 			}
 
-			$this->response->redirect($this->url->link('marketplace/cron', 'user_token=' . $this->session->data['user_token'] . $url));
+			$this->response->redirect($this->url->link('marketplace/cron', 'user_tokens=' . $this->session->data['user_tokens'] . $url));
 		}
 
 		$this->getList();
@@ -83,15 +83,15 @@ class ControllerMarketplaceCron extends Controller {
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_home'),
-			'href' => $this->url->link('common/dashboard', 'user_token=' . $this->session->data['user_token'])
+			'href' => $this->url->link('common/dashboard', 'user_tokens=' . $this->session->data['user_tokens'])
 		);
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('heading_title'),
-			'href' => $this->url->link('marketplace/cron', 'user_token=' . $this->session->data['user_token'] . $url)
+			'href' => $this->url->link('marketplace/cron', 'user_tokens=' . $this->session->data['user_tokens'] . $url)
 		);
 
-		$data['delete'] = $this->url->link('marketplace/cron/delete', 'user_token=' . $this->session->data['user_token'] . $url);
+		$data['delete'] = $this->url->link('marketplace/cron/delete', 'user_tokens=' . $this->session->data['user_tokens'] . $url);
 		$data['cron'] = $this->url->link('common/cron');
 
 		$data['crons'] = array();
@@ -120,7 +120,7 @@ class ControllerMarketplaceCron extends Controller {
 			);
 		}
 
-		$data['user_token'] = $this->session->data['user_token'];
+		$data['user_tokens'] = $this->session->data['user_tokens'];
 
 		if (isset($this->error['warning'])) {
 			$data['error_warning'] = $this->error['warning'];
@@ -154,12 +154,12 @@ class ControllerMarketplaceCron extends Controller {
 			$url .= '&page=' . $this->request->get['page'];
 		}
 
-		$data['sort_code'] = $this->url->link('marketplace/cron', 'user_token=' . $this->session->data['user_token'] . '&sort=code' . $url);
-		$data['sort_cycle'] = $this->url->link('marketplace/cron', 'user_token=' . $this->session->data['user_token'] . '&sort=cycle' . $url);
-		$data['sort_action'] = $this->url->link('marketplace/cron', 'user_token=' . $this->session->data['user_token'] . '&sort=action' . $url);
-		$data['sort_status'] = $this->url->link('marketplace/cron', 'user_token=' . $this->session->data['user_token'] . '&sort=status' . $url);
-		$data['sort_date_added'] = $this->url->link('marketplace/cron', 'user_token=' . $this->session->data['user_token'] . '&sort=date_added' . $url);
-		$data['sort_date_modified'] = $this->url->link('marketplace/cron', 'user_token=' . $this->session->data['user_token'] . '&sort=date_modified' . $url);
+		$data['sort_code'] = $this->url->link('marketplace/cron', 'user_tokens=' . $this->session->data['user_tokens'] . '&sort=code' . $url);
+		$data['sort_cycle'] = $this->url->link('marketplace/cron', 'user_tokens=' . $this->session->data['user_tokens'] . '&sort=cycle' . $url);
+		$data['sort_action'] = $this->url->link('marketplace/cron', 'user_tokens=' . $this->session->data['user_tokens'] . '&sort=action' . $url);
+		$data['sort_status'] = $this->url->link('marketplace/cron', 'user_tokens=' . $this->session->data['user_tokens'] . '&sort=status' . $url);
+		$data['sort_date_added'] = $this->url->link('marketplace/cron', 'user_tokens=' . $this->session->data['user_tokens'] . '&sort=date_added' . $url);
+		$data['sort_date_modified'] = $this->url->link('marketplace/cron', 'user_tokens=' . $this->session->data['user_tokens'] . '&sort=date_modified' . $url);
 
 		$url = '';
 
@@ -175,7 +175,7 @@ class ControllerMarketplaceCron extends Controller {
 		$pagination->total = $cron_total;
 		$pagination->page = $page;
 		$pagination->limit = $this->config->get('config_limit_admin');
-		$pagination->url = $this->url->link('marketplace/cron', 'user_token=' . $this->session->data['user_token'] . $url . '&page={page}');
+		$pagination->url = $this->url->link('marketplace/cron', 'user_tokens=' . $this->session->data['user_tokens'] . $url . '&page={page}');
 
 		$data['pagination'] = $pagination->render();
 

@@ -9,6 +9,7 @@ class ControllerStartupLogin extends Controller {
 			'common/reset',
 			'common/register',
 			'common/register/check',
+			'common/register/check_card',
 			'common/register/add'
 		);
 
@@ -28,16 +29,17 @@ class ControllerStartupLogin extends Controller {
 				'common/cron',
 				'common/register',
 				'common/register/check',
+				'common/register/check_card',
 				'common/register/add',
 				'error/not_found',
 				'error/permission'
 			);
 
-			if (!in_array($route, $ignore) && (!isset($this->request->get['user_token']) || !isset($this->session->data['user_token']) || ($this->request->get['user_token'] != $this->session->data['user_token']))) {
+			if (!in_array($route, $ignore) && (!isset($this->request->get['user_tokens']) || !isset($this->session->data['user_tokens']) || ($this->request->get['user_tokens'] != $this->session->data['user_tokens']))) {
 				return new Action('common/login');
 			}
 		} else {
-			if (!isset($this->request->get['user_token']) || !isset($this->session->data['user_token']) || ($this->request->get['user_token'] != $this->session->data['user_token'])) {
+			if (!isset($this->request->get['user_tokens']) || !isset($this->session->data['user_tokens']) || ($this->request->get['user_tokens'] != $this->session->data['user_tokens'])) {
 				return new Action('common/login');
 			}
 		}

@@ -14,7 +14,7 @@ class ControllerExtensionAnalyticsGoogle extends Controller {
 
 			$this->session->data['success'] = $this->language->get('text_success');
 
-			$this->response->redirect($this->url->link('marketplace/extension', 'user_token=' . $this->session->data['user_token'] . '&type=analytics'));
+			$this->response->redirect($this->url->link('marketplace/extension', 'user_tokens=' . $this->session->data['user_tokens'] . '&type=analytics'));
 		}
 
 		if (isset($this->error['warning'])) {
@@ -33,24 +33,24 @@ class ControllerExtensionAnalyticsGoogle extends Controller {
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_home'),
-			'href' => $this->url->link('common/dashboard', 'user_token=' . $this->session->data['user_token'])
+			'href' => $this->url->link('common/dashboard', 'user_tokens=' . $this->session->data['user_tokens'])
 		);
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_extension'),
-			'href' => $this->url->link('marketplace/extension', 'user_token=' . $this->session->data['user_token'] . '&type=analytics')
+			'href' => $this->url->link('marketplace/extension', 'user_tokens=' . $this->session->data['user_tokens'] . '&type=analytics')
 		);
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('heading_title'),
-			'href' => $this->url->link('extension/analytics/google', 'user_token=' . $this->session->data['user_token'] . '&store_id=' . $this->request->get['store_id'])
+			'href' => $this->url->link('extension/analytics/google', 'user_tokens=' . $this->session->data['user_tokens'] . '&store_id=' . $this->request->get['store_id'])
 		);
 
-		$data['action'] = $this->url->link('extension/analytics/google', 'user_token=' . $this->session->data['user_token'] . '&store_id=' . $this->request->get['store_id']);
+		$data['action'] = $this->url->link('extension/analytics/google', 'user_tokens=' . $this->session->data['user_tokens'] . '&store_id=' . $this->request->get['store_id']);
 
-		$data['cancel'] = $this->url->link('marketplace/extension', 'user_token=' . $this->session->data['user_token'] . '&type=analytics');
+		$data['cancel'] = $this->url->link('marketplace/extension', 'user_tokens=' . $this->session->data['user_tokens'] . '&type=analytics');
 		
-		$data['user_token'] = $this->session->data['user_token'];
+		$data['user_tokens'] = $this->session->data['user_tokens'];
 				
 		if (isset($this->request->post['analytics_google_code'])) {
 			$data['analytics_google_code'] = $this->request->post['analytics_google_code'];

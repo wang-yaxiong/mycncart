@@ -58,7 +58,7 @@ class ControllerCatalogProduct extends Controller {
 				$url .= '&page=' . $this->request->get['page'];
 			}
 
-			$this->response->redirect($this->url->link('catalog/product', 'user_token=' . $this->session->data['user_token'] . $url));
+			$this->response->redirect($this->url->link('catalog/product', 'user_tokens=' . $this->session->data['user_tokens'] . $url));
 		}
 
 		$this->getForm();
@@ -110,7 +110,7 @@ class ControllerCatalogProduct extends Controller {
 				$url .= '&page=' . $this->request->get['page'];
 			}
 
-			$this->response->redirect($this->url->link('catalog/product', 'user_token=' . $this->session->data['user_token'] . $url));
+			$this->response->redirect($this->url->link('catalog/product', 'user_tokens=' . $this->session->data['user_tokens'] . $url));
 		}
 
 		$this->getForm();
@@ -164,7 +164,7 @@ class ControllerCatalogProduct extends Controller {
 				$url .= '&page=' . $this->request->get['page'];
 			}
 
-			$this->response->redirect($this->url->link('catalog/product', 'user_token=' . $this->session->data['user_token'] . $url));
+			$this->response->redirect($this->url->link('catalog/product', 'user_tokens=' . $this->session->data['user_tokens'] . $url));
 		}
 
 		$this->getList();
@@ -218,7 +218,7 @@ class ControllerCatalogProduct extends Controller {
 				$url .= '&page=' . $this->request->get['page'];
 			}
 
-			$this->response->redirect($this->url->link('catalog/product', 'user_token=' . $this->session->data['user_token'] . $url));
+			$this->response->redirect($this->url->link('catalog/product', 'user_tokens=' . $this->session->data['user_tokens'] . $url));
 		}
 
 		$this->getList();
@@ -333,17 +333,17 @@ class ControllerCatalogProduct extends Controller {
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_home'),
-			'href' => $this->url->link('common/dashboard', 'user_token=' . $this->session->data['user_token'])
+			'href' => $this->url->link('common/dashboard', 'user_tokens=' . $this->session->data['user_tokens'])
 		);
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('heading_title'),
-			'href' => $this->url->link('catalog/product', 'user_token=' . $this->session->data['user_token'] . $url)
+			'href' => $this->url->link('catalog/product', 'user_tokens=' . $this->session->data['user_tokens'] . $url)
 		);
 
-		$data['add'] = $this->url->link('catalog/product/add', 'user_token=' . $this->session->data['user_token'] . $url);
-		$data['copy'] = $this->url->link('catalog/product/copy', 'user_token=' . $this->session->data['user_token'] . $url);
-		$data['delete'] = $this->url->link('catalog/product/delete', 'user_token=' . $this->session->data['user_token'] . $url);
+		$data['add'] = $this->url->link('catalog/product/add', 'user_tokens=' . $this->session->data['user_tokens'] . $url);
+		$data['copy'] = $this->url->link('catalog/product/copy', 'user_tokens=' . $this->session->data['user_tokens'] . $url);
+		$data['delete'] = $this->url->link('catalog/product/delete', 'user_tokens=' . $this->session->data['user_tokens'] . $url);
 
 		$this->load->model('catalog/category');
 		$data['categories'] = array();
@@ -415,11 +415,11 @@ class ControllerCatalogProduct extends Controller {
 				'quantity'   => $result['quantity'],
 				'status'     => $result['status'],
 				'view'       => $this->front_url->link('product/product', "product_id={$result['product_id']}"),
-				'edit'       => $this->url->link('catalog/product/edit', 'user_token=' . $this->session->data['user_token'] . '&product_id=' . $result['product_id'] . $url)
+				'edit'       => $this->url->link('catalog/product/edit', 'user_tokens=' . $this->session->data['user_tokens'] . '&product_id=' . $result['product_id'] . $url)
 			);
 		}
 
-		$data['user_token'] = $this->session->data['user_token'];
+		$data['user_tokens'] = $this->session->data['user_tokens'];
 
 		if (isset($this->error['warning'])) {
 			$data['error_warning'] = $this->error['warning'];
@@ -481,13 +481,13 @@ class ControllerCatalogProduct extends Controller {
 			$url .= '&page=' . $this->request->get['page'];
 		}
 
-		$data['sort_id'] = $this->url->link('catalog/product', 'user_token=' . $this->session->data['user_token'] . '&sort=p.product_id' . $url);
-		$data['sort_name'] = $this->url->link('catalog/product', 'user_token=' . $this->session->data['user_token'] . '&sort=pd.name' . $url);
-		$data['sort_model'] = $this->url->link('catalog/product', 'user_token=' . $this->session->data['user_token'] . '&sort=p.model' . $url);
-		$data['sort_price'] = $this->url->link('catalog/product', 'user_token=' . $this->session->data['user_token'] . '&sort=p.price' . $url);
-		$data['sort_quantity'] = $this->url->link('catalog/product', 'user_token=' . $this->session->data['user_token'] . '&sort=p.quantity' . $url);
-		$data['sort_status'] = $this->url->link('catalog/product', 'user_token=' . $this->session->data['user_token'] . '&sort=p.status' . $url);
-		$data['sort_order'] = $this->url->link('catalog/product', 'user_token=' . $this->session->data['user_token'] . '&sort=p.sort_order' . $url);
+		$data['sort_id'] = $this->url->link('catalog/product', 'user_tokens=' . $this->session->data['user_tokens'] . '&sort=p.product_id' . $url);
+		$data['sort_name'] = $this->url->link('catalog/product', 'user_tokens=' . $this->session->data['user_tokens'] . '&sort=pd.name' . $url);
+		$data['sort_model'] = $this->url->link('catalog/product', 'user_tokens=' . $this->session->data['user_tokens'] . '&sort=p.model' . $url);
+		$data['sort_price'] = $this->url->link('catalog/product', 'user_tokens=' . $this->session->data['user_tokens'] . '&sort=p.price' . $url);
+		$data['sort_quantity'] = $this->url->link('catalog/product', 'user_tokens=' . $this->session->data['user_tokens'] . '&sort=p.quantity' . $url);
+		$data['sort_status'] = $this->url->link('catalog/product', 'user_tokens=' . $this->session->data['user_tokens'] . '&sort=p.status' . $url);
+		$data['sort_order'] = $this->url->link('catalog/product', 'user_tokens=' . $this->session->data['user_tokens'] . '&sort=p.sort_order' . $url);
 
 		$url = '';
 
@@ -531,7 +531,7 @@ class ControllerCatalogProduct extends Controller {
 		$pagination->total = $product_total;
 		$pagination->page = $page;
 		$pagination->limit = $this->config->get('config_limit_admin');
-		$pagination->url = $this->url->link('catalog/product', 'user_token=' . $this->session->data['user_token'] . $url . '&page={page}');
+		$pagination->url = $this->url->link('catalog/product', 'user_tokens=' . $this->session->data['user_tokens'] . $url . '&page={page}');
 
 		$data['pagination'] = $pagination->render();
 
@@ -637,27 +637,27 @@ class ControllerCatalogProduct extends Controller {
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_home'),
-			'href' => $this->url->link('common/dashboard', 'user_token=' . $this->session->data['user_token'])
+			'href' => $this->url->link('common/dashboard', 'user_tokens=' . $this->session->data['user_tokens'])
 		);
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('heading_title'),
-			'href' => $this->url->link('catalog/product', 'user_token=' . $this->session->data['user_token'] . $url)
+			'href' => $this->url->link('catalog/product', 'user_tokens=' . $this->session->data['user_tokens'] . $url)
 		);
 
 		if (!isset($this->request->get['product_id'])) {
-			$data['action'] = $this->url->link('catalog/product/add', 'user_token=' . $this->session->data['user_token'] . $url);
+			$data['action'] = $this->url->link('catalog/product/add', 'user_tokens=' . $this->session->data['user_tokens'] . $url);
 		} else {
-			$data['action'] = $this->url->link('catalog/product/edit', 'user_token=' . $this->session->data['user_token'] . '&product_id=' . $this->request->get['product_id'] . $url);
+			$data['action'] = $this->url->link('catalog/product/edit', 'user_tokens=' . $this->session->data['user_tokens'] . '&product_id=' . $this->request->get['product_id'] . $url);
 		}
 
-		$data['cancel'] = $this->url->link('catalog/product', 'user_token=' . $this->session->data['user_token'] . $url);
+		$data['cancel'] = $this->url->link('catalog/product', 'user_tokens=' . $this->session->data['user_tokens'] . $url);
 
 		if (isset($this->request->get['product_id']) && ($this->request->server['REQUEST_METHOD'] != 'POST')) {
 			$product_info = $this->model_catalog_product->getProduct($this->request->get['product_id']);
 		}
 
-		$data['user_token'] = $this->session->data['user_token'];
+		$data['user_tokens'] = $this->session->data['user_tokens'];
 
 		if (isset($this->request->get['product_id'])) {
 			$data['product_id'] = $this->request->get['product_id'];
@@ -1104,8 +1104,8 @@ class ControllerCatalogProduct extends Controller {
 
 		// Options
         if (isset($this->request->get['product_id'])) {
-            $data['option_list'] = $this->url->link('catalog/product_option', 'user_token=' . $this->session->data['user_token'] . '&filter_product_id=' . $this->request->get['product_id']);
-            $data['option_add'] = $this->url->link('catalog/product_option/add', 'user_token=' . $this->session->data['user_token'] . '&filter_product_id=' . $this->request->get['product_id']);
+            $data['option_list'] = $this->url->link('catalog/product_option', 'user_tokens=' . $this->session->data['user_tokens'] . '&filter_product_id=' . $this->request->get['product_id']);
+            $data['option_add'] = $this->url->link('catalog/product_option/add', 'user_tokens=' . $this->session->data['user_tokens'] . '&filter_product_id=' . $this->request->get['product_id']);
         }
 
 		// Downloads

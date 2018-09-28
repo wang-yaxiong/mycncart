@@ -62,7 +62,7 @@ class ControllerCustomerCustomer extends Controller {
 				$url .= '&page=' . $this->request->get['page'];
 			}
 
-			$this->response->redirect($this->url->link('customer/customer', 'user_token=' . $this->session->data['user_token'] . $url));
+			$this->response->redirect($this->url->link('customer/customer', 'user_tokens=' . $this->session->data['user_tokens'] . $url));
 		}
 
 		$this->getForm();
@@ -118,7 +118,7 @@ class ControllerCustomerCustomer extends Controller {
 				$url .= '&page=' . $this->request->get['page'];
 			}
 
-			$this->response->redirect($this->url->link('customer/customer', 'user_token=' . $this->session->data['user_token'] . $url));
+			$this->response->redirect($this->url->link('customer/customer', 'user_tokens=' . $this->session->data['user_tokens'] . $url));
 		}
 
 		$this->getForm();
@@ -176,7 +176,7 @@ class ControllerCustomerCustomer extends Controller {
 				$url .= '&page=' . $this->request->get['page'];
 			}
 
-			$this->response->redirect($this->url->link('customer/customer', 'user_token=' . $this->session->data['user_token'] . $url));
+			$this->response->redirect($this->url->link('customer/customer', 'user_tokens=' . $this->session->data['user_tokens'] . $url));
 		}
 
 		$this->getList();
@@ -232,7 +232,7 @@ class ControllerCustomerCustomer extends Controller {
 				$url .= '&page=' . $this->request->get['page'];
 			}
 
-			$this->response->redirect($this->url->link('customer/customer', 'user_token=' . $this->session->data['user_token'] . $url));
+			$this->response->redirect($this->url->link('customer/customer', 'user_tokens=' . $this->session->data['user_tokens'] . $url));
 		}
 
 		$this->getList();
@@ -335,16 +335,16 @@ class ControllerCustomerCustomer extends Controller {
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_home'),
-			'href' => $this->url->link('common/dashboard', 'user_token=' . $this->session->data['user_token'])
+			'href' => $this->url->link('common/dashboard', 'user_tokens=' . $this->session->data['user_tokens'])
 		);
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('heading_title'),
-			'href' => $this->url->link('customer/customer', 'user_token=' . $this->session->data['user_token'] . $url)
+			'href' => $this->url->link('customer/customer', 'user_tokens=' . $this->session->data['user_tokens'] . $url)
 		);
 
-		$data['add'] = $this->url->link('customer/customer/add', 'user_token=' . $this->session->data['user_token'] . $url);
-		$data['delete'] = $this->url->link('customer/customer/delete', 'user_token=' . $this->session->data['user_token'] . $url);
+		$data['add'] = $this->url->link('customer/customer/add', 'user_tokens=' . $this->session->data['user_tokens'] . $url);
+		$data['delete'] = $this->url->link('customer/customer/delete', 'user_tokens=' . $this->session->data['user_tokens'] . $url);
 
 		$this->load->model('setting/store');
 
@@ -373,7 +373,7 @@ class ControllerCustomerCustomer extends Controller {
 			$login_info = $this->model_customer_customer->getTotalLoginAttempts($result['customer_id']);
 
 			if ($login_info && $login_info['total'] >= $this->config->get('config_login_attempts')) {
-				$unlock = $this->url->link('customer/customer/unlock', 'user_token=' . $this->session->data['user_token'] . '&customer_id=' . $result['customer_id'] . $url);
+				$unlock = $this->url->link('customer/customer/unlock', 'user_tokens=' . $this->session->data['user_tokens'] . '&customer_id=' . $result['customer_id'] . $url);
 			} else {
 				$unlock = '';
 			}
@@ -382,13 +382,13 @@ class ControllerCustomerCustomer extends Controller {
 
 			$store_data[] = array(
 				'name' => $this->config->get('config_name'),
-				'href' => $this->url->link('customer/customer/login', 'user_token=' . $this->session->data['user_token'] . '&customer_id=' . $result['customer_id'] . '&store_id=0')
+				'href' => $this->url->link('customer/customer/login', 'user_tokens=' . $this->session->data['user_tokens'] . '&customer_id=' . $result['customer_id'] . '&store_id=0')
 			);
 
 			foreach ($stores as $store) {
 				$store_data[] = array(
 					'name' => $store['name'],
-					'href' => $this->url->link('customer/customer/login', 'user_token=' . $this->session->data['user_token'] . '&customer_id=' . $result['customer_id'] . '&store_id=' . $result['store_id'])
+					'href' => $this->url->link('customer/customer/login', 'user_tokens=' . $this->session->data['user_tokens'] . '&customer_id=' . $result['customer_id'] . '&store_id=' . $result['store_id'])
 				);
 			}
 
@@ -402,11 +402,11 @@ class ControllerCustomerCustomer extends Controller {
 				'date_added'     => date($this->language->get('datetime_format'), strtotime($result['date_added'])),
 				'unlock'         => $unlock,
 				'store'          => $store_data,
-				'edit'           => $this->url->link('customer/customer/edit', 'user_token=' . $this->session->data['user_token'] . '&customer_id=' . $result['customer_id'] . $url)
+				'edit'           => $this->url->link('customer/customer/edit', 'user_tokens=' . $this->session->data['user_tokens'] . '&customer_id=' . $result['customer_id'] . $url)
 			);
 		}
 
-		$data['user_token'] = $this->session->data['user_token'];
+		$data['user_tokens'] = $this->session->data['user_tokens'];
 
 		if (isset($this->error['warning'])) {
 			$data['error_warning'] = $this->error['warning'];
@@ -464,12 +464,12 @@ class ControllerCustomerCustomer extends Controller {
 			$url .= '&page=' . $this->request->get['page'];
 		}
 
-		$data['sort_name'] = $this->url->link('customer/customer', 'user_token=' . $this->session->data['user_token'] . '&sort=name' . $url);
-		$data['sort_email'] = $this->url->link('customer/customer', 'user_token=' . $this->session->data['user_token'] . '&sort=c.email' . $url);
-		$data['sort_customer_group'] = $this->url->link('customer/customer', 'user_token=' . $this->session->data['user_token'] . '&sort=customer_group' . $url);
-		$data['sort_status'] = $this->url->link('customer/customer', 'user_token=' . $this->session->data['user_token'] . '&sort=c.status' . $url);
-		$data['sort_ip'] = $this->url->link('customer/customer', 'user_token=' . $this->session->data['user_token'] . '&sort=c.ip' . $url);
-		$data['sort_date_added'] = $this->url->link('customer/customer', 'user_token=' . $this->session->data['user_token'] . '&sort=c.date_added' . $url);
+		$data['sort_name'] = $this->url->link('customer/customer', 'user_tokens=' . $this->session->data['user_tokens'] . '&sort=name' . $url);
+		$data['sort_email'] = $this->url->link('customer/customer', 'user_tokens=' . $this->session->data['user_tokens'] . '&sort=c.email' . $url);
+		$data['sort_customer_group'] = $this->url->link('customer/customer', 'user_tokens=' . $this->session->data['user_tokens'] . '&sort=customer_group' . $url);
+		$data['sort_status'] = $this->url->link('customer/customer', 'user_tokens=' . $this->session->data['user_tokens'] . '&sort=c.status' . $url);
+		$data['sort_ip'] = $this->url->link('customer/customer', 'user_tokens=' . $this->session->data['user_tokens'] . '&sort=c.ip' . $url);
+		$data['sort_date_added'] = $this->url->link('customer/customer', 'user_tokens=' . $this->session->data['user_tokens'] . '&sort=c.date_added' . $url);
 
 		$url = '';
 
@@ -509,7 +509,7 @@ class ControllerCustomerCustomer extends Controller {
 		$pagination->total = $customer_total;
 		$pagination->page = $page;
 		$pagination->limit = $this->config->get('config_limit_admin');
-		$pagination->url = $this->url->link('customer/customer', 'user_token=' . $this->session->data['user_token'] . $url . '&page={page}');
+		$pagination->url = $this->url->link('customer/customer', 'user_tokens=' . $this->session->data['user_tokens'] . $url . '&page={page}');
 
 		$data['pagination'] = $pagination->render();
 
@@ -540,7 +540,7 @@ class ControllerCustomerCustomer extends Controller {
 		$data['text_form'] = !isset($this->request->get['customer_id']) ? $this->language->get('text_add') : $this->language->get('text_edit');
 
         $data['store_url'] = HTTP_CATALOG;
-		$data['user_token'] = $this->session->data['user_token'];
+		$data['user_tokens'] = $this->session->data['user_tokens'];
 
 		if (isset($this->request->get['customer_id'])) {
 			$data['customer_id'] = (int)$this->request->get['customer_id'];
@@ -662,21 +662,21 @@ class ControllerCustomerCustomer extends Controller {
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_home'),
-			'href' => $this->url->link('common/dashboard', 'user_token=' . $this->session->data['user_token'],'')
+			'href' => $this->url->link('common/dashboard', 'user_tokens=' . $this->session->data['user_tokens'],'')
 		);
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('heading_title'),
-			'href' => $this->url->link('customer/customer', 'user_token=' . $this->session->data['user_token'] . $url)
+			'href' => $this->url->link('customer/customer', 'user_tokens=' . $this->session->data['user_tokens'] . $url)
 		);
 
 		if (!isset($this->request->get['customer_id'])) {
-			$data['action'] = $this->url->link('customer/customer/add', 'user_token=' . $this->session->data['user_token'] . $url);
+			$data['action'] = $this->url->link('customer/customer/add', 'user_tokens=' . $this->session->data['user_tokens'] . $url);
 		} else {
-			$data['action'] = $this->url->link('customer/customer/edit', 'user_token=' . $this->session->data['user_token'] . '&customer_id=' . $this->request->get['customer_id'] . $url);
+			$data['action'] = $this->url->link('customer/customer/edit', 'user_tokens=' . $this->session->data['user_tokens'] . '&customer_id=' . $this->request->get['customer_id'] . $url);
 		}
 
-		$data['cancel'] = $this->url->link('customer/customer', 'user_token=' . $this->session->data['user_token'] . $url);
+		$data['cancel'] = $this->url->link('customer/customer', 'user_tokens=' . $this->session->data['user_tokens'] . $url);
 
 		if (isset($this->request->get['customer_id']) && ($this->request->server['REQUEST_METHOD'] != 'POST')) {
 			$customer_info = $this->model_customer_customer->getCustomer($this->request->get['customer_id']);
@@ -991,12 +991,12 @@ class ControllerCustomerCustomer extends Controller {
 
 			$data['breadcrumbs'][] = array(
 				'text' => $this->language->get('text_home'),
-				'href' => $this->url->link('common/dashboard', 'user_token=' . $this->session->data['user_token'])
+				'href' => $this->url->link('common/dashboard', 'user_tokens=' . $this->session->data['user_tokens'])
 			);
 
 			$data['breadcrumbs'][] = array(
 				'text' => $this->language->get('heading_title'),
-				'href' => $this->url->link('error/not_found', 'user_token=' . $this->session->data['user_token'])
+				'href' => $this->url->link('error/not_found', 'user_tokens=' . $this->session->data['user_tokens'])
 			);
 
 			$data['header'] = $this->load->controller('common/header');
@@ -1041,7 +1041,7 @@ class ControllerCustomerCustomer extends Controller {
 		$pagination->total = $history_total;
 		$pagination->page = $page;
 		$pagination->limit = 10;
-		$pagination->url = $this->url->link('customer/customer/history', 'user_token=' . $this->session->data['user_token'] . '&customer_id=' . $customer_id . '&page={page}');
+		$pagination->url = $this->url->link('customer/customer/history', 'user_tokens=' . $this->session->data['user_tokens'] . '&customer_id=' . $customer_id . '&page={page}');
 
 		$data['pagination'] = $pagination->render();
 
@@ -1112,7 +1112,7 @@ class ControllerCustomerCustomer extends Controller {
 		$pagination->total = $transaction_total;
 		$pagination->page = $page;
 		$pagination->limit = 10;
-		$pagination->url = $this->url->link('customer/customer/transaction', 'user_token=' . $this->session->data['user_token'] . '&customer_id=' . $customer_id . '&page={page}');
+		$pagination->url = $this->url->link('customer/customer/transaction', 'user_tokens=' . $this->session->data['user_tokens'] . '&customer_id=' . $customer_id . '&page={page}');
 
 		$data['pagination'] = $pagination->render();
 
@@ -1183,7 +1183,7 @@ class ControllerCustomerCustomer extends Controller {
 		$pagination->total = $reward_total;
 		$pagination->page = $page;
 		$pagination->limit = 10;
-		$pagination->url = $this->url->link('customer/customer/reward', 'user_token=' . $this->session->data['user_token'] . '&customer_id=' . $customer_id . '&page={page}');
+		$pagination->url = $this->url->link('customer/customer/reward', 'user_tokens=' . $this->session->data['user_tokens'] . '&customer_id=' . $customer_id . '&page={page}');
 
 		$data['pagination'] = $pagination->render();
 
@@ -1256,7 +1256,7 @@ class ControllerCustomerCustomer extends Controller {
 				'store'      => $store,
 				'country'    => $result['country'],
 				'date_added' => date($this->language->get('datetime_format'), strtotime($result['date_added'])),
-				'filter_ip'  => $this->url->link('customer/customer', 'user_token=' . $this->session->data['user_token'] . '&filter_ip=' . $result['ip'])
+				'filter_ip'  => $this->url->link('customer/customer', 'user_tokens=' . $this->session->data['user_tokens'] . '&filter_ip=' . $result['ip'])
 			);
 		}
 
@@ -1266,7 +1266,7 @@ class ControllerCustomerCustomer extends Controller {
 		$pagination->total = $ip_total;
 		$pagination->page = $page;
 		$pagination->limit = 10;
-		$pagination->url = $this->url->link('customer/customer/ip', 'user_token=' . $this->session->data['user_token'] . '&customer_id=' . $customer_id . '&page={page}');
+		$pagination->url = $this->url->link('customer/customer/ip', 'user_tokens=' . $this->session->data['user_tokens'] . '&customer_id=' . $customer_id . '&page={page}');
 
 		$data['pagination'] = $pagination->render();
 

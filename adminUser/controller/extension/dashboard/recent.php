@@ -14,7 +14,7 @@ class ControllerExtensionDashboardRecent extends Controller {
 
 			$this->session->data['success'] = $this->language->get('text_success');
 
-			$this->response->redirect($this->url->link('marketplace/extension', 'user_token=' . $this->session->data['user_token'] . '&type=dashboard'));
+			$this->response->redirect($this->url->link('marketplace/extension', 'user_tokens=' . $this->session->data['user_tokens'] . '&type=dashboard'));
 		}
 
 		if (isset($this->error['warning'])) {
@@ -27,22 +27,22 @@ class ControllerExtensionDashboardRecent extends Controller {
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_home'),
-			'href' => $this->url->link('common/dashboard', 'user_token=' . $this->session->data['user_token'])
+			'href' => $this->url->link('common/dashboard', 'user_tokens=' . $this->session->data['user_tokens'])
 		);
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_extension'),
-			'href' => $this->url->link('marketplace/extension', 'user_token=' . $this->session->data['user_token'] . '&type=dashboard')
+			'href' => $this->url->link('marketplace/extension', 'user_tokens=' . $this->session->data['user_tokens'] . '&type=dashboard')
 		);
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('heading_title'),
-			'href' => $this->url->link('extension/dashboard/recent', 'user_token=' . $this->session->data['user_token'])
+			'href' => $this->url->link('extension/dashboard/recent', 'user_tokens=' . $this->session->data['user_tokens'])
 		);
 
-		$data['action'] = $this->url->link('extension/dashboard/recent', 'user_token=' . $this->session->data['user_token']);
+		$data['action'] = $this->url->link('extension/dashboard/recent', 'user_tokens=' . $this->session->data['user_tokens']);
 
-		$data['cancel'] = $this->url->link('marketplace/extension', 'user_token=' . $this->session->data['user_token'] . '&type=dashboard');
+		$data['cancel'] = $this->url->link('marketplace/extension', 'user_tokens=' . $this->session->data['user_tokens'] . '&type=dashboard');
 
 		if (isset($this->request->post['dashboard_recent_width'])) {
 			$data['dashboard_recent_width'] = $this->request->post['dashboard_recent_width'];
@@ -86,7 +86,7 @@ class ControllerExtensionDashboardRecent extends Controller {
 	public function dashboard() {
 		$this->load->language('extension/dashboard/recent');
 
-		$data['user_token'] = $this->session->data['user_token'];
+		$data['user_tokens'] = $this->session->data['user_tokens'];
 
 		// Last 5 Orders
 		$data['orders'] = array();
@@ -109,7 +109,7 @@ class ControllerExtensionDashboardRecent extends Controller {
 				'status'     => $result['order_status'],
 				'date_added' => date($this->language->get('datetime_format'), strtotime($result['date_added'])),
 				'total'      => $this->currency->format($result['total'], $result['currency_code'], $result['currency_value']),
-				'view'       => $this->url->link('sale/order/info', 'user_token=' . $this->session->data['user_token'] . '&order_id=' . $result['order_id']),
+				'view'       => $this->url->link('sale/order/info', 'user_tokens=' . $this->session->data['user_tokens'] . '&order_id=' . $result['order_id']),
 			);
 		}
 
