@@ -256,7 +256,7 @@
 							<div class='step2-tel'>
 								<dl>
 								    <dt><span>手机号：</span></dt>
-								    <dd><input type="text" name="stel" id = 'steptel'></dd>
+								    <dd><input type="text" name="stel" id = 'steptel' autocomplete='tel'></dd>
 								    <dd><span id='s_tel'></span></dd>
 								</dl>
 								
@@ -337,8 +337,8 @@
 
 				 $.post(
 					"index.php?route=common/register/check",
-					{type:"card",value:card},
-					function(result){
+					{type:"cardid",value:card},
+					function(result){console.log(result);
 						 if(result != 0){
 							$('#stepcard').css('border','2px solid red');
 							$("#s_card").html("<font color='red'>身份证已注册</font>");
@@ -470,7 +470,7 @@
 				$("#s_card").html("<font color='red'>身份证格式错误</font>");
 				cardbool = false;
 			}else{
-				 $.post("index.php?route=common/register/check",{type:'card',value:card},function(result){
+				 $.post("index.php?route=common/register/check",{type:'cardid',value:card},function(result){
 					if(result != 0){
 						$('#stepcard').css('border','2px solid red');
 						$("#s_card").html("<font color='red'>身份证已注册</font>");
