@@ -235,8 +235,6 @@
 			<div>
 				<form method="post" action="index.php?route=common/register/add" name='form'>			
 					<div class="joinin-concrete">
-						<div style='text-align:center;font-size:18px;color:red'><span>{{error_info}}</span></div>
-						
 						<div class='step2-info'>
 							<div class='step2-name'>
 								<dl>
@@ -256,7 +254,7 @@
 							<div class='step2-tel'>
 								<dl>
 								    <dt><span>手机号：</span></dt>
-								    <dd><input type="text" name="stel" id = 'steptel' autocomplete='tel'></dd>
+								    <dd><input type="text" name="stel" id = 'steptel'></dd>
 								    <dd><span id='s_tel'></span></dd>
 								</dl>
 								
@@ -337,12 +335,11 @@
 
 				 $.post(
 					"index.php?route=common/register/check",
-					{type:"cardid",value:card},
-					function(result){console.log(result);
+					{type:"card",value:card},
+					function(result){
 						 if(result != 0){
 							$('#stepcard').css('border','2px solid red');
 							$("#s_card").html("<font color='red'>身份证已注册</font>");
-							 cardbool = false;
 						 }else{
 							 cardbool = true;
 						 }
@@ -380,7 +377,6 @@
 						 if(result != 0){
 							$('#steptel').css('border','2px solid red');
 							$("#s_tel").html("<font color='red'>手机号已注册</font>");
-							telbool = flase;
 						 }else{
 							telbool = true;
 						 }
@@ -470,7 +466,7 @@
 				$("#s_card").html("<font color='red'>身份证格式错误</font>");
 				cardbool = false;
 			}else{
-				 $.post("index.php?route=common/register/check",{type:'cardid',value:card},function(result){
+				 $.post("index.php?route=common/register/check",{type:'card',value:card},function(result){
 					if(result != 0){
 						$('#stepcard').css('border','2px solid red');
 						$("#s_card").html("<font color='red'>身份证已注册</font>");
@@ -528,11 +524,11 @@
 				npwdbool = true;
 			}
 		}
-
+		 
 		if(namebool && cardbool && telbool && pwdbool && npwdbool){
 			$("form[name='form']").submit();
 		}else{
-			return;
+			 return;
 		}
 		 
 	})

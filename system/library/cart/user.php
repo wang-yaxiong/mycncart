@@ -38,6 +38,7 @@ class User {
 
 	public function login($username, $password) {
 		$user_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "user WHERE username = '" . $this->db->escape($username) . "' AND status = '1'");
+
 		if ($user_query->num_rows) {
 			if (password_verify($password, $user_query->row['password'])) {
 				if (password_needs_rehash($user_query->row['password'], PASSWORD_DEFAULT)) {

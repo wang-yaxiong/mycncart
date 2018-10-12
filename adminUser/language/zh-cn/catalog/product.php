@@ -9,10 +9,12 @@
 
 // Heading
 $_['heading_title']              = '商品管理';
+$_['heading_title2']             = '竞拍管理';      //新增
 
 // Text
 $_['text_success']               = '成功：商品已修改！';
 $_['text_list']                  = '商品列表';
+$_['text_ebaylist']              = '竞拍列表';      //新增
 $_['text_add']                   = '新增商品';
 $_['text_edit']                  = '编辑商品';
 $_['text_filter']                = '筛选';
@@ -30,6 +32,7 @@ $_['column_id']                  = 'ID';
 $_['column_name']                = '商品名称';
 $_['column_model']               = '商品型号';
 $_['column_image']               = '图片';
+$_['column_fuprice']             = '服务费';
 $_['column_price']               = '价格';
 $_['column_quantity']            = '数量';
 $_['column_status']              = '状态';
@@ -38,6 +41,7 @@ $_['column_action']              = '管理';
 // Entry
 $_['entry_name']                 = '商品名称';
 $_['entry_description']          = '商品描述';
+$_['entry_fuprice']              = '服务费';
 $_['entry_meta_title']           = 'Meta Tag 标题';
 $_['entry_meta_keyword']         = 'Meta Tag 关键字';
 $_['entry_meta_description']     = 'Meta Tag 描述';
@@ -54,6 +58,7 @@ $_['entry_location']             = '商品位置';
 $_['entry_shipping']             = '需要配送';
 $_['entry_manufacturer']         = '商品品牌';
 $_['entry_date_available']       = '开售日期';
+$_['entry_end_available']       = '结束日期';
 $_['entry_quantity']             = '购买数量';
 $_['entry_minimum']              = '最小购买数量';
 $_['entry_stock_status']         = '缺货显示状态';

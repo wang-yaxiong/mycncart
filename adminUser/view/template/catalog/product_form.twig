@@ -110,6 +110,20 @@
             </div>
             <div class="tab-pane" id="tab-data">
               <div class="form-group">
+                <label class="col-md-2 control-label" for="input-fuprice">{{ entry_fuprice }}</label>
+                <div class="col-md-3">
+                  <div class="input-group">
+                      {% if helper.currency().getSymbolLeft(helper.config('config_currency')) %}
+                        <div class="input-group-addon">{{ helper.currency().getSymbolLeft(helper.config('config_currency')) }}</div>
+                      {% endif %}
+                    <input type="text" name="fuprice" value="{{ fuprice|round(2) }}" placeholder="{{ entry_fuprice }}" id="input-price" class="form-control"/>
+                      {% if helper.currency().getSymbolRight(helper.config('config_currency')) %}
+                        <div class="input-group-addon">{{ helper.currency().getSymbolRight(helper.config('config_currency')) }}</div>
+                      {% endif %}
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
                 <label class="col-md-2 control-label" for="input-price">{{ entry_price }}</label>
                 <div class="col-md-6">
                   <div class="input-group">
@@ -222,13 +236,36 @@
                 </div>
               </div>
               <div class="form-group">
-                <label class="col-md-2 control-label" for="input-date-available">{{ entry_date_available }}</label>
+                <label class="col-md-2 control-label" >{{ entry_date_available }}</label>
                 <div class="col-md-6">
                   <div class="input-group date">
                     <input type="text" name="date_available" value="{{ date_available }}" placeholder="{{ entry_date_available }}" data-date-format="YYYY-MM-DD" id="input-date-available" class="form-control"/>
                     <div class="input-group-btn">
                       <button class="btn btn-default" type="button"><i class="fa fa-calendar"></i></button>
                     </div>
+
+
+                  </div>
+                  <div class="text">
+                    <input type="text" name="hh" oninput="if(value<0)value=00;if(value>24)value=24;" value="" placeholder="时"  class="col-sm-3"/>
+                    <input type="text" name="mm" oninput="if(value<0)value=00;if(value>59)value=59;" value="" placeholder="分"  class="col-sm-3"/>
+                    <input type="text" name="ss" oninput="if(value<0)value=00;if(value>59)value=59;" value="00" placeholder="秒"  class="col-sm-3"/>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-md-2 control-label" for="input-end-available">{{ entry_end_available }}</label>
+                <div class="col-md-6">
+                  <div class="input-group date">
+                    <input type="text" name="end_available" value="{{ end_available }}" placeholder="{{ entry_end_available }}" data-date-format="YYYY-MM-DD" id="input-date-available" class="form-control"/>
+                    <div class="input-group-btn">
+                      <button class="btn btn-default" type="button"><i class="fa fa-calendar"></i></button>
+                    </div>
+                  </div>
+                  <div class="text">
+                    <input type="text" name="end_hh" oninput="if(value<0)value=00;if(value>24)value=24;" value="" placeholder="时"  class="col-sm-3"/>
+                    <input type="text" name="end_mm" oninput="if(value<0)value=00;if(value>59)value=59;" value="" placeholder="分"  class="col-sm-3"/>
+                    <input type="text" name="end_ss" oninput="if(value<0)value=00;if(value>59)value=59;" value="00" placeholder="秒"  class="col-sm-3"/>
                   </div>
                 </div>
               </div>
@@ -718,7 +755,7 @@
 $('input[name=\'manufacturer\']').autocomplete({
 	'source': function(request, response) {
 		$.ajax({
-			url: 'index.php?route=catalog/manufacturer/autocomplete&user_tokens={{ user_tokens }}&filter_name=' + encodeURIComponent(request),
+			url: 'index.php?route=catalog/manufacturer/autocomplete&user_token={{ user_token }}&filter_name=' + encodeURIComponent(request),
 			dataType: 'json',
 			success: function(json) {
 				json.unshift({
@@ -745,7 +782,7 @@ $('input[name=\'manufacturer\']').autocomplete({
 $('input[name=\'category\']').autocomplete({
 	'source': function(request, response) {
 		$.ajax({
-			url: 'index.php?route=catalog/category/autocomplete&user_tokens={{ user_tokens }}&filter_name=' + encodeURIComponent(request),
+			url: 'index.php?route=catalog/category/autocomplete&user_token={{ user_token }}&filter_name=' + encodeURIComponent(request),
 			dataType: 'json',
 			success: function(json) {
 				response($.map(json, function(item) {
@@ -774,7 +811,7 @@ $('#product-category').delegate('.fa-minus-circle', 'click', function() {
 $('input[name=\'filter\']').autocomplete({
 	'source': function(request, response) {
 		$.ajax({
-			url: 'index.php?route=catalog/filter/autocomplete&user_tokens={{ user_tokens }}&filter_name=' + encodeURIComponent(request),
+			url: 'index.php?route=catalog/filter/autocomplete&user_token={{ user_token }}&filter_name=' + encodeURIComponent(request),
 			dataType: 'json',
 			success: function(json) {
 				response($.map(json, function(item) {
@@ -803,7 +840,7 @@ $('#product-filter').delegate('.fa-minus-circle', 'click', function() {
 $('input[name=\'download\']').autocomplete({
 	'source': function(request, response) {
 		$.ajax({
-			url: 'index.php?route=catalog/download/autocomplete&user_tokens={{ user_tokens }}&filter_name=' + encodeURIComponent(request),
+			url: 'index.php?route=catalog/download/autocomplete&user_token={{ user_token }}&filter_name=' + encodeURIComponent(request),
 			dataType: 'json',
 			success: function(json) {
 				response($.map(json, function(item) {
@@ -832,7 +869,7 @@ $('#product-download').delegate('.fa-minus-circle', 'click', function() {
 $('input[name=\'related\']').autocomplete({
 	'source': function(request, response) {
 		$.ajax({
-			url: 'index.php?route=catalog/product/autocomplete&user_tokens={{ user_tokens }}&filter_name=' + encodeURIComponent(request),
+			url: 'index.php?route=catalog/product/autocomplete&user_token={{ user_token }}&filter_name=' + encodeURIComponent(request),
 			dataType: 'json',
 			success: function(json) {
 				response($.map(json, function(item) {
@@ -882,7 +919,7 @@ function attributeautocomplete(attribute_row) {
 	$('input[name=\'product_attribute[' + attribute_row + '][name]\']').autocomplete({
 		'source': function(request, response) {
 			$.ajax({
-				url: 'index.php?route=catalog/attribute/autocomplete&user_tokens={{ user_tokens }}&filter_name=' + encodeURIComponent(request),
+				url: 'index.php?route=catalog/attribute/autocomplete&user_token={{ user_token }}&filter_name=' + encodeURIComponent(request),
 				dataType: 'json',
 				success: function(json) {
 					response($.map(json, function(item) {

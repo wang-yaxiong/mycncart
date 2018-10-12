@@ -115,7 +115,8 @@
                       <td class="text-center">{{ column_image }}</td>
                       <td class="text-left">{% if sort == 'pd.name' %}<a href="{{ sort_name }}" class="{{ order|lower }}">{{ column_name }}</a>{% else %}<a href="{{ sort_name }}">{{ column_name }}</a> {% endif %}</td>
                       <td class="text-left">{% if sort == 'p.model' %}<a href="{{ sort_model }}" class="{{ order|lower }}">{{ column_model }}</a>{% else %}<a href="{{ sort_model }}">{{ column_model }}</a> {% endif %}</td>
-                      <td class="text-right">{% if sort == 'p.price' %}<a href="{{ sort_price }}" class="{{ order|lower }}">{{ column_price }}</a>{% else %}<a href="{{ sort_price }}">{{ column_price }}</a> {% endif %}</td>
+                        <td class="text-right">{% if sort == 'p.fuprice' %}<a href="{{ sort_fuprice }}" class="{{ order|lower }}">{{ column_fuprice }}</a>{% else %}<a href="{{ sort_fuprice }}">{{ column_fuprice }}</a> {% endif %}</td>
+                        <td class="text-right">{% if sort == 'p.price' %}<a href="{{ sort_price }}" class="{{ order|lower }}">{{ column_price }}</a>{% else %}<a href="{{ sort_price }}">{{ column_price }}</a> {% endif %}</td>
                       <td class="text-right">{% if sort == 'p.quantity' %}<a href="{{ sort_quantity }}" class="{{ order|lower }}">{{ column_quantity }}</a>{% else %}<a href="{{ sort_quantity }}">{{ column_quantity }}</a> {% endif %}</td>
                       <td class="text-left">{% if sort == 'p.status' %}<a href="{{ sort_status }}" class="{{ order|lower }}">{{ column_status }}</a>{% else %}<a href="{{ sort_status }}">{{ column_status }}</a> {% endif %}</td>
                       <td class="text-right">{{ column_action }}</td>
@@ -136,6 +137,7 @@
                           <td class="text-center">{% if product.image %}<img src="{{ product.image }}" alt="{{ product.name }}" class="img-thumbnail"/>{% else %}<span class="img-thumbnail list"><i class="fa fa-camera fa-2x"></i></span>{% endif %}</td>
                           <td class="text-left">{{ product.name }}</td>
                           <td class="text-left">{{ product.model }}</td>
+                            <td class="text-right">{{ product.fuprice }}</td>
                           <td class="text-right">{% if product.special %}<span style="text-decoration: line-through;">{{ product.price }}</span>
                               <br/>
                               <div class="text-danger">{{ product.special }}</div>
@@ -214,7 +216,7 @@ $('#button-filter').on('click', function() {
 		url += '&filter_image=' + encodeURIComponent(filter_image);
 	}
 
-	location = 'index.php?route=catalog/product&user_tokens={{ user_tokens }}' + url;
+	location = 'index.php?route=catalog/product&user_token={{ user_token }}' + url;
 });
 //--></script>
 <script type="text/javascript"><!--
@@ -226,7 +228,7 @@ $('button[form=\'form-product\']').on('click', function(e) {
 $('input[name=\'filter_name\']').autocomplete({
 	'source': function(request, response) {
 		$.ajax({
-			url: 'index.php?route=catalog/product/autocomplete&user_tokens={{ user_tokens }}&filter_name=' + encodeURIComponent(request),
+			url: 'index.php?route=catalog/product/autocomplete&user_token={{ user_token }}&filter_name=' + encodeURIComponent(request),
 			dataType: 'json',
 			success: function(json) {
 				response($.map(json, function(item) {
@@ -246,7 +248,7 @@ $('input[name=\'filter_name\']').autocomplete({
 $('input[name=\'filter_model\']').autocomplete({
 	'source': function(request, response) {
 		$.ajax({
-			url: 'index.php?route=catalog/product/autocomplete&user_tokens={{ user_tokens }}&filter_model=' + encodeURIComponent(request),
+			url: 'index.php?route=catalog/product/autocomplete&user_token={{ user_token }}&filter_model=' + encodeURIComponent(request),
 			dataType: 'json',
 			success: function(json) {
 				response($.map(json, function(item) {
@@ -273,7 +275,7 @@ $("[name='product-status-toggle']").bootstrapSwitch({
 $('input[name="product-status-toggle"]').on('switchChange.bootstrapSwitch', function(event, state) {
   var switcher = $(this);
   $.ajax({
-    url: 'index.php?route=catalog/product/status&user_tokens={{ user_tokens }}&product_id=' + $(this).data('id') + '&status=' + (state ? 1 : 0),
+    url: 'index.php?route=catalog/product/status&user_token={{ user_token }}&product_id=' + $(this).data('id') + '&status=' + (state ? 1 : 0),
     dataType: 'json',
     beforeSend: function () {
       switcher.bootstrapSwitch('toggleReadonly', true);

@@ -27,6 +27,14 @@ class ControllerCommonColumnLeft extends Controller {
 				);
 			}
 
+			//左侧菜单新增  竞拍管理
+            if ($this->user->hasPermission('access', 'catalog/ebaypro')) {
+                $catalog[] = array(
+                    'name'	   => $this->language->get('text_ebaypro'),
+                    'href'     => $this->url->link('catalog/ebaypro', 'user_token=' . $this->session->data['user_token']),
+                    'children' => array()
+                );
+            }
 			// Products
 			if ($this->user->hasPermission('access', 'catalog/product')) {
 				$catalog[] = array(

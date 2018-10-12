@@ -12,7 +12,7 @@ class ControllerExtensionReportCustomerReward extends Controller {
 
 			$this->session->data['success'] = $this->language->get('text_success');
 
-			$this->response->redirect($this->url->link('marketplace/extension', 'user_tokens=' . $this->session->data['user_tokens'] . '&type=report'));
+			$this->response->redirect($this->url->link('marketplace/extension', 'user_token=' . $this->session->data['user_token'] . '&type=report'));
 		}
 
 		if (isset($this->error['warning'])) {
@@ -25,22 +25,22 @@ class ControllerExtensionReportCustomerReward extends Controller {
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_home'),
-			'href' => $this->url->link('common/dashboard', 'user_tokens=' . $this->session->data['user_tokens'])
+			'href' => $this->url->link('common/dashboard', 'user_token=' . $this->session->data['user_token'])
 		);
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_extension'),
-			'href' => $this->url->link('marketplace/extension', 'user_tokens=' . $this->session->data['user_tokens'] . '&type=report')
+			'href' => $this->url->link('marketplace/extension', 'user_token=' . $this->session->data['user_token'] . '&type=report')
 		);
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('heading_title'),
-			'href' => $this->url->link('extension/report/customer_reward', 'user_tokens=' . $this->session->data['user_tokens'])
+			'href' => $this->url->link('extension/report/customer_reward', 'user_token=' . $this->session->data['user_token'])
 		);
 
-		$data['action'] = $this->url->link('extension/report/customer_reward', 'user_tokens=' . $this->session->data['user_tokens']);
+		$data['action'] = $this->url->link('extension/report/customer_reward', 'user_token=' . $this->session->data['user_token']);
 
-		$data['cancel'] = $this->url->link('marketplace/extension', 'user_tokens=' . $this->session->data['user_tokens'] . '&type=report');
+		$data['cancel'] = $this->url->link('marketplace/extension', 'user_token=' . $this->session->data['user_token'] . '&type=report');
 
 		if (isset($this->request->post['report_customer_reward_status'])) {
 			$data['report_customer_reward_status'] = $this->request->post['report_customer_reward_status'];
@@ -121,11 +121,11 @@ class ControllerExtensionReportCustomerReward extends Controller {
 				'points'         => $result['points'],
 				'orders'         => $result['orders'],
 				'total'          => $this->currency->format($result['total'], $this->config->get('config_currency')),
-				'edit'           => $this->url->link('customer/customer/edit', 'user_tokens=' . $this->session->data['user_tokens'] . '&customer_id=' . $result['customer_id'])
+				'edit'           => $this->url->link('customer/customer/edit', 'user_token=' . $this->session->data['user_token'] . '&customer_id=' . $result['customer_id'])
 			);
 		}
 
-		$data['user_tokens'] = $this->session->data['user_tokens'];
+		$data['user_token'] = $this->session->data['user_token'];
 
 		$url = '';
 
@@ -145,7 +145,7 @@ class ControllerExtensionReportCustomerReward extends Controller {
 		$pagination->total = $customer_total;
 		$pagination->page = $page;
 		$pagination->limit = $this->config->get('config_limit_admin');
-		$pagination->url = $this->url->link('report/report', 'user_tokens=' . $this->session->data['user_tokens'] . '&code=customer_reward' . $url . '&page={page}');
+		$pagination->url = $this->url->link('report/report', 'user_token=' . $this->session->data['user_token'] . '&code=customer_reward' . $url . '&page={page}');
 
 		$data['pagination'] = $pagination->render();
 

@@ -3,7 +3,7 @@ class ControllerMarketplaceApi extends Controller {
 	public function index() {	
 		$this->load->language('marketplace/api');
 			
-		$data['user_tokens'] = $this->session->data['user_tokens'];	
+		$data['user_token'] = $this->session->data['user_token'];	
 			
 		$this->response->setOutput($this->load->view('marketplace/api', $data));
 	}
