@@ -19,17 +19,7 @@ class ControllerCommonForgotten extends Controller {
 
 		if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validate()) {
 			$this->model_user_user->editCode($this->request->post['email'], token(40));
-
-
-			$txt = "First line of text\nSecond line of text";
-
-			// 如果一行大于 70 个字符，请使用 wordwrap()。
-			$txt = wordwrap($txt,70);
-
-			// 发送邮件
-			mail("1368114756@qq.com","My subject",$txt);
-
-
+			
 			$this->session->data['success'] = $this->language->get('text_success');
 
 			$this->response->redirect($this->url->link('common/login'));

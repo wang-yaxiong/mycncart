@@ -18,7 +18,7 @@ class ControllerExtensionModuleFeatured extends Controller {
 
 			$this->session->data['success'] = $this->language->get('text_success');
 
-			$this->response->redirect($this->url->link('marketplace/extension', 'user_tokens=' . $this->session->data['user_tokens'] . '&type=module'));
+			$this->response->redirect($this->url->link('marketplace/extension', 'user_token=' . $this->session->data['user_token'] . '&type=module'));
 		}
 
 		if (isset($this->error['warning'])) {
@@ -49,39 +49,39 @@ class ControllerExtensionModuleFeatured extends Controller {
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_home'),
-			'href' => $this->url->link('common/dashboard', 'user_tokens=' . $this->session->data['user_tokens'])
+			'href' => $this->url->link('common/dashboard', 'user_token=' . $this->session->data['user_token'])
 		);
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_extension'),
-			'href' => $this->url->link('marketplace/extension', 'user_tokens=' . $this->session->data['user_tokens'] . '&type=module')
+			'href' => $this->url->link('marketplace/extension', 'user_token=' . $this->session->data['user_token'] . '&type=module')
 		);
 
 		if (!isset($this->request->get['module_id'])) {
 			$data['breadcrumbs'][] = array(
 				'text' => $this->language->get('heading_title'),
-				'href' => $this->url->link('extension/module/featured', 'user_tokens=' . $this->session->data['user_tokens'])
+				'href' => $this->url->link('extension/module/featured', 'user_token=' . $this->session->data['user_token'])
 			);
 		} else {
 			$data['breadcrumbs'][] = array(
 				'text' => $this->language->get('heading_title'),
-				'href' => $this->url->link('extension/module/featured', 'user_tokens=' . $this->session->data['user_tokens'] . '&module_id=' . $this->request->get['module_id'])
+				'href' => $this->url->link('extension/module/featured', 'user_token=' . $this->session->data['user_token'] . '&module_id=' . $this->request->get['module_id'])
 			);
 		}
 
 		if (!isset($this->request->get['module_id'])) {
-			$data['action'] = $this->url->link('extension/module/featured', 'user_tokens=' . $this->session->data['user_tokens']);
+			$data['action'] = $this->url->link('extension/module/featured', 'user_token=' . $this->session->data['user_token']);
 		} else {
-			$data['action'] = $this->url->link('extension/module/featured', 'user_tokens=' . $this->session->data['user_tokens'] . '&module_id=' . $this->request->get['module_id']);
+			$data['action'] = $this->url->link('extension/module/featured', 'user_token=' . $this->session->data['user_token'] . '&module_id=' . $this->request->get['module_id']);
 		}
 
-		$data['cancel'] = $this->url->link('marketplace/extension', 'user_tokens=' . $this->session->data['user_tokens'] . '&type=module');
+		$data['cancel'] = $this->url->link('marketplace/extension', 'user_token=' . $this->session->data['user_token'] . '&type=module');
 
 		if (isset($this->request->get['module_id']) && ($this->request->server['REQUEST_METHOD'] != 'POST')) {
 			$module_info = $this->model_setting_module->getModule($this->request->get['module_id']);
 		}
 
-		$data['user_tokens'] = $this->session->data['user_tokens'];
+		$data['user_token'] = $this->session->data['user_token'];
 
 		if (isset($this->request->post['name'])) {
 			$data['name'] = $this->request->post['name'];

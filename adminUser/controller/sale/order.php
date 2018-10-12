@@ -81,7 +81,7 @@ class ControllerSaleOrder extends Controller {
 			$url .= '&page=' . $this->request->get['page'];
 		}
 
-		$this->response->redirect($this->url->link('sale/order', 'user_tokens=' . $this->session->data['user_tokens'] . $url));
+		$this->response->redirect($this->url->link('sale/order', 'user_token=' . $this->session->data['user_token'] . $url));
 	}
 
 	protected function getList() {
@@ -191,18 +191,18 @@ class ControllerSaleOrder extends Controller {
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_home'),
-			'href' => $this->url->link('common/dashboard', 'user_tokens=' . $this->session->data['user_tokens'])
+			'href' => $this->url->link('common/dashboard', 'user_token=' . $this->session->data['user_token'])
 		);
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('heading_title'),
-			'href' => $this->url->link('sale/order', 'user_tokens=' . $this->session->data['user_tokens'] . $url)
+			'href' => $this->url->link('sale/order', 'user_token=' . $this->session->data['user_token'] . $url)
 		);
 
-		$data['invoice'] = $this->url->link('sale/order/invoice', 'user_tokens=' . $this->session->data['user_tokens']);
-		$data['shipping'] = $this->url->link('sale/order/shipping', 'user_tokens=' . $this->session->data['user_tokens']);
-		$data['add'] = $this->url->link('sale/order/add', 'user_tokens=' . $this->session->data['user_tokens'] . $url);
-		$data['delete'] = str_replace('&amp;', '&', $this->url->link('sale/order/delete', 'user_tokens=' . $this->session->data['user_tokens'] . $url));
+		$data['invoice'] = $this->url->link('sale/order/invoice', 'user_token=' . $this->session->data['user_token']);
+		$data['shipping'] = $this->url->link('sale/order/shipping', 'user_token=' . $this->session->data['user_token']);
+		$data['add'] = $this->url->link('sale/order/add', 'user_token=' . $this->session->data['user_token'] . $url);
+		$data['delete'] = str_replace('&amp;', '&', $this->url->link('sale/order/delete', 'user_token=' . $this->session->data['user_token'] . $url));
 
 		$data['orders'] = array();
 
@@ -233,12 +233,12 @@ class ControllerSaleOrder extends Controller {
 				'date_added'    => date($this->language->get('datetime_format'), strtotime($result['date_added'])),
 				'date_modified' => date($this->language->get('datetime_format'), strtotime($result['date_modified'])),
 				'shipping_code' => $result['shipping_code'],
-				'view'          => $this->url->link('sale/order/info', 'user_tokens=' . $this->session->data['user_tokens'] . '&order_id=' . $result['order_id'] . $url),
-				'edit'          => $this->url->link('sale/order/edit', 'user_tokens=' . $this->session->data['user_tokens'] . '&order_id=' . $result['order_id'] . $url)
+				'view'          => $this->url->link('sale/order/info', 'user_token=' . $this->session->data['user_token'] . '&order_id=' . $result['order_id'] . $url),
+				'edit'          => $this->url->link('sale/order/edit', 'user_token=' . $this->session->data['user_token'] . '&order_id=' . $result['order_id'] . $url)
 			);
 		}
 
-		$data['user_tokens'] = $this->session->data['user_tokens'];
+		$data['user_token'] = $this->session->data['user_token'];
 
 		if (isset($this->error['warning'])) {
 			$data['error_warning'] = $this->error['warning'];
@@ -300,12 +300,12 @@ class ControllerSaleOrder extends Controller {
 			$url .= '&page=' . $this->request->get['page'];
 		}
 
-		$data['sort_order'] = $this->url->link('sale/order', 'user_tokens=' . $this->session->data['user_tokens'] . '&sort=o.order_id' . $url);
-		$data['sort_customer'] = $this->url->link('sale/order', 'user_tokens=' . $this->session->data['user_tokens'] . '&sort=customer' . $url);
-		$data['sort_status'] = $this->url->link('sale/order', 'user_tokens=' . $this->session->data['user_tokens'] . '&sort=order_status' . $url);
-		$data['sort_total'] = $this->url->link('sale/order', 'user_tokens=' . $this->session->data['user_tokens'] . '&sort=o.total' . $url);
-		$data['sort_date_added'] = $this->url->link('sale/order', 'user_tokens=' . $this->session->data['user_tokens'] . '&sort=o.date_added' . $url);
-		$data['sort_date_modified'] = $this->url->link('sale/order', 'user_tokens=' . $this->session->data['user_tokens'] . '&sort=o.date_modified' . $url);
+		$data['sort_order'] = $this->url->link('sale/order', 'user_token=' . $this->session->data['user_token'] . '&sort=o.order_id' . $url);
+		$data['sort_customer'] = $this->url->link('sale/order', 'user_token=' . $this->session->data['user_token'] . '&sort=customer' . $url);
+		$data['sort_status'] = $this->url->link('sale/order', 'user_token=' . $this->session->data['user_token'] . '&sort=order_status' . $url);
+		$data['sort_total'] = $this->url->link('sale/order', 'user_token=' . $this->session->data['user_token'] . '&sort=o.total' . $url);
+		$data['sort_date_added'] = $this->url->link('sale/order', 'user_token=' . $this->session->data['user_token'] . '&sort=o.date_added' . $url);
+		$data['sort_date_modified'] = $this->url->link('sale/order', 'user_token=' . $this->session->data['user_token'] . '&sort=o.date_modified' . $url);
 
 		$url = '';
 
@@ -349,7 +349,7 @@ class ControllerSaleOrder extends Controller {
 		$pagination->total = $order_total;
 		$pagination->page = $page;
 		$pagination->limit = $this->config->get('config_limit_admin');
-		$pagination->url = $this->url->link('sale/order', 'user_tokens=' . $this->session->data['user_tokens'] . $url . '&page={page}');
+		$pagination->url = $this->url->link('sale/order', 'user_token=' . $this->session->data['user_token'] . $url . '&page={page}');
 
 		$data['pagination'] = $pagination->render();
 
@@ -450,17 +450,17 @@ class ControllerSaleOrder extends Controller {
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_home'),
-			'href' => $this->url->link('common/dashboard', 'user_tokens=' . $this->session->data['user_tokens'])
+			'href' => $this->url->link('common/dashboard', 'user_token=' . $this->session->data['user_token'])
 		);
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('heading_title'),
-			'href' => $this->url->link('sale/order', 'user_tokens=' . $this->session->data['user_tokens'] . $url)
+			'href' => $this->url->link('sale/order', 'user_token=' . $this->session->data['user_token'] . $url)
 		);
 
-		$data['cancel'] = $this->url->link('sale/order', 'user_tokens=' . $this->session->data['user_tokens'] . $url);
+		$data['cancel'] = $this->url->link('sale/order', 'user_token=' . $this->session->data['user_token'] . $url);
 
-		$data['user_tokens'] = $this->session->data['user_tokens'];
+		$data['user_token'] = $this->session->data['user_token'];
 
 		if (isset($this->request->get['order_id'])) {
 			$order_info = $this->model_sale_order->getOrder($this->request->get['order_id']);
@@ -768,20 +768,20 @@ class ControllerSaleOrder extends Controller {
 
 			$data['breadcrumbs'][] = array(
 				'text' => $this->language->get('text_home'),
-				'href' => $this->url->link('common/dashboard', 'user_tokens=' . $this->session->data['user_tokens'])
+				'href' => $this->url->link('common/dashboard', 'user_token=' . $this->session->data['user_token'])
 			);
 
 			$data['breadcrumbs'][] = array(
 				'text' => $this->language->get('heading_title'),
-				'href' => $this->url->link('sale/order', 'user_tokens=' . $this->session->data['user_tokens'] . $url)
+				'href' => $this->url->link('sale/order', 'user_token=' . $this->session->data['user_token'] . $url)
 			);
 
-			$data['shipping'] = $this->url->link('sale/order/shipping', 'user_tokens=' . $this->session->data['user_tokens'] . '&order_id=' . (int)$this->request->get['order_id']);
-			$data['invoice'] = $this->url->link('sale/order/invoice', 'user_tokens=' . $this->session->data['user_tokens'] . '&order_id=' . (int)$this->request->get['order_id']);
-			$data['edit'] = $this->url->link('sale/order/edit', 'user_tokens=' . $this->session->data['user_tokens'] . '&order_id=' . (int)$this->request->get['order_id']);
-			$data['cancel'] = $this->url->link('sale/order', 'user_tokens=' . $this->session->data['user_tokens'] . $url);
+			$data['shipping'] = $this->url->link('sale/order/shipping', 'user_token=' . $this->session->data['user_token'] . '&order_id=' . (int)$this->request->get['order_id']);
+			$data['invoice'] = $this->url->link('sale/order/invoice', 'user_token=' . $this->session->data['user_token'] . '&order_id=' . (int)$this->request->get['order_id']);
+			$data['edit'] = $this->url->link('sale/order/edit', 'user_token=' . $this->session->data['user_token'] . '&order_id=' . (int)$this->request->get['order_id']);
+			$data['cancel'] = $this->url->link('sale/order', 'user_token=' . $this->session->data['user_token'] . $url);
 
-			$data['user_tokens'] = $this->session->data['user_tokens'];
+			$data['user_token'] = $this->session->data['user_token'];
 
 			$data['order_id'] = (int)$this->request->get['order_id'];
 
@@ -805,7 +805,7 @@ class ControllerSaleOrder extends Controller {
 			$data['fullname'] = $order_info['fullname'];
 
 			if ($order_info['customer_id']) {
-				$data['customer'] = $this->url->link('customer/customer/edit', 'user_tokens=' . $this->session->data['user_tokens'] . '&customer_id=' . $order_info['customer_id']);
+				$data['customer'] = $this->url->link('customer/customer/edit', 'user_token=' . $this->session->data['user_token'] . '&customer_id=' . $order_info['customer_id']);
 			} else {
 				$data['customer'] = '';
 			}
@@ -867,7 +867,7 @@ class ControllerSaleOrder extends Controller {
 								'name'  => $option['name'],
 								'value' => $upload_info['name'],
 								'type'  => $option['type'],
-								'href'  => $this->url->link('tool/upload/download', 'user_tokens=' . $this->session->data['user_tokens'] . '&code=' . $upload_info['code'])
+								'href'  => $this->url->link('tool/upload/download', 'user_token=' . $this->session->data['user_token'] . '&code=' . $upload_info['code'])
 							);
 						}
 					}
@@ -882,7 +882,7 @@ class ControllerSaleOrder extends Controller {
 					'quantity'		   => $product['quantity'],
 					'price'    		   => $this->currency->format($product['price'] + ($this->config->get('config_tax') ? $product['tax'] : 0), $order_info['currency_code'], $order_info['currency_value']),
 					'total'    		   => $this->currency->format($product['total'] + ($this->config->get('config_tax') ? ($product['tax'] * $product['quantity']) : 0), $order_info['currency_code'], $order_info['currency_value']),
-					'href'     		   => $this->url->link('catalog/product/edit', 'user_tokens=' . $this->session->data['user_tokens'] . '&product_id=' . $product['product_id'])
+					'href'     		   => $this->url->link('catalog/product/edit', 'user_token=' . $this->session->data['user_token'] . '&product_id=' . $product['product_id'])
 				);
 			}
 
@@ -894,7 +894,7 @@ class ControllerSaleOrder extends Controller {
 				$data['vouchers'][] = array(
 					'description' => $voucher['description'],
 					'amount'      => $this->currency->format($voucher['amount'], $order_info['currency_code'], $order_info['currency_value']),
-					'href'        => $this->url->link('sale/voucher/edit', 'user_tokens=' . $this->session->data['user_tokens'] . '&voucher_id=' . $voucher['voucher_id'])
+					'href'        => $this->url->link('sale/voucher/edit', 'user_token=' . $this->session->data['user_token'] . '&voucher_id=' . $voucher['voucher_id'])
 				);
 			}
 
@@ -920,7 +920,7 @@ class ControllerSaleOrder extends Controller {
 			$data['affiliate_fullname'] = $order_info['affiliate_fullname'];
 
 			if ($order_info['affiliate_id']) {
-				$data['affiliate'] = $this->url->link('customer/customer/edit', 'user_tokens=' . $this->session->data['user_tokens'] . '&customer_id=' . $order_info['affiliate_id']);
+				$data['affiliate'] = $this->url->link('customer/customer/edit', 'user_token=' . $this->session->data['user_token'] . '&customer_id=' . $order_info['affiliate_id']);
 			} else {
 				$data['affiliate'] = '';
 			}
@@ -1396,7 +1396,7 @@ class ControllerSaleOrder extends Controller {
 		$pagination->total = $history_total;
 		$pagination->page = $page;
 		$pagination->limit = 10;
-		$pagination->url = $this->url->link('sale/order/history', 'user_tokens=' . $this->session->data['user_tokens'] . '&order_id=' . $order_id . '&page={page}');
+		$pagination->url = $this->url->link('sale/order/history', 'user_token=' . $this->session->data['user_token'] . '&order_id=' . $order_id . '&page={page}');
 
 		$data['pagination'] = $pagination->render();
 

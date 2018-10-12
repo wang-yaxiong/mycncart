@@ -9,10 +9,12 @@
 
 // Heading
 $_['heading_title']              = '商品管理';
+$_['heading_title2']              = '竞拍管理';
 
 // Text
 $_['text_success']               = '成功：商品已修改！';
 $_['text_list']                  = '商品列表';
+$_['text_ebaylist']              = '拍卖列表';
 $_['text_add']                   = '新增商品';
 $_['text_edit']                  = '编辑商品';
 $_['text_filter']                = '筛选';

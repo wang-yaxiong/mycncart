@@ -89,10 +89,10 @@ class ControllerExtensionExtensionTotal extends Controller {
 					'name'       => $this->language->get('extension')->get('heading_title'),
 					'status'     => $this->config->get('total_' . $extension . '_status') ? $this->language->get('text_enabled') : $this->language->get('text_disabled'),
 					'sort_order' => $this->config->get('total_' . $extension . '_sort_order'),
-					'install'    => $this->url->link('extension/extension/total/install', 'user_tokens=' . $this->session->data['user_tokens'] . '&extension=' . $extension),
-					'uninstall'  => $this->url->link('extension/extension/total/uninstall', 'user_tokens=' . $this->session->data['user_tokens'] . '&extension=' . $extension),
+					'install'    => $this->url->link('extension/extension/total/install', 'user_token=' . $this->session->data['user_token'] . '&extension=' . $extension),
+					'uninstall'  => $this->url->link('extension/extension/total/uninstall', 'user_token=' . $this->session->data['user_token'] . '&extension=' . $extension),
 					'installed'  => in_array($extension, $extensions),
-					'edit'       => $this->url->link('extension/total/' . $extension, 'user_tokens=' . $this->session->data['user_tokens'])
+					'edit'       => $this->url->link('extension/total/' . $extension, 'user_token=' . $this->session->data['user_token'])
 				);
 			}
 		}
