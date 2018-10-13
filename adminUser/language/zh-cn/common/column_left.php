@@ -66,6 +66,7 @@ $_['text_order']                    = '订单管理';
 $_['text_order_status']             = '订单状态';
 $_['text_online']                   = '在线用户';
 $_['text_product']                  = '商品管理';
+$_['text_ebaypro']                  = '竞拍管理';
 $_['text_product_option']           = '商品选项';
 $_['text_reports']                  = '统计报表';
 $_['text_review']                   = '商品评论';
