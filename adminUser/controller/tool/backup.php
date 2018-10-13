@@ -9,15 +9,15 @@ class ControllerToolBackup extends Controller {
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_home'),
-			'href' => $this->url->link('common/dashboard', 'user_tokens=' . $this->session->data['user_tokens'])
+			'href' => $this->url->link('common/dashboard', 'user_token=' . $this->session->data['user_token'])
 		);
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('heading_title'),
-			'href' => $this->url->link('tool/backup', 'user_tokens=' . $this->session->data['user_tokens'])
+			'href' => $this->url->link('tool/backup', 'user_token=' . $this->session->data['user_token'])
 		);
 
-		$data['user_tokens'] = $this->session->data['user_tokens'];
+		$data['user_token'] = $this->session->data['user_token'];
 
 		$this->load->model('tool/backup');
 
@@ -77,7 +77,7 @@ class ControllerToolBackup extends Controller {
 				'filename'   => basename($file),
 				'size'       => round(substr($size, 0, strpos($size, '.') + 4), 2) . $suffix[$i],
 				'date_added' => date($this->language->get('datetime_format'), filemtime($file)),
-				'download'   => $this->url->link('tool/backup/download', 'user_tokens=' . $this->session->data['user_tokens'] . '&filename=' . urlencode(basename($file))),
+				'download'   => $this->url->link('tool/backup/download', 'user_token=' . $this->session->data['user_token'] . '&filename=' . urlencode(basename($file))),
 			);
 		}
 
@@ -189,11 +189,11 @@ class ControllerToolBackup extends Controller {
 			} elseif (($page * 200) >= $record_total) {
 				$json['text'] = sprintf($this->language->get('text_backup'), $table, ($page - 1) * 200, $record_total);
 
-				$json['next'] = str_replace('&amp;', '&', $this->url->link('tool/backup/backup', 'user_tokens=' . $this->session->data['user_tokens'] . '&filename=' . urlencode($filename) . '&table=' . $table . '&page=1'));
+				$json['next'] = str_replace('&amp;', '&', $this->url->link('tool/backup/backup', 'user_token=' . $this->session->data['user_token'] . '&filename=' . urlencode($filename) . '&table=' . $table . '&page=1'));
 			} else {
 				$json['text'] = sprintf($this->language->get('text_backup'), $table, ($page - 1) * 200, $page * 200);
 
-				$json['next'] = str_replace('&amp;', '&', $this->url->link('tool/backup/backup', 'user_tokens=' . $this->session->data['user_tokens'] . '&filename=' . urlencode($filename) . '&table=' . $table . '&page=' . ($page + 1)));
+				$json['next'] = str_replace('&amp;', '&', $this->url->link('tool/backup/backup', 'user_token=' . $this->session->data['user_token'] . '&filename=' . urlencode($filename) . '&table=' . $table . '&page=' . ($page + 1)));
 			}
 		}
 
@@ -280,7 +280,7 @@ class ControllerToolBackup extends Controller {
 			if ($position && !feof($handle)) {
 				$json['text'] = sprintf($this->language->get('text_restore'), $position, $size);
 
-				$json['next'] = str_replace('&amp;', '&', $this->url->link('tool/backup/restore', 'user_tokens=' . $this->session->data['user_tokens'] . '&filename=' . urlencode($filename) . '&position=' . $position));
+				$json['next'] = str_replace('&amp;', '&', $this->url->link('tool/backup/restore', 'user_token=' . $this->session->data['user_token'] . '&filename=' . urlencode($filename) . '&position=' . $position));
 
 				fclose($handle);
 			} else {

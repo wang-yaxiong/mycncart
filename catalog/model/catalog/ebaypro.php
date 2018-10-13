@@ -16,6 +16,7 @@ class ModelCatalogEbaypro extends Model {
                 $pimage[$k]['image'] = '/image/'.$pimage[$k]['image'];
             }
         }
+
 		if ($query->num_rows) {
 			return array(
 				'product_id'       => $query->row['product_id'],
@@ -157,6 +158,7 @@ class ModelCatalogEbaypro extends Model {
         }
         $query = $this->db->query($sql);
 
+
         $path = HTTPS_SERVER.'image/';
         $res = $this->outprice()->rows;
         foreach($query->rows as $k=>$v){
@@ -164,7 +166,9 @@ class ModelCatalogEbaypro extends Model {
 //            ($query->rows)[$k]['date_available'] = strtotime($v['date_available']);
             ($query->rows)[$k]['image'] = $path.$v['image'];
             ($query->rows)[$k]['img'] = '/image/'.$v['image'];
+
             ($query->rows)[$k]['href'] = $this->url->link('ebaypro/ebaypro', 'product_id=' . $v['product_id']);
+
             if((($query->rows)[$k]['stock_status_id'])==7){
                 ($query->rows)[$k]['stock_status_id'] = '热拍中';
                 ($query->p)[] = ($query->rows)[$k];
@@ -178,6 +182,7 @@ class ModelCatalogEbaypro extends Model {
                 ($query->end)[] = ($query->rows)[$k];
             }
         }
+
         unset($query->row);
         unset($query->rows);
 
@@ -285,7 +290,9 @@ class ModelCatalogEbaypro extends Model {
 //            ($query->rows)[$k]['date_available'] = strtotime($v['date_available']);
             ($query->rows)[$k]['image'] = $path.$v['image'];
             ($query->rows)[$k]['img'] = '/image/'.$v['image'];
+
             ($query->rows)[$k]['href'] = $this->url->link('ebaypro/ebaypro', 'product_id=' . $v['product_id']);
+
 //            if((($query->rows)[$k]['stock_status_id'])==7){
 //                ($query->rows)[$k]['stock_status_id'] = '热拍中';
 //                ($query->p)[] = ($query->rows)[$k];

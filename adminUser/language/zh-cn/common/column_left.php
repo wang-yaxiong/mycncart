@@ -15,6 +15,7 @@ $_['text_attribute_group']          = '属性组';
 $_['text_backup']                   = '备份/恢复';
 $_['text_banner']                   = '横幅管理';
 $_['text_catalog']                  = '商品目录';
+$_['text_ebaypro']                  = '竞拍管理';     //新增后台菜单项
 $_['text_cron']                     = '定时任务';
 $_['text_category']                 = '商品分类';
 $_['text_country']                  = '国家设置';

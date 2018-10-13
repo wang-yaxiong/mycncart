@@ -17,7 +17,7 @@ $_['text_forgotten'] = '忘记密码？';
 $_['text_register']  = '用户注册';
 
 // Entry
-$_['entry_username'] = '手机号';
+$_['entry_username'] = '账号';
 $_['entry_password'] = '密码';
 
 // Button

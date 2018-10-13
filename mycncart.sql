@@ -10,7 +10,11 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
+<<<<<<< HEAD
 Date: 2018-10-12 14:51:56
+=======
+Date: 2018-09-22 17:23:39
+>>>>>>> 790b49e13c12789410af78d35dc87d3d392cacc9
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -345,9 +349,15 @@ INSERT INTO `oc_category` VALUES ('39', 'catalog/demo/product/product-5.png', '3
 INSERT INTO `oc_category` VALUES ('45', 'catalog/demo/product/product-7.png', '18', '0', '0', '0', '1', '2010-09-24 18:29:16', '2011-04-26 08:52:11');
 INSERT INTO `oc_category` VALUES ('46', 'catalog/demo/product/product-6.png', '18', '0', '0', '0', '1', '2010-09-24 18:29:31', '2011-04-26 08:52:23');
 INSERT INTO `oc_category` VALUES ('57', 'catalog/demo/product/product-8.png', '0', '1', '1', '3', '1', '2011-04-26 08:53:16', '2011-05-30 12:15:05');
+<<<<<<< HEAD
 INSERT INTO `oc_category` VALUES ('59', 'catalog/demo/product/product-7.png', '0', '1', '1', '0', '1', '2018-09-18 10:45:50', '2018-09-18 10:45:50');
 INSERT INTO `oc_category` VALUES ('60', 'catalog/demo/product/product-6.png', '59', '1', '1', '1', '1', '2018-09-18 12:13:27', '2018-09-18 12:13:27');
 INSERT INTO `oc_category` VALUES ('61', 'catalog/demo/product/product-8.png', '60', '0', '1', '1', '1', '2018-09-18 12:15:12', '2018-09-18 12:15:12');
+=======
+INSERT INTO `oc_category` VALUES ('59', '', '0', '1', '1', '0', '1', '2018-09-18 10:45:50', '2018-09-18 10:45:50');
+INSERT INTO `oc_category` VALUES ('60', '', '59', '1', '1', '1', '1', '2018-09-18 12:13:27', '2018-09-18 12:13:27');
+INSERT INTO `oc_category` VALUES ('61', '', '60', '0', '1', '1', '1', '2018-09-18 12:15:12', '2018-09-18 12:15:12');
+>>>>>>> 790b49e13c12789410af78d35dc87d3d392cacc9
 
 -- ----------------------------
 -- Table structure for oc_category_description
@@ -4140,7 +4150,10 @@ CREATE TABLE `oc_customer` (
   `fullname` varchar(64) NOT NULL,
   `email` varchar(96) NOT NULL,
   `telephone` varchar(32) NOT NULL,
+<<<<<<< HEAD
   `bzprice` decimal(20,2) unsigned NOT NULL,
+=======
+>>>>>>> 790b49e13c12789410af78d35dc87d3d392cacc9
   `fax` varchar(32) NOT NULL,
   `password` varchar(255) NOT NULL,
   `salt` varchar(9) NOT NULL,
@@ -4156,13 +4169,21 @@ CREATE TABLE `oc_customer` (
   `code` varchar(40) NOT NULL,
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`customer_id`)
+<<<<<<< HEAD
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+=======
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+>>>>>>> 790b49e13c12789410af78d35dc87d3d392cacc9
 
 -- ----------------------------
 -- Records of oc_customer
 -- ----------------------------
+<<<<<<< HEAD
 INSERT INTO `oc_customer` VALUES ('1', '1', '0', '2', 'wyx', '1368114756@qq.com', '18642024553', '0.00', '', '$2y$10$xQfVfe2sDGnMLlNlQRVqDOrqwqQrUafQ5JErFrd/KPwRy4nmZGI2u', '', '', '', '0', '1', '', '127.0.0.1', '1', '0', '', '84ecc6fe70f99fe0b47e0e3f31d2d98af4a63773', '2018-06-26 14:20:42');
 INSERT INTO `oc_customer` VALUES ('2', '0', '0', '2', 'demo', '231574266@qq.com', '18600326531', '0.00', '', '$2y$10$tQzFhbZ7kcaYHge117hrleW6tJMXfhVRys.jJpPRLAPNXfYlqvOzu', '', '', '', '0', '1', '', '127.0.0.1', '1', '0', '', '84ecc6fe70f99fe0b47e0e3f31d2d98af4a63773', '2018-06-26 14:20:42');
+=======
+INSERT INTO `oc_customer` VALUES ('1', '1', '0', '2', 'wyx', '1368114756@qq.com', '18642024553', '', '$2y$10$xQfVfe2sDGnMLlNlQRVqDOrqwqQrUafQ5JErFrd/KPwRy4nmZGI2u', '', '', '', '0', '1', '', '127.0.0.1', '1', '0', '', '84ecc6fe70f99fe0b47e0e3f31d2d98af4a63773', '2018-06-26 14:20:42');
+>>>>>>> 790b49e13c12789410af78d35dc87d3d392cacc9
 
 -- ----------------------------
 -- Table structure for oc_customer_activity
@@ -4311,7 +4332,11 @@ CREATE TABLE `oc_customer_ip` (
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`customer_ip_id`),
   KEY `ip` (`ip`)
+<<<<<<< HEAD
 ) ENGINE=MyISAM AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
+=======
+) ENGINE=MyISAM AUTO_INCREMENT=24 DEFAULT CHARSET=utf8;
+>>>>>>> 790b49e13c12789410af78d35dc87d3d392cacc9
 
 -- ----------------------------
 -- Records of oc_customer_ip
@@ -4339,8 +4364,11 @@ INSERT INTO `oc_customer_ip` VALUES ('20', '1', '0', '127.0.0.1', '', '2018-07-3
 INSERT INTO `oc_customer_ip` VALUES ('21', '1', '0', '127.0.0.1', '', '2018-07-31 10:12:20');
 INSERT INTO `oc_customer_ip` VALUES ('22', '1', '0', '127.0.0.1', '', '2018-07-31 14:53:13');
 INSERT INTO `oc_customer_ip` VALUES ('23', '1', '0', '127.0.0.1', '', '2018-08-20 14:22:22');
+<<<<<<< HEAD
 INSERT INTO `oc_customer_ip` VALUES ('24', '2', '0', '127.0.0.1', '', '2018-10-11 11:07:14');
 INSERT INTO `oc_customer_ip` VALUES ('25', '2', '0', '127.0.0.1', '', '2018-10-12 10:53:19');
+=======
+>>>>>>> 790b49e13c12789410af78d35dc87d3d392cacc9
 
 -- ----------------------------
 -- Table structure for oc_customer_login
@@ -4583,6 +4611,7 @@ CREATE TABLE `oc_download_report` (
 -- ----------------------------
 
 -- ----------------------------
+<<<<<<< HEAD
 -- Table structure for oc_ebayproqqq
 -- ----------------------------
 DROP TABLE IF EXISTS `oc_ebayproqqq`;
@@ -4660,6 +4689,8 @@ INSERT INTO `oc_ebayproqqq` VALUES ('70', '11111', '', '', '', '', '', '', '', '
 INSERT INTO `oc_ebayproqqq` VALUES ('71', '11111', '', '', '', '', '', '', '', '1', '7', 'catalog/demo/product/product-7.png', '0', '1', '0.00', '1111.0000', '0', '0', '2018-09-19', '0.00000000', '1', '0.00000000', '0.00000000', '0.00000000', '1', '1', '1', '1', '1', '0', '2018-09-19 11:40:23', '2018-09-19 11:40:23');
 
 -- ----------------------------
+=======
+>>>>>>> 790b49e13c12789410af78d35dc87d3d392cacc9
 -- Table structure for oc_event
 -- ----------------------------
 DROP TABLE IF EXISTS `oc_event`;
@@ -5752,17 +5783,25 @@ CREATE TABLE `oc_order_voucher` (
 DROP TABLE IF EXISTS `oc_outprice`;
 CREATE TABLE `oc_outprice` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+<<<<<<< HEAD
   `customer_id` int(10) unsigned NOT NULL,
   `shop_id` int(10) NOT NULL,
   `pro_id` int(10) unsigned NOT NULL,
   `outprice` decimal(10,2) NOT NULL,
   `outnum` int(10) NOT NULL,
+=======
+  `user_id` int(10) unsigned NOT NULL,
+  `shop_id` int(10) NOT NULL,
+  `product_id` int(10) unsigned NOT NULL,
+  `outprice` decimal(10,2) NOT NULL,
+>>>>>>> 790b49e13c12789410af78d35dc87d3d392cacc9
   `pstatus` varchar(1) NOT NULL,
   `user_ip` varchar(20) NOT NULL,
   `outptime` datetime NOT NULL,
   `startime` datetime NOT NULL,
   `endtime` datetime NOT NULL,
   PRIMARY KEY (`id`)
+<<<<<<< HEAD
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -5787,6 +5826,13 @@ CREATE TABLE `oc_plook_info` (
 INSERT INTO `oc_plook_info` VALUES ('76', '100', '');
 INSERT INTO `oc_plook_info` VALUES ('73', '2', '');
 INSERT INTO `oc_plook_info` VALUES ('42', '6', '');
+=======
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of oc_outprice
+-- ----------------------------
+>>>>>>> 790b49e13c12789410af78d35dc87d3d392cacc9
 
 -- ----------------------------
 -- Table structure for oc_product
@@ -5807,12 +5853,19 @@ CREATE TABLE `oc_product` (
   `image` varchar(255) NOT NULL,
   `manufacturer_id` int(11) NOT NULL,
   `shipping` tinyint(1) NOT NULL DEFAULT '1',
+<<<<<<< HEAD
   `fuprice` decimal(10,2) unsigned NOT NULL,
   `price` decimal(15,4) NOT NULL DEFAULT '0.0000',
   `points` int(8) NOT NULL DEFAULT '0',
   `tax_class_id` int(11) NOT NULL,
   `date_available` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `end_available` datetime NOT NULL,
+=======
+  `price` decimal(15,4) NOT NULL DEFAULT '0.0000',
+  `points` int(8) NOT NULL DEFAULT '0',
+  `tax_class_id` int(11) NOT NULL,
+  `date_available` date NOT NULL DEFAULT '0000-00-00',
+>>>>>>> 790b49e13c12789410af78d35dc87d3d392cacc9
   `weight` decimal(15,8) NOT NULL DEFAULT '0.00000000',
   `weight_class_id` int(11) NOT NULL DEFAULT '0',
   `length` decimal(15,8) NOT NULL DEFAULT '0.00000000',
@@ -5827,11 +5880,16 @@ CREATE TABLE `oc_product` (
   `date_added` datetime NOT NULL,
   `date_modified` datetime NOT NULL,
   PRIMARY KEY (`product_id`)
+<<<<<<< HEAD
 ) ENGINE=MyISAM AUTO_INCREMENT=80 DEFAULT CHARSET=utf8;
+=======
+) ENGINE=MyISAM AUTO_INCREMENT=74 DEFAULT CHARSET=utf8;
+>>>>>>> 790b49e13c12789410af78d35dc87d3d392cacc9
 
 -- ----------------------------
 -- Records of oc_product
 -- ----------------------------
+<<<<<<< HEAD
 INSERT INTO `oc_product` VALUES ('28', 'Product 1', '', '', '', '', '', '', '', '1000', '7', 'catalog/demo/product/product-3.png', '5', '1', '0.00', '199.0000', '200', '9', '2018-09-30 11:49:00', '2018-10-29 20:00:00', '146.40000000', '2', '0.00000000', '0.00000000', '0.00000000', '1', '1', '1', '0', '1', '10', '2009-02-03 16:06:50', '2011-09-30 01:05:39');
 INSERT INTO `oc_product` VALUES ('29', 'Product 2', '', '', '', '', '', '', '', '1000', '7', 'catalog/demo/product/product-2.png', '6', '1', '0.00', '299.9900', '0', '9', '2018-09-30 11:49:00', '2018-10-29 20:00:00', '133.00000000', '2', '0.00000000', '0.00000000', '0.00000000', '3', '1', '1', '0', '1', '0', '2009-02-03 16:42:17', '2011-09-30 01:06:08');
 INSERT INTO `oc_product` VALUES ('30', 'Product 3', '', '', '', '', '', '', '', '1000', '7', 'catalog/demo/product/product-3.png', '9', '1', '0.00', '199.0000', '0', '9', '2018-09-30 11:49:00', '2018-10-29 20:00:00', '0.00000000', '1', '0.00000000', '0.00000000', '0.00000000', '1', '1', '1', '0', '1', '7', '2009-02-03 16:59:00', '2017-12-07 20:01:46');
@@ -5871,6 +5929,41 @@ INSERT INTO `oc_product` VALUES ('76', '\\(^o^)/', '', '', '', '', '', '', '', '
 INSERT INTO `oc_product` VALUES ('77', '\\(^o^)/', '', '', '', '', '', '', '', '1', '8', 'catalog/demo/product/wew.jpg', '0', '1', '100.00', '599900.0000', '0', '0', '2018-10-20 20:00:00', '2018-10-29 20:00:00', '30.00000000', '2', '0.00000000', '0.00000000', '0.00000000', '1', '1', '1', '1', '1', '0', '2018-09-25 11:12:00', '2018-09-25 11:12:00');
 INSERT INTO `oc_product` VALUES ('78', '\\(^o^)/', '', '', '', '', '', '', '', '1', '8', 'catalog/demo/product/wew.jpg', '0', '1', '100.00', '599900.0000', '0', '0', '2018-10-20 20:00:00', '2018-10-29 20:00:00', '30.00000000', '2', '0.00000000', '0.00000000', '0.00000000', '1', '1', '1', '1', '1', '2', '2018-09-25 11:12:06', '2018-09-25 11:12:06');
 INSERT INTO `oc_product` VALUES ('79', '\\(^o^)/', '', '', '', '', '', '', '', '1', '8', 'catalog/demo/product/wew.jpg', '0', '1', '100.00', '599900.0000', '0', '0', '2018-10-20 20:00:00', '2018-10-29 20:00:00', '30.00000000', '2', '0.00000000', '0.00000000', '0.00000000', '1', '1', '1', '1', '1', '0', '2018-09-25 11:16:34', '2018-09-25 11:16:34');
+=======
+INSERT INTO `oc_product` VALUES ('28', 'Product 1', '', '', '', '', '', '', '', '1000', '7', 'catalog/demo/product/product-3.png', '5', '1', '199.0000', '200', '9', '2009-01-01', '146.40000000', '2', '0.00000000', '0.00000000', '0.00000000', '1', '1', '1', '0', '1', '10', '2009-02-03 16:06:50', '2011-09-30 01:05:39');
+INSERT INTO `oc_product` VALUES ('29', 'Product 2', '', '', '', '', '', '', '', '1000', '6', 'catalog/demo/product/product-2.png', '6', '1', '299.9900', '0', '9', '2009-01-01', '133.00000000', '2', '0.00000000', '0.00000000', '0.00000000', '3', '1', '1', '0', '0', '0', '2009-02-03 16:42:17', '2011-09-30 01:06:08');
+INSERT INTO `oc_product` VALUES ('30', 'Product 3', '', '', '', '', '', '', '', '1000', '6', 'catalog/demo/product/product-3.png', '9', '1', '199.0000', '0', '9', '2009-01-01', '0.00000000', '1', '0.00000000', '0.00000000', '0.00000000', '1', '1', '1', '0', '1', '7', '2009-02-03 16:59:00', '2017-12-07 20:01:46');
+INSERT INTO `oc_product` VALUES ('31', 'Product 4', '', '', '', '', '', '', '', '1000', '6', 'catalog/demo/product/product-3.png', '0', '1', '99.0000', '0', '9', '2009-01-01', '0.00000000', '1', '0.00000000', '0.00000000', '0.00000000', '3', '1', '1', '0', '0', '0', '2009-02-03 17:00:10', '2011-09-30 01:06:00');
+INSERT INTO `oc_product` VALUES ('32', 'Product 5', '', '', '', '', '', '', '', '1000', '6', 'catalog/demo/product/product-5.png', '8', '1', '399.0000', '0', '9', '2009-01-01', '5.00000000', '1', '0.00000000', '0.00000000', '0.00000000', '1', '1', '1', '0', '0', '0', '2009-02-03 17:07:26', '2011-09-30 01:07:22');
+INSERT INTO `oc_product` VALUES ('33', 'Product 6', '', '', '', '', '', '', '', '989', '6', 'catalog/demo/product/0.jpg', '0', '1', '299.0000', '0', '9', '2009-01-01', '5.00000000', '1', '0.00000000', '0.00000000', '0.00000000', '2', '1', '1', '0', '1', '24', '2009-02-03 17:08:31', '2018-09-22 12:07:39');
+INSERT INTO `oc_product` VALUES ('34', 'Product 7', '', '', '', '', '', '', '', '1000', '6', 'catalog/demo/product/product-9.png', '8', '1', '199.0000', '0', '9', '2009-01-01', '5.00000000', '1', '0.00000000', '0.00000000', '0.00000000', '2', '1', '1', '0', '0', '0', '2009-02-03 18:07:54', '2011-09-30 01:07:17');
+INSERT INTO `oc_product` VALUES ('35', 'Product 8', '', '', '', '', '', '', '', '1000', '5', 'catalog/demo/product/product-10.png', '0', '1', '199.0000', '0', '9', '2009-01-01', '5.00000000', '1', '0.00000000', '0.00000000', '0.00000000', '1', '1', '1', '0', '0', '0', '2009-02-03 18:08:31', '2011-09-30 01:06:17');
+INSERT INTO `oc_product` VALUES ('36', 'Product 9', '', '', '', '', '', '', '', '1000', '6', 'catalog/demo/product/product-5.png', '8', '1', '99.0000', '100', '9', '2009-01-01', '5.00000000', '1', '0.00000000', '0.00000000', '0.00000000', '2', '1', '1', '0', '0', '0', '2009-02-03 18:09:19', '2011-09-30 01:07:12');
+INSERT INTO `oc_product` VALUES ('40', 'product 11', '', '', '', '', '', '', '', '993', '5', 'catalog/demo/product/product-3.png', '8', '1', '129.0000', '0', '9', '2009-01-01', '10.00000000', '1', '0.00000000', '0.00000000', '0.00000000', '1', '1', '1', '0', '0', '0', '2009-02-03 21:07:12', '2017-12-01 20:32:06');
+INSERT INTO `oc_product` VALUES ('41', 'Product 14', '', '', '', '', '', '', '', '999', '5', 'catalog/demo/product/product-5.png', '8', '1', '159.0000', '0', '9', '2009-01-01', '5.00000000', '1', '0.00000000', '0.00000000', '0.00000000', '1', '1', '1', '0', '0', '0', '2009-02-03 21:07:26', '2011-09-30 01:06:44');
+INSERT INTO `oc_product` VALUES ('42', 'Product 15', '', '', '', '', '', '', '', '1000', '5', 'catalog/demo/product/product-9.png', '8', '1', '299.0000', '400', '9', '2009-01-01', '12.50000000', '1', '1.00000000', '2.00000000', '3.00000000', '1', '1', '2', '0', '0', '0', '2009-02-03 21:07:37', '2017-12-13 15:18:30');
+INSERT INTO `oc_product` VALUES ('43', 'Product 16', '', '', '', '', '', '', '', '1000', '5', 'catalog/demo/product/product-11.png', '8', '1', '699.0000', '0', '9', '2009-01-01', '0.00000000', '1', '0.00000000', '0.00000000', '0.00000000', '2', '1', '1', '0', '0', '1', '2009-02-03 21:07:49', '2017-11-30 15:16:07');
+INSERT INTO `oc_product` VALUES ('44', 'Product 17', '', '', '', '', '', '', '', '1000', '5', 'catalog/demo/product/product-10.png', '8', '1', '1999.0000', '0', '9', '2009-01-01', '0.00000000', '1', '0.00000000', '0.00000000', '0.00000000', '2', '1', '1', '0', '0', '0', '2009-02-03 21:08:00', '2011-09-30 01:05:53');
+INSERT INTO `oc_product` VALUES ('45', 'Product 18', '', '', '', '', '', '', '', '999', '5', 'catalog/demo/product/product-9.png', '8', '1', '1999.0000', '0', '9', '2009-01-01', '0.00000000', '1', '0.00000000', '0.00000000', '0.00000000', '2', '1', '1', '0', '0', '0', '2009-02-03 21:08:17', '2011-09-15 22:22:01');
+INSERT INTO `oc_product` VALUES ('46', 'Product 19', '', '', '', '', '', '', '', '998', '5', 'catalog/demo/product/product-1.png', '10', '1', '1999.0000', '0', '9', '2009-01-01', '0.00000000', '1', '0.00000000', '0.00000000', '0.00000000', '2', '1', '1', '0', '0', '0', '2009-02-03 21:08:29', '2011-09-30 01:06:39');
+INSERT INTO `oc_product` VALUES ('47', 'Product 21', '', '', '', '', '', '', '', '1000', '5', 'catalog/demo/product/product-10.png', '7', '1', '99.0000', '400', '9', '2009-01-01', '1.00000000', '1', '0.00000000', '0.00000000', '0.00000000', '1', '0', '1', '0', '0', '0', '2009-02-03 21:08:40', '2011-09-30 01:05:28');
+INSERT INTO `oc_product` VALUES ('48', 'Product 20', '', '', '', '', '', '', '', '998', '5', 'catalog/demo/product/product-11.png', '8', '1', '99.0000', '0', '9', '2009-01-01', '1.00000000', '1', '0.00000000', '0.00000000', '0.00000000', '2', '1', '1', '0', '0', '1', '2009-02-08 17:21:51', '2018-09-21 17:26:36');
+INSERT INTO `oc_product` VALUES ('49', 'Product 21', '', '', '', '', '', '', '', '995', '8', 'catalog/demo/product/product-7.png', '0', '1', '199.9900', '0', '9', '2009-01-01', '0.00000000', '1', '0.00000000', '0.00000000', '0.00000000', '1', '1', '1', '1', '0', '14', '2011-04-26 08:57:34', '2017-12-19 11:19:49');
+INSERT INTO `oc_product` VALUES ('57', '11111', '', '', '', '', '', '', '', '1', '7', '', '0', '1', '1111.0000', '0', '0', '2018-09-19', '0.00000000', '1', '0.00000000', '0.00000000', '0.00000000', '1', '1', '1', '1', '1', '0', '2018-09-19 11:24:59', '2018-09-19 11:24:59');
+INSERT INTO `oc_product` VALUES ('58', '11111', '', '', '', '', '', '', '', '1', '7', '', '0', '1', '1111.0000', '0', '0', '2018-09-19', '0.00000000', '1', '0.00000000', '0.00000000', '0.00000000', '1', '1', '1', '1', '1', '0', '2018-09-19 11:32:51', '2018-09-19 11:32:51');
+INSERT INTO `oc_product` VALUES ('73', 'product  580', '', '', '', '', '', '', '', '580', '7', 'catalog/demo/product/product-1(1).png', '0', '1', '5800.0000', '0', '0', '2018-09-22', '50.00000000', '2', '0.00000000', '0.00000000', '0.00000000', '1', '1', '1', '1', '1', '0', '2018-09-22 08:50:10', '2018-09-22 08:50:10');
+INSERT INTO `oc_product` VALUES ('61', '11111', '', '', '', '', '', '', '', '1', '7', '', '0', '1', '1111.0000', '0', '0', '2018-09-19', '0.00000000', '1', '0.00000000', '0.00000000', '0.00000000', '1', '1', '1', '1', '1', '0', '2018-09-19 11:34:21', '2018-09-19 11:34:21');
+INSERT INTO `oc_product` VALUES ('62', '11111', '', '', '', '', '', '', '', '1', '7', '', '0', '1', '1111.0000', '0', '0', '2018-09-19', '0.00000000', '1', '0.00000000', '0.00000000', '0.00000000', '1', '1', '1', '1', '1', '0', '2018-09-19 11:35:02', '2018-09-19 11:35:02');
+INSERT INTO `oc_product` VALUES ('63', '11111', '', '', '', '', '', '', '', '1', '7', '', '0', '1', '1111.0000', '0', '0', '2018-09-19', '0.00000000', '1', '0.00000000', '0.00000000', '0.00000000', '1', '1', '1', '1', '1', '0', '2018-09-19 11:35:33', '2018-09-19 11:35:33');
+INSERT INTO `oc_product` VALUES ('64', '11111', '', '', '', '', '', '', '', '1', '7', '', '0', '1', '1111.0000', '0', '0', '2018-09-19', '0.00000000', '1', '0.00000000', '0.00000000', '0.00000000', '1', '1', '1', '1', '1', '0', '2018-09-19 11:35:42', '2018-09-19 11:35:42');
+INSERT INTO `oc_product` VALUES ('65', '11111', '', '', '', '', '', '', '', '1', '7', '', '0', '1', '1111.0000', '0', '0', '2018-09-19', '0.00000000', '1', '0.00000000', '0.00000000', '0.00000000', '1', '1', '1', '1', '1', '0', '2018-09-19 11:35:54', '2018-09-19 11:35:54');
+INSERT INTO `oc_product` VALUES ('66', '11111', '', '', '', '', '', '', '', '1', '7', '', '0', '1', '1111.0000', '0', '0', '2018-09-19', '0.00000000', '1', '0.00000000', '0.00000000', '0.00000000', '1', '1', '1', '1', '1', '0', '2018-09-19 11:36:09', '2018-09-19 11:36:09');
+INSERT INTO `oc_product` VALUES ('67', '11111', '', '', '', '', '', '', '', '1', '7', '', '0', '1', '1111.0000', '0', '0', '2018-09-19', '0.00000000', '1', '0.00000000', '0.00000000', '0.00000000', '1', '1', '1', '1', '1', '0', '2018-09-19 11:36:58', '2018-09-19 11:36:58');
+INSERT INTO `oc_product` VALUES ('68', '11111', '', '', '', '', '', '', '', '1', '7', '', '0', '1', '1111.0000', '0', '0', '2018-09-19', '0.00000000', '1', '0.00000000', '0.00000000', '0.00000000', '1', '1', '1', '1', '1', '0', '2018-09-19 11:37:19', '2018-09-19 11:37:19');
+INSERT INTO `oc_product` VALUES ('69', '11111', '', '', '', '', '', '', '', '1', '7', '', '0', '1', '1111.0000', '0', '0', '2018-09-19', '0.00000000', '1', '0.00000000', '0.00000000', '0.00000000', '1', '1', '1', '1', '1', '0', '2018-09-19 11:37:35', '2018-09-19 11:37:35');
+INSERT INTO `oc_product` VALUES ('70', '11111', '', '', '', '', '', '', '', '1', '7', '', '0', '1', '1111.0000', '0', '0', '2018-09-19', '0.00000000', '1', '0.00000000', '0.00000000', '0.00000000', '1', '1', '1', '1', '1', '0', '2018-09-19 11:40:13', '2018-09-19 11:40:13');
+INSERT INTO `oc_product` VALUES ('71', '11111', '', '', '', '', '', '', '', '1', '7', '', '0', '1', '1111.0000', '0', '0', '2018-09-19', '0.00000000', '1', '0.00000000', '0.00000000', '0.00000000', '1', '1', '1', '1', '1', '0', '2018-09-19 11:40:23', '2018-09-19 11:40:23');
+>>>>>>> 790b49e13c12789410af78d35dc87d3d392cacc9
 
 -- ----------------------------
 -- Table structure for oc_product_attribute
@@ -5887,6 +5980,7 @@ CREATE TABLE `oc_product_attribute` (
 -- ----------------------------
 -- Records of oc_product_attribute
 -- ----------------------------
+<<<<<<< HEAD
 INSERT INTO `oc_product_attribute` VALUES ('47', '2', '1', '4');
 INSERT INTO `oc_product_attribute` VALUES ('43', '2', '1', '1');
 INSERT INTO `oc_product_attribute` VALUES ('42', '3', '1', '100mhz');
@@ -5897,6 +5991,44 @@ INSERT INTO `oc_product_attribute` VALUES ('42', '3', '2', '100mhz');
 INSERT INTO `oc_product_attribute` VALUES ('47', '4', '2', '16GB');
 INSERT INTO `oc_product_attribute` VALUES ('43', '4', '1', '8gb');
 INSERT INTO `oc_product_attribute` VALUES ('47', '4', '1', '16GB');
+=======
+INSERT INTO `oc_product_attribute` VALUES ('47', '4', '1', '16GB');
+INSERT INTO `oc_product_attribute` VALUES ('43', '2', '1', '1');
+INSERT INTO `oc_product_attribute` VALUES ('42', '3', '1', '100mhz');
+INSERT INTO `oc_product_attribute` VALUES ('47', '2', '1', '4');
+INSERT INTO `oc_product_attribute` VALUES ('43', '4', '2', '8gb');
+INSERT INTO `oc_product_attribute` VALUES ('47', '4', '2', '16GB');
+INSERT INTO `oc_product_attribute` VALUES ('43', '2', '2', '1');
+INSERT INTO `oc_product_attribute` VALUES ('42', '3', '2', '100mhz');
+INSERT INTO `oc_product_attribute` VALUES ('47', '2', '2', '4');
+INSERT INTO `oc_product_attribute` VALUES ('43', '4', '1', '8gb');
+
+-- ----------------------------
+-- Table structure for oc_product_attribute_ebaypro
+-- ----------------------------
+DROP TABLE IF EXISTS `oc_product_attribute_ebaypro`;
+CREATE TABLE `oc_product_attribute_ebaypro` (
+  `product_id` int(11) NOT NULL,
+  `attribute_id` int(11) NOT NULL,
+  `language_id` int(11) NOT NULL,
+  `text` text NOT NULL,
+  PRIMARY KEY (`product_id`,`attribute_id`,`language_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of oc_product_attribute_ebaypro
+-- ----------------------------
+INSERT INTO `oc_product_attribute_ebaypro` VALUES ('47', '4', '1', '16GB');
+INSERT INTO `oc_product_attribute_ebaypro` VALUES ('43', '2', '1', '1');
+INSERT INTO `oc_product_attribute_ebaypro` VALUES ('42', '3', '1', '100mhz');
+INSERT INTO `oc_product_attribute_ebaypro` VALUES ('47', '2', '1', '4');
+INSERT INTO `oc_product_attribute_ebaypro` VALUES ('43', '4', '2', '8gb');
+INSERT INTO `oc_product_attribute_ebaypro` VALUES ('47', '4', '2', '16GB');
+INSERT INTO `oc_product_attribute_ebaypro` VALUES ('43', '2', '2', '1');
+INSERT INTO `oc_product_attribute_ebaypro` VALUES ('42', '3', '2', '100mhz');
+INSERT INTO `oc_product_attribute_ebaypro` VALUES ('47', '2', '2', '4');
+INSERT INTO `oc_product_attribute_ebaypro` VALUES ('43', '4', '1', '8gb');
+>>>>>>> 790b49e13c12789410af78d35dc87d3d392cacc9
 
 -- ----------------------------
 -- Table structure for oc_product_description
@@ -5927,7 +6059,11 @@ INSERT INTO `oc_product_description` VALUES ('45', '1', 'Qi Dolorem Ipsum Quia D
 INSERT INTO `oc_product_description` VALUES ('29', '1', 'Beatae Vitae Dicta 9001 Sunt Explicabo', '&lt;p&gt;\r\n	Redefine your workday with the Palm Treo Pro smartphone. Perfectly balanced, you can respond to business and personal email, stay on top of appointments and contacts, and use Wi-Fi or GPS when you&amp;rsquo;re out and about. Then watch a video on YouTube, catch up with news and sports on the web, or listen to a few songs. Balance your work and play the way you like it, with the Palm Treo Pro.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Features&lt;/strong&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Windows Mobile&amp;reg; 6.1 Professional Edition&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Qualcomm&amp;reg; MSM7201 400MHz Processor&lt;/li&gt;\r\n	&lt;li&gt;\r\n		320x320 transflective colour TFT touchscreen&lt;/li&gt;\r\n	&lt;li&gt;\r\n		HSDPA/UMTS/EDGE/GPRS/GSM radio&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Tri-band UMTS &amp;mdash; 850MHz, 1900MHz, 2100MHz&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Quad-band GSM &amp;mdash; 850/900/1800/1900&lt;/li&gt;\r\n	&lt;li&gt;\r\n		802.11b/g with WPA, WPA2, and 801.1x authentication&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Built-in GPS&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Bluetooth Version: 2.0 + Enhanced Data Rate&lt;/li&gt;\r\n	&lt;li&gt;\r\n		256MB storage (100MB user available), 128MB RAM&lt;/li&gt;\r\n	&lt;li&gt;\r\n		2.0 megapixel camera, up to 8x digital zoom and video capture&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Removable, rechargeable 1500mAh lithium-ion battery&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Up to 5.0 hours talk time and up to 250 hours standby&lt;/li&gt;\r\n	&lt;li&gt;\r\n		MicroSDHC card expansion (up to 32GB supported)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		MicroUSB 2.0 for synchronization and charging&lt;/li&gt;\r\n	&lt;li&gt;\r\n		3.5mm stereo headset jack&lt;/li&gt;\r\n	&lt;li&gt;\r\n		60mm (W) x 114mm (L) x 13.5mm (D) / 133g&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', '', 'Beatae Vitae Dicta 9001 Sunt Explicabo', '', '');
 INSERT INTO `oc_product_description` VALUES ('36', '1', 'At Fero G99 Acusamus Et Iusto Sdio', '&lt;div&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;Video in your pocket.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		Its the small iPod with one very big idea: video. The worlds most popular music player now lets you enjoy movies, TV shows, and more on a two-inch display thats 65% brighter than before.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;Cover Flow.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		Browse through your music collection by flipping through album art. Select an album to turn it over and see the track list.&lt;strong&gt;&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;Enhanced interface.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		Experience a whole new way to browse and view your music and video.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;Sleek and colorful.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		With an anodized aluminum and polished stainless steel enclosure and a choice of five colors, iPod nano is dressed to impress.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;iTunes.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		Available as a free download, iTunes makes it easy to browse and buy millions of songs, movies, TV shows, audiobooks, and games and download free podcasts all at the iTunes Store. And you can import your own music, manage your whole media library, and sync your iPod or iPhone with ease.&lt;/p&gt;\r\n&lt;/div&gt;\r\n', '', 'At Fero G99 Acusamus Et Iusto Sdio', '', '');
 INSERT INTO `oc_product_description` VALUES ('46', '1', 'Kelit Esse Cillum Dolore Eu 909 Fugiat', '&lt;div&gt;\r\n	Unprecedented power. The next generation of processing technology has arrived. Built into the newest VAIO notebooks lies Intel&amp;#39;s latest, most powerful innovation yet: Intel&amp;reg; Centrino&amp;reg; 2 processor technology. Boasting incredible speed, expanded wireless connectivity, enhanced multimedia support and greater energy efficiency, all the high-performance essentials are seamlessly combined into a single chip.&lt;/div&gt;\r\n', '', 'Kelit Esse Cillum Dolore Eu 909 Fugiat', '', '');
+<<<<<<< HEAD
 INSERT INTO `oc_product_description` VALUES ('47', '1', 'Moluptatem AM01 Nesciunt Neque Porro Quisquam', '&lt;p&gt;Stop your co-workers in their tracks with the stunning new 30-inch diagonal HP LP3065 Flat Panel Monitor. This flagship monitor features best-in-class performance and presentation features on a huge wide-aspect screen while letting you work as comfortably as possible - you might even forget you\'re at the office&lt;/p&gt;', '', 'Moluptatem AM01 Nesciunt Neque Porro Quisquam', '', '');
+=======
+INSERT INTO `oc_product_description` VALUES ('47', '1', 'Moluptatem AM01 Nesciunt Neque Porro Quisquam', '&lt;p&gt;\r\n	Stop your co-workers in their tracks with the stunning new 30-inch diagonal HP LP3065 Flat Panel Monitor. This flagship monitor features best-in-class performance and presentation features on a huge wide-aspect screen while letting you work as comfortably as possible - you might even forget you&amp;#39;re at the office&lt;/p&gt;\r\n', '', 'Moluptatem AM01 Nesciunt Neque Porro Quisquam', '', '');
+>>>>>>> 790b49e13c12789410af78d35dc87d3d392cacc9
 INSERT INTO `oc_product_description` VALUES ('32', '1', 'Vel Illum C09 Dolorem Eum Fugiat Quo', '&lt;p&gt;\r\n	&lt;strong&gt;Revolutionary multi-touch interface.&lt;/strong&gt;&lt;br /&gt;\r\n	iPod touch features the same multi-touch screen technology as iPhone. Pinch to zoom in on a photo. Scroll through your songs and videos with a flick. Flip through your library by album artwork with Cover Flow.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Gorgeous 3.5-inch widescreen display.&lt;/strong&gt;&lt;br /&gt;\r\n	Watch your movies, TV shows, and photos come alive with bright, vivid color on the 320-by-480-pixel display.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Music downloads straight from iTunes.&lt;/strong&gt;&lt;br /&gt;\r\n	Shop the iTunes Wi-Fi Music Store from anywhere with Wi-Fi.1 Browse or search to find the music youre looking for, preview it, and buy it with just a tap.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Surf the web with Wi-Fi.&lt;/strong&gt;&lt;br /&gt;\r\n	Browse the web using Safari and watch YouTube videos on the first iPod with Wi-Fi built in&lt;br /&gt;\r\n	&amp;nbsp;&lt;/p&gt;\r\n', '', 'Vel Illum C09 Dolorem Eum Fugiat Quo', '', '');
 INSERT INTO `oc_product_description` VALUES ('41', '1', 'Omnis Provident M235 Odio Volupt Cupiditate', '&lt;div&gt;\r\n	Just when you thought iMac had everything, now there&acute;s even more. More powerful Intel Core 2 Duo processors. And more memory standard. Combine this with Mac OS X Leopard and iLife &acute;08, and it&acute;s more all-in-one than ever. iMac packs amazing performance into a stunningly slim space.&lt;/div&gt;\r\n', '', 'Omnis Provident M235 Odio Volupt Cupiditate', '', '');
 INSERT INTO `oc_product_description` VALUES ('34', '1', 'Encimunt Moptio Labore 898 Olore Magnam', '&lt;div&gt;\r\n	&lt;strong&gt;Born to be worn.&lt;/strong&gt;\r\n	&lt;p&gt;\r\n		Clip on the worlds most wearable music player and take up to 240 songs with you anywhere. Choose from five colors including four new hues to make your musical fashion statement.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;Random meets rhythm.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		With iTunes autofill, iPod shuffle can deliver a new musical experience every time you sync. For more randomness, you can shuffle songs during playback with the slide of a switch.&lt;/p&gt;\r\n	&lt;strong&gt;Everything is easy.&lt;/strong&gt;\r\n	&lt;p&gt;\r\n		Charge and sync with the included USB dock. Operate the iPod shuffle controls with one hand. Enjoy up to 12 hours straight of skip-free music playback.&lt;/p&gt;\r\n&lt;/div&gt;\r\n', '', 'Encimunt Moptio Labore 898 Olore Magnam', '', '');
@@ -5946,7 +6082,11 @@ INSERT INTO `oc_product_description` VALUES ('45', '2', 'OMNIS 双面羊毛呢�
 INSERT INTO `oc_product_description` VALUES ('29', '2', '双面羊毛呢子大衣女短款2017春季新款韩版修身小香风毛呢外套女', '&lt;p&gt;\r\n	Redefine your workday with the Palm Treo Pro smartphone. Perfectly balanced, you can respond to business and personal email, stay on top of appointments and contacts, and use Wi-Fi or GPS when you&amp;rsquo;re out and about. Then watch a video on YouTube, catch up with news and sports on the web, or listen to a few songs. Balance your work and play the way you like it, with the Palm Treo Pro.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Features&lt;/strong&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Windows Mobile&amp;reg; 6.1 Professional Edition&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Qualcomm&amp;reg; MSM7201 400MHz Processor&lt;/li&gt;\r\n	&lt;li&gt;\r\n		320x320 transflective colour TFT touchscreen&lt;/li&gt;\r\n	&lt;li&gt;\r\n		HSDPA/UMTS/EDGE/GPRS/GSM radio&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Tri-band UMTS &amp;mdash; 850MHz, 1900MHz, 2100MHz&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Quad-band GSM &amp;mdash; 850/900/1800/1900&lt;/li&gt;\r\n	&lt;li&gt;\r\n		802.11b/g with WPA, WPA2, and 801.1x authentication&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Built-in GPS&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Bluetooth Version: 2.0 + Enhanced Data Rate&lt;/li&gt;\r\n	&lt;li&gt;\r\n		256MB storage (100MB user available), 128MB RAM&lt;/li&gt;\r\n	&lt;li&gt;\r\n		2.0 megapixel camera, up to 8x digital zoom and video capture&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Removable, rechargeable 1500mAh lithium-ion battery&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Up to 5.0 hours talk time and up to 250 hours standby&lt;/li&gt;\r\n	&lt;li&gt;\r\n		MicroSDHC card expansion (up to 32GB supported)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		MicroUSB 2.0 for synchronization and charging&lt;/li&gt;\r\n	&lt;li&gt;\r\n		3.5mm stereo headset jack&lt;/li&gt;\r\n	&lt;li&gt;\r\n		60mm (W) x 114mm (L) x 13.5mm (D) / 133g&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', '', '双面羊毛呢子大衣女短款2017春季新款韩版修身小香风毛呢外套女', '', '');
 INSERT INTO `oc_product_description` VALUES ('36', '2', '春秋新款一字领针织衫长袖短款紧身毛衣女', '&lt;div&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;Video in your pocket.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		Its the small iPod with one very big idea: video. The worlds most popular music player now lets you enjoy movies, TV shows, and more on a two-inch display thats 65% brighter than before.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;Cover Flow.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		Browse through your music collection by flipping through album art. Select an album to turn it over and see the track list.&lt;strong&gt;&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;Enhanced interface.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		Experience a whole new way to browse and view your music and video.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;Sleek and colorful.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		With an anodized aluminum and polished stainless steel enclosure and a choice of five colors, iPod nano is dressed to impress.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;iTunes.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		Available as a free download, iTunes makes it easy to browse and buy millions of songs, movies, TV shows, audiobooks, and games and download free podcasts all at the iTunes Store. And you can import your own music, manage your whole media library, and sync your iPod or iPhone with ease.&lt;/p&gt;\r\n&lt;/div&gt;\r\n', '', '春秋新款一字领针织衫长袖短款紧身毛衣女', '', '');
 INSERT INTO `oc_product_description` VALUES ('46', '2', '浅秋专柜正品早秋新款休闲半高领纯羊毛针织衫套头毛衣女基础打底', '&lt;div&gt;\r\n	Unprecedented power. The next generation of processing technology has arrived. Built into the newest VAIO notebooks lies Intel&amp;#39;s latest, most powerful innovation yet: Intel&amp;reg; Centrino&amp;reg; 2 processor technology. Boasting incredible speed, expanded wireless connectivity, enhanced multimedia support and greater energy efficiency, all the high-performance essentials are seamlessly combined into a single chip.&lt;/div&gt;\r\n', '', '浅秋专柜正品早秋新款休闲半高领纯羊毛针织衫套头毛衣女基础打底', '', '');
+<<<<<<< HEAD
 INSERT INTO `oc_product_description` VALUES ('47', '2', '羊毛打底衫女长袖秋冬套头修身高领薄款毛衣百搭秋装冬季针织衫', '&lt;p&gt;Stop your co-workers in their tracks with the stunning new 30-inch diagonal HP LP3065 Flat Panel Monitor. This flagship monitor features best-in-class performance and presentation features on a huge wide-aspect screen while letting you work as comfortably as possible - you might even forget you\'re at the office&lt;/p&gt;', '', '羊毛打底衫女长袖秋冬套头修身高领薄款毛衣百搭秋装冬季针织衫', '', '');
+=======
+INSERT INTO `oc_product_description` VALUES ('47', '2', '羊毛打底衫女长袖秋冬套头修身高领薄款毛衣百搭秋装冬季针织衫', '&lt;p&gt;\r\n	Stop your co-workers in their tracks with the stunning new 30-inch diagonal HP LP3065 Flat Panel Monitor. This flagship monitor features best-in-class performance and presentation features on a huge wide-aspect screen while letting you work as comfortably as possible - you might even forget you&amp;#39;re at the office&lt;/p&gt;\r\n', '', '羊毛打底衫女长袖秋冬套头修身高领薄款毛衣百搭秋装冬季针织衫', '', '');
+>>>>>>> 790b49e13c12789410af78d35dc87d3d392cacc9
 INSERT INTO `oc_product_description` VALUES ('32', '2', '梦伊 2018 秋冬新款丝绒刺绣连衣裙气质优雅显瘦a字长裙女装', '&lt;p&gt;\r\n	&lt;strong&gt;Revolutionary multi-touch interface.&lt;/strong&gt;&lt;br /&gt;\r\n	iPod touch features the same multi-touch screen technology as iPhone. Pinch to zoom in on a photo. Scroll through your songs and videos with a flick. Flip through your library by album artwork with Cover Flow.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Gorgeous 3.5-inch widescreen display.&lt;/strong&gt;&lt;br /&gt;\r\n	Watch your movies, TV shows, and photos come alive with bright, vivid color on the 320-by-480-pixel display.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Music downloads straight from iTunes.&lt;/strong&gt;&lt;br /&gt;\r\n	Shop the iTunes Wi-Fi Music Store from anywhere with Wi-Fi.1 Browse or search to find the music youre looking for, preview it, and buy it with just a tap.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Surf the web with Wi-Fi.&lt;/strong&gt;&lt;br /&gt;\r\n	Browse the web using Safari and watch YouTube videos on the first iPod with Wi-Fi built in&lt;br /&gt;\r\n	&amp;nbsp;&lt;/p&gt;\r\n', '', '梦伊 2018 秋冬新款丝绒刺绣连衣裙气质优雅显瘦a字长裙女装', '', '');
 INSERT INTO `oc_product_description` VALUES ('41', '2', '蔻娜焦糖色羊毛针织连衣裙秋冬长袖打底裙宽松中长款过膝毛衣裙', '&lt;div&gt;\r\n	Just when you thought iMac had everything, now there&acute;s even more. More powerful Intel Core 2 Duo processors. And more memory standard. Combine this with Mac OS X Leopard and iLife &acute;08, and it&acute;s more all-in-one than ever. iMac packs amazing performance into a stunningly slim space.&lt;/div&gt;\r\n', '', '蔻娜焦糖色羊毛针织连衣裙秋冬长袖打底裙宽松中长款过膝毛衣裙', '', '');
 INSERT INTO `oc_product_description` VALUES ('34', '2', 'Kelit 连衣裙秋冬长袖打底裙宽松中长款过膝毛衣裙', '&lt;div&gt;\r\n	&lt;strong&gt;Born to be worn.&lt;/strong&gt;\r\n	&lt;p&gt;\r\n		Clip on the worlds most wearable music player and take up to 240 songs with you anywhere. Choose from five colors including four new hues to make your musical fashion statement.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;Random meets rhythm.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		With iTunes autofill, iPod shuffle can deliver a new musical experience every time you sync. For more randomness, you can shuffle songs during playback with the slide of a switch.&lt;/p&gt;\r\n	&lt;strong&gt;Everything is easy.&lt;/strong&gt;\r\n	&lt;p&gt;\r\n		Charge and sync with the included USB dock. Operate the iPod shuffle controls with one hand. Enjoy up to 12 hours straight of skip-free music playback.&lt;/p&gt;\r\n&lt;/div&gt;\r\n', '', 'Kelit 连衣裙秋冬长袖打底裙宽松中长款过膝毛衣裙', '', '');
@@ -5958,6 +6098,7 @@ INSERT INTO `oc_product_description` VALUES ('30', '1', 'Kelit Esse Cillum Dolor
 INSERT INTO `oc_product_description` VALUES ('33', '1', 'Kelit Esse Cillum Dolore Eu 909 Fugiat', '&lt;div&gt;Imagine the advantages of going big without slowing down. The big 19&quot; 941BW monitor combines wide aspect ratio with fast pixel response time, for bigger images, more room to work and crisp motion. In addition, the exclusive MagicBright 2, MagicColor and MagicTune technologies help deliver the ideal image in every situation, while sleek, narrow bezels and adjustable stands deliver style just the way you want it. With the Samsung 941BW widescreen analog/digital LCD monitor, it\'s not hard to imagine.&lt;/div&gt;', '', 'Kelit Esse Cillum Dolore Eu 909 Fugiat', '', '');
 INSERT INTO `oc_product_description` VALUES ('33', '2', '2018 秋冬装新款韩版羊毛大衣外套中长款女大码呢子大衣风衣无羊绒', '&lt;div&gt;Imagine the advantages of going big without slowing down. The big 19&quot; 941BW monitor combines wide aspect ratio with fast pixel response time, for bigger images, more room to work and crisp motion. In addition, the exclusive MagicBright 2, MagicColor and MagicTune technologies help deliver the ideal image in every situation, while sleek, narrow bezels and adjustable stands deliver style just the way you want it. With the Samsung 941BW widescreen analog/digital LCD monitor, it\'s not hard to imagine.&lt;/div&gt;', '', '2018 秋冬装新款韩版羊毛大衣外套中长款女大码呢子大衣风衣无羊绒', '', '');
 INSERT INTO `oc_product_description` VALUES ('73', '1', '翡翠手镯', '', '', '翡翠手镯', '', '');
+<<<<<<< HEAD
 INSERT INTO `oc_product_description` VALUES ('74', '2', '翡翠手镯3', '', '', '翡翠手镯', '', '');
 INSERT INTO `oc_product_description` VALUES ('74', '1', '翡翠手镯', '', '', '翡翠手镯', '', '');
 INSERT INTO `oc_product_description` VALUES ('75', '2', '翡翠手镯', '', '', '翡翠手镯', '', '');
@@ -5972,6 +6113,93 @@ INSERT INTO `oc_product_description` VALUES ('78', '2', '翡翠手镯', '', '', 
 INSERT INTO `oc_product_description` VALUES ('78', '1', '翡翠手镯', '', '', '翡翠手镯', '', '');
 INSERT INTO `oc_product_description` VALUES ('79', '2', '翡翠手镯', '', '', '翡翠手镯', '', '');
 INSERT INTO `oc_product_description` VALUES ('79', '1', '翡翠手镯', '', '', '翡翠手镯', '', '');
+=======
+INSERT INTO `oc_product_description` VALUES ('0', '2', '翡镯', '', '', '翡镯', '', '');
+INSERT INTO `oc_product_description` VALUES ('0', '1', '翡翠手镯', '', '', '翡翠手镯', '', '');
+
+-- ----------------------------
+-- Table structure for oc_product_description_ebaypro
+-- ----------------------------
+DROP TABLE IF EXISTS `oc_product_description_ebaypro`;
+CREATE TABLE `oc_product_description_ebaypro` (
+  `product_id` int(11) NOT NULL,
+  `language_id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `description` text NOT NULL,
+  `tag` text NOT NULL,
+  `meta_title` varchar(255) NOT NULL,
+  `meta_description` varchar(255) NOT NULL,
+  `meta_keyword` varchar(255) NOT NULL,
+  PRIMARY KEY (`product_id`,`language_id`),
+  KEY `name` (`name`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of oc_product_description_ebaypro
+-- ----------------------------
+INSERT INTO `oc_product_description_ebaypro` VALUES ('35', '1', 'Lorem Ipsum Sit 365 Officia Doloribus', '&lt;p&gt;\r\n	Product 8&lt;/p&gt;\r\n', '', 'Lorem Ipsum Sit 365 Officia Doloribus', '', '');
+INSERT INTO `oc_product_description_ebaypro` VALUES ('48', '1', 'EOST Iusto Odio Tmpora Incidunt', '&lt;div class=&quot;cpt_product_description &quot;&gt;\r\n	&lt;div&gt;\r\n		&lt;p&gt;\r\n			&lt;strong&gt;More room to move.&lt;/strong&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			With 80GB or 160GB of storage and up to 40 hours of battery life, the new iPod classic lets you enjoy up to 40,000 songs or up to 200 hours of video or any combination wherever you go.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;strong&gt;Cover Flow.&lt;/strong&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Browse through your music collection by flipping through album art. Select an album to turn it over and see the track list.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;strong&gt;Enhanced interface.&lt;/strong&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Experience a whole new way to browse and view your music and video.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;strong&gt;Sleeker design.&lt;/strong&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Beautiful, durable, and sleeker than ever, iPod classic now features an anodized aluminum and polished stainless steel enclosure with rounded edges.&lt;/p&gt;\r\n	&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;!-- cpt_container_end --&gt;', '', 'EOST Iusto Odio Tmpora Incidunt', '', '');
+INSERT INTO `oc_product_description_ebaypro` VALUES ('40', '1', 'Omnis Voluptas Asumenda Est Sequi', '&lt;p class=&quot;intro&quot;&gt;iPhone is a revolutionary new mobile phone that allows you to make a call by simply tapping a name or number in your address book, a favorites list, or a call log. It also automatically syncs all your contacts from a PC, Mac, or Internet service. And it lets you select and listen to voicemail messages in whatever order you want just like email.&lt;/p&gt;', '', 'Omnis Voluptas Asumenda Est Sequi', '', '');
+INSERT INTO `oc_product_description_ebaypro` VALUES ('28', '1', 'Temporibus Autem Quibus Amet Aut', '&lt;p&gt;\r\n	HTC Touch - in High Definition. Watch music videos and streaming content in awe-inspiring high definition clarity for a mobile experience you never thought possible. Seductively sleek, the HTC Touch HD provides the next generation of mobile functionality, all at a simple touch. Fully integrated with Windows Mobile Professional 6.1, ultrafast 3.5G, GPS, 5MP camera, plus lots more - all delivered on a breathtakingly crisp 3.8&amp;quot; WVGA touchscreen - you can take control of your mobile world with the HTC Touch HD.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Features&lt;/strong&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Processor Qualcomm&amp;reg; MSM 7201A&amp;trade; 528 MHz&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Windows Mobile&amp;reg; 6.1 Professional Operating System&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Memory: 512 MB ROM, 288 MB RAM&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Dimensions: 115 mm x 62.8 mm x 12 mm / 146.4 grams&lt;/li&gt;\r\n	&lt;li&gt;\r\n		3.8-inch TFT-LCD flat touch-sensitive screen with 480 x 800 WVGA resolution&lt;/li&gt;\r\n	&lt;li&gt;\r\n		HSDPA/WCDMA: Europe/Asia: 900/2100 MHz; Up to 2 Mbps up-link and 7.2 Mbps down-link speeds&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Quad-band GSM/GPRS/EDGE: Europe/Asia: 850/900/1800/1900 MHz (Band frequency, HSUPA availability, and data speed are operator dependent.)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Device Control via HTC TouchFLO&amp;trade; 3D &amp;amp; Touch-sensitive front panel buttons&lt;/li&gt;\r\n	&lt;li&gt;\r\n		GPS and A-GPS ready&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Bluetooth&amp;reg; 2.0 with Enhanced Data Rate and A2DP for wireless stereo headsets&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Wi-Fi&amp;reg;: IEEE 802.11 b/g&lt;/li&gt;\r\n	&lt;li&gt;\r\n		HTC ExtUSB&amp;trade; (11-pin mini-USB 2.0)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		5 megapixel color camera with auto focus&lt;/li&gt;\r\n	&lt;li&gt;\r\n		VGA CMOS color camera&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Built-in 3.5 mm audio jack, microphone, speaker, and FM radio&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Ring tone formats: AAC, AAC+, eAAC+, AMR-NB, AMR-WB, QCP, MP3, WMA, WAV&lt;/li&gt;\r\n	&lt;li&gt;\r\n		40 polyphonic and standard MIDI format 0 and 1 (SMF)/SP MIDI&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Rechargeable Lithium-ion or Lithium-ion polymer 1350 mAh battery&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Expansion Slot: microSD&amp;trade; memory card (SD 2.0 compatible)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		AC Adapter Voltage range/frequency: 100 ~ 240V AC, 50/60 Hz DC output: 5V and 1A&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Special Features: FM Radio, G-Sensor&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', '', 'Temporibus Autem Quibus Amet Aut', '', '');
+INSERT INTO `oc_product_description_ebaypro` VALUES ('44', '1', 'Encimunt Moptio Labore 898 Olore Magnam', '&lt;div&gt;\r\n	MacBook Air is ultrathin, ultraportable, and ultra unlike anything else. But you don&amp;rsquo;t lose inches and pounds overnight. It&amp;rsquo;s the result of rethinking conventions. Of multiple wireless innovations. And of breakthrough design. With MacBook Air, mobile computing suddenly has a new standard.&lt;/div&gt;\r\n', '', 'Encimunt Moptio Labore 898 Olore Magnam', '', '');
+INSERT INTO `oc_product_description_ebaypro` VALUES ('45', '1', 'Qi Dolorem Ipsum Quia Dolor Sit Amet', '&lt;div class=&quot;cpt_product_description &quot;&gt;\r\n	&lt;div&gt;\r\n		&lt;p&gt;\r\n			&lt;b&gt;Latest Intel mobile architecture&lt;/b&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Powered by the most advanced mobile processors from Intel, the new Core 2 Duo MacBook Pro is over 50% faster than the original Core Duo MacBook Pro and now supports up to 4GB of RAM.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;b&gt;Leading-edge graphics&lt;/b&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			The NVIDIA GeForce 8600M GT delivers exceptional graphics processing power. For the ultimate creative canvas, you can even configure the 17-inch model with a 1920-by-1200 resolution display.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;b&gt;Designed for life on the road&lt;/b&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Innovations such as a magnetic power connection and an illuminated keyboard with ambient light sensor put the MacBook Pro in a class by itself.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;b&gt;Connect. Create. Communicate.&lt;/b&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Quickly set up a video conference with the built-in iSight camera. Control presentations and media from up to 30 feet away with the included Apple Remote. Connect to high-bandwidth peripherals with FireWire 800 and DVI.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;b&gt;Next-generation wireless&lt;/b&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Featuring 802.11n wireless technology, the MacBook Pro delivers up to five times the performance and up to twice the range of previous-generation technologies.&lt;/p&gt;\r\n	&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;!-- cpt_container_end --&gt;', '', 'Qi Dolorem Ipsum Quia Dolor Sit Amet', '', '');
+INSERT INTO `oc_product_description_ebaypro` VALUES ('29', '1', 'Beatae Vitae Dicta 9001 Sunt Explicabo', '&lt;p&gt;\r\n	Redefine your workday with the Palm Treo Pro smartphone. Perfectly balanced, you can respond to business and personal email, stay on top of appointments and contacts, and use Wi-Fi or GPS when you&amp;rsquo;re out and about. Then watch a video on YouTube, catch up with news and sports on the web, or listen to a few songs. Balance your work and play the way you like it, with the Palm Treo Pro.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Features&lt;/strong&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Windows Mobile&amp;reg; 6.1 Professional Edition&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Qualcomm&amp;reg; MSM7201 400MHz Processor&lt;/li&gt;\r\n	&lt;li&gt;\r\n		320x320 transflective colour TFT touchscreen&lt;/li&gt;\r\n	&lt;li&gt;\r\n		HSDPA/UMTS/EDGE/GPRS/GSM radio&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Tri-band UMTS &amp;mdash; 850MHz, 1900MHz, 2100MHz&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Quad-band GSM &amp;mdash; 850/900/1800/1900&lt;/li&gt;\r\n	&lt;li&gt;\r\n		802.11b/g with WPA, WPA2, and 801.1x authentication&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Built-in GPS&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Bluetooth Version: 2.0 + Enhanced Data Rate&lt;/li&gt;\r\n	&lt;li&gt;\r\n		256MB storage (100MB user available), 128MB RAM&lt;/li&gt;\r\n	&lt;li&gt;\r\n		2.0 megapixel camera, up to 8x digital zoom and video capture&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Removable, rechargeable 1500mAh lithium-ion battery&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Up to 5.0 hours talk time and up to 250 hours standby&lt;/li&gt;\r\n	&lt;li&gt;\r\n		MicroSDHC card expansion (up to 32GB supported)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		MicroUSB 2.0 for synchronization and charging&lt;/li&gt;\r\n	&lt;li&gt;\r\n		3.5mm stereo headset jack&lt;/li&gt;\r\n	&lt;li&gt;\r\n		60mm (W) x 114mm (L) x 13.5mm (D) / 133g&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', '', 'Beatae Vitae Dicta 9001 Sunt Explicabo', '', '');
+INSERT INTO `oc_product_description_ebaypro` VALUES ('36', '1', 'At Fero G99 Acusamus Et Iusto Sdio', '&lt;div&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;Video in your pocket.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		Its the small iPod with one very big idea: video. The worlds most popular music player now lets you enjoy movies, TV shows, and more on a two-inch display thats 65% brighter than before.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;Cover Flow.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		Browse through your music collection by flipping through album art. Select an album to turn it over and see the track list.&lt;strong&gt;&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;Enhanced interface.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		Experience a whole new way to browse and view your music and video.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;Sleek and colorful.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		With an anodized aluminum and polished stainless steel enclosure and a choice of five colors, iPod nano is dressed to impress.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;iTunes.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		Available as a free download, iTunes makes it easy to browse and buy millions of songs, movies, TV shows, audiobooks, and games and download free podcasts all at the iTunes Store. And you can import your own music, manage your whole media library, and sync your iPod or iPhone with ease.&lt;/p&gt;\r\n&lt;/div&gt;\r\n', '', 'At Fero G99 Acusamus Et Iusto Sdio', '', '');
+INSERT INTO `oc_product_description_ebaypro` VALUES ('46', '1', 'Kelit Esse Cillum Dolore Eu 909 Fugiat', '&lt;div&gt;\r\n	Unprecedented power. The next generation of processing technology has arrived. Built into the newest VAIO notebooks lies Intel&amp;#39;s latest, most powerful innovation yet: Intel&amp;reg; Centrino&amp;reg; 2 processor technology. Boasting incredible speed, expanded wireless connectivity, enhanced multimedia support and greater energy efficiency, all the high-performance essentials are seamlessly combined into a single chip.&lt;/div&gt;\r\n', '', 'Kelit Esse Cillum Dolore Eu 909 Fugiat', '', '');
+INSERT INTO `oc_product_description_ebaypro` VALUES ('47', '1', 'Moluptatem AM01 Nesciunt Neque Porro Quisquam', '&lt;p&gt;\r\n	Stop your co-workers in their tracks with the stunning new 30-inch diagonal HP LP3065 Flat Panel Monitor. This flagship monitor features best-in-class performance and presentation features on a huge wide-aspect screen while letting you work as comfortably as possible - you might even forget you&amp;#39;re at the office&lt;/p&gt;\r\n', '', 'Moluptatem AM01 Nesciunt Neque Porro Quisquam', '', '');
+INSERT INTO `oc_product_description_ebaypro` VALUES ('32', '1', 'Vel Illum C09 Dolorem Eum Fugiat Quo', '&lt;p&gt;\r\n	&lt;strong&gt;Revolutionary multi-touch interface.&lt;/strong&gt;&lt;br /&gt;\r\n	iPod touch features the same multi-touch screen technology as iPhone. Pinch to zoom in on a photo. Scroll through your songs and videos with a flick. Flip through your library by album artwork with Cover Flow.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Gorgeous 3.5-inch widescreen display.&lt;/strong&gt;&lt;br /&gt;\r\n	Watch your movies, TV shows, and photos come alive with bright, vivid color on the 320-by-480-pixel display.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Music downloads straight from iTunes.&lt;/strong&gt;&lt;br /&gt;\r\n	Shop the iTunes Wi-Fi Music Store from anywhere with Wi-Fi.1 Browse or search to find the music youre looking for, preview it, and buy it with just a tap.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Surf the web with Wi-Fi.&lt;/strong&gt;&lt;br /&gt;\r\n	Browse the web using Safari and watch YouTube videos on the first iPod with Wi-Fi built in&lt;br /&gt;\r\n	&amp;nbsp;&lt;/p&gt;\r\n', '', 'Vel Illum C09 Dolorem Eum Fugiat Quo', '', '');
+INSERT INTO `oc_product_description_ebaypro` VALUES ('41', '1', 'Omnis Provident M235 Odio Volupt Cupiditate', '&lt;div&gt;\r\n	Just when you thought iMac had everything, now there&acute;s even more. More powerful Intel Core 2 Duo processors. And more memory standard. Combine this with Mac OS X Leopard and iLife &acute;08, and it&acute;s more all-in-one than ever. iMac packs amazing performance into a stunningly slim space.&lt;/div&gt;\r\n', '', 'Omnis Provident M235 Odio Volupt Cupiditate', '', '');
+INSERT INTO `oc_product_description_ebaypro` VALUES ('34', '1', 'Encimunt Moptio Labore 898 Olore Magnam', '&lt;div&gt;\r\n	&lt;strong&gt;Born to be worn.&lt;/strong&gt;\r\n	&lt;p&gt;\r\n		Clip on the worlds most wearable music player and take up to 240 songs with you anywhere. Choose from five colors including four new hues to make your musical fashion statement.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;Random meets rhythm.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		With iTunes autofill, iPod shuffle can deliver a new musical experience every time you sync. For more randomness, you can shuffle songs during playback with the slide of a switch.&lt;/p&gt;\r\n	&lt;strong&gt;Everything is easy.&lt;/strong&gt;\r\n	&lt;p&gt;\r\n		Charge and sync with the included USB dock. Operate the iPod shuffle controls with one hand. Enjoy up to 12 hours straight of skip-free music playback.&lt;/p&gt;\r\n&lt;/div&gt;\r\n', '', 'Encimunt Moptio Labore 898 Olore Magnam', '', '');
+INSERT INTO `oc_product_description_ebaypro` VALUES ('43', '1', 'Lorem Ipsum Sit 365 Officia Doloribus', '&lt;div&gt;\r\n&lt;p&gt;&lt;strong&gt;Intel Core 2 Duo processor&lt;/strong&gt;&lt;/p&gt;\r\n&lt;p&gt;Powered by an Intel Core 2 Duo processor at speeds up to 2.16GHz, the new MacBook is the fastest ever.&lt;/p&gt;\r\n&lt;p&gt;&lt;strong&gt;1GB memory, larger hard drives&lt;/strong&gt;&lt;/p&gt;\r\n&lt;p&gt;The new MacBook now comes with 1GB of memory standard and larger hard drives for the entire line perfect for running more of your favorite applications and storing growing media collections.&lt;/p&gt;\r\n&lt;p&gt;&lt;strong&gt;Sleek, 1.08-inch-thin design&lt;/strong&gt;&lt;/p&gt;\r\n&lt;p&gt;MacBook makes it easy to hit the road thanks to its tough polycarbonate case, built-in wireless technologies, and innovative MagSafe Power Adapter that releases automatically if someone accidentally trips on the cord.&lt;/p&gt;\r\n&lt;p&gt;&lt;strong&gt;Built-in iSight camera&lt;/strong&gt;&lt;/p&gt;\r\n&lt;p&gt;Right out of the box, you can have a video chat with friends or family,2 record a video at your desk, or take fun pictures with Photo Booth&lt;/p&gt;\r\n&lt;/div&gt;', '', 'Lorem Ipsum Sit 365 Officia Doloribus', '', '');
+INSERT INTO `oc_product_description_ebaypro` VALUES ('31', '1', 'At Fero G99 Acusamus Et Iusto Sdio', '&lt;div class=&quot;cpt_product_description &quot;&gt;\r\n	&lt;div&gt;\r\n		Engineered with pro-level features and performance, the 12.3-effective-megapixel D300 combines brand new technologies with advanced features inherited from Nikon&amp;#39;s newly announced D3 professional digital SLR camera to offer serious photographers remarkable performance combined with agility.&lt;br /&gt;\r\n		&lt;br /&gt;\r\n		Similar to the D3, the D300 features Nikon&amp;#39;s exclusive EXPEED Image Processing System that is central to driving the speed and processing power needed for many of the camera&amp;#39;s new features. The D300 features a new 51-point autofocus system with Nikon&amp;#39;s 3D Focus Tracking feature and two new LiveView shooting modes that allow users to frame a photograph using the camera&amp;#39;s high-resolution LCD monitor. The D300 shares a similar Scene Recognition System as is found in the D3; it promises to greatly enhance the accuracy of autofocus, autoexposure, and auto white balance by recognizing the subject or scene being photographed and applying this information to the calculations for the three functions.&lt;br /&gt;\r\n		&lt;br /&gt;\r\n		The D300 reacts with lightning speed, powering up in a mere 0.13 seconds and shooting with an imperceptible 45-millisecond shutter release lag time. The D300 is capable of shooting at a rapid six frames per second and can go as fast as eight frames per second when using the optional MB-D10 multi-power battery pack. In continuous bursts, the D300 can shoot up to 100 shots at full 12.3-megapixel resolution. (NORMAL-LARGE image setting, using a SanDisk Extreme IV 1GB CompactFlash card.)&lt;br /&gt;\r\n		&lt;br /&gt;\r\n		The D300 incorporates a range of innovative technologies and features that will significantly improve the accuracy, control, and performance photographers can get from their equipment. Its new Scene Recognition System advances the use of Nikon&amp;#39;s acclaimed 1,005-segment sensor to recognize colors and light patterns that help the camera determine the subject and the type of scene being photographed before a picture is taken. This information is used to improve the accuracy of autofocus, autoexposure, and auto white balance functions in the D300. For example, the camera can track moving subjects better and by identifying them, it can also automatically select focus points faster and with greater accuracy. It can also analyze highlights and more accurately determine exposure, as well as infer light sources to deliver more accurate white balance detection.&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;!-- cpt_container_end --&gt;', '', 'At Fero G99 Acusamus Et Iusto Sdio', '', '');
+INSERT INTO `oc_product_description_ebaypro` VALUES ('49', '1', 'Omnis Voluptas Asumenda Est Sequi', '&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. &lt;strong&gt;Ut enim ad minim veniam&lt;/strong&gt;, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore - eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;\r\n&lt;p&gt;Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.&lt;/p&gt;\r\n&lt;p&gt;&lt;strong&gt;Neque porro quisquam est&lt;/strong&gt;, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur.&lt;/p&gt;\r\n&lt;ol&gt;\r\n&lt;li&gt;At vero eos et accusamus et&lt;/li&gt;\r\n&lt;li&gt;Iusto odio dignissimos ducimus qui&lt;/li&gt;\r\n&lt;li&gt;Blanditiis &lt;strong&gt;praesentium voluptatum&lt;/strong&gt;&lt;/li&gt;\r\n&lt;li&gt;Deleniti atque corrupti quos dolores et&lt;/li&gt;\r\n&lt;li&gt;Iquas molestias excepturi sint occaecati cupiditate non provident&lt;/li&gt;\r\n&lt;li&gt;Similique sunt in culpa qui officia deserunt mollitia animi&lt;/li&gt;\r\n&lt;li&gt;Id est laborum et dolorum fuga&lt;/li&gt;\r\n&lt;/ol&gt;\r\n&lt;p&gt;Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.&lt;/p&gt;\r\n&lt;p&gt;&lt;strong&gt;Nullam sollicitudin&lt;/strong&gt; rutrum augue sit amet ornare. Vivamus placerat cursus arcu, vitae molestie nulla luctus eu. Pellentesque eros tortor, convallis non magna eu, congue rutrum diam. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris elit augue, sollicitudin a gravida eu, ultricies vitae purus. Integer sed convallis sapien. Etiam non tincidunt ligula.&lt;/p&gt;\r\n&lt;p&gt;In ut sem rhoncus &lt;strong&gt;lorem pellentesque facilisis&lt;/strong&gt; sed nec neque. Sed eget tortor sem. Proin semper ex risus, ac posuere tellus consequat vitae. Sed dignissim sem non nisl aliquet fermentum. Curabitur porta ex placerat nisl efficitur, eget suscipit felis sodales. Pellentesque sit amet ipsum eget est vestibulum pretium.&lt;/p&gt;\r\n&lt;p&gt;&lt;strong&gt;Donec nisl odio&lt;/strong&gt;, consectetur nec porta vitae, ullamcorper vitae elit. Nullam nec semper magna. Nunc sed est id nisl interdum commodo mattis vitae dui. Vestibulum venenatis nisl ac eros euismod, a ullamcorper nunc malesuada.&lt;/p&gt;', '', 'Omnis Voluptas Asumenda Est Sequi', '', '');
+INSERT INTO `oc_product_description_ebaypro` VALUES ('42', '2', '蔻姿娜焦糖色羊毛针织连衣裙秋冬长袖打底裙宽松中长款过膝毛衣裙', '&lt;p&gt;&lt;span style=&quot;font-family: helvetica, geneva, arial; font-size: small;&quot;&gt;&lt;span style=&quot;font-family: Helvetica; font-size: small;&quot;&gt;&lt;img src=&quot;http://local.oc3-free-dev/image/catalog/中文测试/cropped.jpg&quot; /&gt;&lt;img src=&quot;http://local.oc3-free-dev/image/catalog/中文测试/中文图片上传.jpg&quot; /&gt;&lt;img src=&quot;http://local.oc3-free-dev/image/catalog/demo/banner/banner-1.jpg&quot; /&gt;The 30-inch Apple Cinema HD Display delivers an amazing 2560 x 1600 pixel resolution. Designed specifically for the creative professional, this display provides more space for easier access to all the tools and palettes needed to edit, format and composite your work. Combine this display with a Mac Pro, MacBook Pro, or PowerMac G5 and there\'s no limit to what you can achieve. &lt;br /&gt; &lt;br /&gt; &lt;/span&gt;&lt;span style=&quot;font-family: Helvetica; font-size: small;&quot;&gt;The Cinema HD features an active-matrix liquid crystal display that produces flicker-free images that deliver twice the brightness, twice the sharpness and twice the contrast ratio of a typical CRT display. Unlike other flat panels, it\'s designed with a pure digital interface to deliver distortion-free images that never need adjusting. With over 4 million digital pixels, the display is uniquely suited for scientific and technical applications such as visualizing molecular structures or analyzing geological data. &lt;br /&gt; &lt;br /&gt; &lt;/span&gt;&lt;span style=&quot;font-family: Helvetica; font-size: small;&quot;&gt;Offering accurate, brilliant color performance, the Cinema HD delivers up to 16.7 million colors across a wide gamut allowing you to see subtle nuances between colors from soft pastels to rich jewel tones. A wide viewing angle ensures uniform color from edge to edge. Apple\'s ColorSync technology allows you to create custom profiles to maintain consistent color onscreen and in print. The result: You can confidently use this display in all your color-critical applications. &lt;br /&gt; &lt;br /&gt; &lt;/span&gt;&lt;span style=&quot;font-family: Helvetica; font-size: small;&quot;&gt;Housed in a new aluminum design, the display has a very thin bezel that enhances visual accuracy. Each display features two FireWire 400 ports and two USB 2.0 ports, making attachment of desktop peripherals, such as iSight, iPod, digital and still cameras, hard drives, printers and scanners, even more accessible and convenient. Taking advantage of the much thinner and lighter footprint of an LCD, the new displays support the VESA (Video Electronics Standards Association) mounting interface standard. Customers with the optional Cinema Display VESA Mount Adapter kit gain the flexibility to mount their display in locations most appropriate for their work environment. &lt;br /&gt; &lt;br /&gt; &lt;/span&gt;&lt;span style=&quot;font-family: Helvetica; font-size: small;&quot;&gt;&lt;span style=&quot;font-size: 12pt; font-family: \'Microsoft Yahei\';&quot;&gt;The Cinema HD features a single cable design with elegant breakout for the USB 2.0, FireWire 400 and a pure digital connection using the industry standard Digital Video Interface (DVI) interface. The DVI connection allows for a direct pure-digital connection.&lt;/span&gt;&lt;br /&gt; &lt;/span&gt;&lt;/span&gt;&lt;/p&gt;\r\n&lt;h3&gt;Features:&lt;/h3&gt;\r\n&lt;p&gt;Unrivaled display performance&lt;/p&gt;\r\n&lt;ul&gt;\r\n&lt;li&gt;30-inch (viewable) active-matrix liquid crystal display provides breathtaking image quality and vivid, richly saturated color.&lt;/li&gt;\r\n&lt;li&gt;Support for 2560-by-1600 pixel resolution for display of high definition still and video imagery.&lt;/li&gt;\r\n&lt;li&gt;Wide-format design for simultaneous display of two full pages of text and graphics.&lt;/li&gt;\r\n&lt;li&gt;Industry standard DVI connector for direct attachment to Mac- and Windows-based desktops and notebooks&lt;/li&gt;\r\n&lt;li&gt;Incredibly wide (170 degree) horizontal and vertical viewing angle for maximum visibility and color performance.&lt;/li&gt;\r\n&lt;li&gt;Lightning-fast pixel response for full-motion digital video playback.&lt;/li&gt;\r\n&lt;li&gt;Support for 16.7 million saturated colors, for use in all graphics-intensive applications.&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;Simple setup and operation&lt;/p&gt;\r\n&lt;ul&gt;\r\n&lt;li&gt;Single cable with elegant breakout for connection to DVI, USB and FireWire ports&lt;/li&gt;\r\n&lt;li&gt;Built-in two-port USB 2.0 hub for easy connection of desktop peripheral devices.&lt;/li&gt;\r\n&lt;li&gt;Two FireWire 400 ports to support iSight and other desktop peripherals&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;Sleek, elegant design&lt;/p&gt;\r\n&lt;ul&gt;\r\n&lt;li&gt;Huge virtual workspace, very small footprint.&lt;/li&gt;\r\n&lt;li&gt;Narrow Bezel design to minimize visual impact of using dual displays&lt;/li&gt;\r\n&lt;li&gt;Unique hinge design for effortless adjustment&lt;/li&gt;\r\n&lt;li&gt;Support for VESA mounting solutions (Apple Cinema Display VESA Mount Adapter sold separately)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;h3&gt;Technical specifications&lt;/h3&gt;\r\n&lt;p&gt;&lt;strong&gt;Screen size (diagonal viewable image size)&lt;/strong&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n&lt;li&gt;Apple Cinema HD Display: 30 inches (29.7-inch viewable)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;&lt;strong&gt;Screen type&lt;/strong&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n&lt;li&gt;Thin film transistor (TFT) active-matrix liquid crystal display (AMLCD)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;&lt;strong&gt;Resolutions&lt;/strong&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n&lt;li&gt;2560 x 1600 pixels (optimum resolution)&lt;/li&gt;\r\n&lt;li&gt;2048 x 1280&lt;/li&gt;\r\n&lt;li&gt;1920 x 1200&lt;/li&gt;\r\n&lt;li&gt;1280 x 800&lt;/li&gt;\r\n&lt;li&gt;1024 x 640&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;&lt;strong&gt;Display colors (maximum)&lt;/strong&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n&lt;li&gt;16.7 million&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;&lt;strong&gt;Viewing angle (typical)&lt;/strong&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n&lt;li&gt;170&amp;deg; horizontal; 170&amp;deg; vertical&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;&lt;strong&gt;Brightness (typical)&lt;/strong&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n&lt;li&gt;30-inch Cinema HD Display: 400 cd/m2&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;&lt;strong&gt;Contrast ratio (typical)&lt;/strong&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n&lt;li&gt;700:1&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;&lt;strong&gt;Response time (typical)&lt;/strong&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n&lt;li&gt;16 ms&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;&lt;strong&gt;Pixel pitch&lt;/strong&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n&lt;li&gt;30-inch Cinema HD Display: 0.250 mm&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;&lt;strong&gt;Screen treatment&lt;/strong&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n&lt;li&gt;Antiglare hardcoat&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;&lt;strong&gt;User controls (hardware and software)&lt;/strong&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n&lt;li&gt;Display Power,&lt;/li&gt;\r\n&lt;li&gt;System sleep, wake&lt;/li&gt;\r\n&lt;li&gt;Brightness&lt;/li&gt;\r\n&lt;li&gt;Monitor tilt&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;&lt;strong&gt;Connectors and cables&lt;/strong&gt;&lt;br /&gt; Cable&lt;/p&gt;\r\n&lt;ul&gt;\r\n&lt;li&gt;DVI (Digital Visual Interface)&lt;/li&gt;\r\n&lt;li&gt;FireWire 400&lt;/li&gt;\r\n&lt;li&gt;USB 2.0&lt;/li&gt;\r\n&lt;li&gt;DC power (24 V)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;Connectors&lt;/p&gt;\r\n&lt;ul&gt;\r\n&lt;li&gt;Two-port, self-powered USB 2.0 hub&lt;/li&gt;\r\n&lt;li&gt;Two FireWire 400 ports&lt;/li&gt;\r\n&lt;li&gt;Kensington security port&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;&lt;strong&gt;VESA mount adapter&lt;/strong&gt;&lt;br /&gt; Requires optional Cinema Display VESA Mount Adapter (M9649G/A)&lt;/p&gt;\r\n&lt;ul&gt;\r\n&lt;li&gt;Compatible with VESA FDMI (MIS-D, 100, C) compliant mounting solutions&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;&lt;strong&gt;Electrical requirements&lt;/strong&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n&lt;li&gt;Input voltage: 100-240 VAC 50-60Hz&lt;/li&gt;\r\n&lt;li&gt;Maximum power when operating: 150W&lt;/li&gt;\r\n&lt;li&gt;Energy saver mode: 3W or less&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;&lt;strong&gt;Environmental requirements&lt;/strong&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n&lt;li&gt;Operating temperature: 50&amp;deg; to 95&amp;deg; F (10&amp;deg; to 35&amp;deg; C)&lt;/li&gt;\r\n&lt;li&gt;Storage temperature: -40&amp;deg; to 116&amp;deg; F (-40&amp;deg; to 47&amp;deg; C)&lt;/li&gt;\r\n&lt;li&gt;Operating humidity: 20% to 80% noncondensing&lt;/li&gt;\r\n&lt;li&gt;Maximum operating altitude: 10,000 feet&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;&lt;strong&gt;Agency approvals&lt;/strong&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n&lt;li&gt;FCC Part 15 Class B&lt;/li&gt;\r\n&lt;li&gt;EN55022 Class B&lt;/li&gt;\r\n&lt;li&gt;EN55024&lt;/li&gt;\r\n&lt;li&gt;VCCI Class B&lt;/li&gt;\r\n&lt;li&gt;AS/NZS 3548 Class B&lt;/li&gt;\r\n&lt;li&gt;CNS 13438 Class B&lt;/li&gt;\r\n&lt;li&gt;ICES-003 Class B&lt;/li&gt;\r\n&lt;li&gt;ISO 13406 part 2&lt;/li&gt;\r\n&lt;li&gt;MPR II&lt;/li&gt;\r\n&lt;li&gt;IEC 60950&lt;/li&gt;\r\n&lt;li&gt;UL 60950&lt;/li&gt;\r\n&lt;li&gt;CSA 60950&lt;/li&gt;\r\n&lt;li&gt;EN60950&lt;/li&gt;\r\n&lt;li&gt;ENERGY STAR&lt;/li&gt;\r\n&lt;li&gt;TCO \'03&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;&lt;strong&gt;Size and weight&lt;/strong&gt;&lt;br /&gt; 30-inch Apple Cinema HD Display&lt;/p&gt;\r\n&lt;ul&gt;\r\n&lt;li&gt;Height: 21.3 inches (54.3 cm)&lt;/li&gt;\r\n&lt;li&gt;Width: 27.2 inches (68.8 cm)&lt;/li&gt;\r\n&lt;li&gt;Depth: 8.46 inches (21.5 cm)&lt;/li&gt;\r\n&lt;li&gt;Weight: 27.5 pounds (12.5 kg)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;&lt;strong&gt;System Requirements&lt;/strong&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n&lt;li&gt;Mac Pro, all graphic options&lt;/li&gt;\r\n&lt;li&gt;MacBook Pro&lt;/li&gt;\r\n&lt;li&gt;Power Mac G5 (PCI-X) with ATI Radeon 9650 or better or NVIDIA GeForce 6800 GT DDL or better&lt;/li&gt;\r\n&lt;li&gt;Power Mac G5 (PCI Express), all graphics options&lt;/li&gt;\r\n&lt;li&gt;PowerBook G4 with dual-link DVI support&lt;/li&gt;\r\n&lt;li&gt;Windows PC and graphics card that supports DVI ports with dual-link digital bandwidth and VESA DDC standard for plug-and-play setup&lt;/li&gt;\r\n&lt;/ul&gt;', '', '蔻姿娜焦糖色羊毛针织连衣裙秋冬长袖打底裙宽松中长款过膝毛衣裙', '', '');
+INSERT INTO `oc_product_description_ebaypro` VALUES ('30', '2', 'HARA 新品 TRF 女装 连帽毛领棉服外套', '&lt;p&gt;Canon\'s press material for the EOS 5D states that it \'defines (a) new D-SLR category\', while we\'re not typically too concerned with marketing talk this particular statement is clearly pretty accurate. The EOS 5D is unlike any previous digital SLR in that it combines a full-frame (35 mm sized) high resolution sensor (12.8 megapixels) with a relatively compact body (slightly larger than the EOS 20D, although in your hand it feels noticeably \'chunkier\'). The EOS 5D is aimed to slot in between the EOS 20D and the EOS-1D professional digital SLR\'s, an important difference when compared to the latter is that the EOS 5D doesn\'t have any environmental seals. While Canon don\'t specifically refer to the EOS 5D as a \'professional\' digital SLR it will have obvious appeal to professionals who want a high quality digital SLR in a body lighter than the EOS-1D. It will also no doubt appeal to current EOS 20D owners (although lets hope they\'ve not bought too many EF-S lenses...) &amp;auml;&amp;euml;&lt;/p&gt;', '', 'HARA 新品 TRF 女装 连帽毛领棉服外套', '', '');
+INSERT INTO `oc_product_description_ebaypro` VALUES ('35', '2', 'ONLY 2018冬新品宽松中长款套头毛衣针织衫女', '&lt;p&gt;\r\n	Product 8&lt;/p&gt;\r\n', '', 'ONLY 2018冬新品宽松中长款套头毛衣针织衫女', '', '');
+INSERT INTO `oc_product_description_ebaypro` VALUES ('48', '2', '春秋新款一字领针织衫长袖短款紧身毛衣女', '&lt;div class=&quot;cpt_product_description &quot;&gt;\r\n	&lt;div&gt;\r\n		&lt;p&gt;\r\n			&lt;strong&gt;More room to move.&lt;/strong&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			With 80GB or 160GB of storage and up to 40 hours of battery life, the new iPod classic lets you enjoy up to 40,000 songs or up to 200 hours of video or any combination wherever you go.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;strong&gt;Cover Flow.&lt;/strong&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Browse through your music collection by flipping through album art. Select an album to turn it over and see the track list.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;strong&gt;Enhanced interface.&lt;/strong&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Experience a whole new way to browse and view your music and video.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;strong&gt;Sleeker design.&lt;/strong&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Beautiful, durable, and sleeker than ever, iPod classic now features an anodized aluminum and polished stainless steel enclosure with rounded edges.&lt;/p&gt;\r\n	&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;!-- cpt_container_end --&gt;', '', '春秋新款一字领针织衫长袖短款紧身毛衣女', '', '');
+INSERT INTO `oc_product_description_ebaypro` VALUES ('40', '2', 'LOREM 双腰头修身九分棉弹牛仔裤', '&lt;p class=&quot;intro&quot;&gt;iPhone is a revolutionary new mobile phone that allows you to make a call by simply tapping a name or number in your address book, a favorites list, or a call log. It also automatically syncs all your contacts from a PC, Mac, or Internet service. And it lets you select and listen to voicemail messages in whatever order you want just like email.&lt;/p&gt;', '', 'LOREM 双腰头修身九分棉弹牛仔裤', '', '');
+INSERT INTO `oc_product_description_ebaypro` VALUES ('28', '2', 'HAXA 新品女装连帽毛领棉服外套', '&lt;p&gt;\r\n	HTC Touch - in High Definition. Watch music videos and streaming content in awe-inspiring high definition clarity for a mobile experience you never thought possible. Seductively sleek, the HTC Touch HD provides the next generation of mobile functionality, all at a simple touch. Fully integrated with Windows Mobile Professional 6.1, ultrafast 3.5G, GPS, 5MP camera, plus lots more - all delivered on a breathtakingly crisp 3.8&amp;quot; WVGA touchscreen - you can take control of your mobile world with the HTC Touch HD.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Features&lt;/strong&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Processor Qualcomm&amp;reg; MSM 7201A&amp;trade; 528 MHz&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Windows Mobile&amp;reg; 6.1 Professional Operating System&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Memory: 512 MB ROM, 288 MB RAM&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Dimensions: 115 mm x 62.8 mm x 12 mm / 146.4 grams&lt;/li&gt;\r\n	&lt;li&gt;\r\n		3.8-inch TFT-LCD flat touch-sensitive screen with 480 x 800 WVGA resolution&lt;/li&gt;\r\n	&lt;li&gt;\r\n		HSDPA/WCDMA: Europe/Asia: 900/2100 MHz; Up to 2 Mbps up-link and 7.2 Mbps down-link speeds&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Quad-band GSM/GPRS/EDGE: Europe/Asia: 850/900/1800/1900 MHz (Band frequency, HSUPA availability, and data speed are operator dependent.)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Device Control via HTC TouchFLO&amp;trade; 3D &amp;amp; Touch-sensitive front panel buttons&lt;/li&gt;\r\n	&lt;li&gt;\r\n		GPS and A-GPS ready&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Bluetooth&amp;reg; 2.0 with Enhanced Data Rate and A2DP for wireless stereo headsets&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Wi-Fi&amp;reg;: IEEE 802.11 b/g&lt;/li&gt;\r\n	&lt;li&gt;\r\n		HTC ExtUSB&amp;trade; (11-pin mini-USB 2.0)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		5 megapixel color camera with auto focus&lt;/li&gt;\r\n	&lt;li&gt;\r\n		VGA CMOS color camera&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Built-in 3.5 mm audio jack, microphone, speaker, and FM radio&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Ring tone formats: AAC, AAC+, eAAC+, AMR-NB, AMR-WB, QCP, MP3, WMA, WAV&lt;/li&gt;\r\n	&lt;li&gt;\r\n		40 polyphonic and standard MIDI format 0 and 1 (SMF)/SP MIDI&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Rechargeable Lithium-ion or Lithium-ion polymer 1350 mAh battery&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Expansion Slot: microSD&amp;trade; memory card (SD 2.0 compatible)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		AC Adapter Voltage range/frequency: 100 ~ 240V AC, 50/60 Hz DC output: 5V and 1A&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Special Features: FM Radio, G-Sensor&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', '', 'HAXA 新品女装连帽毛领棉服外套', '', '');
+INSERT INTO `oc_product_description_ebaypro` VALUES ('44', '2', 'SIMPLE 2018冬新品宽松中长款套头毛衣针织衫女', '&lt;div&gt;\r\n	MacBook Air is ultrathin, ultraportable, and ultra unlike anything else. But you don&amp;rsquo;t lose inches and pounds overnight. It&amp;rsquo;s the result of rethinking conventions. Of multiple wireless innovations. And of breakthrough design. With MacBook Air, mobile computing suddenly has a new standard.&lt;/div&gt;\r\n', '', 'SIMPLE 2018冬新品宽松中长款套头毛衣针织衫女', '', '');
+INSERT INTO `oc_product_description_ebaypro` VALUES ('45', '2', 'OMNIS 双面羊毛呢子大衣女短款织衫女', '&lt;div class=&quot;cpt_product_description &quot;&gt;\r\n	&lt;div&gt;\r\n		&lt;p&gt;\r\n			&lt;b&gt;Latest Intel mobile architecture&lt;/b&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Powered by the most advanced mobile processors from Intel, the new Core 2 Duo MacBook Pro is over 50% faster than the original Core Duo MacBook Pro and now supports up to 4GB of RAM.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;b&gt;Leading-edge graphics&lt;/b&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			The NVIDIA GeForce 8600M GT delivers exceptional graphics processing power. For the ultimate creative canvas, you can even configure the 17-inch model with a 1920-by-1200 resolution display.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;b&gt;Designed for life on the road&lt;/b&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Innovations such as a magnetic power connection and an illuminated keyboard with ambient light sensor put the MacBook Pro in a class by itself.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;b&gt;Connect. Create. Communicate.&lt;/b&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Quickly set up a video conference with the built-in iSight camera. Control presentations and media from up to 30 feet away with the included Apple Remote. Connect to high-bandwidth peripherals with FireWire 800 and DVI.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;b&gt;Next-generation wireless&lt;/b&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Featuring 802.11n wireless technology, the MacBook Pro delivers up to five times the performance and up to twice the range of previous-generation technologies.&lt;/p&gt;\r\n	&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;!-- cpt_container_end --&gt;', '', 'OMNIS 双面羊毛呢子大衣女短款织衫女', '', '');
+INSERT INTO `oc_product_description_ebaypro` VALUES ('29', '2', '双面羊毛呢子大衣女短款2017春季新款韩版修身小香风毛呢外套女', '&lt;p&gt;\r\n	Redefine your workday with the Palm Treo Pro smartphone. Perfectly balanced, you can respond to business and personal email, stay on top of appointments and contacts, and use Wi-Fi or GPS when you&amp;rsquo;re out and about. Then watch a video on YouTube, catch up with news and sports on the web, or listen to a few songs. Balance your work and play the way you like it, with the Palm Treo Pro.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Features&lt;/strong&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Windows Mobile&amp;reg; 6.1 Professional Edition&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Qualcomm&amp;reg; MSM7201 400MHz Processor&lt;/li&gt;\r\n	&lt;li&gt;\r\n		320x320 transflective colour TFT touchscreen&lt;/li&gt;\r\n	&lt;li&gt;\r\n		HSDPA/UMTS/EDGE/GPRS/GSM radio&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Tri-band UMTS &amp;mdash; 850MHz, 1900MHz, 2100MHz&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Quad-band GSM &amp;mdash; 850/900/1800/1900&lt;/li&gt;\r\n	&lt;li&gt;\r\n		802.11b/g with WPA, WPA2, and 801.1x authentication&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Built-in GPS&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Bluetooth Version: 2.0 + Enhanced Data Rate&lt;/li&gt;\r\n	&lt;li&gt;\r\n		256MB storage (100MB user available), 128MB RAM&lt;/li&gt;\r\n	&lt;li&gt;\r\n		2.0 megapixel camera, up to 8x digital zoom and video capture&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Removable, rechargeable 1500mAh lithium-ion battery&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Up to 5.0 hours talk time and up to 250 hours standby&lt;/li&gt;\r\n	&lt;li&gt;\r\n		MicroSDHC card expansion (up to 32GB supported)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		MicroUSB 2.0 for synchronization and charging&lt;/li&gt;\r\n	&lt;li&gt;\r\n		3.5mm stereo headset jack&lt;/li&gt;\r\n	&lt;li&gt;\r\n		60mm (W) x 114mm (L) x 13.5mm (D) / 133g&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', '', '双面羊毛呢子大衣女短款2017春季新款韩版修身小香风毛呢外套女', '', '');
+INSERT INTO `oc_product_description_ebaypro` VALUES ('36', '2', '春秋新款一字领针织衫长袖短款紧身毛衣女', '&lt;div&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;Video in your pocket.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		Its the small iPod with one very big idea: video. The worlds most popular music player now lets you enjoy movies, TV shows, and more on a two-inch display thats 65% brighter than before.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;Cover Flow.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		Browse through your music collection by flipping through album art. Select an album to turn it over and see the track list.&lt;strong&gt;&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;Enhanced interface.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		Experience a whole new way to browse and view your music and video.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;Sleek and colorful.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		With an anodized aluminum and polished stainless steel enclosure and a choice of five colors, iPod nano is dressed to impress.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;iTunes.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		Available as a free download, iTunes makes it easy to browse and buy millions of songs, movies, TV shows, audiobooks, and games and download free podcasts all at the iTunes Store. And you can import your own music, manage your whole media library, and sync your iPod or iPhone with ease.&lt;/p&gt;\r\n&lt;/div&gt;\r\n', '', '春秋新款一字领针织衫长袖短款紧身毛衣女', '', '');
+INSERT INTO `oc_product_description_ebaypro` VALUES ('46', '2', '浅秋专柜正品早秋新款休闲半高领纯羊毛针织衫套头毛衣女基础打底', '&lt;div&gt;\r\n	Unprecedented power. The next generation of processing technology has arrived. Built into the newest VAIO notebooks lies Intel&amp;#39;s latest, most powerful innovation yet: Intel&amp;reg; Centrino&amp;reg; 2 processor technology. Boasting incredible speed, expanded wireless connectivity, enhanced multimedia support and greater energy efficiency, all the high-performance essentials are seamlessly combined into a single chip.&lt;/div&gt;\r\n', '', '浅秋专柜正品早秋新款休闲半高领纯羊毛针织衫套头毛衣女基础打底', '', '');
+INSERT INTO `oc_product_description_ebaypro` VALUES ('47', '2', '羊毛打底衫女长袖秋冬套头修身高领薄款毛衣百搭秋装冬季针织衫', '&lt;p&gt;\r\n	Stop your co-workers in their tracks with the stunning new 30-inch diagonal HP LP3065 Flat Panel Monitor. This flagship monitor features best-in-class performance and presentation features on a huge wide-aspect screen while letting you work as comfortably as possible - you might even forget you&amp;#39;re at the office&lt;/p&gt;\r\n', '', '羊毛打底衫女长袖秋冬套头修身高领薄款毛衣百搭秋装冬季针织衫', '', '');
+INSERT INTO `oc_product_description_ebaypro` VALUES ('32', '2', '梦伊 2018 秋冬新款丝绒刺绣连衣裙气质优雅显瘦a字长裙女装', '&lt;p&gt;\r\n	&lt;strong&gt;Revolutionary multi-touch interface.&lt;/strong&gt;&lt;br /&gt;\r\n	iPod touch features the same multi-touch screen technology as iPhone. Pinch to zoom in on a photo. Scroll through your songs and videos with a flick. Flip through your library by album artwork with Cover Flow.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Gorgeous 3.5-inch widescreen display.&lt;/strong&gt;&lt;br /&gt;\r\n	Watch your movies, TV shows, and photos come alive with bright, vivid color on the 320-by-480-pixel display.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Music downloads straight from iTunes.&lt;/strong&gt;&lt;br /&gt;\r\n	Shop the iTunes Wi-Fi Music Store from anywhere with Wi-Fi.1 Browse or search to find the music youre looking for, preview it, and buy it with just a tap.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Surf the web with Wi-Fi.&lt;/strong&gt;&lt;br /&gt;\r\n	Browse the web using Safari and watch YouTube videos on the first iPod with Wi-Fi built in&lt;br /&gt;\r\n	&amp;nbsp;&lt;/p&gt;\r\n', '', '梦伊 2018 秋冬新款丝绒刺绣连衣裙气质优雅显瘦a字长裙女装', '', '');
+INSERT INTO `oc_product_description_ebaypro` VALUES ('41', '2', '蔻娜焦糖色羊毛针织连衣裙秋冬长袖打底裙宽松中长款过膝毛衣裙', '&lt;div&gt;\r\n	Just when you thought iMac had everything, now there&acute;s even more. More powerful Intel Core 2 Duo processors. And more memory standard. Combine this with Mac OS X Leopard and iLife &acute;08, and it&acute;s more all-in-one than ever. iMac packs amazing performance into a stunningly slim space.&lt;/div&gt;\r\n', '', '蔻娜焦糖色羊毛针织连衣裙秋冬长袖打底裙宽松中长款过膝毛衣裙', '', '');
+INSERT INTO `oc_product_description_ebaypro` VALUES ('34', '2', 'Kelit 连衣裙秋冬长袖打底裙宽松中长款过膝毛衣裙', '&lt;div&gt;\r\n	&lt;strong&gt;Born to be worn.&lt;/strong&gt;\r\n	&lt;p&gt;\r\n		Clip on the worlds most wearable music player and take up to 240 songs with you anywhere. Choose from five colors including four new hues to make your musical fashion statement.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;Random meets rhythm.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		With iTunes autofill, iPod shuffle can deliver a new musical experience every time you sync. For more randomness, you can shuffle songs during playback with the slide of a switch.&lt;/p&gt;\r\n	&lt;strong&gt;Everything is easy.&lt;/strong&gt;\r\n	&lt;p&gt;\r\n		Charge and sync with the included USB dock. Operate the iPod shuffle controls with one hand. Enjoy up to 12 hours straight of skip-free music playback.&lt;/p&gt;\r\n&lt;/div&gt;\r\n', '', 'Kelit 连衣裙秋冬长袖打底裙宽松中长款过膝毛衣裙', '', '');
+INSERT INTO `oc_product_description_ebaypro` VALUES ('43', '2', '羊毛 EOST 女长袖秋冬套头修身高领薄款毛衣针织衫', '&lt;div&gt;\r\n&lt;p&gt;&lt;strong&gt;Intel Core 2 Duo processor&lt;/strong&gt;&lt;/p&gt;\r\n&lt;p&gt;Powered by an Intel Core 2 Duo processor at speeds up to 2.16GHz, the new MacBook is the fastest ever.&lt;/p&gt;\r\n&lt;p&gt;&lt;strong&gt;1GB memory, larger hard drives&lt;/strong&gt;&lt;/p&gt;\r\n&lt;p&gt;The new MacBook now comes with 1GB of memory standard and larger hard drives for the entire line perfect for running more of your favorite applications and storing growing media collections.&lt;/p&gt;\r\n&lt;p&gt;&lt;strong&gt;Sleek, 1.08-inch-thin design&lt;/strong&gt;&lt;/p&gt;\r\n&lt;p&gt;MacBook makes it easy to hit the road thanks to its tough polycarbonate case, built-in wireless technologies, and innovative MagSafe Power Adapter that releases automatically if someone accidentally trips on the cord.&lt;/p&gt;\r\n&lt;p&gt;&lt;strong&gt;Built-in iSight camera&lt;/strong&gt;&lt;/p&gt;\r\n&lt;p&gt;Right out of the box, you can have a video chat with friends or family,2 record a video at your desk, or take fun pictures with Photo Booth&lt;/p&gt;\r\n&lt;/div&gt;', '', '羊毛 EOST 女长袖秋冬套头修身高领薄款毛衣针织衫', '', '');
+INSERT INTO `oc_product_description_ebaypro` VALUES ('31', '2', 'OMNIS 春秋新款一字领针织衫长袖短款紧身毛衣女', '&lt;div class=&quot;cpt_product_description &quot;&gt;\r\n	&lt;div&gt;\r\n		Engineered with pro-level features and performance, the 12.3-effective-megapixel D300 combines brand new technologies with advanced features inherited from Nikon&amp;#39;s newly announced D3 professional digital SLR camera to offer serious photographers remarkable performance combined with agility.&lt;br /&gt;\r\n		&lt;br /&gt;\r\n		Similar to the D3, the D300 features Nikon&amp;#39;s exclusive EXPEED Image Processing System that is central to driving the speed and processing power needed for many of the camera&amp;#39;s new features. The D300 features a new 51-point autofocus system with Nikon&amp;#39;s 3D Focus Tracking feature and two new LiveView shooting modes that allow users to frame a photograph using the camera&amp;#39;s high-resolution LCD monitor. The D300 shares a similar Scene Recognition System as is found in the D3; it promises to greatly enhance the accuracy of autofocus, autoexposure, and auto white balance by recognizing the subject or scene being photographed and applying this information to the calculations for the three functions.&lt;br /&gt;\r\n		&lt;br /&gt;\r\n		The D300 reacts with lightning speed, powering up in a mere 0.13 seconds and shooting with an imperceptible 45-millisecond shutter release lag time. The D300 is capable of shooting at a rapid six frames per second and can go as fast as eight frames per second when using the optional MB-D10 multi-power battery pack. In continuous bursts, the D300 can shoot up to 100 shots at full 12.3-megapixel resolution. (NORMAL-LARGE image setting, using a SanDisk Extreme IV 1GB CompactFlash card.)&lt;br /&gt;\r\n		&lt;br /&gt;\r\n		The D300 incorporates a range of innovative technologies and features that will significantly improve the accuracy, control, and performance photographers can get from their equipment. Its new Scene Recognition System advances the use of Nikon&amp;#39;s acclaimed 1,005-segment sensor to recognize colors and light patterns that help the camera determine the subject and the type of scene being photographed before a picture is taken. This information is used to improve the accuracy of autofocus, autoexposure, and auto white balance functions in the D300. For example, the camera can track moving subjects better and by identifying them, it can also automatically select focus points faster and with greater accuracy. It can also analyze highlights and more accurately determine exposure, as well as infer light sources to deliver more accurate white balance detection.&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;!-- cpt_container_end --&gt;', '', 'OMNIS 春秋新款一字领针织衫长袖短款紧身毛衣女', '', '');
+INSERT INTO `oc_product_description_ebaypro` VALUES ('49', '2', '浅秋专柜正品早秋新款休闲半高领纯羊毛针织衫套头毛衣女基础打底', '&lt;p&gt;Samsung Galaxy Tab 10.1, is the world&amp;rsquo;s thinnest tablet, measuring 8.6 mm thickness, running with Android 3.0 Honeycomb OS on a 1GHz dual-core Tegra 2 processor, similar to its younger brother Samsung Galaxy Tab 8.9.&lt;/p&gt;\r\n&lt;p&gt;Samsung Galaxy Tab 10.1 gives pure Android 3.0 experience, adding its new TouchWiz UX or TouchWiz 4.0 &amp;ndash; includes a live panel, which lets you to customize with different content, such as your pictures, bookmarks, and social feeds, sporting a 10.1 inches WXGA capacitive touch screen with 1280 x 800 pixels of resolution, equipped with 3 megapixel rear camera with LED flash and a 2 megapixel front camera, HSPA+ connectivity up to 21Mbps, 720p HD video recording capability, 1080p HD playback, DLNA support, Bluetooth 2.1, USB 2.0, gyroscope, Wi-Fi 802.11 a/b/g/n, micro-SD slot, 3.5mm headphone jack, and SIM slot, including the Samsung Stick &amp;ndash; a Bluetooth microphone that can be carried in a pocket like a pen and sound dock with powered subwoofer.&lt;/p&gt;\r\n&lt;p&gt;Samsung Galaxy Tab 10.1 will come in 16GB / 32GB / 64GB verities and pre-loaded with Social Hub, Reader&amp;rsquo;s Hub, Music Hub and Samsung Mini Apps Tray &amp;ndash; which gives you access to more commonly used apps to help ease multitasking and it is capable of Adobe Flash Player 10.2, powered by 6860mAh battery that gives you 10hours of video-playback time.&amp;nbsp;&amp;auml;&amp;ouml;&lt;/p&gt;', '', '浅秋专柜正品早秋新款休闲半高领纯羊毛针织衫套头毛衣女基础打底', '', '');
+INSERT INTO `oc_product_description_ebaypro` VALUES ('42', '1', 'At Fero G99 Acusamus Et Iusto Sdio', '&lt;p&gt;&amp;nbsp;&lt;/p&gt;\r\n&lt;p&gt;&lt;span style=&quot;font-family: helvetica, geneva, arial; font-size: small;&quot;&gt;&lt;span style=&quot;font-family: Helvetica; font-size: small;&quot;&gt;&lt;img src=&quot;http://local.oc3-free-dev/image/catalog/demo/manufacturer/burgerking.png&quot; /&gt;&lt;img src=&quot;http://local.oc3-free-dev/image/catalog/demo/manufacturer/canon.png&quot; /&gt;&lt;img src=&quot;http://local.oc3-free-dev/image/catalog/demo/manufacturer/cocacola.png&quot; /&gt;&lt;img src=&quot;http://local.oc3-free-dev/image/catalog/demo/manufacturer/dell.png&quot; /&gt;&lt;img src=&quot;http://local.oc3-free-dev/image/catalog/demo/manufacturer/disney.png&quot; /&gt;&lt;img src=&quot;http://local.oc3-free-dev/image/catalog/demo/manufacturer/harley.png&quot; /&gt;&lt;img src=&quot;http://local.oc3-free-dev/image/catalog/demo/manufacturer/nfl.png&quot; /&gt;&lt;img src=&quot;http://local.oc3-free-dev/image/catalog/demo/manufacturer/nintendo.png&quot; /&gt;&lt;img src=&quot;http://local.oc3-free-dev/image/catalog/demo/manufacturer/redbull.png&quot; /&gt;&lt;img src=&quot;http://local.oc3-free-dev/image/catalog/demo/manufacturer/shell.png&quot; /&gt;&lt;img src=&quot;http://local.oc3-free-dev/image/catalog/demo/manufacturer/sony.png&quot; /&gt;&lt;img src=&quot;http://local.oc3-free-dev/image/catalog/demo/manufacturer/starbucks.png&quot; /&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;\r\n&lt;p&gt;&lt;span style=&quot;font-family: helvetica, geneva, arial; font-size: small;&quot;&gt;&lt;span style=&quot;font-family: Helvetica; font-size: small;&quot;&gt;The 30-inch Apple Cinema HD Display delivers an amazing 2560 x 1600 pixel resolution. Designed specifically for the creative professional, this display provides more space for easier access to all the tools and palettes needed to edit, format and composite your work. Combine this display with a Mac Pro, MacBook Pro, or PowerMac G5 and there\'s no limit to what you can achieve. &lt;br /&gt; &lt;br /&gt; &lt;/span&gt;&lt;span style=&quot;font-family: Helvetica; font-size: small;&quot;&gt;The Cinema HD features an active-matrix liquid crystal display that produces flicker-free images that deliver twice the brightness, twice the sharpness and twice the contrast ratio of a typical CRT display. Unlike other flat panels, it\'s designed with a pure digital interface to deliver distortion-free images that never need adjusting. With over 4 million digital pixels, the display is uniquely suited for scientific and technical applications such as visualizing molecular structures or analyzing geological data. &lt;br /&gt; &lt;br /&gt; &lt;/span&gt;&lt;span style=&quot;font-family: Helvetica; font-size: small;&quot;&gt;Offering accurate, brilliant color performance, the Cinema HD delivers up to 16.7 million colors across a wide gamut allowing you to see subtle nuances between colors from soft pastels to rich jewel tones. A wide viewing angle ensures uniform color from edge to edge. Apple\'s ColorSync technology allows you to create custom profiles to maintain consistent color onscreen and in print. The result: You can confidently use this display in all your color-critical applications. &lt;br /&gt; &lt;br /&gt; &lt;/span&gt;&lt;span style=&quot;font-family: Helvetica; font-size: small;&quot;&gt;Housed in a new aluminum design, the display has a very thin bezel that enhances visual accuracy. Each display features two FireWire 400 ports and two USB 2.0 ports, making attachment of desktop peripherals, such as iSight, iPod, digital and still cameras, hard drives, printers and scanners, even more accessible and convenient. Taking advantage of the much thinner and lighter footprint of an LCD, the new displays support the VESA (Video Electronics Standards Association) mounting interface standard. Customers with the optional Cinema Display VESA Mount Adapter kit gain the flexibility to mount their display in locations most appropriate for their work environment. &lt;br /&gt; &lt;br /&gt; &lt;/span&gt;&lt;span style=&quot;font-family: Helvetica; font-size: small;&quot;&gt;The Cinema HD features a single cable design with elegant breakout for the USB 2.0, FireWire 400 and a pure digital connection using the industry standard Digital Video Interface (DVI) interface. The DVI connection allows for a direct pure-digital connection.&lt;br /&gt; &lt;/span&gt;&lt;/span&gt;&lt;/p&gt;\r\n&lt;h3&gt;Features:&lt;/h3&gt;\r\n&lt;p&gt;Unrivaled display performance&lt;/p&gt;\r\n&lt;ul&gt;\r\n&lt;li&gt;30-inch (viewable) active-matrix liquid crystal display provides breathtaking image quality and vivid, richly saturated color.&lt;/li&gt;\r\n&lt;li&gt;Support for 2560-by-1600 pixel resolution for display of high definition still and video imagery.&lt;/li&gt;\r\n&lt;li&gt;Wide-format design for simultaneous display of two full pages of text and graphics.&lt;/li&gt;\r\n&lt;li&gt;Industry standard DVI connector for direct attachment to Mac- and Windows-based desktops and notebooks&lt;/li&gt;\r\n&lt;li&gt;Incredibly wide (170 degree) horizontal and vertical viewing angle for maximum visibility and color performance.&lt;/li&gt;\r\n&lt;li&gt;Lightning-fast pixel response for full-motion digital video playback.&lt;/li&gt;\r\n&lt;li&gt;Support for 16.7 million saturated colors, for use in all graphics-intensive applications.&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;Simple setup and operation&lt;/p&gt;\r\n&lt;ul&gt;\r\n&lt;li&gt;Single cable with elegant breakout for connection to DVI, USB and FireWire ports&lt;/li&gt;\r\n&lt;li&gt;Built-in two-port USB 2.0 hub for easy connection of desktop peripheral devices.&lt;/li&gt;\r\n&lt;li&gt;Two FireWire 400 ports to support iSight and other desktop peripherals&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;Sleek, elegant design&lt;/p&gt;\r\n&lt;ul&gt;\r\n&lt;li&gt;Huge virtual workspace, very small footprint.&lt;/li&gt;\r\n&lt;li&gt;Narrow Bezel design to minimize visual impact of using dual displays&lt;/li&gt;\r\n&lt;li&gt;Unique hinge design for effortless adjustment&lt;/li&gt;\r\n&lt;li&gt;Support for VESA mounting solutions (Apple Cinema Display VESA Mount Adapter sold separately)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;h3&gt;Technical specifications&lt;/h3&gt;\r\n&lt;p&gt;&lt;strong&gt;Screen size (diagonal viewable image size)&lt;/strong&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n&lt;li&gt;Apple Cinema HD Display: 30 inches (29.7-inch viewable)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;&lt;strong&gt;Screen type&lt;/strong&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n&lt;li&gt;Thin film transistor (TFT) active-matrix liquid crystal display (AMLCD)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;&lt;strong&gt;Resolutions&lt;/strong&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n&lt;li&gt;2560 x 1600 pixels (optimum resolution)&lt;/li&gt;\r\n&lt;li&gt;2048 x 1280&lt;/li&gt;\r\n&lt;li&gt;1920 x 1200&lt;/li&gt;\r\n&lt;li&gt;1280 x 800&lt;/li&gt;\r\n&lt;li&gt;1024 x 640&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;&lt;strong&gt;Display colors (maximum)&lt;/strong&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n&lt;li&gt;16.7 million&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;&lt;strong&gt;Viewing angle (typical)&lt;/strong&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n&lt;li&gt;170&amp;deg; horizontal; 170&amp;deg; vertical&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;&lt;strong&gt;Brightness (typical)&lt;/strong&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n&lt;li&gt;30-inch Cinema HD Display: 400 cd/m2&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;&lt;strong&gt;Contrast ratio (typical)&lt;/strong&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n&lt;li&gt;700:1&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;&lt;strong&gt;Response time (typical)&lt;/strong&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n&lt;li&gt;16 ms&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;&lt;strong&gt;Pixel pitch&lt;/strong&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n&lt;li&gt;30-inch Cinema HD Display: 0.250 mm&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;&lt;strong&gt;Screen treatment&lt;/strong&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n&lt;li&gt;Antiglare hardcoat&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;&lt;strong&gt;User controls (hardware and software)&lt;/strong&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n&lt;li&gt;Display Power,&lt;/li&gt;\r\n&lt;li&gt;System sleep, wake&lt;/li&gt;\r\n&lt;li&gt;Brightness&lt;/li&gt;\r\n&lt;li&gt;Monitor tilt&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;&lt;strong&gt;Connectors and cables&lt;/strong&gt;&lt;br /&gt; Cable&lt;/p&gt;\r\n&lt;ul&gt;\r\n&lt;li&gt;DVI (Digital Visual Interface)&lt;/li&gt;\r\n&lt;li&gt;FireWire 400&lt;/li&gt;\r\n&lt;li&gt;USB 2.0&lt;/li&gt;\r\n&lt;li&gt;DC power (24 V)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;Connectors&lt;/p&gt;\r\n&lt;ul&gt;\r\n&lt;li&gt;Two-port, self-powered USB 2.0 hub&lt;/li&gt;\r\n&lt;li&gt;Two FireWire 400 ports&lt;/li&gt;\r\n&lt;li&gt;Kensington security port&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;&lt;strong&gt;VESA mount adapter&lt;/strong&gt;&lt;br /&gt; Requires optional Cinema Display VESA Mount Adapter (M9649G/A)&lt;/p&gt;\r\n&lt;ul&gt;\r\n&lt;li&gt;Compatible with VESA FDMI (MIS-D, 100, C) compliant mounting solutions&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;&lt;strong&gt;Electrical requirements&lt;/strong&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n&lt;li&gt;Input voltage: 100-240 VAC 50-60Hz&lt;/li&gt;\r\n&lt;li&gt;Maximum power when operating: 150W&lt;/li&gt;\r\n&lt;li&gt;Energy saver mode: 3W or less&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;&lt;strong&gt;Environmental requirements&lt;/strong&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n&lt;li&gt;Operating temperature: 50&amp;deg; to 95&amp;deg; F (10&amp;deg; to 35&amp;deg; C)&lt;/li&gt;\r\n&lt;li&gt;Storage temperature: -40&amp;deg; to 116&amp;deg; F (-40&amp;deg; to 47&amp;deg; C)&lt;/li&gt;\r\n&lt;li&gt;Operating humidity: 20% to 80% noncondensing&lt;/li&gt;\r\n&lt;li&gt;Maximum operating altitude: 10,000 feet&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;&lt;strong&gt;Agency approvals&lt;/strong&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n&lt;li&gt;FCC Part 15 Class B&lt;/li&gt;\r\n&lt;li&gt;EN55022 Class B&lt;/li&gt;\r\n&lt;li&gt;EN55024&lt;/li&gt;\r\n&lt;li&gt;VCCI Class B&lt;/li&gt;\r\n&lt;li&gt;AS/NZS 3548 Class B&lt;/li&gt;\r\n&lt;li&gt;CNS 13438 Class B&lt;/li&gt;\r\n&lt;li&gt;ICES-003 Class B&lt;/li&gt;\r\n&lt;li&gt;ISO 13406 part 2&lt;/li&gt;\r\n&lt;li&gt;MPR II&lt;/li&gt;\r\n&lt;li&gt;IEC 60950&lt;/li&gt;\r\n&lt;li&gt;UL 60950&lt;/li&gt;\r\n&lt;li&gt;CSA 60950&lt;/li&gt;\r\n&lt;li&gt;EN60950&lt;/li&gt;\r\n&lt;li&gt;ENERGY STAR&lt;/li&gt;\r\n&lt;li&gt;TCO \'03&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;&lt;strong&gt;Size and weight&lt;/strong&gt;&lt;br /&gt; 30-inch Apple Cinema HD Display&lt;/p&gt;\r\n&lt;ul&gt;\r\n&lt;li&gt;Height: 21.3 inches (54.3 cm)&lt;/li&gt;\r\n&lt;li&gt;Width: 27.2 inches (68.8 cm)&lt;/li&gt;\r\n&lt;li&gt;Depth: 8.46 inches (21.5 cm)&lt;/li&gt;\r\n&lt;li&gt;Weight: 27.5 pounds (12.5 kg)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;&lt;strong&gt;System Requirements&lt;/strong&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n&lt;li&gt;Mac Pro, all graphic options&lt;/li&gt;\r\n&lt;li&gt;MacBook Pro&lt;/li&gt;\r\n&lt;li&gt;Power Mac G5 (PCI-X) with ATI Radeon 9650 or better or NVIDIA GeForce 6800 GT DDL or better&lt;/li&gt;\r\n&lt;li&gt;Power Mac G5 (PCI Express), all graphics options&lt;/li&gt;\r\n&lt;li&gt;PowerBook G4 with dual-link DVI support&lt;/li&gt;\r\n&lt;li&gt;Windows PC and graphics card that supports DVI ports with dual-link digital bandwidth and VESA DDC standard for plug-and-play setup&lt;/li&gt;\r\n&lt;/ul&gt;', '', 'At Fero G99 Acusamus Et Iusto Sdio', '', '');
+INSERT INTO `oc_product_description_ebaypro` VALUES ('30', '1', 'Kelit Esse Cillum Dolore Eu 909 Fugiat', '&lt;p&gt;Canon\'s press material for the EOS 5D states that it \'defines (a) new D-SLR category\', while we\'re not typically too concerned with marketing talk this particular statement is clearly pretty accurate. The EOS 5D is unlike any previous digital SLR in that it combines a full-frame (35 mm sized) high resolution sensor (12.8 megapixels) with a relatively compact body (slightly larger than the EOS 20D, although in your hand it feels noticeably \'chunkier\'). The EOS 5D is aimed to slot in between the EOS 20D and the EOS-1D professional digital SLR\'s, an important difference when compared to the latter is that the EOS 5D doesn\'t have any environmental seals. While Canon don\'t specifically refer to the EOS 5D as a \'professional\' digital SLR it will have obvious appeal to professionals who want a high quality digital SLR in a body lighter than the EOS-1D. It will also no doubt appeal to current EOS 20D owners (although lets hope they\'ve not bought too many EF-S lenses...) &amp;auml;&amp;euml;&lt;/p&gt;', '', 'Kelit Esse Cillum Dolore Eu 909 Fugiat', '', '');
+INSERT INTO `oc_product_description_ebaypro` VALUES ('33', '1', 'Kelit Esse Cillum Dolore Eu 909 Fugiat', '&lt;div&gt;Imagine the advantages of going big without slowing down. The big 19&quot; 941BW monitor combines wide aspect ratio with fast pixel response time, for bigger images, more room to work and crisp motion. In addition, the exclusive MagicBright 2, MagicColor and MagicTune technologies help deliver the ideal image in every situation, while sleek, narrow bezels and adjustable stands deliver style just the way you want it. With the Samsung 941BW widescreen analog/digital LCD monitor, it\'s not hard to imagine.&lt;/div&gt;', '', 'Kelit Esse Cillum Dolore Eu 909 Fugiat', '', '');
+INSERT INTO `oc_product_description_ebaypro` VALUES ('33', '2', '2018 秋冬装新款韩版羊毛大衣外套中长款女大码呢子大衣风衣无羊绒', '&lt;div&gt;Imagine the advantages of going big without slowing down. The big 19&quot; 941BW monitor combines wide aspect ratio with fast pixel response time, for bigger images, more room to work and crisp motion. In addition, the exclusive MagicBright 2, MagicColor and MagicTune technologies help deliver the ideal image in every situation, while sleek, narrow bezels and adjustable stands deliver style just the way you want it. With the Samsung 941BW widescreen analog/digital LCD monitor, it\'s not hard to imagine.&lt;/div&gt;', '', '2018 秋冬装新款韩版羊毛大衣外套中长款女大码呢子大衣风衣无羊绒', '', '');
+INSERT INTO `oc_product_description_ebaypro` VALUES ('50', '2', '拍商品', '', '', '拍', '', '');
+INSERT INTO `oc_product_description_ebaypro` VALUES ('50', '1', 'ebay', '', '', 'pro', '', '');
+INSERT INTO `oc_product_description_ebaypro` VALUES ('51', '2', '翡翠手镯', '', '', '翡翠手镯', '', '');
+INSERT INTO `oc_product_description_ebaypro` VALUES ('51', '1', '翡翠手镯', '', '', '翡翠手镯', '', '');
+INSERT INTO `oc_product_description_ebaypro` VALUES ('52', '1', '翡翠手镯', '', '', '翡翠手镯', '', '');
+INSERT INTO `oc_product_description_ebaypro` VALUES ('52', '2', '翡翠手镯', '', '', '翡翠手镯', '', '');
+INSERT INTO `oc_product_description_ebaypro` VALUES ('53', '2', '翡翠项链', '', '', '翡翠项链', '', '');
+INSERT INTO `oc_product_description_ebaypro` VALUES ('53', '1', '翡翠项链', '', '', '翡翠项链', '', '');
+INSERT INTO `oc_product_description_ebaypro` VALUES ('54', '2', '翡翠项链', '', '', '翡翠项链', '', '');
+INSERT INTO `oc_product_description_ebaypro` VALUES ('54', '1', '翡翠项链', '', '', '翡翠项链', '', '');
+INSERT INTO `oc_product_description_ebaypro` VALUES ('55', '2', '翡翠手镯', '', '', '翡翠手镯', '', '');
+INSERT INTO `oc_product_description_ebaypro` VALUES ('55', '1', '翡翠手镯', '', '', '翡翠手镯', '', '');
+INSERT INTO `oc_product_description_ebaypro` VALUES ('76', '2', '镯', '', '', '翡翠', '', '');
+INSERT INTO `oc_product_description_ebaypro` VALUES ('0', '2', '翡镯', '', '', '翡镯', '', '');
+INSERT INTO `oc_product_description_ebaypro` VALUES ('0', '1', '翡翠手镯', '', '', '翡翠手镯', '', '');
+INSERT INTO `oc_product_description_ebaypro` VALUES ('72', '2', '12321', '&lt;p&gt;123&lt;/p&gt;', '', '1231', '12321', '');
+INSERT INTO `oc_product_description_ebaypro` VALUES ('72', '1', '1312112', '&lt;p&gt;111111&lt;/p&gt;', '', '111111', '', '');
+INSERT INTO `oc_product_description_ebaypro` VALUES ('76', '1', 'ww', '', '', 'ww', '', '');
+INSERT INTO `oc_product_description_ebaypro` VALUES ('60', '2', '大大的', '', '', '大大的', '', '');
+INSERT INTO `oc_product_description_ebaypro` VALUES ('61', '2', '翡翠手镯4432', '', '', '翡翠手镯4432', '', '');
+INSERT INTO `oc_product_description_ebaypro` VALUES ('61', '1', '翡翠手镯4432', '', '', '翡翠手镯4432', '', '');
+INSERT INTO `oc_product_description_ebaypro` VALUES ('62', '2', '翡翠手镯11', '', '', '翡翠手镯11', '', '');
+INSERT INTO `oc_product_description_ebaypro` VALUES ('62', '1', '翡翠手镯11', '', '', '翡翠手镯11', '', '');
+INSERT INTO `oc_product_description_ebaypro` VALUES ('60', '1', 'big', '', '', 'big', '', '');
+>>>>>>> 790b49e13c12789410af78d35dc87d3d392cacc9
 
 -- ----------------------------
 -- Table structure for oc_product_discount
@@ -5998,6 +6226,33 @@ INSERT INTO `oc_product_discount` VALUES ('499', '42', '1', '20', '1', '77.0000'
 INSERT INTO `oc_product_discount` VALUES ('498', '42', '1', '10', '1', '88.0000', '2017-12-04', '2018-03-16');
 
 -- ----------------------------
+<<<<<<< HEAD
+=======
+-- Table structure for oc_product_discount_ebaypro
+-- ----------------------------
+DROP TABLE IF EXISTS `oc_product_discount_ebaypro`;
+CREATE TABLE `oc_product_discount_ebaypro` (
+  `product_discount_id` int(11) NOT NULL AUTO_INCREMENT,
+  `product_id` int(11) NOT NULL,
+  `customer_group_id` int(11) NOT NULL,
+  `quantity` int(4) NOT NULL DEFAULT '0',
+  `priority` int(5) NOT NULL DEFAULT '1',
+  `price` decimal(15,4) NOT NULL DEFAULT '0.0000',
+  `date_start` date NOT NULL DEFAULT '0000-00-00',
+  `date_end` date NOT NULL DEFAULT '0000-00-00',
+  PRIMARY KEY (`product_discount_id`),
+  KEY `product_id` (`product_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=501 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of oc_product_discount_ebaypro
+-- ----------------------------
+INSERT INTO `oc_product_discount_ebaypro` VALUES ('500', '42', '1', '30', '1', '66.0000', '2017-12-04', '2018-04-25');
+INSERT INTO `oc_product_discount_ebaypro` VALUES ('499', '42', '1', '20', '1', '77.0000', '2017-12-04', '2018-03-23');
+INSERT INTO `oc_product_discount_ebaypro` VALUES ('498', '42', '1', '10', '1', '88.0000', '2017-12-04', '2018-03-16');
+
+-- ----------------------------
+>>>>>>> 790b49e13c12789410af78d35dc87d3d392cacc9
 -- Table structure for oc_product_ebaypro
 -- ----------------------------
 DROP TABLE IF EXISTS `oc_product_ebaypro`;
@@ -6081,6 +6336,23 @@ CREATE TABLE `oc_product_filter` (
 -- ----------------------------
 
 -- ----------------------------
+<<<<<<< HEAD
+=======
+-- Table structure for oc_product_filter_ebaypro
+-- ----------------------------
+DROP TABLE IF EXISTS `oc_product_filter_ebaypro`;
+CREATE TABLE `oc_product_filter_ebaypro` (
+  `product_id` int(11) NOT NULL,
+  `filter_id` int(11) NOT NULL,
+  PRIMARY KEY (`product_id`,`filter_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of oc_product_filter_ebaypro
+-- ----------------------------
+
+-- ----------------------------
+>>>>>>> 790b49e13c12789410af78d35dc87d3d392cacc9
 -- Table structure for oc_product_image
 -- ----------------------------
 DROP TABLE IF EXISTS `oc_product_image`;
@@ -6091,12 +6363,20 @@ CREATE TABLE `oc_product_image` (
   `sort_order` int(3) NOT NULL DEFAULT '0',
   PRIMARY KEY (`product_image_id`),
   KEY `product_id` (`product_id`)
+<<<<<<< HEAD
 ) ENGINE=MyISAM AUTO_INCREMENT=2673 DEFAULT CHARSET=utf8;
+=======
+) ENGINE=MyISAM AUTO_INCREMENT=2656 DEFAULT CHARSET=utf8;
+>>>>>>> 790b49e13c12789410af78d35dc87d3d392cacc9
 
 -- ----------------------------
 -- Records of oc_product_image
 -- ----------------------------
+<<<<<<< HEAD
 INSERT INTO `oc_product_image` VALUES ('2672', '47', 'catalog/demo/product/product-8.png', '0');
+=======
+INSERT INTO `oc_product_image` VALUES ('2321', '47', 'catalog/demo/product/product-10.png', '0');
+>>>>>>> 790b49e13c12789410af78d35dc87d3d392cacc9
 INSERT INTO `oc_product_image` VALUES ('2035', '28', 'catalog/demo/product/product-3.png', '0');
 INSERT INTO `oc_product_image` VALUES ('2351', '41', 'catalog/demo/product/product-7.png', '0');
 INSERT INTO `oc_product_image` VALUES ('2001', '36', 'catalog/demo/product/product-5.png', '0');
@@ -6119,7 +6399,11 @@ INSERT INTO `oc_product_image` VALUES ('1995', '46', 'catalog/demo/product/produ
 INSERT INTO `oc_product_image` VALUES ('1994', '46', 'catalog/demo/product/product-7.png', '0');
 INSERT INTO `oc_product_image` VALUES ('2653', '48', 'catalog/demo/product/product-1.png', '0');
 INSERT INTO `oc_product_image` VALUES ('2652', '48', 'catalog/demo/product/product-3.png', '0');
+<<<<<<< HEAD
 INSERT INTO `oc_product_image` VALUES ('2671', '47', 'catalog/demo/product/product-10.png', '0');
+=======
+INSERT INTO `oc_product_image` VALUES ('2320', '47', 'catalog/demo/product/product-8.png', '0');
+>>>>>>> 790b49e13c12789410af78d35dc87d3d392cacc9
 INSERT INTO `oc_product_image` VALUES ('2034', '28', 'catalog/demo/product/product-7.png', '0');
 INSERT INTO `oc_product_image` VALUES ('2350', '41', 'catalog/demo/product/product-1.png', '0');
 INSERT INTO `oc_product_image` VALUES ('2651', '48', 'catalog/demo/product/product-11.png', '0');
@@ -6157,6 +6441,7 @@ INSERT INTO `oc_product_image` VALUES ('2641', '42', 'catalog/demo/product/produ
 INSERT INTO `oc_product_image` VALUES ('2640', '30', 'catalog/demo/product/product-8.png', '0');
 INSERT INTO `oc_product_image` VALUES ('2637', '30', 'catalog/demo/product/product-3.png', '0');
 INSERT INTO `oc_product_image` VALUES ('2638', '30', 'catalog/demo/product/product-2.png', '0');
+<<<<<<< HEAD
 INSERT INTO `oc_product_image` VALUES ('2666', '73', 'catalog/demo/product/product-4.png', '2');
 INSERT INTO `oc_product_image` VALUES ('2665', '73', 'catalog/demo/product/product-10.png', '1');
 INSERT INTO `oc_product_image` VALUES ('2670', '74', 'catalog/demo/product/product-1.png', '0');
@@ -6166,6 +6451,89 @@ INSERT INTO `oc_product_image` VALUES ('2659', '76', 'catalog/demo/product/produ
 INSERT INTO `oc_product_image` VALUES ('2660', '77', 'catalog/demo/product/product-10.png', '0');
 INSERT INTO `oc_product_image` VALUES ('2661', '78', 'catalog/demo/product/product-10.png', '0');
 INSERT INTO `oc_product_image` VALUES ('2662', '79', 'catalog/demo/product/product-10.png', '0');
+=======
+INSERT INTO `oc_product_image` VALUES ('2654', '73', 'catalog/demo/product/product-1(1).png', '1');
+INSERT INTO `oc_product_image` VALUES ('2655', '73', 'catalog/demo/product/product-1(1).png', '2');
+
+-- ----------------------------
+-- Table structure for oc_product_image_ebaypro
+-- ----------------------------
+DROP TABLE IF EXISTS `oc_product_image_ebaypro`;
+CREATE TABLE `oc_product_image_ebaypro` (
+  `product_image_id` int(11) NOT NULL AUTO_INCREMENT,
+  `product_id` int(11) NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `sort_order` int(3) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`product_image_id`),
+  KEY `product_id` (`product_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2653 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of oc_product_image_ebaypro
+-- ----------------------------
+INSERT INTO `oc_product_image_ebaypro` VALUES ('2321', '47', 'catalog/demo/product/product-10.png', '0');
+INSERT INTO `oc_product_image_ebaypro` VALUES ('2035', '28', 'catalog/demo/product/product-3.png', '0');
+INSERT INTO `oc_product_image_ebaypro` VALUES ('2351', '41', 'catalog/demo/product/product-7.png', '0');
+INSERT INTO `oc_product_image_ebaypro` VALUES ('2001', '36', 'catalog/demo/product/product-5.png', '0');
+INSERT INTO `oc_product_image_ebaypro` VALUES ('2000', '36', 'catalog/demo/product/product-2.png', '0');
+INSERT INTO `oc_product_image_ebaypro` VALUES ('2005', '34', 'catalog/demo/product/product-8.png', '0');
+INSERT INTO `oc_product_image_ebaypro` VALUES ('2004', '34', 'catalog/demo/product/product-10.png', '0');
+INSERT INTO `oc_product_image_ebaypro` VALUES ('2011', '32', 'catalog/demo/product/product-5.png', '0');
+INSERT INTO `oc_product_image_ebaypro` VALUES ('2010', '32', 'catalog/demo/product/product-3.png', '0');
+INSERT INTO `oc_product_image_ebaypro` VALUES ('2009', '32', 'catalog/demo/product/product-2.png', '0');
+INSERT INTO `oc_product_image_ebaypro` VALUES ('2425', '43', 'catalog/demo/product/product-9.png', '0');
+INSERT INTO `oc_product_image_ebaypro` VALUES ('2424', '43', 'catalog/demo/product/product-5.png', '0');
+INSERT INTO `oc_product_image_ebaypro` VALUES ('1974', '44', 'catalog/demo/product/product-8.png', '0');
+INSERT INTO `oc_product_image_ebaypro` VALUES ('1973', '44', 'catalog/demo/product/product-2.png', '0');
+INSERT INTO `oc_product_image_ebaypro` VALUES ('1977', '45', 'catalog/demo/product/product-8.png', '0');
+INSERT INTO `oc_product_image_ebaypro` VALUES ('1976', '45', 'catalog/demo/product/product-2.png', '0');
+INSERT INTO `oc_product_image_ebaypro` VALUES ('1986', '31', 'catalog/demo/product/product-6.png', '0');
+INSERT INTO `oc_product_image_ebaypro` VALUES ('1985', '31', 'catalog/demo/product/product-1.png', '0');
+INSERT INTO `oc_product_image_ebaypro` VALUES ('1988', '29', 'catalog/demo/product/product-9.png', '0');
+INSERT INTO `oc_product_image_ebaypro` VALUES ('1995', '46', 'catalog/demo/product/product-9.png', '0');
+INSERT INTO `oc_product_image_ebaypro` VALUES ('1994', '46', 'catalog/demo/product/product-7.png', '0');
+INSERT INTO `oc_product_image_ebaypro` VALUES ('1991', '48', 'catalog/demo/product/product-5.png', '0');
+INSERT INTO `oc_product_image_ebaypro` VALUES ('1990', '48', 'catalog/demo/product/product-7.png', '0');
+INSERT INTO `oc_product_image_ebaypro` VALUES ('2320', '47', 'catalog/demo/product/product-8.png', '0');
+INSERT INTO `oc_product_image_ebaypro` VALUES ('2034', '28', 'catalog/demo/product/product-7.png', '0');
+INSERT INTO `oc_product_image_ebaypro` VALUES ('2350', '41', 'catalog/demo/product/product-1.png', '0');
+INSERT INTO `oc_product_image_ebaypro` VALUES ('1989', '48', 'catalog/demo/product/product-1.png', '0');
+INSERT INTO `oc_product_image_ebaypro` VALUES ('1999', '36', 'catalog/demo/product/product-6.png', '0');
+INSERT INTO `oc_product_image_ebaypro` VALUES ('1998', '36', 'catalog/demo/product/product-8.png', '0');
+INSERT INTO `oc_product_image_ebaypro` VALUES ('2003', '34', 'catalog/demo/product/product-7.png', '0');
+INSERT INTO `oc_product_image_ebaypro` VALUES ('2002', '34', 'catalog/demo/product/product-1.png', '0');
+INSERT INTO `oc_product_image_ebaypro` VALUES ('2008', '32', 'catalog/demo/product/product-5.png', '0');
+INSERT INTO `oc_product_image_ebaypro` VALUES ('2007', '32', 'catalog/demo/product/product-9.png', '0');
+INSERT INTO `oc_product_image_ebaypro` VALUES ('2006', '32', 'catalog/demo/product/product-8.png', '0');
+INSERT INTO `oc_product_image_ebaypro` VALUES ('2423', '43', 'catalog/demo/product/product-1.png', '0');
+INSERT INTO `oc_product_image_ebaypro` VALUES ('2422', '43', 'catalog/demo/product/product-3.png', '0');
+INSERT INTO `oc_product_image_ebaypro` VALUES ('1972', '44', 'catalog/demo/product/product-1.png', '0');
+INSERT INTO `oc_product_image_ebaypro` VALUES ('1975', '45', 'catalog/demo/product/product-6.png', '0');
+INSERT INTO `oc_product_image_ebaypro` VALUES ('1984', '31', 'catalog/demo/product/product-4.png', '0');
+INSERT INTO `oc_product_image_ebaypro` VALUES ('1983', '31', 'catalog/demo/product/product-3.png', '0');
+INSERT INTO `oc_product_image_ebaypro` VALUES ('1987', '29', 'catalog/demo/product/product-3.png', '0');
+INSERT INTO `oc_product_image_ebaypro` VALUES ('1993', '46', 'catalog/demo/product/product-3.png', '0');
+INSERT INTO `oc_product_image_ebaypro` VALUES ('1992', '46', 'catalog/demo/product/product-8.png', '0');
+INSERT INTO `oc_product_image_ebaypro` VALUES ('2650', '49', 'catalog/demo/product/product-11.png', '0');
+INSERT INTO `oc_product_image_ebaypro` VALUES ('2649', '49', 'catalog/demo/product/product-6.png', '0');
+INSERT INTO `oc_product_image_ebaypro` VALUES ('2648', '49', 'catalog/demo/product/product-3.png', '0');
+INSERT INTO `oc_product_image_ebaypro` VALUES ('2647', '49', 'catalog/demo/product/product-10.png', '0');
+INSERT INTO `oc_product_image_ebaypro` VALUES ('2646', '49', 'catalog/demo/product/product-8.png', '0');
+INSERT INTO `oc_product_image_ebaypro` VALUES ('2645', '49', 'catalog/demo/product/product-6.png', '0');
+INSERT INTO `oc_product_image_ebaypro` VALUES ('2644', '42', 'catalog/demo/product/product-2.png', '0');
+INSERT INTO `oc_product_image_ebaypro` VALUES ('2643', '42', 'catalog/demo/product/product-10.png', '0');
+INSERT INTO `oc_product_image_ebaypro` VALUES ('2642', '42', 'catalog/demo/product/product-6.png', '0');
+INSERT INTO `oc_product_image_ebaypro` VALUES ('2628', '40', 'catalog/demo/product/product-10.png', '0');
+INSERT INTO `oc_product_image_ebaypro` VALUES ('2627', '40', 'catalog/demo/product/product-5.png', '0');
+INSERT INTO `oc_product_image_ebaypro` VALUES ('2626', '40', 'catalog/demo/product/product-3.png', '0');
+INSERT INTO `oc_product_image_ebaypro` VALUES ('2625', '40', 'catalog/demo/product/product-1.png', '0');
+INSERT INTO `oc_product_image_ebaypro` VALUES ('2639', '30', 'catalog/demo/product/product-2.png', '0');
+INSERT INTO `oc_product_image_ebaypro` VALUES ('2641', '42', 'catalog/demo/product/product-3.png', '0');
+INSERT INTO `oc_product_image_ebaypro` VALUES ('2640', '30', 'catalog/demo/product/product-8.png', '0');
+INSERT INTO `oc_product_image_ebaypro` VALUES ('2637', '30', 'catalog/demo/product/product-3.png', '0');
+INSERT INTO `oc_product_image_ebaypro` VALUES ('2638', '30', 'catalog/demo/product/product-2.png', '0');
+INSERT INTO `oc_product_image_ebaypro` VALUES ('2652', '72', 'catalog/demo/product/product-11.png', '0');
+>>>>>>> 790b49e13c12789410af78d35dc87d3d392cacc9
 
 -- ----------------------------
 -- Table structure for oc_product_option
@@ -6194,6 +6562,35 @@ INSERT INTO `oc_product_option` VALUES ('227', '30', '2', '', '1');
 INSERT INTO `oc_product_option` VALUES ('226', '30', '5', '', '1');
 
 -- ----------------------------
+<<<<<<< HEAD
+=======
+-- Table structure for oc_product_option_ebaypro
+-- ----------------------------
+DROP TABLE IF EXISTS `oc_product_option_ebaypro`;
+CREATE TABLE `oc_product_option_ebaypro` (
+  `product_option_id` int(11) NOT NULL AUTO_INCREMENT,
+  `product_id` int(11) NOT NULL,
+  `option_id` int(11) NOT NULL,
+  `value` text NOT NULL,
+  `required` tinyint(1) NOT NULL,
+  PRIMARY KEY (`product_option_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=233 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of oc_product_option_ebaypro
+-- ----------------------------
+INSERT INTO `oc_product_option_ebaypro` VALUES ('224', '42', '11', '', '1');
+INSERT INTO `oc_product_option_ebaypro` VALUES ('225', '47', '12', '2011-04-22', '1');
+INSERT INTO `oc_product_option_ebaypro` VALUES ('232', '30', '10', '2017-12-04 15:26', '0');
+INSERT INTO `oc_product_option_ebaypro` VALUES ('231', '30', '8', '2017-12-15', '0');
+INSERT INTO `oc_product_option_ebaypro` VALUES ('230', '30', '12', '2017-12-23', '1');
+INSERT INTO `oc_product_option_ebaypro` VALUES ('229', '30', '11', '', '1');
+INSERT INTO `oc_product_option_ebaypro` VALUES ('228', '30', '1', '', '1');
+INSERT INTO `oc_product_option_ebaypro` VALUES ('227', '30', '2', '', '1');
+INSERT INTO `oc_product_option_ebaypro` VALUES ('226', '30', '5', '', '1');
+
+-- ----------------------------
+>>>>>>> 790b49e13c12789410af78d35dc87d3d392cacc9
 -- Table structure for oc_product_option_value
 -- ----------------------------
 DROP TABLE IF EXISTS `oc_product_option_value`;
@@ -6234,6 +6631,49 @@ INSERT INTO `oc_product_option_value` VALUES ('25', '229', '30', '11', '47', '30
 INSERT INTO `oc_product_option_value` VALUES ('26', '229', '30', '11', '46', '30', '1', '30.0000', '+', '30', '+', '30.00000000', '+');
 
 -- ----------------------------
+<<<<<<< HEAD
+=======
+-- Table structure for oc_product_option_value_ebaypro
+-- ----------------------------
+DROP TABLE IF EXISTS `oc_product_option_value_ebaypro`;
+CREATE TABLE `oc_product_option_value_ebaypro` (
+  `product_option_value_id` int(11) NOT NULL AUTO_INCREMENT,
+  `product_option_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `option_id` int(11) NOT NULL,
+  `option_value_id` int(11) NOT NULL,
+  `quantity` int(3) NOT NULL,
+  `subtract` tinyint(1) NOT NULL,
+  `price` decimal(15,4) NOT NULL,
+  `price_prefix` varchar(1) NOT NULL,
+  `points` int(8) NOT NULL,
+  `points_prefix` varchar(1) NOT NULL,
+  `weight` decimal(15,8) NOT NULL,
+  `weight_prefix` varchar(1) NOT NULL,
+  PRIMARY KEY (`product_option_value_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=27 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of oc_product_option_value_ebaypro
+-- ----------------------------
+INSERT INTO `oc_product_option_value_ebaypro` VALUES ('23', '228', '30', '1', '32', '40', '1', '320.0000', '+', '20', '+', '0.00000000', '+');
+INSERT INTO `oc_product_option_value_ebaypro` VALUES ('22', '228', '30', '1', '31', '30', '1', '20.0000', '+', '10', '+', '0.00000000', '+');
+INSERT INTO `oc_product_option_value_ebaypro` VALUES ('21', '228', '30', '1', '43', '20', '1', '10.0000', '+', '10', '+', '0.00000000', '+');
+INSERT INTO `oc_product_option_value_ebaypro` VALUES ('20', '227', '30', '2', '45', '99', '1', '25.0000', '+', '100', '+', '0.00000000', '+');
+INSERT INTO `oc_product_option_value_ebaypro` VALUES ('19', '227', '30', '2', '44', '66', '1', '23.0000', '+', '100', '+', '0.00000000', '+');
+INSERT INTO `oc_product_option_value_ebaypro` VALUES ('18', '227', '30', '2', '24', '22', '1', '22.0000', '+', '100', '+', '0.00000000', '+');
+INSERT INTO `oc_product_option_value_ebaypro` VALUES ('17', '227', '30', '2', '23', '10', '1', '0.0000', '+', '0', '+', '0.00000000', '+');
+INSERT INTO `oc_product_option_value_ebaypro` VALUES ('14', '224', '42', '11', '48', '15', '1', '15.0000', '+', '0', '+', '0.00000000', '+');
+INSERT INTO `oc_product_option_value_ebaypro` VALUES ('13', '224', '42', '11', '47', '10', '1', '10.0000', '+', '0', '+', '0.00000000', '+');
+INSERT INTO `oc_product_option_value_ebaypro` VALUES ('12', '224', '42', '11', '46', '0', '1', '5.0000', '+', '0', '+', '0.00000000', '+');
+INSERT INTO `oc_product_option_value_ebaypro` VALUES ('16', '226', '30', '5', '40', '5', '1', '0.0000', '+', '0', '+', '0.00000000', '+');
+INSERT INTO `oc_product_option_value_ebaypro` VALUES ('15', '226', '30', '5', '39', '2', '1', '0.0000', '+', '0', '+', '0.00000000', '+');
+INSERT INTO `oc_product_option_value_ebaypro` VALUES ('24', '229', '30', '11', '48', '20', '1', '20.0000', '+', '20', '+', '20.00000000', '+');
+INSERT INTO `oc_product_option_value_ebaypro` VALUES ('25', '229', '30', '11', '47', '30', '1', '20.0000', '+', '20', '+', '20.00000000', '+');
+INSERT INTO `oc_product_option_value_ebaypro` VALUES ('26', '229', '30', '11', '46', '30', '1', '30.0000', '+', '30', '+', '30.00000000', '+');
+
+-- ----------------------------
+>>>>>>> 790b49e13c12789410af78d35dc87d3d392cacc9
 -- Table structure for oc_product_recurring
 -- ----------------------------
 DROP TABLE IF EXISTS `oc_product_recurring`;
@@ -6249,6 +6689,24 @@ CREATE TABLE `oc_product_recurring` (
 -- ----------------------------
 
 -- ----------------------------
+<<<<<<< HEAD
+=======
+-- Table structure for oc_product_recurring_ebaypro
+-- ----------------------------
+DROP TABLE IF EXISTS `oc_product_recurring_ebaypro`;
+CREATE TABLE `oc_product_recurring_ebaypro` (
+  `product_id` int(11) NOT NULL,
+  `recurring_id` int(11) NOT NULL,
+  `customer_group_id` int(11) NOT NULL,
+  PRIMARY KEY (`product_id`,`recurring_id`,`customer_group_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of oc_product_recurring_ebaypro
+-- ----------------------------
+
+-- ----------------------------
+>>>>>>> 790b49e13c12789410af78d35dc87d3d392cacc9
 -- Table structure for oc_product_related
 -- ----------------------------
 DROP TABLE IF EXISTS `oc_product_related`;
@@ -6267,6 +6725,27 @@ INSERT INTO `oc_product_related` VALUES ('42', '40');
 INSERT INTO `oc_product_related` VALUES ('42', '41');
 
 -- ----------------------------
+<<<<<<< HEAD
+=======
+-- Table structure for oc_product_related_ebaypro
+-- ----------------------------
+DROP TABLE IF EXISTS `oc_product_related_ebaypro`;
+CREATE TABLE `oc_product_related_ebaypro` (
+  `product_id` int(11) NOT NULL,
+  `related_id` int(11) NOT NULL,
+  PRIMARY KEY (`product_id`,`related_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of oc_product_related_ebaypro
+-- ----------------------------
+INSERT INTO `oc_product_related_ebaypro` VALUES ('40', '42');
+INSERT INTO `oc_product_related_ebaypro` VALUES ('41', '42');
+INSERT INTO `oc_product_related_ebaypro` VALUES ('42', '40');
+INSERT INTO `oc_product_related_ebaypro` VALUES ('42', '41');
+
+-- ----------------------------
+>>>>>>> 790b49e13c12789410af78d35dc87d3d392cacc9
 -- Table structure for oc_product_reward
 -- ----------------------------
 DROP TABLE IF EXISTS `oc_product_reward`;
@@ -6283,6 +6762,25 @@ CREATE TABLE `oc_product_reward` (
 -- ----------------------------
 
 -- ----------------------------
+<<<<<<< HEAD
+=======
+-- Table structure for oc_product_reward_ebaypro
+-- ----------------------------
+DROP TABLE IF EXISTS `oc_product_reward_ebaypro`;
+CREATE TABLE `oc_product_reward_ebaypro` (
+  `product_reward_id` int(11) NOT NULL AUTO_INCREMENT,
+  `product_id` int(11) NOT NULL DEFAULT '0',
+  `customer_group_id` int(11) NOT NULL DEFAULT '0',
+  `points` int(8) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`product_reward_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of oc_product_reward_ebaypro
+-- ----------------------------
+
+-- ----------------------------
+>>>>>>> 790b49e13c12789410af78d35dc87d3d392cacc9
 -- Table structure for oc_product_special
 -- ----------------------------
 DROP TABLE IF EXISTS `oc_product_special`;
@@ -6307,6 +6805,33 @@ INSERT INTO `oc_product_special` VALUES ('466', '30', '1', '1', '109.0000', '000
 INSERT INTO `oc_product_special` VALUES ('445', '43', '1', '0', '599.0000', '2017-11-30', '2018-04-01');
 
 -- ----------------------------
+<<<<<<< HEAD
+=======
+-- Table structure for oc_product_special_ebaypro
+-- ----------------------------
+DROP TABLE IF EXISTS `oc_product_special_ebaypro`;
+CREATE TABLE `oc_product_special_ebaypro` (
+  `product_special_id` int(11) NOT NULL AUTO_INCREMENT,
+  `product_id` int(11) NOT NULL,
+  `customer_group_id` int(11) NOT NULL,
+  `priority` int(5) NOT NULL DEFAULT '1',
+  `price` decimal(15,4) NOT NULL DEFAULT '0.0000',
+  `date_start` date NOT NULL DEFAULT '0000-00-00',
+  `date_end` date NOT NULL DEFAULT '0000-00-00',
+  PRIMARY KEY (`product_special_id`),
+  KEY `product_id` (`product_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=469 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of oc_product_special_ebaypro
+-- ----------------------------
+INSERT INTO `oc_product_special_ebaypro` VALUES ('468', '42', '1', '1', '199.0000', '0000-00-00', '0000-00-00');
+INSERT INTO `oc_product_special_ebaypro` VALUES ('467', '30', '1', '2', '129.0000', '0000-00-00', '0000-00-00');
+INSERT INTO `oc_product_special_ebaypro` VALUES ('466', '30', '1', '1', '109.0000', '0000-00-00', '0000-00-00');
+INSERT INTO `oc_product_special_ebaypro` VALUES ('445', '43', '1', '0', '599.0000', '2017-11-30', '2018-04-01');
+
+-- ----------------------------
+>>>>>>> 790b49e13c12789410af78d35dc87d3d392cacc9
 -- Table structure for oc_product_to_category
 -- ----------------------------
 DROP TABLE IF EXISTS `oc_product_to_category`;
@@ -6608,9 +7133,340 @@ INSERT INTO `oc_product_to_category` VALUES ('49', '39');
 INSERT INTO `oc_product_to_category` VALUES ('49', '45');
 INSERT INTO `oc_product_to_category` VALUES ('49', '46');
 INSERT INTO `oc_product_to_category` VALUES ('49', '57');
+<<<<<<< HEAD
 INSERT INTO `oc_product_to_category` VALUES ('74', '59');
 INSERT INTO `oc_product_to_category` VALUES ('74', '60');
 INSERT INTO `oc_product_to_category` VALUES ('74', '61');
+=======
+
+-- ----------------------------
+-- Table structure for oc_product_to_category_ebaypro
+-- ----------------------------
+DROP TABLE IF EXISTS `oc_product_to_category_ebaypro`;
+CREATE TABLE `oc_product_to_category_ebaypro` (
+  `product_id` int(11) NOT NULL,
+  `category_id` int(11) NOT NULL,
+  PRIMARY KEY (`product_id`,`category_id`),
+  KEY `category_id` (`category_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of oc_product_to_category_ebaypro
+-- ----------------------------
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('0', '59');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('0', '60');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('0', '61');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('28', '17');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('28', '24');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('28', '26');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('28', '27');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('28', '29');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('28', '30');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('28', '31');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('28', '32');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('28', '33');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('28', '35');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('28', '36');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('28', '39');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('28', '45');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('28', '46');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('28', '57');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('29', '17');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('29', '24');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('29', '26');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('29', '27');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('29', '29');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('29', '30');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('29', '31');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('29', '32');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('29', '33');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('29', '35');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('29', '36');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('29', '39');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('29', '45');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('29', '46');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('29', '57');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('30', '17');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('30', '24');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('30', '26');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('30', '27');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('30', '29');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('30', '30');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('30', '31');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('30', '32');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('30', '33');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('30', '35');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('30', '36');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('30', '39');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('30', '45');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('30', '46');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('30', '57');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('31', '17');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('31', '24');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('31', '26');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('31', '27');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('31', '29');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('31', '30');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('31', '31');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('31', '32');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('31', '33');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('31', '35');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('31', '36');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('31', '39');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('31', '45');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('31', '46');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('31', '57');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('32', '17');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('32', '24');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('32', '26');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('32', '27');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('32', '29');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('32', '30');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('32', '31');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('32', '32');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('32', '33');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('32', '35');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('32', '36');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('32', '39');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('32', '45');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('32', '46');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('32', '57');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('33', '17');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('33', '24');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('33', '26');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('33', '27');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('33', '29');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('33', '30');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('33', '31');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('33', '32');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('33', '33');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('33', '35');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('33', '36');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('33', '39');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('33', '45');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('33', '46');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('33', '57');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('34', '17');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('34', '24');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('34', '26');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('34', '27');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('34', '29');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('34', '30');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('34', '31');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('34', '32');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('34', '33');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('34', '35');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('34', '36');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('34', '39');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('34', '45');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('34', '46');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('34', '57');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('35', '17');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('35', '24');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('35', '26');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('35', '27');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('35', '29');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('35', '30');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('35', '31');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('35', '32');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('35', '33');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('35', '35');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('35', '36');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('35', '39');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('35', '45');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('35', '46');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('35', '57');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('36', '17');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('36', '24');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('36', '26');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('36', '27');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('36', '29');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('36', '30');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('36', '31');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('36', '32');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('36', '33');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('36', '35');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('36', '36');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('36', '39');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('36', '45');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('36', '46');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('36', '57');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('40', '17');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('40', '24');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('40', '26');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('40', '27');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('40', '29');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('40', '30');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('40', '31');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('40', '32');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('40', '33');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('40', '35');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('40', '36');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('40', '39');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('40', '45');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('40', '46');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('40', '57');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('41', '17');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('41', '24');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('41', '26');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('41', '27');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('41', '29');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('41', '30');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('41', '31');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('41', '32');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('41', '33');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('41', '35');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('41', '36');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('41', '39');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('41', '45');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('41', '46');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('41', '57');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('42', '17');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('42', '24');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('42', '26');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('42', '27');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('42', '29');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('42', '30');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('42', '31');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('42', '32');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('42', '33');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('42', '35');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('42', '36');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('42', '39');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('42', '45');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('42', '46');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('42', '57');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('43', '17');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('43', '24');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('43', '26');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('43', '27');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('43', '29');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('43', '30');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('43', '31');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('43', '32');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('43', '33');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('43', '35');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('43', '36');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('43', '39');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('43', '45');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('43', '46');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('43', '57');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('44', '17');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('44', '24');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('44', '26');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('44', '27');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('44', '29');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('44', '30');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('44', '31');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('44', '32');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('44', '33');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('44', '35');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('44', '36');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('44', '39');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('44', '45');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('44', '46');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('44', '57');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('45', '17');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('45', '24');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('45', '26');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('45', '27');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('45', '29');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('45', '30');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('45', '31');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('45', '32');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('45', '33');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('45', '35');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('45', '36');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('45', '39');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('45', '45');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('45', '46');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('45', '57');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('46', '17');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('46', '24');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('46', '26');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('46', '27');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('46', '29');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('46', '30');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('46', '31');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('46', '32');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('46', '33');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('46', '35');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('46', '36');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('46', '39');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('46', '45');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('46', '46');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('46', '57');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('47', '17');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('47', '24');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('47', '26');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('47', '27');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('47', '29');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('47', '30');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('47', '31');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('47', '32');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('47', '33');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('47', '35');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('47', '36');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('47', '39');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('47', '45');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('47', '46');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('47', '57');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('48', '17');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('48', '24');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('48', '26');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('48', '27');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('48', '29');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('48', '30');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('48', '31');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('48', '32');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('48', '33');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('48', '35');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('48', '36');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('48', '39');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('48', '45');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('48', '46');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('48', '57');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('49', '17');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('49', '24');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('49', '26');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('49', '27');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('49', '29');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('49', '30');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('49', '31');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('49', '32');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('49', '33');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('49', '35');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('49', '36');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('49', '39');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('49', '45');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('49', '46');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('49', '57');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('50', '59');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('51', '59');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('51', '60');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('51', '61');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('52', '59');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('52', '60');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('52', '61');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('53', '59');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('53', '60');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('53', '61');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('54', '59');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('54', '60');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('54', '61');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('55', '59');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('55', '60');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('55', '61');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('61', '59');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('61', '60');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('61', '61');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('62', '59');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('62', '60');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('62', '61');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('76', '59');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('76', '60');
+INSERT INTO `oc_product_to_category_ebaypro` VALUES ('76', '61');
+>>>>>>> 790b49e13c12789410af78d35dc87d3d392cacc9
 
 -- ----------------------------
 -- Table structure for oc_product_to_download
@@ -6627,6 +7483,23 @@ CREATE TABLE `oc_product_to_download` (
 -- ----------------------------
 
 -- ----------------------------
+<<<<<<< HEAD
+=======
+-- Table structure for oc_product_to_download_ebaypro
+-- ----------------------------
+DROP TABLE IF EXISTS `oc_product_to_download_ebaypro`;
+CREATE TABLE `oc_product_to_download_ebaypro` (
+  `product_id` int(11) NOT NULL,
+  `download_id` int(11) NOT NULL,
+  PRIMARY KEY (`product_id`,`download_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of oc_product_to_download_ebaypro
+-- ----------------------------
+
+-- ----------------------------
+>>>>>>> 790b49e13c12789410af78d35dc87d3d392cacc9
 -- Table structure for oc_product_to_layout
 -- ----------------------------
 DROP TABLE IF EXISTS `oc_product_to_layout`;
@@ -6642,6 +7515,7 @@ CREATE TABLE `oc_product_to_layout` (
 -- ----------------------------
 INSERT INTO `oc_product_to_layout` VALUES ('33', '0', '0');
 INSERT INTO `oc_product_to_layout` VALUES ('48', '0', '0');
+<<<<<<< HEAD
 INSERT INTO `oc_product_to_layout` VALUES ('77', '0', '0');
 INSERT INTO `oc_product_to_layout` VALUES ('76', '0', '0');
 INSERT INTO `oc_product_to_layout` VALUES ('74', '0', '0');
@@ -6651,6 +7525,38 @@ INSERT INTO `oc_product_to_layout` VALUES ('78', '0', '0');
 INSERT INTO `oc_product_to_layout` VALUES ('0', '0', '0');
 INSERT INTO `oc_product_to_layout` VALUES ('79', '0', '0');
 INSERT INTO `oc_product_to_layout` VALUES ('47', '0', '0');
+=======
+INSERT INTO `oc_product_to_layout` VALUES ('73', '0', '0');
+INSERT INTO `oc_product_to_layout` VALUES ('0', '0', '0');
+
+-- ----------------------------
+-- Table structure for oc_product_to_layout_ebaypro
+-- ----------------------------
+DROP TABLE IF EXISTS `oc_product_to_layout_ebaypro`;
+CREATE TABLE `oc_product_to_layout_ebaypro` (
+  `product_id` int(11) NOT NULL,
+  `store_id` int(11) NOT NULL,
+  `layout_id` int(11) NOT NULL,
+  PRIMARY KEY (`product_id`,`store_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of oc_product_to_layout_ebaypro
+-- ----------------------------
+INSERT INTO `oc_product_to_layout_ebaypro` VALUES ('33', '0', '0');
+INSERT INTO `oc_product_to_layout_ebaypro` VALUES ('50', '0', '0');
+INSERT INTO `oc_product_to_layout_ebaypro` VALUES ('51', '0', '0');
+INSERT INTO `oc_product_to_layout_ebaypro` VALUES ('52', '0', '0');
+INSERT INTO `oc_product_to_layout_ebaypro` VALUES ('53', '0', '0');
+INSERT INTO `oc_product_to_layout_ebaypro` VALUES ('54', '0', '0');
+INSERT INTO `oc_product_to_layout_ebaypro` VALUES ('55', '0', '0');
+INSERT INTO `oc_product_to_layout_ebaypro` VALUES ('76', '0', '0');
+INSERT INTO `oc_product_to_layout_ebaypro` VALUES ('0', '0', '0');
+INSERT INTO `oc_product_to_layout_ebaypro` VALUES ('72', '0', '0');
+INSERT INTO `oc_product_to_layout_ebaypro` VALUES ('60', '0', '0');
+INSERT INTO `oc_product_to_layout_ebaypro` VALUES ('61', '0', '0');
+INSERT INTO `oc_product_to_layout_ebaypro` VALUES ('62', '0', '0');
+>>>>>>> 790b49e13c12789410af78d35dc87d3d392cacc9
 
 -- ----------------------------
 -- Table structure for oc_product_to_store
@@ -6686,12 +7592,58 @@ INSERT INTO `oc_product_to_store` VALUES ('47', '0');
 INSERT INTO `oc_product_to_store` VALUES ('48', '0');
 INSERT INTO `oc_product_to_store` VALUES ('49', '0');
 INSERT INTO `oc_product_to_store` VALUES ('73', '0');
+<<<<<<< HEAD
 INSERT INTO `oc_product_to_store` VALUES ('74', '0');
 INSERT INTO `oc_product_to_store` VALUES ('75', '0');
 INSERT INTO `oc_product_to_store` VALUES ('76', '0');
 INSERT INTO `oc_product_to_store` VALUES ('77', '0');
 INSERT INTO `oc_product_to_store` VALUES ('78', '0');
 INSERT INTO `oc_product_to_store` VALUES ('79', '0');
+=======
+
+-- ----------------------------
+-- Table structure for oc_product_to_store_ebaypro
+-- ----------------------------
+DROP TABLE IF EXISTS `oc_product_to_store_ebaypro`;
+CREATE TABLE `oc_product_to_store_ebaypro` (
+  `product_id` int(11) NOT NULL,
+  `store_id` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`product_id`,`store_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of oc_product_to_store_ebaypro
+-- ----------------------------
+INSERT INTO `oc_product_to_store_ebaypro` VALUES ('0', '0');
+INSERT INTO `oc_product_to_store_ebaypro` VALUES ('28', '0');
+INSERT INTO `oc_product_to_store_ebaypro` VALUES ('29', '0');
+INSERT INTO `oc_product_to_store_ebaypro` VALUES ('30', '0');
+INSERT INTO `oc_product_to_store_ebaypro` VALUES ('31', '0');
+INSERT INTO `oc_product_to_store_ebaypro` VALUES ('32', '0');
+INSERT INTO `oc_product_to_store_ebaypro` VALUES ('33', '0');
+INSERT INTO `oc_product_to_store_ebaypro` VALUES ('34', '0');
+INSERT INTO `oc_product_to_store_ebaypro` VALUES ('35', '0');
+INSERT INTO `oc_product_to_store_ebaypro` VALUES ('36', '0');
+INSERT INTO `oc_product_to_store_ebaypro` VALUES ('40', '0');
+INSERT INTO `oc_product_to_store_ebaypro` VALUES ('41', '0');
+INSERT INTO `oc_product_to_store_ebaypro` VALUES ('42', '0');
+INSERT INTO `oc_product_to_store_ebaypro` VALUES ('43', '0');
+INSERT INTO `oc_product_to_store_ebaypro` VALUES ('44', '0');
+INSERT INTO `oc_product_to_store_ebaypro` VALUES ('45', '0');
+INSERT INTO `oc_product_to_store_ebaypro` VALUES ('46', '0');
+INSERT INTO `oc_product_to_store_ebaypro` VALUES ('47', '0');
+INSERT INTO `oc_product_to_store_ebaypro` VALUES ('48', '0');
+INSERT INTO `oc_product_to_store_ebaypro` VALUES ('49', '0');
+INSERT INTO `oc_product_to_store_ebaypro` VALUES ('50', '0');
+INSERT INTO `oc_product_to_store_ebaypro` VALUES ('51', '0');
+INSERT INTO `oc_product_to_store_ebaypro` VALUES ('52', '0');
+INSERT INTO `oc_product_to_store_ebaypro` VALUES ('53', '0');
+INSERT INTO `oc_product_to_store_ebaypro` VALUES ('54', '0');
+INSERT INTO `oc_product_to_store_ebaypro` VALUES ('55', '0');
+INSERT INTO `oc_product_to_store_ebaypro` VALUES ('61', '0');
+INSERT INTO `oc_product_to_store_ebaypro` VALUES ('62', '0');
+INSERT INTO `oc_product_to_store_ebaypro` VALUES ('76', '0');
+>>>>>>> 790b49e13c12789410af78d35dc87d3d392cacc9
 
 -- ----------------------------
 -- Table structure for oc_recurring
@@ -6882,7 +7834,11 @@ CREATE TABLE `oc_seo_url` (
   PRIMARY KEY (`seo_url_id`),
   KEY `query` (`query`),
   KEY `keyword` (`keyword`)
+<<<<<<< HEAD
 ) ENGINE=MyISAM AUTO_INCREMENT=894 DEFAULT CHARSET=utf8;
+=======
+) ENGINE=MyISAM AUTO_INCREMENT=890 DEFAULT CHARSET=utf8;
+>>>>>>> 790b49e13c12789410af78d35dc87d3d392cacc9
 
 -- ----------------------------
 -- Records of oc_seo_url
@@ -6912,7 +7868,11 @@ INSERT INTO `oc_seo_url` VALUES ('787', '0', '1', 'category_id=24', 'smartphone'
 INSERT INTO `oc_seo_url` VALUES ('852', '0', '1', 'category_id=33', 'camera');
 INSERT INTO `oc_seo_url` VALUES ('805', '0', '1', 'category_id=39', 'test6');
 INSERT INTO `oc_seo_url` VALUES ('875', '0', '1', 'product_id=30', 'canon-eos-5d');
+<<<<<<< HEAD
 INSERT INTO `oc_seo_url` VALUES ('893', '0', '1', 'product_id=47', 'hp-lp3065');
+=======
+INSERT INTO `oc_seo_url` VALUES ('840', '0', '1', 'product_id=47', 'hp-lp3065');
+>>>>>>> 790b49e13c12789410af78d35dc87d3d392cacc9
 INSERT INTO `oc_seo_url` VALUES ('811', '0', '1', 'product_id=28', 'htc-touch-hd');
 INSERT INTO `oc_seo_url` VALUES ('849', '0', '1', 'product_id=43', 'macbook');
 INSERT INTO `oc_seo_url` VALUES ('813', '0', '1', 'product_id=44', 'macbook-air');
@@ -6921,7 +7881,11 @@ INSERT INTO `oc_seo_url` VALUES ('816', '0', '1', 'product_id=31', 'nikon-d300')
 INSERT INTO `oc_seo_url` VALUES ('817', '0', '1', 'product_id=29', 'palm-treo-pro');
 INSERT INTO `oc_seo_url` VALUES ('818', '0', '1', 'product_id=35', 'product-8');
 INSERT INTO `oc_seo_url` VALUES ('819', '0', '1', 'product_id=49', 'samsung-galaxy-tab-10-1');
+<<<<<<< HEAD
 INSERT INTO `oc_seo_url` VALUES ('892', '0', '1', 'product_id=33', 'samsung-syncmaster-941bw');
+=======
+INSERT INTO `oc_seo_url` VALUES ('889', '0', '1', 'product_id=33', 'samsung-syncmaster-941bw');
+>>>>>>> 790b49e13c12789410af78d35dc87d3d392cacc9
 INSERT INTO `oc_seo_url` VALUES ('821', '0', '1', 'product_id=46', 'sony-vaio');
 INSERT INTO `oc_seo_url` VALUES ('837', '0', '1', 'product_id=41', 'imac');
 INSERT INTO `oc_seo_url` VALUES ('868', '0', '1', 'product_id=40', 'iphone');
@@ -6965,20 +7929,29 @@ INSERT INTO `oc_session` VALUES ('0aadb33985a04dba99532c6805', '{\"language\":\"
 INSERT INTO `oc_session` VALUES ('0b0f3e0cea66ec180e37b6a60b', '{\"api_id\":\"1\",\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-06-26 07:51:53');
 INSERT INTO `oc_session` VALUES ('0b6098bc3af0166793a5a75071', '{\"language\":\"zh-cn\",\"currency\":\"CNY\",\"captcha\":\"73984b\",\"display_style\":\"grid\",\"vouchers\":[],\"user_id\":\"1\",\"user_token\":\"33ab2957b4bdabd1a3a629f412d1a34c\",\"compare\":[\"49\"],\"customer_id\":\"1\",\"shipping_address\":{\"address_id\":\"1\",\"fullname\":\"wyx\",\"telephone\":\"13681147568\",\"company\":\"www\",\"address_1\":\"wwww\",\"address_2\":\"\",\"postcode\":\"\",\"city\":\"\",\"zone_id\":\"710\",\"zone\":\"\\u56db\\u5ddd\\u7701\",\"zone_code\":\"SI\",\"country_id\":\"44\",\"country\":\"\\u4e2d\\u56fd\",\"iso_code_2\":\"CN\",\"iso_code_3\":\"CHN\",\"address_format\":\"\",\"city_id\":\"2538\",\"county_id\":\"2539\",\"custom_field\":null},\"shipping_methods\":{\"flat\":{\"title\":\"\\u56fa\\u5b9a\\u8fd0\\u8d39\",\"quote\":{\"flat\":{\"code\":\"flat.flat\",\"title\":\"\\u56fa\\u5b9a\\u8fd0\\u8d39\",\"cost\":\"5.00\",\"tax_class_id\":\"9\",\"text\":\"\\uffe55.00\"}},\"sort_order\":\"1\",\"error\":false}},\"shipping_method\":{\"code\":\"flat.flat\",\"title\":\"\\u56fa\\u5b9a\\u8fd0\\u8d39\",\"cost\":\"5.00\",\"tax_class_id\":\"9\",\"text\":\"\\uffe55.00\"},\"payment_address\":{\"address_id\":\"1\",\"fullname\":\"wyx\",\"telephone\":\"13681147568\",\"company\":\"www\",\"address_1\":\"wwww\",\"address_2\":\"\",\"postcode\":\"\",\"city\":\"\",\"zone_id\":\"710\",\"zone\":\"\\u56db\\u5ddd\\u7701\",\"zone_code\":\"SI\",\"country_id\":\"44\",\"country\":\"\\u4e2d\\u56fd\",\"iso_code_2\":\"CN\",\"iso_code_3\":\"CHN\",\"address_format\":\"\",\"city_id\":\"2538\",\"county_id\":\"2539\",\"custom_field\":null},\"payment_methods\":{\"pp_express\":{\"code\":\"pp_express\",\"title\":\"PayPal Express Checkout\",\"terms\":\"\",\"sort_order\":\"\"},\"cod\":{\"code\":\"cod\",\"title\":\"\\u8d27\\u5230\\u4ed8\\u6b3e\",\"terms\":\"\",\"sort_order\":\"5\"}},\"payment_method\":{\"code\":\"pp_express\",\"title\":\"PayPal Express Checkout\",\"terms\":\"\",\"sort_order\":\"\"},\"checkout_terms\":\"1\",\"comment\":\"\",\"order_id\":6,\"error\":\"Receiving country does not support the transaction currency.\"}', '2018-07-11 10:02:29');
 INSERT INTO `oc_session` VALUES ('0bce263f23f0bbc245e6cd3386', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-08-07 09:52:23');
+<<<<<<< HEAD
 INSERT INTO `oc_session` VALUES ('0be91c7efc404876bececd4794', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-09-29 01:23:35');
+=======
+>>>>>>> 790b49e13c12789410af78d35dc87d3d392cacc9
 INSERT INTO `oc_session` VALUES ('0c75a66f5ea9d4d113bbc0ed0a', '{\"api_id\":\"1\"}', '2018-09-21 09:45:01');
 INSERT INTO `oc_session` VALUES ('0ccda55f8a5034d25bb31116b2', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-07-13 02:32:44');
 INSERT INTO `oc_session` VALUES ('0cefad7e785ba8ef8e00c2099a', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-09-21 10:06:59');
 INSERT INTO `oc_session` VALUES ('0d18e8d8c68f875cc39d02119a', 'false', '2018-09-13 08:24:10');
 INSERT INTO `oc_session` VALUES ('0d4567a2faaa15e337e292331e', '{\"language\":\"zh-cn\",\"currency\":\"CNY\",\"captcha\":\"749051\"}', '2018-08-13 09:52:56');
+<<<<<<< HEAD
 INSERT INTO `oc_session` VALUES ('0d756122a4f01a7989fe795de6', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-09-27 02:48:08');
+=======
+>>>>>>> 790b49e13c12789410af78d35dc87d3d392cacc9
 INSERT INTO `oc_session` VALUES ('0e16e2762a4672e6b8ea0d9a86', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-06-28 07:17:48');
 INSERT INTO `oc_session` VALUES ('11a93240c2e050ab8bdd617fde', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-08-08 03:06:09');
 INSERT INTO `oc_session` VALUES ('12d2c447a999dd0f2aa7edb2ad', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-08-25 07:29:41');
 INSERT INTO `oc_session` VALUES ('12efdb9d9096462d2a031fe1c1', '{\"language\":\"zh-cn\",\"currency\":\"CNY\",\"captcha\":\"7fbbf5\",\"user_id\":\"2\",\"user_token\":\"72c3bb334c568baf2745b14dbc43e050\"}', '2018-08-21 08:58:43');
 INSERT INTO `oc_session` VALUES ('13c0e4c312432807be22ee3db8', '{\"language\":\"zh-cn\",\"currency\":\"CNY\",\"user_id\":\"1\",\"user_token\":\"7051f72f97f7ac18cf97d38d8c09e623\"}', '2018-08-15 10:36:11');
 INSERT INTO `oc_session` VALUES ('148c243d01bc14bee50c554f77', '{\"language\":\"zh-cn\",\"currency\":\"CNY\",\"user_id\":\"1\",\"user_token\":\"60f4ed9551719feb963c753361bc25ae\",\"display_style\":\"grid\",\"customer_id\":\"1\",\"shipping_address\":{\"address_id\":\"1\",\"fullname\":\"wyx\",\"telephone\":\"13681147568\",\"company\":\"www\",\"address_1\":\"wwww\",\"address_2\":\"\",\"postcode\":\"\",\"city\":\"\",\"zone_id\":\"710\",\"zone\":\"\\u56db\\u5ddd\\u7701\",\"zone_code\":\"SI\",\"country_id\":\"44\",\"country\":\"\\u4e2d\\u56fd\",\"iso_code_2\":\"CN\",\"iso_code_3\":\"CHN\",\"address_format\":\"\",\"city_id\":\"2538\",\"county_id\":\"2539\",\"custom_field\":null},\"shipping_methods\":{\"flat\":{\"title\":\"\\u56fa\\u5b9a\\u8fd0\\u8d39\",\"quote\":{\"flat\":{\"code\":\"flat.flat\",\"title\":\"\\u56fa\\u5b9a\\u8fd0\\u8d39\",\"cost\":\"5.00\",\"tax_class_id\":\"9\",\"text\":\"\\uffe55.00\"}},\"sort_order\":\"1\",\"error\":false}},\"shipping_method\":{\"code\":\"flat.flat\",\"title\":\"\\u56fa\\u5b9a\\u8fd0\\u8d39\",\"cost\":\"5.00\",\"tax_class_id\":\"9\",\"text\":\"\\uffe55.00\"},\"payment_address\":{\"address_id\":\"1\",\"fullname\":\"wyx\",\"telephone\":\"13681147568\",\"company\":\"www\",\"address_1\":\"wwww\",\"address_2\":\"\",\"postcode\":\"\",\"city\":\"\",\"zone_id\":\"710\",\"zone\":\"\\u56db\\u5ddd\\u7701\",\"zone_code\":\"SI\",\"country_id\":\"44\",\"country\":\"\\u4e2d\\u56fd\",\"iso_code_2\":\"CN\",\"iso_code_3\":\"CHN\",\"address_format\":\"\",\"city_id\":\"2538\",\"county_id\":\"2539\",\"custom_field\":null},\"payment_methods\":{\"pp_express\":{\"code\":\"pp_express\",\"title\":\"PayPal Express Checkout\",\"terms\":\"\",\"sort_order\":\"\"},\"cod\":{\"code\":\"cod\",\"title\":\"\\u8d27\\u5230\\u4ed8\\u6b3e\",\"terms\":\"\",\"sort_order\":\"5\"}},\"payment_method\":{\"code\":\"pp_express\",\"title\":\"PayPal Express Checkout\",\"terms\":\"\",\"sort_order\":\"\"},\"checkout_terms\":\"1\",\"comment\":\"\",\"order_id\":7,\"captcha\":\"dad3df\"}', '2018-07-27 09:06:17');
+<<<<<<< HEAD
 INSERT INTO `oc_session` VALUES ('19746e5c3b7f411cf70b7e8061', '{\"language\":\"zh-cn\",\"currency\":\"CNY\",\"captcha\":\"fa8b37\",\"user_id\":\"1\",\"user_token\":\"5fe48a50c36d48bbfdac3e9399e29cc9\",\"customer_id\":\"2\",\"shipping_address\":false}', '2018-10-11 11:10:42');
+=======
+>>>>>>> 790b49e13c12789410af78d35dc87d3d392cacc9
 INSERT INTO `oc_session` VALUES ('19e4dc7b2ed9201c24407d6820', '{\"api_id\":\"1\"}', '2018-06-26 07:51:46');
 INSERT INTO `oc_session` VALUES ('1a28b1d0a2be0f76f76f00b335', '{\"user_id\":\"1\",\"user_token\":\"876a28487315049d1f460f7ce0d0be1b\",\"language\":\"zh-cn\",\"currency\":\"CNY\",\"captcha\":\"0a738e\"}', '2018-08-10 10:26:04');
 INSERT INTO `oc_session` VALUES ('1a42ac99e07c074f33577b57f5', '{\"user_id\":\"1\",\"user_token\":\"cfed9ce2197cea82227fd2cc604cfb01\"}', '2018-08-22 10:20:04');
@@ -6995,7 +7968,10 @@ INSERT INTO `oc_session` VALUES ('21d6069f8678cca2b9876f7874', '{\"api_id\":\"1\
 INSERT INTO `oc_session` VALUES ('2230ab9fc1137adb3be2d3e512', '{\"language\":\"zh-cn\",\"currency\":\"CNY\",\"captcha\":\"9068c7\"}', '2018-08-27 03:40:26');
 INSERT INTO `oc_session` VALUES ('228e3c8de24acda5f286d2a7cd', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-06-26 04:24:24');
 INSERT INTO `oc_session` VALUES ('249052cdb017e0e01dd722ce28', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-08-27 04:36:47');
+<<<<<<< HEAD
 INSERT INTO `oc_session` VALUES ('24f40beadda5a55d8b0a45cf64', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-09-26 02:20:41');
+=======
+>>>>>>> 790b49e13c12789410af78d35dc87d3d392cacc9
 INSERT INTO `oc_session` VALUES ('25eb7869acd1ad86cf1964a524', 'false', '2018-08-30 03:59:19');
 INSERT INTO `oc_session` VALUES ('26a03ec712bb14be0c03a30a76', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-07-03 03:02:56');
 INSERT INTO `oc_session` VALUES ('27130b188435c73338f6b78e53', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-06-29 07:26:48');
@@ -7004,32 +7980,47 @@ INSERT INTO `oc_session` VALUES ('2926aedddc478608688240b22b', '{\"language\":\"
 INSERT INTO `oc_session` VALUES ('29769ce54ee04af4e398900404', 'false', '2018-08-31 02:41:54');
 INSERT INTO `oc_session` VALUES ('2a970bf28ee62aeed2d07e6083', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-08-25 01:25:38');
 INSERT INTO `oc_session` VALUES ('2af08ef46bdb1edd3652f2aa38', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-09-22 00:54:59');
+<<<<<<< HEAD
 INSERT INTO `oc_session` VALUES ('2b2986d0833fb4559faa3297f1', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-09-25 01:23:18');
+=======
+>>>>>>> 790b49e13c12789410af78d35dc87d3d392cacc9
 INSERT INTO `oc_session` VALUES ('2df2d63c4ab8cdc6dbb61d3d6e', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-09-03 01:51:44');
 INSERT INTO `oc_session` VALUES ('2ec2562b6972948ca7bebbb5ea', '{\"language\":\"zh-cn\",\"currency\":\"CNY\",\"captcha\":\"21bdeb\",\"display_style\":\"grid\"}', '2018-09-07 10:30:54');
 INSERT INTO `oc_session` VALUES ('2ece1bfcd1ca96124efdf4b5e8', '{\"language\":\"zh-cn\",\"currency\":\"CNY\",\"user_id\":\"1\",\"user_token\":\"78eb1e3112a253c43cebd56623510726\"}', '2018-09-20 07:03:12');
 INSERT INTO `oc_session` VALUES ('2fdaab3a812aaf5efb4c6cb73b', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-09-06 09:15:55');
+<<<<<<< HEAD
 INSERT INTO `oc_session` VALUES ('30858c539ef1f9241cd41fbf0f', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-09-27 06:18:24');
 INSERT INTO `oc_session` VALUES ('312034ccf85bc4b9ae7537e099', '{\"language\":\"zh-cn\",\"currency\":\"CNY\",\"user_id\":\"1\",\"user_token\":\"fe0a495fba7a152efa48f26751cd8273\"}', '2018-09-25 10:08:07');
 INSERT INTO `oc_session` VALUES ('31209c8b0709afdf73248ea680', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-10-10 00:42:59');
+=======
+>>>>>>> 790b49e13c12789410af78d35dc87d3d392cacc9
 INSERT INTO `oc_session` VALUES ('3262d17c2c678091a8a8476afa', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-06-28 08:26:51');
 INSERT INTO `oc_session` VALUES ('34b1b0c247634fcbc49aebf6d0', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-06-29 10:10:57');
 INSERT INTO `oc_session` VALUES ('374601a67e0be5a14b84e21f55', '{\"language\":\"zh-cn\",\"currency\":\"CNY\",\"captcha\":\"26b889\"}', '2018-08-20 10:17:44');
 INSERT INTO `oc_session` VALUES ('37e337d8591e1df5061215e43e', '{\"language\":\"zh-cn\",\"currency\":\"CNY\",\"captcha\":\"b32ae8\"}', '2018-08-20 09:36:40');
 INSERT INTO `oc_session` VALUES ('3c4a3450770d1599f005eee7bf', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-07-28 06:46:39');
 INSERT INTO `oc_session` VALUES ('3c4e123cda28921bd0842056a8', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-06-30 02:07:11');
+<<<<<<< HEAD
 INSERT INTO `oc_session` VALUES ('3cf18211e72f55b2a3280f7236', '{\"language\":\"zh-cn\",\"currency\":\"CNY\",\"user_id\":\"1\",\"user_token\":\"c266b3c8ba2c94fe13448b3fa1693fdc\"}', '2018-09-28 10:31:15');
+=======
+>>>>>>> 790b49e13c12789410af78d35dc87d3d392cacc9
 INSERT INTO `oc_session` VALUES ('3e1e509d56ee32c4eab2435104', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-09-01 07:13:32');
 INSERT INTO `oc_session` VALUES ('3e6f82a4cd61d9a1f25eb142db', 'false', '2018-08-30 10:55:25');
 INSERT INTO `oc_session` VALUES ('405c4147aeb09d4e9d48df37d3', '{\"language\":\"zh-cn\",\"currency\":\"CNY\",\"captcha\":\"68405b\"}', '2018-08-14 09:45:19');
 INSERT INTO `oc_session` VALUES ('40c290f38a464718107f2871bb', '{\"api_id\":\"1\"}', '2018-06-26 07:53:36');
 INSERT INTO `oc_session` VALUES ('415e655ddde26ff7341e5a8d00', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-08-08 09:31:13');
+<<<<<<< HEAD
 INSERT INTO `oc_session` VALUES ('425412d3b45e0ca172cb3b107b', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-09-26 06:15:08');
+=======
+>>>>>>> 790b49e13c12789410af78d35dc87d3d392cacc9
 INSERT INTO `oc_session` VALUES ('4361e5d8c3d7dc21d711f25e98', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-08-23 09:18:51');
 INSERT INTO `oc_session` VALUES ('436213e414b58a0fc325106e54', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-08-18 10:05:08');
 INSERT INTO `oc_session` VALUES ('495152e8ebbe0e2cedc73945f8', 'false', '2018-09-08 08:25:13');
 INSERT INTO `oc_session` VALUES ('4abd3729dd2191cd6d36c7edfd', '{\"language\":\"zh-cn\",\"currency\":\"CNY\",\"user_id\":\"1\",\"user_token\":\"6eb08069b8dbf47b4edc4a5b36f2be3b\",\"captcha\":\"e5fc82\"}', '2018-09-18 10:15:03');
+<<<<<<< HEAD
 INSERT INTO `oc_session` VALUES ('4bb1d458de8a58fc3898f430b0', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-10-08 09:53:19');
+=======
+>>>>>>> 790b49e13c12789410af78d35dc87d3d392cacc9
 INSERT INTO `oc_session` VALUES ('4c341461e1f35591b5bd63da91', '{\"language\":\"zh-cn\",\"currency\":\"CNY\",\"captcha\":\"780546\"}', '2018-08-21 09:03:09');
 INSERT INTO `oc_session` VALUES ('4fcf545e7bdbdceaa26f918520', '{\"language\":\"zh-cn\",\"currency\":\"CNY\",\"user_id\":\"1\",\"user_token\":\"84c2b38b529a1e93c8e440daa7ac5a52\"}', '2018-08-07 04:21:30');
 INSERT INTO `oc_session` VALUES ('501ff20ca5a9d1bc6b4522e060', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-08-13 10:37:25');
@@ -7046,7 +8037,10 @@ INSERT INTO `oc_session` VALUES ('58e2d8121de8445a332a8c9e2b', '{\"language\":\"
 INSERT INTO `oc_session` VALUES ('59f471fa9dcc892efc0a3a7597', '{\"language\":\"zh-cn\",\"currency\":\"CNY\",\"captcha\":\"39de0d\"}', '2018-09-03 10:33:35');
 INSERT INTO `oc_session` VALUES ('5b2b9e52bdb51f4cfdd997f5d5', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-09-04 10:33:12');
 INSERT INTO `oc_session` VALUES ('5d0fab34cf3354521602a4324d', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-08-18 07:20:16');
+<<<<<<< HEAD
 INSERT INTO `oc_session` VALUES ('5daf69244e640329767d975c3f', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-10-08 10:22:48');
+=======
+>>>>>>> 790b49e13c12789410af78d35dc87d3d392cacc9
 INSERT INTO `oc_session` VALUES ('5ee0aa95bc2e58dbdc78a1a303', '{\"language\":\"zh-cn\",\"currency\":\"CNY\",\"captcha\":\"692f49\"}', '2018-08-08 10:32:26');
 INSERT INTO `oc_session` VALUES ('5f0356c7e139bcdbf6a0078da9', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-09-21 10:06:09');
 INSERT INTO `oc_session` VALUES ('5f55f94101c1e9d37c976c43c9', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-07-09 09:29:16');
@@ -7055,7 +8049,10 @@ INSERT INTO `oc_session` VALUES ('60883d9d33373c99ad1811ef80', '{\"language\":\"
 INSERT INTO `oc_session` VALUES ('62cdd87adecf9abecdd721be10', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-09-13 03:47:00');
 INSERT INTO `oc_session` VALUES ('63409b7f184b8c5dd7f963f6ff', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-08-13 09:53:52');
 INSERT INTO `oc_session` VALUES ('637e70a51b03396f3184ebfcde', '{\"language\":\"zh-cn\",\"currency\":\"CNY\",\"captcha\":\"969c99\"}', '2018-08-30 02:07:20');
+<<<<<<< HEAD
 INSERT INTO `oc_session` VALUES ('638405447e32feeddaa223a9b5', '{\"language\":\"zh-cn\",\"currency\":\"CNY\",\"captcha\":\"c29ad8\",\"user_id\":\"1\",\"user_token\":\"284ff8ea28128b17eab2cbea647c2714\"}', '2018-09-27 10:28:56');
+=======
+>>>>>>> 790b49e13c12789410af78d35dc87d3d392cacc9
 INSERT INTO `oc_session` VALUES ('63b49836f0e1d333124940056a', '{\"language\":\"zh-cn\",\"currency\":\"USD\"}', '2018-06-26 01:53:09');
 INSERT INTO `oc_session` VALUES ('6411fbf17250f828ebe285abd1', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-08-25 07:29:42');
 INSERT INTO `oc_session` VALUES ('6455420e186ca92100e9db23b9', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-08-24 03:00:17');
@@ -7066,7 +8063,10 @@ INSERT INTO `oc_session` VALUES ('66edf05a2c7ef1355727cc2626', '{\"language\":\"
 INSERT INTO `oc_session` VALUES ('67a6f99922cc49de9926fe353e', '{\"api_id\":\"1\"}', '2018-09-21 09:45:07');
 INSERT INTO `oc_session` VALUES ('689c7db647cbce3cc5559aca3c', '{\"language\":\"zh-cn\",\"currency\":\"CNY\",\"captcha\":\"1f2f30\",\"display_style\":\"grid\"}', '2018-08-24 10:32:21');
 INSERT INTO `oc_session` VALUES ('6ecd57647631a7e4aed68d2801', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-09-04 10:27:18');
+<<<<<<< HEAD
 INSERT INTO `oc_session` VALUES ('6ee4b1385f7b4eab8849d879de', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-10-08 10:26:45');
+=======
+>>>>>>> 790b49e13c12789410af78d35dc87d3d392cacc9
 INSERT INTO `oc_session` VALUES ('6ee4fa0756db915e5f5e0e931e', '{\"language\":\"zh-cn\",\"currency\":\"CNY\",\"captcha\":\"c5a598\"}', '2018-08-14 08:36:54');
 INSERT INTO `oc_session` VALUES ('750692cceac061d953056be27d', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-08-27 04:36:10');
 INSERT INTO `oc_session` VALUES ('7873e32a27622f9d78fbebe53d', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-08-07 02:58:40');
@@ -7076,15 +8076,22 @@ INSERT INTO `oc_session` VALUES ('7d67792b17a278500a47d1545b', '{\"language\":\"
 INSERT INTO `oc_session` VALUES ('7e50035ab65977ce5833e8dc42', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-07-12 01:27:37');
 INSERT INTO `oc_session` VALUES ('809c32fa926ed2d38a35278212', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-08-25 07:29:42');
 INSERT INTO `oc_session` VALUES ('80ff0cf8efd5c0d5475fe4ade9', '{\"language\":\"zh-cn\",\"currency\":\"CNY\",\"wishlist\":[],\"display_style\":\"grid\",\"user_id\":\"1\",\"user_token\":\"4c515b7ad2743c9c94d76328e3f15e9f\",\"checkout_terms\":\"1\"}', '2018-06-27 10:10:36');
+<<<<<<< HEAD
 INSERT INTO `oc_session` VALUES ('8268e50539a77ad3367a25f612', '{\"language\":\"zh-cn\",\"currency\":\"CNY\",\"user_id\":\"1\",\"user_token\":\"7ca8bb8cdb7a86e6021de57a0f23ee3b\",\"captcha\":\"c8ad6b\",\"customer_id\":\"2\",\"shipping_address\":false}', '2018-10-12 07:15:12');
+=======
+>>>>>>> 790b49e13c12789410af78d35dc87d3d392cacc9
 INSERT INTO `oc_session` VALUES ('84dda31aa636fcffae15502136', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-08-10 04:25:47');
 INSERT INTO `oc_session` VALUES ('857a38becd8828716db46fa820', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-07-09 03:36:07');
 INSERT INTO `oc_session` VALUES ('87a981d2d4595be1bf4da76f0e', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-08-31 09:27:54');
 INSERT INTO `oc_session` VALUES ('87b60a846bc21c3f003c2887e9', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-09-21 10:07:02');
 INSERT INTO `oc_session` VALUES ('87c096b4c9f6f5370c8948339a', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-06-30 02:06:13');
+<<<<<<< HEAD
 INSERT INTO `oc_session` VALUES ('8b1fdc3c06ccd1c8fa4566a074', '{\"language\":\"zh-cn\",\"currency\":\"CNY\",\"captcha\":\"914114\",\"display_style\":\"grid\"}', '2018-10-10 03:15:07');
 INSERT INTO `oc_session` VALUES ('8be5b2207963b49c994aa780a5', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-08-06 03:45:14');
 INSERT INTO `oc_session` VALUES ('8c28cc859a4b10409c5ed1487a', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-09-26 07:08:25');
+=======
+INSERT INTO `oc_session` VALUES ('8be5b2207963b49c994aa780a5', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-08-06 03:45:14');
+>>>>>>> 790b49e13c12789410af78d35dc87d3d392cacc9
 INSERT INTO `oc_session` VALUES ('8d9984480fd6b044da84d819b3', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-09-05 10:02:12');
 INSERT INTO `oc_session` VALUES ('8e0a959611db935ba11eef1dba', 'false', '2018-09-06 09:26:52');
 INSERT INTO `oc_session` VALUES ('8eb435dcaa5d0a09b4dbf0f874', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-08-07 09:11:37');
@@ -7095,10 +8102,15 @@ INSERT INTO `oc_session` VALUES ('90db5ca45af19047b0fdedeb0c', '{\"language\":\"
 INSERT INTO `oc_session` VALUES ('916f2b86867a739acc212bd5f7', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-08-27 04:07:27');
 INSERT INTO `oc_session` VALUES ('93923a8e8ddc29cb231c4142cf', '{\"language\":\"zh-cn\",\"currency\":\"CNY\",\"user_id\":\"1\",\"user_token\":\"a5cde7179fb6a0a01fb57e7e96162739\"}', '2018-06-26 06:22:31');
 INSERT INTO `oc_session` VALUES ('94693bd88cad35b3984d1a28b1', '{\"user_id\":\"1\",\"user_token\":\"43967ce9d15a6307b3fc7cce7e56041d\",\"language\":\"zh-cn\",\"currency\":\"CNY\",\"captcha\":\"067c33\"}', '2018-08-30 10:53:37');
+<<<<<<< HEAD
 INSERT INTO `oc_session` VALUES ('94c452963dffeb579cf7ca075e', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-10-09 00:46:02');
 INSERT INTO `oc_session` VALUES ('94ffcf6a144fe15891d3f492b0', '{\"language\":\"zh-cn\",\"currency\":\"CNY\",\"captcha\":\"364e16\"}', '2018-08-09 07:08:43');
 INSERT INTO `oc_session` VALUES ('96e19796209a55690d7908c6e5', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-09-21 10:07:00');
 INSERT INTO `oc_session` VALUES ('979bfc44b147f95a72c4be8229', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-10-09 10:30:17');
+=======
+INSERT INTO `oc_session` VALUES ('94ffcf6a144fe15891d3f492b0', '{\"language\":\"zh-cn\",\"currency\":\"CNY\",\"captcha\":\"364e16\"}', '2018-08-09 07:08:43');
+INSERT INTO `oc_session` VALUES ('96e19796209a55690d7908c6e5', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-09-21 10:07:00');
+>>>>>>> 790b49e13c12789410af78d35dc87d3d392cacc9
 INSERT INTO `oc_session` VALUES ('998456a14dfe2c28fca47db2c6', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-08-25 07:29:41');
 INSERT INTO `oc_session` VALUES ('9b00531629b868d71f1af620d3', 'false', '2018-08-30 04:04:16');
 INSERT INTO `oc_session` VALUES ('9b0bc2b946f086d87bc5e5d11d', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-08-10 07:49:45');
@@ -7107,7 +8119,10 @@ INSERT INTO `oc_session` VALUES ('9c317f94c74ff2b0bfa6428232', '{\"user_id\":\"1
 INSERT INTO `oc_session` VALUES ('9cda54e6184c6595f3a2a01046', '{\"language\":\"zh-cn\",\"currency\":\"CNY\",\"captcha\":\"53342a\",\"vouchers\":[],\"display_style\":\"grid\",\"user_id\":\"1\",\"user_token\":\"9a0e847c0a465b1c055664b25f5d0a16\"}', '2018-08-22 10:21:40');
 INSERT INTO `oc_session` VALUES ('9f759256bb8b41914040a2e49c', '{\"language\":\"zh-cn\",\"currency\":\"CNY\",\"customer_id\":\"1\",\"shipping_address\":{\"address_id\":\"1\",\"fullname\":\"wyx\",\"telephone\":\"13681147568\",\"company\":\"www\",\"address_1\":\"wwww\",\"address_2\":\"\",\"postcode\":\"\",\"city\":\"\",\"zone_id\":\"710\",\"zone\":\"\\u56db\\u5ddd\\u7701\",\"zone_code\":\"SI\",\"country_id\":\"44\",\"country\":\"\\u4e2d\\u56fd\",\"iso_code_2\":\"CN\",\"iso_code_3\":\"CHN\",\"address_format\":\"\",\"city_id\":\"2538\",\"county_id\":\"2539\",\"custom_field\":null}}', '2018-07-03 03:24:48');
 INSERT INTO `oc_session` VALUES ('a34d755943cd02c42b7aa49971', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-09-14 02:49:41');
+<<<<<<< HEAD
 INSERT INTO `oc_session` VALUES ('a389e3fb8c93d7b1cf15c33806', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-10-12 00:32:23');
+=======
+>>>>>>> 790b49e13c12789410af78d35dc87d3d392cacc9
 INSERT INTO `oc_session` VALUES ('a416fdf120d65486bbe2e859f6', '{\"user_id\":\"1\",\"user_token\":\"436d7240494a426aa898a70e57420e3e\",\"language\":\"zh-cn\",\"currency\":\"CNY\",\"captcha\":\"e34aa6\",\"display_style\":\"grid\"}', '2018-06-26 09:22:05');
 INSERT INTO `oc_session` VALUES ('a455383fe7ec4b5d504da09b76', '{\"language\":\"zh-cn\",\"currency\":\"CNY\",\"captcha\":\"7099a8\"}', '2018-07-09 07:31:42');
 INSERT INTO `oc_session` VALUES ('a6def2e274a4154d98af033ac1', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-07-30 08:03:09');
@@ -7115,7 +8130,10 @@ INSERT INTO `oc_session` VALUES ('a6f53783841ae9a8cfb8fecc1a', '{\"language\":\"
 INSERT INTO `oc_session` VALUES ('a83032f7052af56c681629560d', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-08-17 02:51:53');
 INSERT INTO `oc_session` VALUES ('a8bd2da505b8835879d4bf50dc', '{\"language\":\"zh-cn\",\"currency\":\"CNY\",\"captcha\":\"4aa26e\"}', '2018-08-17 09:59:00');
 INSERT INTO `oc_session` VALUES ('ade2fc6ca444b982d1f99a81d7', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-08-14 10:12:18');
+<<<<<<< HEAD
 INSERT INTO `oc_session` VALUES ('ae4fdf3f2ba66eb27d0f441ba9', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-09-29 10:05:55');
+=======
+>>>>>>> 790b49e13c12789410af78d35dc87d3d392cacc9
 INSERT INTO `oc_session` VALUES ('ae5d964828595efa49cb5b8f30', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-09-03 10:34:47');
 INSERT INTO `oc_session` VALUES ('b0918171c6fce8b27ba327609e', '{\"language\":\"zh-cn\",\"currency\":\"CNY\",\"captcha\":\"bc9110\"}', '2018-08-15 09:49:11');
 INSERT INTO `oc_session` VALUES ('b0b1af2f0c2f335a8d412f7d6a', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-08-27 04:37:00');
@@ -7123,7 +8141,10 @@ INSERT INTO `oc_session` VALUES ('b19af15942b737bd316fb7d26f', '{\"language\":\"
 INSERT INTO `oc_session` VALUES ('b1c366cd495a6c0535180e513d', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-06-28 08:56:53');
 INSERT INTO `oc_session` VALUES ('b24c1a4d7de867876416c6710e', '{\"language\":\"zh-cn\",\"currency\":\"CNY\",\"captcha\":\"8c2321\"}', '2018-08-08 05:57:53');
 INSERT INTO `oc_session` VALUES ('b4d1138e793f39a8b353eefcfd', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-07-10 00:53:57');
+<<<<<<< HEAD
 INSERT INTO `oc_session` VALUES ('b5695de19e55eaae1afc9dc139', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-10-08 05:47:54');
+=======
+>>>>>>> 790b49e13c12789410af78d35dc87d3d392cacc9
 INSERT INTO `oc_session` VALUES ('b90cf8074636326ed2fe04dfb9', '{\"api_id\":\"1\"}', '2018-06-27 09:58:35');
 INSERT INTO `oc_session` VALUES ('b926c2641e57565c3cf512fc8a', '{\"api_id\":\"1\"}', '2018-06-27 09:58:37');
 INSERT INTO `oc_session` VALUES ('bac3348eb9d5daea75f0e16d30', '{\"api_id\":\"1\"}', '2018-06-27 09:59:10');
@@ -7142,14 +8163,19 @@ INSERT INTO `oc_session` VALUES ('c78de9f7466dc6909943849bcb', '{\"language\":\"
 INSERT INTO `oc_session` VALUES ('c9388f9b7f217b3a860047b9e3', '{\"api_id\":\"1\"}', '2018-06-26 07:51:55');
 INSERT INTO `oc_session` VALUES ('c94150ae17da0c2f66c0f5439d', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-06-29 02:38:19');
 INSERT INTO `oc_session` VALUES ('c9cd32c6c4dbaf698bc1937ba2', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-08-13 07:32:37');
+<<<<<<< HEAD
 INSERT INTO `oc_session` VALUES ('cdcfef620bca2252e92fc7ad18', '{\"language\":\"zh-cn\",\"currency\":\"CNY\",\"user_id\":\"1\",\"user_token\":\"107f99e0033333b08ff9f848bafdc47c\"}', '2018-10-10 10:22:05');
 INSERT INTO `oc_session` VALUES ('ce11d9e95b9465fed6f2ea3608', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-06-30 02:06:29');
 INSERT INTO `oc_session` VALUES ('ce72e76720d8be01993173f022', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-10-11 00:30:56');
+=======
+INSERT INTO `oc_session` VALUES ('ce11d9e95b9465fed6f2ea3608', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-06-30 02:06:29');
+>>>>>>> 790b49e13c12789410af78d35dc87d3d392cacc9
 INSERT INTO `oc_session` VALUES ('cf35e092bb90d740b19a59260c', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-08-10 02:51:48');
 INSERT INTO `oc_session` VALUES ('d0c69f5931d5bf1181d86518f9', '{\"language\":\"zh-cn\",\"currency\":\"CNY\",\"captcha\":\"5be824\"}', '2018-08-22 07:11:34');
 INSERT INTO `oc_session` VALUES ('d0d43731501375cf84137034a0', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-06-28 07:50:40');
 INSERT INTO `oc_session` VALUES ('d0e4d1d0b17b9257788b61579f', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-08-07 09:11:29');
 INSERT INTO `oc_session` VALUES ('d10e4a6aa7b4202db430cdeecb', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-06-28 07:40:42');
+<<<<<<< HEAD
 INSERT INTO `oc_session` VALUES ('d112501bdae050e19e4c64d24d', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-09-26 02:58:49');
 INSERT INTO `oc_session` VALUES ('d14f86e9b715aacaade6fc60c3', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-09-26 03:54:26');
 INSERT INTO `oc_session` VALUES ('d1c199307eb93e15a964a2be4b', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-08-08 03:06:27');
@@ -7160,6 +8186,13 @@ INSERT INTO `oc_session` VALUES ('d6bcbffac1d40ed4daec941fae', '{\"language\":\"
 INSERT INTO `oc_session` VALUES ('d7d40060fdd6c1b03692e7fb3d', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-09-26 04:23:49');
 INSERT INTO `oc_session` VALUES ('d83a21fd389d6a7325589ea4c7', '{\"language\":\"zh-cn\",\"currency\":\"CNY\",\"user_id\":\"1\",\"user_token\":\"697f66dee0b743341db0b73570e1c459\",\"display_style\":\"grid\"}', '2018-06-27 09:14:57');
 INSERT INTO `oc_session` VALUES ('d885f81b089e9bc3943da94a4f', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-09-30 00:42:07');
+=======
+INSERT INTO `oc_session` VALUES ('d1c199307eb93e15a964a2be4b', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-08-08 03:06:27');
+INSERT INTO `oc_session` VALUES ('d32f15c94a5c096218d348c76b', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-06-28 08:26:28');
+INSERT INTO `oc_session` VALUES ('d630aa64ddc46c463b83dbfc37', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-09-10 02:24:57');
+INSERT INTO `oc_session` VALUES ('d6bcbffac1d40ed4daec941fae', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-08-08 07:07:54');
+INSERT INTO `oc_session` VALUES ('d83a21fd389d6a7325589ea4c7', '{\"language\":\"zh-cn\",\"currency\":\"CNY\",\"user_id\":\"1\",\"user_token\":\"697f66dee0b743341db0b73570e1c459\",\"display_style\":\"grid\"}', '2018-06-27 09:14:57');
+>>>>>>> 790b49e13c12789410af78d35dc87d3d392cacc9
 INSERT INTO `oc_session` VALUES ('d8e3d4a746ee0189a58f2e66ac', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-08-27 04:36:18');
 INSERT INTO `oc_session` VALUES ('da56c822a0702abefb568bf29d', '{\"language\":\"zh-cn\",\"currency\":\"CNY\",\"captcha\":\"7c9de6\"}', '2018-08-13 09:50:48');
 INSERT INTO `oc_session` VALUES ('da87a4aa0aa4d7159a174c6384', '{\"language\":\"zh-cn\",\"currency\":\"CNY\"}', '2018-09-14 02:50:10');

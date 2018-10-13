@@ -33,8 +33,8 @@ $this->nums();
         if(!empty($_GET['product_id'])){
             $nums += 1;
         }
-        echo "<br><br><br><br><br><br><br><br><br><br><br>";
-        echo $nums;
+        // echo "<br><br><br><br><br><br><br><br><br><br><br>";
+        // echo $nums;
     }
 
     //更多作品

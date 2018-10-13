@@ -103,9 +103,15 @@ ol,ul,li{
     vertical-align: middle;
 }
 
+<<<<<<< HEAD
 /* img { */
     /* border: 0; */
 /* } */
+=======
+img {
+    border: 0;
+}
+>>>>>>> 790b49e13c12789410af78d35dc87d3d392cacc9
 
 .auction-show-title {
     height: 55px;

@@ -2,7 +2,7 @@
 class ModelUserShop extends Model {
 	//添加用户
 	public function addShop($data) {
-		$this->db->query("INSERT INTO `" . DB_PREFIX . "shop` SET username = '" . $this->db->escape((string)$data['name']) . "', salt = '".$this->db->escape((string)$data['salt']) ."', password = '" . $this->db->escape(password_hash($data['pwd'], PASSWORD_DEFAULT)) . "',  tel = '" . $this->db->escape((string)$data['stel']) . "', cardid = '" . $this->db->escape((string)$data['card']) . "', status = '" . (int)$data['status'] . "', date_added = NOW()");
+		$this->db->query("INSERT INTO `" . DB_PREFIX . "shop` SET shop_name = '" . $this->db->escape((string)$data['name']) . "', shop_salt = '".$this->db->escape((string)$data['salt']) ."', shop_pwd = '" . $this->db->escape(password_hash($data['pwd'], PASSWORD_DEFAULT)) . "',  shop_tel = '" . $this->db->escape((string)$data['stel']) . "', shop_card = '" . $this->db->escape((string)$data['card']) . "', shop_status = '" . (int)$data['status'] . "', shop_adddate = NOW()");
 	
 		return $this->db->getLastId();
 	}
@@ -108,7 +108,7 @@ class ModelUserShop extends Model {
 	}
 	//验证唯一性
 	public function getShop($type='',$value=''){
-		$query = $this->db->query("SELECT COUNT(*) AS total FROM `" . DB_PREFIX . "shop` WHERE LCASE(".$type.") = '" . $this->db->escape(utf8_strtolower($value)) . "'");
+		$query = $this->db->query("SELECT COUNT(*) AS total FROM `" . DB_PREFIX . "shop` WHERE LCASE(shop_".$type.") = '" . $this->db->escape(utf8_strtolower($value)) . "'");
 		return $query->row['total'];
 	}
 }

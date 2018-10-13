@@ -132,7 +132,7 @@ $('#button-filter').on('click', function() {
     url += '&filter_status=' + encodeURIComponent(filter_status);
   }
 
-  location = 'index.php?route=catalog/category&user_tokens={{ user_tokens }}' + url;
+  location = 'index.php?route=catalog/category&user_token={{ user_token }}' + url;
 });
 //--></script>
 {{ footer }}

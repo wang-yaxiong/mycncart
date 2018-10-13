@@ -78,7 +78,11 @@ a{text-decoration:none;}/**/
 
 .container{
 	width:1200px;
+<<<<<<< HEAD
 	margin:90px auto;
+=======
+	margin:0 auto; 
+>>>>>>> 790b49e13c12789410af78d35dc87d3d392cacc9
 }
 
 .clearf:after,
