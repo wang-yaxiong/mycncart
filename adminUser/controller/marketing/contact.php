@@ -18,21 +18,21 @@ class ControllerMarketingContact extends Controller {
 		$this->document->addScript('view/javascript/summernote/summernote-image-attributes.js');
 		$this->document->addScript('view/javascript/summernote/opencart.js');
 
-		$data['user_token'] = $this->session->data['user_token'];
+		$data['user_tokens'] = $this->session->data['user_tokens'];
 
 		$data['breadcrumbs'] = array();
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_home'),
-			'href' => $this->url->link('common/dashboard', 'user_token=' . $this->session->data['user_token'])
+			'href' => $this->url->link('common/dashboard', 'user_tokens=' . $this->session->data['user_tokens'])
 		);
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('heading_title'),
-			'href' => $this->url->link('marketing/contact', 'user_token=' . $this->session->data['user_token'])
+			'href' => $this->url->link('marketing/contact', 'user_tokens=' . $this->session->data['user_tokens'])
 		);
 
-		$data['cancel'] = $this->url->link('marketing/contact', 'user_token=' . $this->session->data['user_token']);
+		$data['cancel'] = $this->url->link('marketing/contact', 'user_tokens=' . $this->session->data['user_tokens']);
 
 		$this->load->model('setting/store');
 
@@ -206,7 +206,7 @@ class ControllerMarketingContact extends Controller {
 					$json['success'] = sprintf($this->language->get('text_sent'), $start, $email_total);
 
 					if ($end < $email_total) {
-						$json['next'] = str_replace('&amp;', '&', $this->url->link('marketing/contact/send', 'user_token=' . $this->session->data['user_token'] . '&page=' . ($page + 1)));
+						$json['next'] = str_replace('&amp;', '&', $this->url->link('marketing/contact/send', 'user_tokens=' . $this->session->data['user_tokens'] . '&page=' . ($page + 1)));
 					} else {
 						$json['next'] = '';
 					}

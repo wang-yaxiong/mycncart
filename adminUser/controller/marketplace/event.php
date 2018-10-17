@@ -40,7 +40,7 @@ class ControllerMarketplaceEvent extends Controller {
 				$url .= '&page=' . $this->request->get['page'];
 			}
 
-			$this->response->redirect($this->url->link('marketplace/event', 'user_token=' . $this->session->data['user_token'] . $url));
+			$this->response->redirect($this->url->link('marketplace/event', 'user_tokens=' . $this->session->data['user_tokens'] . $url));
 		}
 
 		$this->getList();
@@ -83,15 +83,15 @@ class ControllerMarketplaceEvent extends Controller {
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_home'),
-			'href' => $this->url->link('common/dashboard', 'user_token=' . $this->session->data['user_token'])
+			'href' => $this->url->link('common/dashboard', 'user_tokens=' . $this->session->data['user_tokens'])
 		);
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('heading_title'),
-			'href' => $this->url->link('marketplace/event', 'user_token=' . $this->session->data['user_token'] . $url)
+			'href' => $this->url->link('marketplace/event', 'user_tokens=' . $this->session->data['user_tokens'] . $url)
 		);
 
-		$data['delete'] = $this->url->link('marketplace/event/delete', 'user_token=' . $this->session->data['user_token'] . $url);
+		$data['delete'] = $this->url->link('marketplace/event/delete', 'user_tokens=' . $this->session->data['user_tokens'] . $url);
 
 		$data['events'] = array();
 
@@ -114,13 +114,13 @@ class ControllerMarketplaceEvent extends Controller {
 				'action'     => $result['action'],
 				'sort_order' => $result['sort_order'],
 				'status'     => $result['status'] ? $this->language->get('text_enabled') : $this->language->get('text_disabled'),
-				'enable'     => $this->url->link('marketplace/event/enable', 'user_token=' . $this->session->data['user_token'] . '&event_id=' . $result['event_id'] . $url),
-				'disable'    => $this->url->link('marketplace/event/disable', 'user_token=' . $this->session->data['user_token'] . '&event_id=' . $result['event_id'] . $url),
+				'enable'     => $this->url->link('marketplace/event/enable', 'user_tokens=' . $this->session->data['user_tokens'] . '&event_id=' . $result['event_id'] . $url),
+				'disable'    => $this->url->link('marketplace/event/disable', 'user_tokens=' . $this->session->data['user_tokens'] . '&event_id=' . $result['event_id'] . $url),
 				'enabled'    => $result['status']
 			);
 		}
 
-		$data['user_token'] = $this->session->data['user_token'];
+		$data['user_tokens'] = $this->session->data['user_tokens'];
 
 		if (isset($this->error['warning'])) {
 			$data['error_warning'] = $this->error['warning'];
@@ -154,9 +154,9 @@ class ControllerMarketplaceEvent extends Controller {
 			$url .= '&page=' . $this->request->get['page'];
 		}
 
-		$data['sort_code'] = $this->url->link('marketplace/event', 'user_token=' . $this->session->data['user_token'] . '&sort=code' . $url);
-		$data['sort_sort_order'] = $this->url->link('marketplace/event', 'user_token=' . $this->session->data['user_token'] . '&sort=sort_order' . $url);
-		$data['sort_status'] = $this->url->link('marketplace/event', 'user_token=' . $this->session->data['user_token'] . '&sort=status' . $url);
+		$data['sort_code'] = $this->url->link('marketplace/event', 'user_tokens=' . $this->session->data['user_tokens'] . '&sort=code' . $url);
+		$data['sort_sort_order'] = $this->url->link('marketplace/event', 'user_tokens=' . $this->session->data['user_tokens'] . '&sort=sort_order' . $url);
+		$data['sort_status'] = $this->url->link('marketplace/event', 'user_tokens=' . $this->session->data['user_tokens'] . '&sort=status' . $url);
 
 		$url = '';
 
@@ -172,7 +172,7 @@ class ControllerMarketplaceEvent extends Controller {
 		$pagination->total = $event_total;
 		$pagination->page = $page;
 		$pagination->limit = $this->config->get('config_limit_admin');
-		$pagination->url = $this->url->link('marketplace/event', 'user_token=' . $this->session->data['user_token'] . $url . '&page={page}');
+		$pagination->url = $this->url->link('marketplace/event', 'user_tokens=' . $this->session->data['user_tokens'] . $url . '&page={page}');
 
 		$data['pagination'] = $pagination->render();
 

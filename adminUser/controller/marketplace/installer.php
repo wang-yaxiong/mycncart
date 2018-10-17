@@ -9,15 +9,15 @@ class ControllerMarketplaceInstaller extends Controller {
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_home'),
-			'href' => $this->url->link('common/dashboard', 'user_token=' . $this->session->data['user_token'])
+			'href' => $this->url->link('common/dashboard', 'user_tokens=' . $this->session->data['user_tokens'])
 		);
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('heading_title'),
-			'href' => $this->url->link('marketplace/installer', 'user_token=' . $this->session->data['user_token'])
+			'href' => $this->url->link('marketplace/installer', 'user_tokens=' . $this->session->data['user_tokens'])
 		);
 
-		$data['user_token'] = $this->session->data['user_token'];
+		$data['user_tokens'] = $this->session->data['user_tokens'];
 		
 		$data['header'] = $this->load->controller('common/header');
 		$data['column_left'] = $this->load->controller('common/column_left');
@@ -55,7 +55,7 @@ class ControllerMarketplaceInstaller extends Controller {
 		$pagination->total = $history_total;
 		$pagination->page = $page;
 		$pagination->limit = 10;
-		$pagination->url = $this->url->link('marketplace/installer/history', 'user_token=' . $this->session->data['user_token'] . '&page={page}');
+		$pagination->url = $this->url->link('marketplace/installer/history', 'user_tokens=' . $this->session->data['user_tokens'] . '&page={page}');
 
 		$data['pagination'] = $pagination->render();
 
@@ -160,7 +160,7 @@ class ControllerMarketplaceInstaller extends Controller {
 				
 				$json['text'] = $this->language->get('text_install');
 
-				$json['next'] = str_replace('&amp;', '&', $this->url->link('marketplace/install/install', 'user_token=' . $this->session->data['user_token'] . '&extension_install_id=' . $extension_install_id));
+				$json['next'] = str_replace('&amp;', '&', $this->url->link('marketplace/install/install', 'user_tokens=' . $this->session->data['user_tokens'] . '&extension_install_id=' . $extension_install_id));
 			} else {
 				$json['error'] = $this->language->get('error_file');
 			}

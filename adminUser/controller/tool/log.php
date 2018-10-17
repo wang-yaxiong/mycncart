@@ -29,16 +29,16 @@ class ControllerToolLog extends Controller {
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_home'),
-			'href' => $this->url->link('common/dashboard', 'user_token=' . $this->session->data['user_token'])
+			'href' => $this->url->link('common/dashboard', 'user_tokens=' . $this->session->data['user_tokens'])
 		);
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('heading_title'),
-			'href' => $this->url->link('tool/log', 'user_token=' . $this->session->data['user_token'])
+			'href' => $this->url->link('tool/log', 'user_tokens=' . $this->session->data['user_tokens'])
 		);
 
-		$data['download'] = $this->url->link('tool/log/download', 'user_token=' . $this->session->data['user_token']);
-		$data['clear'] = $this->url->link('tool/log/clear', 'user_token=' . $this->session->data['user_token']);
+		$data['download'] = $this->url->link('tool/log/download', 'user_tokens=' . $this->session->data['user_tokens']);
+		$data['clear'] = $this->url->link('tool/log/clear', 'user_tokens=' . $this->session->data['user_tokens']);
 
 		$data['log'] = '';
 
@@ -97,7 +97,7 @@ class ControllerToolLog extends Controller {
 		} else {
 			$this->session->data['error'] = sprintf($this->language->get('error_warning'), basename($file), '0B');
 
-			$this->response->redirect($this->url->link('tool/log', 'user_token=' . $this->session->data['user_token']));
+			$this->response->redirect($this->url->link('tool/log', 'user_tokens=' . $this->session->data['user_tokens']));
 		}
 	}
 	
@@ -116,6 +116,6 @@ class ControllerToolLog extends Controller {
 			$this->session->data['success'] = $this->language->get('text_success');
 		}
 
-		$this->response->redirect($this->url->link('tool/log', 'user_token=' . $this->session->data['user_token']));
+		$this->response->redirect($this->url->link('tool/log', 'user_tokens=' . $this->session->data['user_tokens']));
 	}
 }

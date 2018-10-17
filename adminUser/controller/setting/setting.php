@@ -14,7 +14,7 @@ class ControllerSettingSetting extends Controller {
 
 			$this->session->data['success'] = $this->language->get('text_success');
 
-			$this->response->redirect($this->url->link('setting/store', 'user_token=' . $this->session->data['user_token']));
+			$this->response->redirect($this->url->link('setting/store', 'user_tokens=' . $this->session->data['user_tokens']));
 		}
 		
 		if (isset($this->error['warning'])) {
@@ -141,17 +141,17 @@ class ControllerSettingSetting extends Controller {
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_home'),
-			'href' => $this->url->link('common/dashboard', 'user_token=' . $this->session->data['user_token'])
+			'href' => $this->url->link('common/dashboard', 'user_tokens=' . $this->session->data['user_tokens'])
 		);
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_stores'),
-			'href' => $this->url->link('setting/store', 'user_token=' . $this->session->data['user_token'])
+			'href' => $this->url->link('setting/store', 'user_tokens=' . $this->session->data['user_tokens'])
 		);
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('heading_title'),
-			'href' => $this->url->link('setting/setting', 'user_token=' . $this->session->data['user_token'])
+			'href' => $this->url->link('setting/setting', 'user_tokens=' . $this->session->data['user_tokens'])
 		);
 
 		if (isset($this->session->data['success'])) {
@@ -162,11 +162,11 @@ class ControllerSettingSetting extends Controller {
 			$data['success'] = '';
 		}
 
-		$data['action'] = $this->url->link('setting/setting', 'user_token=' . $this->session->data['user_token']);
+		$data['action'] = $this->url->link('setting/setting', 'user_tokens=' . $this->session->data['user_tokens']);
 
-		$data['cancel'] = $this->url->link('setting/store', 'user_token=' . $this->session->data['user_token']);
+		$data['cancel'] = $this->url->link('setting/store', 'user_tokens=' . $this->session->data['user_tokens']);
 
-		$data['user_token'] = $this->session->data['user_token'];
+		$data['user_tokens'] = $this->session->data['user_tokens'];
 
 		if (isset($this->request->post['config_meta_title'])) {
 			$data['config_meta_title'] = $this->request->post['config_meta_title'];

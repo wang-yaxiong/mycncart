@@ -33,11 +33,11 @@ class ControllerStartupLogin extends Controller {
 				'error/permission'
 			);
 
-			if (!in_array($route, $ignore) && (!isset($this->request->get['user_token']) || !isset($this->session->data['user_token']) || ($this->request->get['user_token'] != $this->session->data['user_token']))) {
+			if (!in_array($route, $ignore) && (!isset($this->request->get['user_tokens']) || !isset($this->session->data['user_tokens']) || ($this->request->get['user_tokens'] != $this->session->data['user_tokens']))) {
 				return new Action('common/login');
 			}
 		} else {
-			if (!isset($this->request->get['user_token']) || !isset($this->session->data['user_token']) || ($this->request->get['user_token'] != $this->session->data['user_token'])) {
+			if (!isset($this->request->get['user_tokens']) || !isset($this->session->data['user_tokens']) || ($this->request->get['user_tokens'] != $this->session->data['user_tokens'])) {
 				return new Action('common/login');
 			}
 		}

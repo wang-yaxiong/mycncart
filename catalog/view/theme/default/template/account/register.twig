@@ -116,7 +116,7 @@
 				<ul><li>注册</li></ul>
 				<form method="post" action="">
 					<dl>
-						<dt>手机号：</dt><dd><input type="text" name = 'tel' class='text' placeholder='请输入手机号'></dd>
+						<dt>手机号：</dt><dd><input type="text" id = 'tel' name = 'tel' class='text' placeholder='请输入手机号'></dd>
 						
 					</dl>	
 					<div class='cap-div'>
@@ -130,7 +130,7 @@
 					<div class='tcap-div'> 
 						<dl>
 							<dt>手机验证码：</dt> 
-							<dd><input type="button" name = 'tcap' class='text' value='获取手机验证码'></dd>
+							<dd><input type="button" name = 'tcap' class='text' value='获取手机验证码' onclick='checkphone()'></dd>
 							<dd><input type="hidden" name = 'tcap' class='text' placeholder='请输入手机验证码'></dd>
 						</dl>
 					</div>
@@ -169,6 +169,11 @@
 {{ footer }}
 
 <script>
+	
+	function checkphone (){
+		 var phone = $("#tel").val();
+
+	}
 	$('#xieyi').click(function (){
 		var bool =$("#xieyi").is(':checked');
 		if(bool){
@@ -180,7 +185,6 @@
 		    $('#submit').attr('disabled',true);
 		    $('#submit').css('background-color','#f4f4f4');
 		    $('#submit').css('border','1px solid #adb2b5' );
-
 		}
 	})
 	$('#submit').click(function (){

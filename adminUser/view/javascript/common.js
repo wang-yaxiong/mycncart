@@ -154,7 +154,7 @@ $(document).ready(function() {
                         }
                         if(files_array.length > 0){
                             $.ajax({
-                                url: 'index.php?route=common/filemanager/ckfinder&user_token=' + getURLVar('user_token') + '&restore=1&target=' + $element.parent().find('input').attr('id') + '&thumb=' + $element.attr('id'),
+                                url: 'index.php?route=common/filemanager/ckfinder&user_tokens=' + getURLVar('user_tokens') + '&restore=1&target=' + $element.parent().find('input').attr('id') + '&thumb=' + $element.attr('id'),
                                 data : 'files=' + files_array,
                                 type : 'post',
                                 dataType : 'json',
