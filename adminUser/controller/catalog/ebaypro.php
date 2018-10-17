@@ -8,9 +8,9 @@ class ControllerCatalogEbaypro extends Controller {
             $this->ebaypath = 'catalog/ebaypro';
             $this->load->language('catalog/product');
 
-            $this->document->setTitle($this->language->get('heading_title'));
+            $this->document->setTitle($this->language->get('heading_title2'));
 
-            $this->load->model('catalog/product');
+            $this->load->model('catalog/ebaypro');
 
             $this->getList();
         }
@@ -22,12 +22,12 @@ class ControllerCatalogEbaypro extends Controller {
 
 		$this->document->setTitle($this->language->get('heading_title2'));
 
-		$this->load->model('catalog/product');
+		$this->load->model('catalog/ebaypro');
 //echo '<pre>';
 //print_r($this->request->post);
 //echo '</pre>';die;
 		if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validateForm()) {
-			$this->model_catalog_product->addProduct($this->request->post);
+			$this->model_catalog_ebaypro->addProduct($this->request->post);
 			$this->session->data['success'] = $this->language->get('text_success');
 			$url = '';
 
@@ -77,10 +77,10 @@ class ControllerCatalogEbaypro extends Controller {
 
 		$this->document->setTitle($this->language->get('heading_title'));
 
-		$this->load->model('catalog/product');
+		$this->load->model('catalog/ebaypro');
 
 		if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validateForm()) {
-			$this->model_catalog_product->editProduct($this->request->get['product_id'], $this->request->post);
+			$this->model_catalog_ebaypro->editProduct($this->request->get['product_id'], $this->request->post);
 
 			$this->session->data['success'] = $this->language->get('text_success');
 
@@ -129,11 +129,11 @@ class ControllerCatalogEbaypro extends Controller {
 
 		$this->document->setTitle($this->language->get('heading_title'));
 
-		$this->load->model('catalog/product');
+		$this->load->model('catalog/ebaypro');
 
 		if (isset($this->request->post['selected']) && $this->validateDelete()) {
 			foreach ($this->request->post['selected'] as $product_id) {
-				$this->model_catalog_product->deleteProduct($product_id);
+				$this->model_catalog_ebaypro->deleteProduct($product_id);
 			}
 
 			$this->session->data['success'] = $this->language->get('text_success');
@@ -183,11 +183,11 @@ class ControllerCatalogEbaypro extends Controller {
 
 		$this->document->setTitle($this->language->get('heading_title'));
 
-		$this->load->model('catalog/product');
+		$this->load->model('catalog/ebaypro');
 
 		if (isset($this->request->post['selected']) && $this->validateCopy()) {
 			foreach ($this->request->post['selected'] as $product_id) {
-				$this->model_catalog_product->copyProduct($product_id);
+				$this->model_catalog_ebaypro->copyProduct($product_id);
 			}
 
 			$this->session->data['success'] = $this->language->get('text_success');
@@ -403,19 +403,21 @@ class ControllerCatalogEbaypro extends Controller {
 
 		$this->load->model('tool/image');
 
-		$product_total = $this->model_catalog_product->getTotalProducts($filter_data);
+		$product_total = $this->model_catalog_ebaypro->getTotalProducts($filter_data);
 
-		$results = $this->model_catalog_product->getProducts($filter_data);
+		$results = $this->model_catalog_ebaypro->getProducts($filter_data);
 
 		if($this->request->get['route'] === 'catalog/ebaypro' ){
             foreach($results as $k=>$v){
-                if(!empty($v['fuprice']) && ($v['fuprice'])>1){
+                if(($v['fuprice'])>1){
                     $res[] = $results[$k];
                 }
             }
             $results = $res;
         }
-
+//echo '<pre>';
+//print_r($this->session);
+//echo '</pre>';die;
         foreach ($results as $result) {
 			if (is_file(DIR_IMAGE . $result['image'])) {
 				$image = $this->model_tool_image->resize($result['image'], 40, 40);
@@ -425,7 +427,7 @@ class ControllerCatalogEbaypro extends Controller {
 
 			$special = false;
 
-			$product_specials = $this->model_catalog_product->getProductSpecials($result['product_id']);
+			$product_specials = $this->model_catalog_ebaypro->getProductSpecials($result['product_id']);
 
 			foreach ($product_specials  as $product_special) {
 				if (($product_special['date_start'] == '0000-00-00' || strtotime($product_special['date_start']) < time()) && ($product_special['date_end'] == '0000-00-00' || strtotime($product_special['date_end']) > time())) {
@@ -567,7 +569,7 @@ class ControllerCatalogEbaypro extends Controller {
 		$pagination->total = $product_total;
 		$pagination->page = $page;
 		$pagination->limit = $this->config->get('config_limit_admin');
-		$pagination->url = $this->url->link('catalog/product', 'user_token=' . $this->session->data['user_token'] . $url . '&page={page}');
+		$pagination->url = $this->url->link('catalog/ebaypro', 'user_token=' . $this->session->data['user_token'] . $url . '&page={page}');
 
 		$data['pagination'] = $pagination->render();
 
@@ -694,7 +696,7 @@ class ControllerCatalogEbaypro extends Controller {
 		$data['cancel'] = $this->url->link('catalog/ebaypro', 'user_token=' . $this->session->data['user_token'] . $url);
 
 		if (isset($this->request->get['product_id']) && ($this->request->server['REQUEST_METHOD'] != 'POST')) {
-			$product_info = $this->model_catalog_product->getProduct($this->request->get['product_id']);
+			$product_info = $this->model_catalog_ebaypro->getProduct($this->request->get['product_id']);
 		}
 
 		$data['user_token'] = $this->session->data['user_token'];
@@ -712,7 +714,7 @@ class ControllerCatalogEbaypro extends Controller {
 		if (isset($this->request->post['product_description'])) {
 			$data['product_description'] = $this->request->post['product_description'];
 		} elseif (isset($this->request->get['product_id'])) {
-			$data['product_description'] = $this->model_catalog_product->getProductDescriptions($this->request->get['product_id']);
+			$data['product_description'] = $this->model_catalog_ebaypro->getProductDescriptions($this->request->get['product_id']);
 		} else {
 			$data['product_description'] = array();
 		}
@@ -802,7 +804,7 @@ class ControllerCatalogEbaypro extends Controller {
 		if (isset($this->request->post['product_store'])) {
 			$data['product_store'] = $this->request->post['product_store'];
 		} elseif (isset($this->request->get['product_id'])) {
-			$data['product_store'] = $this->model_catalog_product->getProductStores($this->request->get['product_id']);
+			$data['product_store'] = $this->model_catalog_ebaypro->getProductStores($this->request->get['product_id']);
 		} else {
 			$data['product_store'] = array(0);
 		}
@@ -990,7 +992,7 @@ class ControllerCatalogEbaypro extends Controller {
 		if (isset($this->request->post['product_category'])) {
 			$categories = $this->request->post['product_category'];
 		} elseif (isset($this->request->get['product_id'])) {
-			$categories = $this->model_catalog_product->getProductCategories($this->request->get['product_id']);
+			$categories = $this->model_catalog_ebaypro->getProductCategories($this->request->get['product_id']);
 		} else {
 			$categories = array();
 		}
@@ -1014,7 +1016,7 @@ class ControllerCatalogEbaypro extends Controller {
 		if (isset($this->request->post['product_filter'])) {
 			$filters = $this->request->post['product_filter'];
 		} elseif (isset($this->request->get['product_id'])) {
-			$filters = $this->model_catalog_product->getProductFilters($this->request->get['product_id']);
+			$filters = $this->model_catalog_ebaypro->getProductFilters($this->request->get['product_id']);
 		} else {
 			$filters = array();
 		}
@@ -1038,7 +1040,7 @@ class ControllerCatalogEbaypro extends Controller {
 		if (isset($this->request->post['product_attribute'])) {
 			$product_attributes = $this->request->post['product_attribute'];
 		} elseif (isset($this->request->get['product_id'])) {
-			$product_attributes = $this->model_catalog_product->getProductAttributes($this->request->get['product_id']);
+			$product_attributes = $this->model_catalog_ebaypro->getProductAttributes($this->request->get['product_id']);
 		} else {
 			$product_attributes = array();
 		}
@@ -1064,7 +1066,7 @@ class ControllerCatalogEbaypro extends Controller {
 		if (isset($this->request->post['product_discount'])) {
 			$product_discounts = $this->request->post['product_discount'];
 		} elseif (isset($this->request->get['product_id'])) {
-			$product_discounts = $this->model_catalog_product->getProductDiscounts($this->request->get['product_id']);
+			$product_discounts = $this->model_catalog_ebaypro->getProductDiscounts($this->request->get['product_id']);
 		} else {
 			$product_discounts = array();
 		}
@@ -1085,7 +1087,7 @@ class ControllerCatalogEbaypro extends Controller {
 		if (isset($this->request->post['product_special'])) {
 			$product_specials = $this->request->post['product_special'];
 		} elseif (isset($this->request->get['product_id'])) {
-			$product_specials = $this->model_catalog_product->getProductSpecials($this->request->get['product_id']);
+			$product_specials = $this->model_catalog_ebaypro->getProductSpecials($this->request->get['product_id']);
 		} else {
 			$product_specials = array();
 		}
@@ -1127,7 +1129,7 @@ class ControllerCatalogEbaypro extends Controller {
 		if (isset($this->request->post['product_image'])) {
 			$product_images = $this->request->post['product_image'];
 		} elseif (isset($this->request->get['product_id'])) {
-			$product_images = $this->model_catalog_product->getProductImages($this->request->get['product_id']);
+			$product_images = $this->model_catalog_ebaypro->getProductImages($this->request->get['product_id']);
 		} else {
 			$product_images = array();
 		}
@@ -1162,7 +1164,7 @@ class ControllerCatalogEbaypro extends Controller {
 		if (isset($this->request->post['product_download'])) {
 			$product_downloads = $this->request->post['product_download'];
 		} elseif (isset($this->request->get['product_id'])) {
-			$product_downloads = $this->model_catalog_product->getProductDownloads($this->request->get['product_id']);
+			$product_downloads = $this->model_catalog_ebaypro->getProductDownloads($this->request->get['product_id']);
 		} else {
 			$product_downloads = array();
 		}
@@ -1183,7 +1185,7 @@ class ControllerCatalogEbaypro extends Controller {
 		if (isset($this->request->post['product_related'])) {
 			$products = $this->request->post['product_related'];
 		} elseif (isset($this->request->get['product_id'])) {
-			$products = $this->model_catalog_product->getProductRelated($this->request->get['product_id']);
+			$products = $this->model_catalog_ebaypro->getProductRelated($this->request->get['product_id']);
 		} else {
 			$products = array();
 		}
@@ -1191,7 +1193,7 @@ class ControllerCatalogEbaypro extends Controller {
 		$data['product_relateds'] = array();
 
 		foreach ($products as $product_id) {
-			$related_info = $this->model_catalog_product->getProduct($product_id);
+			$related_info = $this->model_catalog_ebaypro->getProduct($product_id);
 
 			if ($related_info) {
 				$data['product_relateds'][] = array(
@@ -1212,7 +1214,7 @@ class ControllerCatalogEbaypro extends Controller {
 		if (isset($this->request->post['product_reward'])) {
 			$data['product_reward'] = $this->request->post['product_reward'];
 		} elseif (isset($this->request->get['product_id'])) {
-			$data['product_reward'] = $this->model_catalog_product->getProductRewards($this->request->get['product_id']);
+			$data['product_reward'] = $this->model_catalog_ebaypro->getProductRewards($this->request->get['product_id']);
 		} else {
 			$data['product_reward'] = array();
 		}
@@ -1220,7 +1222,7 @@ class ControllerCatalogEbaypro extends Controller {
 		if (isset($this->request->post['product_seo_url'])) {
 			$data['product_seo_url'] = $this->request->post['product_seo_url'];
 		} elseif (isset($this->request->get['product_id'])) {
-			$data['product_seo_url'] = $this->model_catalog_product->getProductSeoUrls($this->request->get['product_id']);
+			$data['product_seo_url'] = $this->model_catalog_ebaypro->getProductSeoUrls($this->request->get['product_id']);
 		} else {
 			$data['product_seo_url'] = array();
 		}
@@ -1228,7 +1230,7 @@ class ControllerCatalogEbaypro extends Controller {
 		if (isset($this->request->post['product_layout'])) {
 			$data['product_layout'] = $this->request->post['product_layout'];
 		} elseif (isset($this->request->get['product_id'])) {
-			$data['product_layout'] = $this->model_catalog_product->getProductLayouts($this->request->get['product_id']);
+			$data['product_layout'] = $this->model_catalog_ebaypro->getProductLayouts($this->request->get['product_id']);
 		} else {
 			$data['product_layout'] = array();
 		}
@@ -1310,7 +1312,7 @@ class ControllerCatalogEbaypro extends Controller {
 		$json = array();
 
 		if (isset($this->request->get['filter_name']) || isset($this->request->get['filter_model'])) {
-			$this->load->model('catalog/product');
+			$this->load->model('catalog/ebaypro');
 			$this->load->model('catalog/option');
 			$this->load->model('catalog/product_option');
 
@@ -1339,12 +1341,12 @@ class ControllerCatalogEbaypro extends Controller {
 				'limit'        => $limit
 			);
 
-			$results = $this->model_catalog_product->getProducts($filter_data);
+			$results = $this->model_catalog_ebaypro->getProducts($filter_data);
 
 			foreach ($results as $result) {
 				$option_data = array();
 
-				$product_options = $this->model_catalog_product_option->getProductOptionsByProductId($result['product_id']);
+				$product_options = $this->model_catalog_ebaypro_option->getProductOptionsByProductId($result['product_id']);
 
 				foreach ($product_options as $product_option) {
 					$option_info = $this->model_catalog_option->getOption($product_option['option_id']);
@@ -1424,8 +1426,8 @@ class ControllerCatalogEbaypro extends Controller {
 		$product_id = (int)$this->request->get['product_id'];
 		$status = (int)$this->request->get['status'] > 0 ? 1 : 0;
 
-		$this->load->model('catalog/product');
-		$this->model_catalog_product->editProductStatus($product_id, $status);
+		$this->load->model('catalog/ebaypro');
+		$this->model_catalog_ebaypro->editProductStatus($product_id, $status);
 
 		$json['status'] = 1;
 		$json['message'] = 'Done.';
