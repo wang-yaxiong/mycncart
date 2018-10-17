@@ -14,7 +14,7 @@ class ControllerExtensionFraudFraudLabsPro extends Controller {
 
 			$this->session->data['success'] = $this->language->get('text_success');
 
-			$this->response->redirect($this->url->link('marketplace/extension', 'user_token=' . $this->session->data['user_token'] . '&type=fraud'));
+			$this->response->redirect($this->url->link('marketplace/extension', 'user_tokens=' . $this->session->data['user_tokens'] . '&type=fraud'));
 		}
 
 		if (isset($this->error['warning'])) {
@@ -33,22 +33,22 @@ class ControllerExtensionFraudFraudLabsPro extends Controller {
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_home'),
-			'href' => $this->url->link('common/dashboard', 'user_token=' . $this->session->data['user_token'])
+			'href' => $this->url->link('common/dashboard', 'user_tokens=' . $this->session->data['user_tokens'])
 		);
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_extension'),
-			'href' => $this->url->link('marketplace/extension', 'user_token=' . $this->session->data['user_token'] . '&type=fraud')
+			'href' => $this->url->link('marketplace/extension', 'user_tokens=' . $this->session->data['user_tokens'] . '&type=fraud')
 		);
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('heading_title'),
-			'href' => $this->url->link('extension/fraud/fraudlabspro', 'user_token=' . $this->session->data['user_token'])
+			'href' => $this->url->link('extension/fraud/fraudlabspro', 'user_tokens=' . $this->session->data['user_tokens'])
 		);
 
-		$data['action'] = $this->url->link('extension/fraud/fraudlabspro', 'user_token=' . $this->session->data['user_token']);
+		$data['action'] = $this->url->link('extension/fraud/fraudlabspro', 'user_tokens=' . $this->session->data['user_tokens']);
 
-		$data['cancel'] = $this->url->link('marketplace/extension', 'user_token=' . $this->session->data['user_token'] . '&type=fraud');
+		$data['cancel'] = $this->url->link('marketplace/extension', 'user_tokens=' . $this->session->data['user_tokens'] . '&type=fraud');
 
 		if (isset($this->request->post['fraud_fraudlabspro_key'])) {
 			$data['fraud_fraudlabspro_key'] = $this->request->post['fraud_fraudlabspro_key'];

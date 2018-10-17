@@ -41,15 +41,15 @@ class ControllerReportOnline extends Controller {
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_home'),
-			'href' => $this->url->link('common/dashboard', 'user_token=' . $this->session->data['user_token'])
+			'href' => $this->url->link('common/dashboard', 'user_tokens=' . $this->session->data['user_tokens'])
 		);
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('heading_title'),
-			'href' => $this->url->link('report/online', 'user_token=' . $this->session->data['user_token'])
+			'href' => $this->url->link('report/online', 'user_tokens=' . $this->session->data['user_tokens'])
 		);
 		
-		$data['refresh'] = $this->url->link('report/online', 'user_token=' . $this->session->data['user_token'] . $url);
+		$data['refresh'] = $this->url->link('report/online', 'user_tokens=' . $this->session->data['user_tokens'] . $url);
 
 		$this->load->model('report/online');
 		$this->load->model('customer/customer');		
@@ -83,11 +83,11 @@ class ControllerReportOnline extends Controller {
 				'url'         => $result['url'],
 				'referer'     => $result['referer'],
 				'date_added'  => date($this->language->get('datetime_format'), strtotime($result['date_added'])),
-				'edit'        => $this->url->link('customer/customer/edit', 'user_token=' . $this->session->data['user_token'] . '&customer_id=' . $result['customer_id'])
+				'edit'        => $this->url->link('customer/customer/edit', 'user_tokens=' . $this->session->data['user_tokens'] . '&customer_id=' . $result['customer_id'])
 			);
 		}
 
-		$data['user_token'] = $this->session->data['user_token'];
+		$data['user_tokens'] = $this->session->data['user_tokens'];
 
 		$url = '';
 
@@ -103,7 +103,7 @@ class ControllerReportOnline extends Controller {
 		$pagination->total = $customer_total;
 		$pagination->page = $page;
 		$pagination->limit = $this->config->get('config_limit_admin');
-		$pagination->url = $this->url->link('report/online', 'user_token=' . $this->session->data['user_token'] . $url . '&page={page}');
+		$pagination->url = $this->url->link('report/online', 'user_tokens=' . $this->session->data['user_tokens'] . $url . '&page={page}');
 
 		$data['pagination'] = $pagination->render();
 

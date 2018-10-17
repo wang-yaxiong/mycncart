@@ -3,7 +3,7 @@ class ControllerCommonRegister extends Controller {
 	private $error = array();
 
 	public function index() {
-		if ($this->user->isLogged() && isset($this->request->get['user_token']) && ($this->request->get['user_token'] == $this->session->data['user_token'])) {
+		if ($this->user->isLogged() && isset($this->request->get['user_tokens']) && ($this->request->get['user_tokens'] == $this->session->data['user_tokens'])) {
 			$this->response->redirect($this->url->link('common/dashboard'));
 		}
 		if ( isset($this->request->get['step']) && $this->request->get['step'] != 'step1' ) {
