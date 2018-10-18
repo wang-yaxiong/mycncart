@@ -449,7 +449,7 @@ class ControllerCheckoutCheckout extends Controller {
 		}
 
 		// Check if order is unpaid
-		if ($order['order_status_id'] != 0) {
+		if ($order['order_status_id'] != 1) {
 			$this->response->redirect($this->url->link('account/order/info', 'order_id=' . $order['order_id']));
 		}
 

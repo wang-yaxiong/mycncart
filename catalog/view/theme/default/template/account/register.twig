@@ -171,8 +171,14 @@
 <script>
 	
 	function checkphone (){
-		 var phone = $("#tel").val();
-
+		var phone = $("#tel").val();
+		var reg = /^1[3|4|5|7|8][0-9]{9}$/;  
+                var flag = reg.test(phone);  
+		if(flag){
+			
+		}else{
+		    	
+		}
 	}
 	$('#xieyi').click(function (){
 		var bool =$("#xieyi").is(':checked');
