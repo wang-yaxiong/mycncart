@@ -25,7 +25,6 @@ class ControllerEbayproPaimai extends Controller {
             $nowtime = time()+28800;
             if($strtime<=$nowtime){
                 $this->model_catalog_ebaypro->forProduct($_POST['product_id']);
-                echo 111;
                 return true;
             }else{
                 return false;

@@ -62,16 +62,19 @@ class ControllerCheckoutCart extends Controller {
 			$data['products'] = array();
 
 			$products = $this->cart->getProducts();
+            $this->load->model('catalog/ebaypro');
 
 			foreach ($products as $product) {
 				$product_total = 0;
 
 				foreach ($products as $product_2) {
 					if ($product_2['product_id'] == $product['product_id']) {
+                        $p = $this->model_catalog_ebaypro->getProduct($product_2['product_id']);
+                        $fuprice = $p['fuprice'];
+
 						$product_total += $product_2['quantity'];
 					}
 				}
-
 				if ($product['minimum'] > $product_total) {
 					$data['error_warning'] = sprintf($this->language->get('error_minimum'), $product['name'], $product['minimum']);
 				}
@@ -109,7 +112,11 @@ class ControllerCheckoutCart extends Controller {
 					$price = false;
 					$total = false;
 				}
-
+				
+				$ppath = 'product/product';
+				if($fuprice){
+                    $ppath = 'ebaypro/ebaypro';
+                }
 				$data['products'][] = array(
 					'cart_id'   => $product['cart_id'],
 					'thumb'     => $image,
@@ -119,9 +126,9 @@ class ControllerCheckoutCart extends Controller {
 					'quantity'  => $product['quantity'],
 					'stock'     => $product['stock'] ? true : !(!$this->config->get('config_stock_checkout') || $this->config->get('config_stock_warning')),
 					'reward'    => ($product['reward'] ? sprintf($this->language->get('text_points'), $product['reward']) : ''),
-					'price'     => $price,
+                    'price'     => $price,
 					'total'     => $total,
-					'href'      => $this->url->link('product/product', 'product_id=' . $product['product_id'])
+					'href'      => $this->url->link($ppath , 'product_id=' . $product['product_id'])
 				);
 			}
 
@@ -369,7 +376,9 @@ class ControllerCheckoutCart extends Controller {
 		$this->load->language('checkout/cart');
 
 		$json = array();
-
+//        echo '<pre>';
+//        print_r($this->request->post['key']);
+//        echo '</pre>';die;
 		// Remove
 		if (isset($this->request->post['key'])) {
 			$this->cart->remove($this->request->post['key']);

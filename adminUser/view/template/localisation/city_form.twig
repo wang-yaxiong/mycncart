@@ -136,7 +136,7 @@
     });
     function parentType(city_id){
         $.ajax({
-            url: 'index.php?route=localisation/city/city&user_tokens={{ user_tokens }}&zone_id=' + city_id,
+            url: 'index.php?route=localisation/city/city&user_token={{ user_token }}&zone_id=' + city_id,
             dataType: 'json',
             beforeSend: function() {
                 $('select[name=\'parent_id\']').after('<span class="wait">&nbsp;<img src="view/image/loading.gif" alt="" /></span>');
@@ -160,7 +160,7 @@
     function country(element, zone_id) {
         if (element.value != '') {
             $.ajax({
-                url: 'index.php?route=localisation/country/country&user_tokens={{ user_tokens }}&country_id=' + element.value,
+                url: 'index.php?route=localisation/country/country&user_token={{ user_token }}&country_id=' + element.value,
                 dataType: 'json',
                 beforeSend: function() {
                     $('select[name=\'country_id\']').after('<span class="wait">&nbsp;<img src="view/image/loading.gif" alt="" /></span>');

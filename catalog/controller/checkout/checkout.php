@@ -10,9 +10,9 @@
  */
 
 class ControllerCheckoutCheckout extends Controller {
-	private $ADDRESS_FIELDS = array('fullname', 'telephone', 'company', 'address_1', 'address_2', 'city', 'postcode', 'country_id', 'zone_id', 'city_id', 'county_id', 'custom_field');
+    private $ADDRESS_FIELDS = array('fullname', 'telephone', 'company', 'address_1', 'address_2', 'city', 'postcode', 'country_id', 'zone_id', 'city_id', 'county_id', 'custom_field');
 
-	public function __construct($registry) {
+    public function __construct($registry) {
 		parent::__construct($registry);
 		$this->load->language('checkout/cart');
 		$this->load->language('checkout/coupon');
@@ -33,7 +33,7 @@ class ControllerCheckoutCheckout extends Controller {
 		}
 	}
 
-	public function index() {
+    public function index() {
 		if (!$this->isValidCart()) {
 			$this->log('Cart invalid');
 			$this->response->redirect($this->url->link('checkout/cart'));
@@ -146,8 +146,8 @@ class ControllerCheckoutCheckout extends Controller {
 		$this->response->setOutput($this->load->view('checkout/checkout/checkout', $data));
 	}
 
-	// Update checkout
-	public function update() {
+    // Update checkout
+    public function update() {
 		if ($this->request->server['REQUEST_METHOD'] != 'POST') {
 			$this->response->redirect($this->url->link('checkout/cart'));
 		}
@@ -270,8 +270,8 @@ class ControllerCheckoutCheckout extends Controller {
 		}
 	}
 
-	// Validate and submit order
-	public function confirm() {
+    // Validate and submit order
+    public function confirm() {
 		$this->log(__FUNCTION__);
 		$redirect = '';
 		$error = array();

@@ -114,11 +114,11 @@
 		    <div id='mid-register'>
 		    	<div id='m-left'>
 				<ul><li>注册</li></ul>
-				<form method="post" action="">
+				<form method="post" action="index.php?route=common/register/add">
 					<dl>
 						<dt>手机号：</dt><dd><input type="text" id = 'tel' name = 'tel' class='text' placeholder='请输入手机号'></dd>
 						
-					</dl>	
+					</dl>
 					<div class='cap-div'>
 						<dl>
 							<dt>验证码：</dt><dd><input type="text" name = 'cap' class='text cap100' placeholder='请输入验证码'></dd>
@@ -127,21 +127,21 @@
 							{{ captcha }}
 						</span>
 					</div>
-					<div class='tcap-div'> 
+					<div class='tcap-div'>
 						<dl>
 							<dt>手机验证码：</dt> 
 							<dd><input type="button" name = 'tcap' class='text' value='获取手机验证码' onclick='checkphone()'></dd>
-							<dd><input type="hidden" name = 'tcap' class='text' placeholder='请输入手机验证码'></dd>
+							<dd><input type="text" name = 'tcap' class='text' placeholder='请输入手机验证码'></dd>
 						</dl>
 					</div>
 					<div class='pwd-div'>
 						<dl>
-							<dt>密码：</dt><dd><input type="text" name = 'pwd' class='text pwd' placeholder='请输入密码'></dd>
+							<dt>密码：</dt><dd><input type="text" name = 'password' class='text pwd' placeholder='请输入密码'></dd>
 						</dl> 
 					</div>
 					<div class='cpwd-div'>
 						<dl>
-							<dt>确认密码：</dt><dd><input type="text" name = 'cpwd' class='text cpwd' placeholder='请输入确认密码'></dd>
+							<dt>确认密码：</dt><dd><input type="text" name = 'qpwd' class='text cpwd' placeholder='请输入确认密码'></dd>
 						</dl> 
 					</div>
 					<div>

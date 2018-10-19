@@ -185,12 +185,13 @@
                   var ct = ee - nn - cha;
                   if(ct<=0){
                       $.ajax({
-                          url: 'index.php?route=ebaypro/paimai/move_product',
+                          url: 'index.php?route=ebaypro/ebaypro/move_product',
                           // dataType:'json',
-                          data: { product_id:{{ c.product_id }},end_available:true },
+                          data: { product_id:{{ c.product_id }},end_available:true,endtime:true },
                           type: 'POST',
                           success: function(data){
-                              window.location.reload(true);
+                              // window.location.reload(true);
+                              console.log(data);
                           },
                           error: function(){
                               alert('请求发送失败了!!!');
@@ -249,14 +250,14 @@
     var price = parseInt(document.getElementById('pe').innerText);
     if(bz_price >= price){
         document.getElementsByClassName('Xcontent42')[0].innerHTML =
-            '<input class ="aaaaa" type="number" style="color:red;width:170px;height:40px;" value="">'
-            +'<input  style="color:red;width:70px;height:40px;" type="submit" class="mit" value="出价">';
+            '<input class ="aaaaa" type="number" style="color:red;width:170px;height:40px;" value="">'+'&nbsp;'
+            +'<input  style="color:red;width:70px;height:44px;color:#F0F8FF;font-size: 25px;background-color: red;" type="submit" class="mit" value="出价">';
     }
     document.getElementsByClassName('mit')[0].onclick = function(){
         var aaa = document.getElementsByClassName('aaaaa')[0];
         var np = document.getElementsByClassName('nowprice')[0];
-        if(!np.innerText){
-            np.innerText = parseInt(price) + 1000;
+        if(!np.innerText && !aaa.value){
+            np.innerText = parseInt(price) + 10;
         }else if(!aaa.value){
             np.innerText = 1000 + parseInt(np.innerText);
         }else{
@@ -272,7 +273,7 @@
             // dataType:'json',
             success: function(data){
                 // window.location.reload(true);
-                console.log(data);
+                // console.log(data);
             },
             error: function(){
                 alert('请求发送失败了!!!');
@@ -298,41 +299,72 @@
       </div>
       <div class="btn" ms-class="@tab===3? 'active':''">
         <div class="tab-btn" ms-click="@toggleTab(3)" avalon-events="click:eclick_0_64toggleTab405041">
-          拍卖须知
+          <a class="tab-btn" href="#read">拍卖须知</a>
+
         </div>
       </div>
     </div>
   </div>
-  <div class="j-contain" >
-    <table>
-      <tr>
-        <th>作品名称：</th>
-        <td>{{ c.name }}</td>
-      </tr>
-      <tr>
-        <th>艺术家：</th>
-      <td></td>
-      </tr>
-      <tr>
-        <th>材质：</th>
-        <td></td>
-      </tr>
-      <tr>
-        <th>尺寸：</th>
-        <td></td>
-      </tr>
-      <tr>
-        <th>创作时间：</th>
-        <td></td>
-      </tr>
-      <tr>
-        <th>描 述：</th>
-        <td></td>
-      </tr>
-    </table>
+  <style>
+    .clearfix span{
+      color:red;
+      width: 100px;
+      height: 21.11px;
+    }
+  </style>
+  <div class="j-contain">
+    <ul class="productsInformation">
+      <li class="clearfix">
+        <div>
+          <span style="width: 100px;">作品名称：</span>
+          <h1>寻山手记 系列之二</h1>
+        </div>
+        <div>
+							<span>艺术家：
+								<span class="justify_fix"></span>
+							</span>
+          <a href="#">徐青</a>
+        </div>
+        <div>
+          <span>材质：</span>
+          纸本水彩
+        </div>
+      </li><br>
+      <li class="clearfix">
+        <div>
+          <span>尺寸：</span>
+          39×27cm
+        </div>
+        <div>
+          <span style="width: 100px;">创作时间：</span>
+          2017
+        </div>
+        <div>
+          <span style="width: 100px;">作品类型：</span>
+          水彩（粉）
+        </div>
+      </li>
+      <li class="clearfix">
+        <div>
+          <span>风格：</span>
+          具象表现
+        </div>
+        <div>
+          <span>题材：</span>
+          风景
+        </div>
+      </li>
+      <li>
+        <div>
+          <span>描述：</span>
+
+        </div>
+      </li>
+    </ul>
     <div class="tab-content">
       <div class="tab-pane active" id="tab-description">{{ c.description }}</div>
     </div>
+
     <div class="details">
         {% for img in c.pimage %}
       <div class="item">

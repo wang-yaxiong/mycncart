@@ -15,16 +15,16 @@ class ControllerCommonHeader extends Controller {
 		
 		$data['text_logged'] = sprintf($this->language->get('text_logged'), $this->user->getUserName());
 
-		if (!isset($this->request->get['user_tokens']) || !isset($this->session->data['user_tokens']) || ($this->request->get['user_tokens'] != $this->session->data['user_tokens'])) {
+		if (!isset($this->request->get['user_token']) || !isset($this->session->data['user_token']) || ($this->request->get['user_token'] != $this->session->data['user_token'])) {
 			$data['logged'] = '';
 
 			$data['home'] = $this->url->link('common/login');
 		} else {
 			$data['logged'] = true;
 
-			$data['home'] = $this->url->link('common/dashboard', 'user_tokens=' . $this->session->data['user_tokens']);
-			$data['logout'] = $this->url->link('common/logout', 'user_tokens=' . $this->session->data['user_tokens']);
-			$data['profile'] = $this->url->link('common/profile', 'user_tokens=' . $this->session->data['user_tokens']);
+			$data['home'] = $this->url->link('common/dashboard', 'user_token=' . $this->session->data['user_token']);
+			$data['logout'] = $this->url->link('common/logout', 'user_token=' . $this->session->data['user_token']);
+			$data['profile'] = $this->url->link('common/profile', 'user_token=' . $this->session->data['user_token']);
 
 			$this->load->model('tool/image');
 

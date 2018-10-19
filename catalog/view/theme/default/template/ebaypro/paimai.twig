@@ -173,7 +173,7 @@
                                                 type: 'POST',
                                                 success: function(data){
                                                     window.location.reload(true);
-                                                    console.log(data);
+                                                    // console.log(data);
                                                 },
                                                 error: function(){
                                                     alert('请求发送失败了!!!');
@@ -232,16 +232,16 @@
     </div>
 </div>
 
-<div class="fenye">
-    <div class="fenye-1">
-        <ul class="pagination" id="page1"></ul>
-        <div class="pageJump">
-            <span>跳转到</span>
-            <input type="text"/>
-            <span>页</span>
-            <button type="button" class="button">确定</button>
-        </div>
-    </div>
+{#<div class="fenye">#}
+    {#<div class="fenye-1">#}
+        {#<ul class="pagination" id="page1"></ul>#}
+        {#<div class="pageJump">#}
+            {#<span>跳转到</span>#}
+            {#<input type="text"/>#}
+            {#<span>页</span>#}
+            {#<button type="button" class="button">确定</button>#}
+        {#</div>#}
+    {#</div>#}
     {#<script>#}
         {#Page({#}
             {#num:9,					//页码数#}
@@ -341,95 +341,7 @@
 </style>
 
 <!--右侧-->
-<div class="cndns-right">
-    <div class="cndns-right-meau meau-car">
-        <a href="#" class="cndns-right-btn">
-            <span class="demo-icon">&#xe900;</span>
-            <sup>0</sup>
-        </a>
-    </div>
-    <div class="cndns-right-meau meau-sev">
-        <a href="javascript:" class="cndns-right-btn">
-            <span class="demo-icon">&#xe901;</span>
-            <p>
-                在线<br />
-                客服
-            </p>
-        </a>
-        <div class="cndns-right-box">
-            <div class="box-border">
-                <div class="sev-t">
-                    <span class="demo-icon">&#xe901;</span>
-                    <p>在线客服<i>服务时间：9:00-24:00</i></p>
-                    <div class="clear"></div>
-                </div>
-                <div class="sev-b">
-                    <h4>选择下列产品马上在线沟通：</h4>
-                    <ul id="zixunUl">
-                        <li><a href="javascript:void(0);">购买艺术</a></li>
-                        <li><a href="javascript:void(0);">作品征集</a></li>
-                        <li><a href="javascript:void(0);">合作伙伴</a></li>
-                        <!--<li><a href="javascript:void(0);">代理咨询</a></li>
-                        <li><a href="javascript:void(0);">网站推广</a></li>
-                        <li><a href="javascript:void(0);">橙云主机</a></li>
 
-                        <li><a href="javascript:void(0);">域名交易</a></li>
-
-                        <li><a href="javascript:void(0);">租用托管(BGP)</a></li>
-
-                        <li><a href="javascript:void(0);">其他产品</a></li>-->
-                        <div class="clear"></div>
-                    </ul>
-                </div>
-                <span class="arrow-right"></span>
-            </div>
-        </div>
-    </div>
-    <div class="cndns-right-meau meau-contact">
-        <a href="javascript:" class="cndns-right-btn">
-            <span class="demo-icon">&#xe902;</span>
-            <p>
-                客服<br />
-                热线
-            </p>
-        </a>
-        <div class="cndns-right-box">
-            <div class="box-border">
-                <div class="sev-t">
-                    <span class="demo-icon">&#xe902;</span>
-                    <p>400-123-4567<br /><i>7*24小时客服服务热线</i></p>
-                    <div class="clear"></div>
-                </div>
-                <span class="arrow-right"></span>
-            </div>
-        </div>
-    </div>
-    <div class="cndns-right-meau meau-code">
-        <a href="javascript:" class="cndns-right-btn">
-            <span class="demo-icon">&#xe903;</span>
-            <p>
-                关注<br />
-                微信
-            </p>
-        </a>
-        <div class="cndns-right-box">
-            <div class="box-border">
-                <div class="sev-t">
-                    <img src="" />
-                    <i>关注官方微信</i>
-                </div>
-                <span class="arrow-right"></span>
-            </div>
-        </div>
-    </div>
-    <div class="cndns-right-meau meau-top" id="top-back">
-        <a href="javascript:" class="cndns-right-btn" onclick="topBack()">
-            <span class="demo-icon">&#xe904;</span>
-            <i>顶部</i>
-        </a>
-    </div>
-
-</div>
 
 <script type="text/javascript" src="./catalog/view/javascript/jquery/jquery-1.4.2.min.js"></script>
 <script type="text/javascript">

@@ -12,7 +12,7 @@ class ControllerExtensionReportSaleReturn extends Controller {
 
 			$this->session->data['success'] = $this->language->get('text_success');
 
-			$this->response->redirect($this->url->link('marketplace/extension', 'user_tokens=' . $this->session->data['user_tokens'] . '&type=report'));
+			$this->response->redirect($this->url->link('marketplace/extension', 'user_token=' . $this->session->data['user_token'] . '&type=report'));
 		}
 
 		if (isset($this->error['warning'])) {
@@ -25,22 +25,22 @@ class ControllerExtensionReportSaleReturn extends Controller {
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_home'),
-			'href' => $this->url->link('common/dashboard', 'user_tokens=' . $this->session->data['user_tokens'])
+			'href' => $this->url->link('common/dashboard', 'user_token=' . $this->session->data['user_token'])
 		);
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_extension'),
-			'href' => $this->url->link('marketplace/extension', 'user_tokens=' . $this->session->data['user_tokens'] . '&type=report')
+			'href' => $this->url->link('marketplace/extension', 'user_token=' . $this->session->data['user_token'] . '&type=report')
 		);
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('heading_title'),
-			'href' => $this->url->link('extension/report/sale_return', 'user_tokens=' . $this->session->data['user_tokens'])
+			'href' => $this->url->link('extension/report/sale_return', 'user_token=' . $this->session->data['user_token'])
 		);
 
-		$data['action'] = $this->url->link('extension/report/sale_return', 'user_tokens=' . $this->session->data['user_tokens']);
+		$data['action'] = $this->url->link('extension/report/sale_return', 'user_token=' . $this->session->data['user_token']);
 
-		$data['cancel'] = $this->url->link('marketplace/extension', 'user_tokens=' . $this->session->data['user_tokens'] . '&type=report');
+		$data['cancel'] = $this->url->link('marketplace/extension', 'user_token=' . $this->session->data['user_token'] . '&type=report');
 
 		if (isset($this->request->post['report_sale_return_status'])) {
 			$data['report_sale_return_status'] = $this->request->post['report_sale_return_status'];
@@ -127,7 +127,7 @@ class ControllerExtensionReportSaleReturn extends Controller {
 			);
 		}
 
-		$data['user_tokens'] = $this->session->data['user_tokens'];
+		$data['user_token'] = $this->session->data['user_token'];
 
 		$this->load->model('localisation/return_status');
 
@@ -177,7 +177,7 @@ class ControllerExtensionReportSaleReturn extends Controller {
 		$pagination->total = $return_total;
 		$pagination->page = $page;
 		$pagination->limit = $this->config->get('config_limit_admin');
-		$pagination->url = $this->url->link('report/report', 'user_tokens=' . $this->session->data['user_tokens'] . '&code=sale_return' . $url . '&page={page}');
+		$pagination->url = $this->url->link('report/report', 'user_token=' . $this->session->data['user_token'] . '&code=sale_return' . $url . '&page={page}');
 
 		$data['pagination'] = $pagination->render();
 
