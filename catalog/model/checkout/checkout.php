@@ -88,7 +88,7 @@ class ModelCheckoutCheckout extends Model {
 
 			'comment'                   => '',
 			'total'                     => '',
-			'order_status_id'           => 0,
+			'order_status_id'           => 1,
 			'affiliate_id'              => '',
 			'commission'                => '',
 			'marketing_id'              => '',

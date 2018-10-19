@@ -10,7 +10,7 @@ class ControllerExtensionPaymentAlipay extends Controller {
 		$config = array (
 			'app_id'               => $this->config->get('payment_alipay_app_id'),
 			'merchant_private_key' => $this->config->get('payment_alipay_merchant_private_key'),
-			'notify_url'           => HTTP_SERVER . "payment_callback/alipay",
+			'notify_url'           => "http://www.hongfuclub.com/index.php?route=check/check",
 			'return_url'           => $this->url->link('checkout/success'),
 			'charset'              => "UTF-8",
 			'sign_type'            => "RSA2",
