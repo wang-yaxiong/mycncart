@@ -150,7 +150,7 @@
 	.step2-info  ul li{
 		list-style:none;
 	}
-	.step2-name dl dt ,.step2-card dl dt , .step2-tel dl dt,.step2-pwd dl dt,.step2-npwd dl dt{
+	.step2-name dl dt ,.step2-card dl dt , .step2-tel dl dt,.step2-capt dl dt,.step2-pwd dl dt,.step2-npwd dl dt {
 		float:left;
 	} 
 	#s_name{
@@ -181,6 +181,11 @@
 	}
 	.step2-tel {
 		padding:30px 160px;;
+		height:80px;
+		line-height:80px;
+	}
+	.step2-capt {
+		padding:30px 134px;;
 		height:80px;
 		line-height:80px;
 	}
@@ -235,6 +240,8 @@
 			<div>
 				<form method="post" action="index.php?route=common/register/add" name='form'>			
 					<div class="joinin-concrete">
+						<div style='text-align:center;font-size:18px;color:red'><span>{{error_info}}</span></div>
+
 						<div class='step2-info'>
 							<div class='step2-name'>
 								<dl>
@@ -255,6 +262,14 @@
 								<dl>
 								    <dt><span>手机号：</span></dt>
 								    <dd><input type="text" name="stel" id = 'steptel'></dd>
+								    <dd><span id='s_tel'></span></dd>
+								</dl>
+								
+							</div>
+							<div class='step2-capt'>
+								<dl>
+								    <dt><span>手机验证码：</span></dt>
+								    <dd><input type="text" name="stel" id = 'stepcapt'></dd>
 								    <dd><span id='s_tel'></span></dd>
 								</dl>
 								
@@ -335,7 +350,7 @@
 
 				 $.post(
 					"index.php?route=common/register/check",
-					{type:"card",value:card},
+					{type:"cardid",value:card},
 					function(result){
 						 if(result != 0){
 							$('#stepcard').css('border','2px solid red');
@@ -466,7 +481,7 @@
 				$("#s_card").html("<font color='red'>身份证格式错误</font>");
 				cardbool = false;
 			}else{
-				 $.post("index.php?route=common/register/check",{type:'card',value:card},function(result){
+				 $.post("index.php?route=common/register/check",{type:'cardid',value:card},function(result){
 					if(result != 0){
 						$('#stepcard').css('border','2px solid red');
 						$("#s_card").html("<font color='red'>身份证已注册</font>");

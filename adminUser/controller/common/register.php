@@ -35,6 +35,12 @@ class ControllerCommonRegister extends Controller {
 		} else {
 			$data['error_warning'] = '';
 		}
+		if (isset($this->request->get['info'])) {
+			 
+			$data['error_info'] =  urldecode($this->request->get['info']);
+		} else {
+			$data['error_info'] = '';
+		}
 
 		$data['breadcrumbs'] = array();
 
@@ -102,19 +108,29 @@ class ControllerCommonRegister extends Controller {
 		$data['salt'] = $salt;
 		$data['pwd']  = $pwd; 
 		$data['status'] = '0';
-		$recard = $this->model_user_shop->getShop('card',$card);
+		$recard = $this->model_user_shop->getShop('cardid',$card);
 		$retel  = $this->model_user_shop->getShop('tel',$tel);
-		if($recard == 0 && $retel == 0 ){
-			$shop = $this->model_user_shop->addShop($data);
-			if($shop){
-				$this->response->redirect($this->url->link('common/register&step=step3'));
+		$result = $this->check_card($card,$name,$stel);
+		
+		$re = json_decode($result);
+		$code = $re->resp->code;
+		$desc = $re->resp->desc;
+
+		if($code != 0){
+			$url = $desc;
+			$this->response->redirect($this->url->link('common/register&step=step2&info='.$url));
+		}else{
+			if($recard == 0 && $retel == 0 && $code == 0){
+				$shop = $this->model_user_shop->addShop($data);
+				if($shop){
+					$this->response->redirect($this->url->link('common/register&step=step3'));
+				}else{
+					$this->response->redirect($this->url->link('common/register&step=step2'));
+				}
 			}else{
 				$this->response->redirect($this->url->link('common/register&step=step2'));
 			}
-		}else{
-			$this->response->redirect($this->url->link('common/register&step=step2'));
 		}
-		
 	}
 	private function str_rand() {
 		$length = 6;
@@ -123,7 +139,35 @@ class ControllerCommonRegister extends Controller {
 		for($i = $length; $i > 0; $i--) {
 		    $string .= $char[mt_rand(0, strlen($char) - 1)];
 		}
- 
 		return $string;
-   }
+    }
+
+    private function check_card($card='',$name='',$tel=''){
+	   if($card =='' || $name=='' || $tel==''  ){
+			$this->response->redirect($this->url->link('common/login'));
+		}
+		$host = "http://telvertify.market.alicloudapi.com";
+		$path = "/lianzhuo/telvertify";
+		$method = "GET";
+		$appcode = "9bcff76d268246678dff866af52311cc";
+		$headers = array();
+		array_push($headers, "Authorization:APPCODE " . $appcode);
+		$querys = "id=".$card."&name=".urlencode($name)."&telnumber=".$tel."";
+		$bodys = "";
+		$url = $host . $path . "?" . $querys;
+
+		$curl = curl_init();
+		curl_setopt($curl, CURLOPT_CUSTOMREQUEST, $method);
+		curl_setopt($curl, CURLOPT_URL, $url);
+		curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+		curl_setopt($curl, CURLOPT_FAILONERROR, false);
+		curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+		curl_setopt($curl, CURLOPT_HEADER, false);
+		if (1 == strpos("$".$host, "https://"))
+		{
+			curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+			curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+		}
+		return curl_exec($curl);
+	   }
 }
