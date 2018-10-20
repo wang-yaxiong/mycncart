@@ -9,15 +9,15 @@ class ControllerDesignTheme extends Controller {
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_home'),
-			'href' => $this->url->link('common/dashboard', 'user_token=' . $this->session->data['user_token'])
+			'href' => $this->url->link('common/dashboard', 'user_tokens=' . $this->session->data['user_tokens'])
 		);
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('heading_title'),
-			'href' => $this->url->link('design/theme', 'user_token=' . $this->session->data['user_token'])
+			'href' => $this->url->link('design/theme', 'user_tokens=' . $this->session->data['user_tokens'])
 		);
 
-		$data['user_token'] = $this->session->data['user_token'];
+		$data['user_tokens'] = $this->session->data['user_tokens'];
 
 		$data['stores'] = array();
 
@@ -72,8 +72,8 @@ class ControllerDesignTheme extends Controller {
 				'route'      => $result['route'],
 				'theme'      => $result['theme'],
 				'date_added' => date($this->language->get('datetime_format'), strtotime($result['date_added'])),
-				'edit'       => $this->url->link('design/theme/template', 'user_token=' . $this->session->data['user_token']),
-				'delete'     => $this->url->link('design/theme/delete', 'user_token=' . $this->session->data['user_token'] . '&theme_id=' . $result['theme_id'])
+				'edit'       => $this->url->link('design/theme/template', 'user_tokens=' . $this->session->data['user_tokens']),
+				'delete'     => $this->url->link('design/theme/delete', 'user_tokens=' . $this->session->data['user_tokens'] . '&theme_id=' . $result['theme_id'])
 			);
 		}
 
@@ -81,7 +81,7 @@ class ControllerDesignTheme extends Controller {
 		$pagination->total = $history_total;
 		$pagination->page = $page;
 		$pagination->limit = 10;
-		$pagination->url = $this->url->link('design/theme/history', 'user_token=' . $this->session->data['user_token'] . '&page={page}');
+		$pagination->url = $this->url->link('design/theme/history', 'user_tokens=' . $this->session->data['user_tokens'] . '&page={page}');
 
 		$data['pagination'] = $pagination->render();
 

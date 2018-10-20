@@ -9,15 +9,15 @@ class ControllerCommonDashboard extends Controller {
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_home'),
-			'href' => $this->url->link('common/dashboard', 'user_token=' . $this->session->data['user_token'])
+			'href' => $this->url->link('common/dashboard', 'user_tokens=' . $this->session->data['user_tokens'])
 		);
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('heading_title'),
-			'href' => $this->url->link('common/dashboard', 'user_token=' . $this->session->data['user_token'])
+			'href' => $this->url->link('common/dashboard', 'user_tokens=' . $this->session->data['user_tokens'])
 		);
 
-		$data['user_token'] = $this->session->data['user_token'];
+		$data['user_tokens'] = $this->session->data['user_tokens'];
 
 		// Check install directory exists
 		if (is_dir(DIR_CATALOG . '../install')) {

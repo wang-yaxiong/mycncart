@@ -3,7 +3,7 @@ class ControllerCommonDeveloper extends Controller {
 	public function index() {
 		$this->load->language('common/developer');
 		
-		$data['user_token'] = $this->session->data['user_token'];
+		$data['user_tokens'] = $this->session->data['user_tokens'];
 		
 		$data['developer_theme'] = $this->config->get('developer_theme');
 		$data['developer_sass'] = $this->config->get('developer_sass');	

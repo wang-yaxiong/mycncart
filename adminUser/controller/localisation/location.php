@@ -38,7 +38,7 @@ class ControllerLocalisationLocation extends Controller {
 				$url .= '&page=' . $this->request->get['page'];
 			}
 
-			$this->response->redirect($this->url->link('localisation/location', 'user_token=' . $this->session->data['user_token'] . $url));
+			$this->response->redirect($this->url->link('localisation/location', 'user_tokens=' . $this->session->data['user_tokens'] . $url));
 		}
 
 		$this->getForm();
@@ -70,7 +70,7 @@ class ControllerLocalisationLocation extends Controller {
 				$url .= '&page=' . $this->request->get['page'];
 			}
 
-			$this->response->redirect($this->url->link('localisation/location', 'user_token=' . $this->session->data['user_token'] . $url));
+			$this->response->redirect($this->url->link('localisation/location', 'user_tokens=' . $this->session->data['user_tokens'] . $url));
 		}
 
 		$this->getForm();
@@ -104,7 +104,7 @@ class ControllerLocalisationLocation extends Controller {
 				$url .= '&page=' . $this->request->get['page'];
 			}
 
-			$this->response->redirect($this->url->link('localisation/location', 'user_token=' . $this->session->data['user_token'] . $url));
+			$this->response->redirect($this->url->link('localisation/location', 'user_tokens=' . $this->session->data['user_tokens'] . $url));
 		}
 
 		$this->getList();
@@ -147,16 +147,16 @@ class ControllerLocalisationLocation extends Controller {
 
 		$data['breadcrumbs'][] =   array(
 			'text' =>  $this->language->get('text_home'),
-			'href' => $this->url->link('common/dashboard', 'user_token=' . $this->session->data['user_token'])
+			'href' => $this->url->link('common/dashboard', 'user_tokens=' . $this->session->data['user_tokens'])
 		);
 
 		$data['breadcrumbs'][] =   array(
 			'text' =>  $this->language->get('heading_title'),
-			'href' =>  $this->url->link('localisation/location', 'user_token=' . $this->session->data['user_token'] . $url)
+			'href' =>  $this->url->link('localisation/location', 'user_tokens=' . $this->session->data['user_tokens'] . $url)
 		);
 
-		$data['add'] = $this->url->link('localisation/location/add', 'user_token=' . $this->session->data['user_token'] . $url);
-		$data['delete'] = $this->url->link('localisation/location/delete', 'user_token=' . $this->session->data['user_token'] . $url);
+		$data['add'] = $this->url->link('localisation/location/add', 'user_tokens=' . $this->session->data['user_tokens'] . $url);
+		$data['delete'] = $this->url->link('localisation/location/delete', 'user_tokens=' . $this->session->data['user_tokens'] . $url);
 
 		$data['location'] = array();
 
@@ -176,7 +176,7 @@ class ControllerLocalisationLocation extends Controller {
 				'location_id' => $result['location_id'],
 				'name'        => $result['name'],
 				'address'     => $result['address'],
-				'edit'        => $this->url->link('localisation/location/edit', 'user_token=' . $this->session->data['user_token'] . '&location_id=' . $result['location_id'] . $url)
+				'edit'        => $this->url->link('localisation/location/edit', 'user_tokens=' . $this->session->data['user_tokens'] . '&location_id=' . $result['location_id'] . $url)
 			);
 		}
 
@@ -212,8 +212,8 @@ class ControllerLocalisationLocation extends Controller {
 			$url .= '&page=' . $this->request->get['page'];
 		}
 
-		$data['sort_name'] = $this->url->link('localisation/location', 'user_token=' . $this->session->data['user_token'] . '&sort=name' . $url);
-		$data['sort_address'] = $this->url->link('localisation/location', 'user_token=' . $this->session->data['user_token'] . '&sort=address' . $url);
+		$data['sort_name'] = $this->url->link('localisation/location', 'user_tokens=' . $this->session->data['user_tokens'] . '&sort=name' . $url);
+		$data['sort_address'] = $this->url->link('localisation/location', 'user_tokens=' . $this->session->data['user_tokens'] . '&sort=address' . $url);
 
 		$url = '';
 
@@ -229,7 +229,7 @@ class ControllerLocalisationLocation extends Controller {
 		$pagination->total = $location_total;
 		$pagination->page = $page;
 		$pagination->limit = $this->config->get('config_limit_admin');
-		$pagination->url = $this->url->link('localisation/location', 'user_token=' . $this->session->data['user_token'] . $url . '&page={page}');
+		$pagination->url = $this->url->link('localisation/location', 'user_tokens=' . $this->session->data['user_tokens'] . $url . '&page={page}');
 
 		$data['pagination'] = $pagination->render();
 
@@ -290,27 +290,27 @@ class ControllerLocalisationLocation extends Controller {
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_home'),
-			'href' => $this->url->link('common/dashboard', 'user_token=' . $this->session->data['user_token'])
+			'href' => $this->url->link('common/dashboard', 'user_tokens=' . $this->session->data['user_tokens'])
 		);
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('heading_title'),
-			'href' => $this->url->link('localisation/location', 'user_token=' . $this->session->data['user_token'] . $url)
+			'href' => $this->url->link('localisation/location', 'user_tokens=' . $this->session->data['user_tokens'] . $url)
 		);
 
 		if (!isset($this->request->get['location_id'])) {
-			$data['action'] = $this->url->link('localisation/location/add', 'user_token=' . $this->session->data['user_token'] . $url);
+			$data['action'] = $this->url->link('localisation/location/add', 'user_tokens=' . $this->session->data['user_tokens'] . $url);
 		} else {
-			$data['action'] = $this->url->link('localisation/location/edit', 'user_token=' . $this->session->data['user_token'] .  '&location_id=' . $this->request->get['location_id'] . $url);
+			$data['action'] = $this->url->link('localisation/location/edit', 'user_tokens=' . $this->session->data['user_tokens'] .  '&location_id=' . $this->request->get['location_id'] . $url);
 		}
 
-		$data['cancel'] = $this->url->link('localisation/location', 'user_token=' . $this->session->data['user_token'] . $url);
+		$data['cancel'] = $this->url->link('localisation/location', 'user_tokens=' . $this->session->data['user_tokens'] . $url);
 
 		if (isset($this->request->get['location_id']) && ($this->request->server['REQUEST_METHOD'] != 'POST')) {
 			$location_info = $this->model_localisation_location->getLocation($this->request->get['location_id']);
 		}
 
-		$data['user_token'] = $this->session->data['user_token'];
+		$data['user_tokens'] = $this->session->data['user_tokens'];
 
 		$this->load->model('setting/store');
 

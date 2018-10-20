@@ -79,14 +79,14 @@ $('#history').delegate('.pagination a', 'click', function(e) {
 	$('#history').load(this.href);
 });
 
-$('#history').load('index.php?route=tool/backup/history&user_token={{ user_token }}');
+$('#history').load('index.php?route=tool/backup/history&user_tokens={{ user_tokens }}');
 //--></script>
 <script type="text/javascript"><!--
 $('#button-backup').on('click', function() {
 	$('#progress-bar').css('width', '0%');
 	$('#progress-bar').removeClass('progress-bar-danger progress-bar-success');
 
-	backup('index.php?route=tool/backup/backup&user_token={{ user_token }}&table=' + $('input[name^=\'backup\']:checked').first().val());
+	backup('index.php?route=tool/backup/backup&user_tokens={{ user_tokens }}&table=' + $('input[name^=\'backup\']:checked').first().val());
 });
 
 function backup(url) {
@@ -113,7 +113,7 @@ function backup(url) {
 				$('#progress-bar').addClass('progress-bar-danger');
 				$('#progress-text').html('<div class="text-danger">' + json['error'] + '</div>');
 
-				$('#history').load('index.php?route=tool/backup/history&user_token={{ user_token }}');
+				$('#history').load('index.php?route=tool/backup/history&user_tokens={{ user_tokens }}');
 
 				$('#button-backup').button('reset');
 				$('#button-upload, #history .btn').prop('disabled', false);
@@ -123,7 +123,7 @@ function backup(url) {
 				$('#progress-bar').css('width', '100%').addClass('progress-bar-success');
 				$('#progress-text').html('<div class="text-success">' + json['success'] + '</div>');
 
-				$('#history').load('index.php?route=tool/backup/history&user_token={{ user_token }}');
+				$('#history').load('index.php?route=tool/backup/history&user_tokens={{ user_tokens }}');
 
 				$('#button-backup').button('reset');
 				$('#button-upload, #history .btn').prop('disabled', false);
@@ -151,7 +151,7 @@ $('#history').on('click', '.btn-warning', function() {
 	$('#progress-bar').css('width', '0%');
 	$('#progress-bar').removeClass('progress-bar-danger progress-bar-success');
 
-	restore('index.php?route=tool/backup/restore&user_token={{ user_token }}&filename=' + encodeURIComponent($(this).val(), this));
+	restore('index.php?route=tool/backup/restore&user_tokens={{ user_tokens }}&filename=' + encodeURIComponent($(this).val(), this));
 });
 
 function restore(url, element) {
@@ -174,7 +174,7 @@ function restore(url, element) {
 				$('#progress-bar').addClass('progress-bar-danger');
 				$('#progress-text').html('<div class="text-danger">' + json['error'] + '</div>');
 
-				$('#history').load('index.php?route=tool/backup/history&user_token={{ user_token }}');
+				$('#history').load('index.php?route=tool/backup/history&user_tokens={{ user_tokens }}');
 
 				$(element).button('reset');
 				$('#button-upload, #button-backup, #history .btn').not(element).prop('disabled', false);
@@ -184,7 +184,7 @@ function restore(url, element) {
 				$('#progress-bar').css('width', '100%').addClass('progress-bar-success');
 				$('#progress-text').html('<div class="text-success">' + json['success'] + '</div>');
 
-				$('#history').load('index.php?route=tool/backup/history&user_token={{ user_token }}');
+				$('#history').load('index.php?route=tool/backup/history&user_tokens={{ user_tokens }}');
 
 				$(element).button('reset');
 				$('#button-upload, #button-backup, #history .btn').not(element).prop('disabled', false);
@@ -223,7 +223,7 @@ $('#button-upload').on('click', function() {
 			clearInterval(timer);
 
 			$.ajax({
-				url: 'index.php?route=tool/backup/upload&user_token={{ user_token }}',
+				url: 'index.php?route=tool/backup/upload&user_tokens={{ user_tokens }}',
 				type: 'post',
 				dataType: 'json',
 				data: new FormData($('#form-upload')[0]),
@@ -246,7 +246,7 @@ $('#button-upload').on('click', function() {
 					if (json['success']) {
 						$('#content > .container-fluid').prepend('<div class="alert alert-success alert-dismissible"><i class="fa fa-check-circle"></i> ' + json['success'] + ' <button type="button" class="close" data-dismiss="alert">&times;</button></div>');
 
-						$('#history').load('index.php?route=tool/backup/history&user_token={{ user_token }}');
+						$('#history').load('index.php?route=tool/backup/history&user_tokens={{ user_tokens }}');
 					}
 				},
 				error: function(xhr, ajaxOptions, thrownError) {
@@ -262,7 +262,7 @@ $('#history').on('click', '.btn-danger', function() {
 	var element = this;
 
 	$.ajax({
-		url: 'index.php?route=tool/backup/delete&user_token={{ user_token }}&filename=' + encodeURIComponent($(element).val()),
+		url: 'index.php?route=tool/backup/delete&user_tokens={{ user_tokens }}&filename=' + encodeURIComponent($(element).val()),
 		type: 'post',
 		dataType: 'json',
 		beforeSend: function() {
@@ -281,7 +281,7 @@ $('#history').on('click', '.btn-danger', function() {
 			if (json['success']) {
 				$('#history').before('<div class="alert alert-success alert-dismissible"><i class="fa fa-check-circle"></i> ' + json['success'] + ' <button type="button" class="close" data-dismiss="alert">&times;</button></div>');
 
-				$('#history').load('index.php?route=tool/backup/history&user_token={{ user_token }}');
+				$('#history').load('index.php?route=tool/backup/history&user_tokens={{ user_tokens }}');
 			}
 		},
 		error: function(xhr, ajaxOptions, thrownError) {

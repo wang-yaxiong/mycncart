@@ -15,7 +15,7 @@ class ControllerExtensionModuleKlarnaCheckoutModule extends Controller {
 
 			$this->session->data['success'] = $this->language->get('text_success');
 
-			$this->response->redirect($this->url->link('marketplace/extension', 'user_token=' . $this->session->data['user_token'] . '&type=module'));
+			$this->response->redirect($this->url->link('marketplace/extension', 'user_tokens=' . $this->session->data['user_tokens'] . '&type=module'));
 		}
 
 		if (isset($this->error['warning'])) {
@@ -28,22 +28,22 @@ class ControllerExtensionModuleKlarnaCheckoutModule extends Controller {
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_home'),
-			'href' => $this->url->link('common/dashboard', 'user_token=' . $this->session->data['user_token'])
+			'href' => $this->url->link('common/dashboard', 'user_tokens=' . $this->session->data['user_tokens'])
 		);
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_extension'),
-			'href' => $this->url->link('marketplace/extension', 'user_token=' . $this->session->data['user_token'] . '&type=module')
+			'href' => $this->url->link('marketplace/extension', 'user_tokens=' . $this->session->data['user_tokens'] . '&type=module')
 		);
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('heading_title'),
-			'href' => $this->url->link('extension/module/klarna_checkout_module', 'user_token=' . $this->session->data['user_token'])
+			'href' => $this->url->link('extension/module/klarna_checkout_module', 'user_tokens=' . $this->session->data['user_tokens'])
 		);
 
-		$data['action'] = $this->url->link('extension/module/klarna_checkout_module', 'user_token=' . $this->session->data['user_token']);
+		$data['action'] = $this->url->link('extension/module/klarna_checkout_module', 'user_tokens=' . $this->session->data['user_tokens']);
 
-		$data['cancel'] = $this->url->link('marketplace/extension', 'user_token=' . $this->session->data['user_token'] . '&type=module');
+		$data['cancel'] = $this->url->link('marketplace/extension', 'user_tokens=' . $this->session->data['user_tokens'] . '&type=module');
 
 		if (isset($this->request->post['module_klarna_checkout_status'])) {
 			$data['module_klarna_checkout_status'] = $this->request->post['module_klarna_checkout_status'];

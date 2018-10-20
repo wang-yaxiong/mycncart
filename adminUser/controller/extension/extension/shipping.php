@@ -91,10 +91,10 @@ class ControllerExtensionExtensionShipping extends Controller {
 					'name'       => $this->language->get('extension')->get('heading_title'),
 					'status'     => $this->config->get('shipping_' . $extension . '_status') ? $this->language->get('text_enabled') : $this->language->get('text_disabled'),
 					'sort_order' => $this->config->get('shipping_' . $extension . '_sort_order'),
-					'install'    => $this->url->link('extension/extension/shipping/install', 'user_token=' . $this->session->data['user_token'] . '&extension=' . $extension),
-					'uninstall'  => $this->url->link('extension/extension/shipping/uninstall', 'user_token=' . $this->session->data['user_token'] . '&extension=' . $extension),
+					'install'    => $this->url->link('extension/extension/shipping/install', 'user_tokens=' . $this->session->data['user_tokens'] . '&extension=' . $extension),
+					'uninstall'  => $this->url->link('extension/extension/shipping/uninstall', 'user_tokens=' . $this->session->data['user_tokens'] . '&extension=' . $extension),
 					'installed'  => in_array($extension, $extensions),
-					'edit'       => $this->url->link('extension/shipping/' . $extension, 'user_token=' . $this->session->data['user_token'])
+					'edit'       => $this->url->link('extension/shipping/' . $extension, 'user_tokens=' . $this->session->data['user_tokens'])
 				);
 			}
 		}

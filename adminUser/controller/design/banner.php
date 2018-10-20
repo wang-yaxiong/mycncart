@@ -38,7 +38,7 @@ class ControllerDesignBanner extends Controller {
 				$url .= '&page=' . $this->request->get['page'];
 			}
 
-			$this->response->redirect($this->url->link('design/banner', 'user_token=' . $this->session->data['user_token'] . $url));
+			$this->response->redirect($this->url->link('design/banner', 'user_tokens=' . $this->session->data['user_tokens'] . $url));
 		}
 
 		$this->getForm();
@@ -70,7 +70,7 @@ class ControllerDesignBanner extends Controller {
 				$url .= '&page=' . $this->request->get['page'];
 			}
 
-			$this->response->redirect($this->url->link('design/banner', 'user_token=' . $this->session->data['user_token'] . $url));
+			$this->response->redirect($this->url->link('design/banner', 'user_tokens=' . $this->session->data['user_tokens'] . $url));
 		}
 
 		$this->getForm();
@@ -104,7 +104,7 @@ class ControllerDesignBanner extends Controller {
 				$url .= '&page=' . $this->request->get['page'];
 			}
 
-			$this->response->redirect($this->url->link('design/banner', 'user_token=' . $this->session->data['user_token'] . $url));
+			$this->response->redirect($this->url->link('design/banner', 'user_tokens=' . $this->session->data['user_tokens'] . $url));
 		}
 
 		$this->getList();
@@ -147,16 +147,16 @@ class ControllerDesignBanner extends Controller {
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_home'),
-			'href' => $this->url->link('common/dashboard', 'user_token=' . $this->session->data['user_token'])
+			'href' => $this->url->link('common/dashboard', 'user_tokens=' . $this->session->data['user_tokens'])
 		);
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('heading_title'),
-			'href' => $this->url->link('design/banner', 'user_token=' . $this->session->data['user_token'] . $url)
+			'href' => $this->url->link('design/banner', 'user_tokens=' . $this->session->data['user_tokens'] . $url)
 		);
 
-		$data['add'] = $this->url->link('design/banner/add', 'user_token=' . $this->session->data['user_token'] . $url);
-		$data['delete'] = $this->url->link('design/banner/delete', 'user_token=' . $this->session->data['user_token'] . $url);
+		$data['add'] = $this->url->link('design/banner/add', 'user_tokens=' . $this->session->data['user_tokens'] . $url);
+		$data['delete'] = $this->url->link('design/banner/delete', 'user_tokens=' . $this->session->data['user_tokens'] . $url);
 
 		$data['banners'] = array();
 
@@ -176,7 +176,7 @@ class ControllerDesignBanner extends Controller {
 				'banner_id' => $result['banner_id'],
 				'name'      => $result['name'],
 				'status'    => ($result['status'] ? $this->language->get('text_enabled') : $this->language->get('text_disabled')),
-				'edit'      => $this->url->link('design/banner/edit', 'user_token=' . $this->session->data['user_token'] . '&banner_id=' . $result['banner_id'] . $url)
+				'edit'      => $this->url->link('design/banner/edit', 'user_tokens=' . $this->session->data['user_tokens'] . '&banner_id=' . $result['banner_id'] . $url)
 			);
 		}
 
@@ -212,8 +212,8 @@ class ControllerDesignBanner extends Controller {
 			$url .= '&page=' . $this->request->get['page'];
 		}
 
-		$data['sort_name'] = $this->url->link('design/banner', 'user_token=' . $this->session->data['user_token'] . '&sort=name' . $url);
-		$data['sort_status'] = $this->url->link('design/banner', 'user_token=' . $this->session->data['user_token'] . '&sort=status' . $url);
+		$data['sort_name'] = $this->url->link('design/banner', 'user_tokens=' . $this->session->data['user_tokens'] . '&sort=name' . $url);
+		$data['sort_status'] = $this->url->link('design/banner', 'user_tokens=' . $this->session->data['user_tokens'] . '&sort=status' . $url);
 
 		$url = '';
 
@@ -229,7 +229,7 @@ class ControllerDesignBanner extends Controller {
 		$pagination->total = $banner_total;
 		$pagination->page = $page;
 		$pagination->limit = $this->config->get('config_limit_admin');
-		$pagination->url = $this->url->link('design/banner', 'user_token=' . $this->session->data['user_token'] . $url . '&page={page}');
+		$pagination->url = $this->url->link('design/banner', 'user_tokens=' . $this->session->data['user_tokens'] . $url . '&page={page}');
 
 		$data['pagination'] = $pagination->render();
 
@@ -284,27 +284,27 @@ class ControllerDesignBanner extends Controller {
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_home'),
-			'href' => $this->url->link('common/dashboard', 'user_token=' . $this->session->data['user_token'])
+			'href' => $this->url->link('common/dashboard', 'user_tokens=' . $this->session->data['user_tokens'])
 		);
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('heading_title'),
-			'href' => $this->url->link('design/banner', 'user_token=' . $this->session->data['user_token'] . $url)
+			'href' => $this->url->link('design/banner', 'user_tokens=' . $this->session->data['user_tokens'] . $url)
 		);
 
 		if (!isset($this->request->get['banner_id'])) {
-			$data['action'] = $this->url->link('design/banner/add', 'user_token=' . $this->session->data['user_token'] . $url);
+			$data['action'] = $this->url->link('design/banner/add', 'user_tokens=' . $this->session->data['user_tokens'] . $url);
 		} else {
-			$data['action'] = $this->url->link('design/banner/edit', 'user_token=' . $this->session->data['user_token'] . '&banner_id=' . $this->request->get['banner_id'] . $url);
+			$data['action'] = $this->url->link('design/banner/edit', 'user_tokens=' . $this->session->data['user_tokens'] . '&banner_id=' . $this->request->get['banner_id'] . $url);
 		}
 
-		$data['cancel'] = $this->url->link('design/banner', 'user_token=' . $this->session->data['user_token'] . $url);
+		$data['cancel'] = $this->url->link('design/banner', 'user_tokens=' . $this->session->data['user_tokens'] . $url);
 
 		if (isset($this->request->get['banner_id']) && ($this->request->server['REQUEST_METHOD'] != 'POST')) {
 			$banner_info = $this->model_design_banner->getBanner($this->request->get['banner_id']);
 		}
 
-		$data['user_token'] = $this->session->data['user_token'];
+		$data['user_tokens'] = $this->session->data['user_tokens'];
 
 		if (isset($this->request->post['name'])) {
 			$data['name'] = $this->request->post['name'];

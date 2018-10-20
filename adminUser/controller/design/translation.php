@@ -39,7 +39,7 @@ class ControllerDesignTranslation extends Controller {
 				$url .= '&page=' . $this->request->get['page'];
 			}
 
-			$this->response->redirect($this->url->link('design/translation', 'user_token=' . $this->session->data['user_token'] . $url));
+			$this->response->redirect($this->url->link('design/translation', 'user_tokens=' . $this->session->data['user_tokens'] . $url));
 		}
 
 		$this->getForm();
@@ -71,7 +71,7 @@ class ControllerDesignTranslation extends Controller {
 				$url .= '&page=' . $this->request->get['page'];
 			}
 
-			$this->response->redirect($this->url->link('design/translation', 'user_token=' . $this->session->data['user_token'] . $url));
+			$this->response->redirect($this->url->link('design/translation', 'user_tokens=' . $this->session->data['user_tokens'] . $url));
 		}
 
 		$this->getForm();
@@ -105,7 +105,7 @@ class ControllerDesignTranslation extends Controller {
 				$url .= '&page=' . $this->request->get['page'];
 			}
 
-			$this->response->redirect($this->url->link('design/translation', 'user_token=' . $this->session->data['user_token'] . $url));
+			$this->response->redirect($this->url->link('design/translation', 'user_tokens=' . $this->session->data['user_tokens'] . $url));
 		}
 
 		$this->getList();
@@ -148,18 +148,18 @@ class ControllerDesignTranslation extends Controller {
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_home'),
-			'href' => $this->url->link('common/dashboard', 'user_token=' . $this->session->data['user_token'])
+			'href' => $this->url->link('common/dashboard', 'user_tokens=' . $this->session->data['user_tokens'])
 		);
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('heading_title'),
-			'href' => $this->url->link('design/translation', 'user_token=' . $this->session->data['user_token'])
+			'href' => $this->url->link('design/translation', 'user_tokens=' . $this->session->data['user_tokens'])
 		);
 
 		$this->load->model('localisation/language');
 
-		$data['add'] = $this->url->link('design/translation/add', 'user_token=' . $this->session->data['user_token'] . $url);
-		$data['delete'] = $this->url->link('design/translation/delete', 'user_token=' . $this->session->data['user_token'] . $url);
+		$data['add'] = $this->url->link('design/translation/add', 'user_tokens=' . $this->session->data['user_tokens'] . $url);
+		$data['delete'] = $this->url->link('design/translation/delete', 'user_tokens=' . $this->session->data['user_tokens'] . $url);
 
 		$data['translations'] = array();
 
@@ -182,11 +182,11 @@ class ControllerDesignTranslation extends Controller {
 				'language' => $result['language'],
 				'key' => $result['key'],
 				'value' => $result['value'],
-				'edit' => $this->url->link('design/translation/edit', 'user_token=' . $this->session->data['user_token'] . '&translation_id=' . $result['translation_id']),
+				'edit' => $this->url->link('design/translation/edit', 'user_tokens=' . $this->session->data['user_tokens'] . '&translation_id=' . $result['translation_id']),
 			);
 		}
 
-		$data['user_token'] = $this->session->data['user_token'];
+		$data['user_tokens'] = $this->session->data['user_tokens'];
 
 		if (isset($this->error['warning'])) {
 			$data['error_warning'] = $this->error['warning'];
@@ -220,17 +220,17 @@ class ControllerDesignTranslation extends Controller {
 			$url .= '&page=' . $this->request->get['page'];
 		}
 
-		$data['sort_store'] = $this->url->link('design/translation', 'user_token=' . $this->session->data['user_token'] . '&sort=store' . $url);
-		$data['sort_language'] = $this->url->link('design/translation', 'user_token=' . $this->session->data['user_token'] . '&sort=language' . $url);
-		$data['sort_route'] = $this->url->link('design/translation', 'user_token=' . $this->session->data['user_token'] . '&sort=route' . $url);
-		$data['sort_key'] = $this->url->link('design/translation', 'user_token=' . $this->session->data['user_token'] . '&sort=key' . $url);
-		$data['sort_value'] = $this->url->link('design/translation', 'user_token=' . $this->session->data['user_token'] . '&sort=value' . $url);
+		$data['sort_store'] = $this->url->link('design/translation', 'user_tokens=' . $this->session->data['user_tokens'] . '&sort=store' . $url);
+		$data['sort_language'] = $this->url->link('design/translation', 'user_tokens=' . $this->session->data['user_tokens'] . '&sort=language' . $url);
+		$data['sort_route'] = $this->url->link('design/translation', 'user_tokens=' . $this->session->data['user_tokens'] . '&sort=route' . $url);
+		$data['sort_key'] = $this->url->link('design/translation', 'user_tokens=' . $this->session->data['user_tokens'] . '&sort=key' . $url);
+		$data['sort_value'] = $this->url->link('design/translation', 'user_tokens=' . $this->session->data['user_tokens'] . '&sort=value' . $url);
 
 		$pagination = new Pagination();
 		$pagination->total = $translation_total;
 		$pagination->page = $page;
 		$pagination->limit = $this->config->get('config_limit_admin');
-		$pagination->url = $this->url->link('design/translation', 'user_token=' . $this->session->data['user_token'] . '&page={page}');
+		$pagination->url = $this->url->link('design/translation', 'user_tokens=' . $this->session->data['user_tokens'] . '&page={page}');
 
 		$data['pagination'] = $pagination->render();
 
@@ -279,23 +279,23 @@ class ControllerDesignTranslation extends Controller {
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_home'),
-			'href' => $this->url->link('common/dashboard', 'user_token=' . $this->session->data['user_token'])
+			'href' => $this->url->link('common/dashboard', 'user_tokens=' . $this->session->data['user_tokens'])
 		);
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('heading_title'),
-			'href' => $this->url->link('design/translation', 'user_token=' . $this->session->data['user_token'] . $url)
+			'href' => $this->url->link('design/translation', 'user_tokens=' . $this->session->data['user_tokens'] . $url)
 		);
 
 		if (!isset($this->request->get['translation_id'])) {
-			$data['action'] = $this->url->link('design/translation/add', 'user_token=' . $this->session->data['user_token'] . $url);
+			$data['action'] = $this->url->link('design/translation/add', 'user_tokens=' . $this->session->data['user_tokens'] . $url);
 		} else {
-			$data['action'] = $this->url->link('design/translation/edit', 'user_token=' . $this->session->data['user_token'] . '&translation_id=' . $this->request->get['translation_id'] . $url);
+			$data['action'] = $this->url->link('design/translation/edit', 'user_tokens=' . $this->session->data['user_tokens'] . '&translation_id=' . $this->request->get['translation_id'] . $url);
 		}
 
-		$data['cancel'] = $this->url->link('design/translation', 'user_token=' . $this->session->data['user_token'] . $url);
+		$data['cancel'] = $this->url->link('design/translation', 'user_tokens=' . $this->session->data['user_tokens'] . $url);
 
-		$data['user_token'] = $this->session->data['user_token'];
+		$data['user_tokens'] = $this->session->data['user_tokens'];
 
 		if (isset($this->request->get['translation_id']) && ($this->request->server['REQUEST_METHOD'] != 'POST')) {
 			$translation_info = $this->model_design_translation->getTranslation($this->request->get['translation_id']);
