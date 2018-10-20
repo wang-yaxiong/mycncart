@@ -137,15 +137,15 @@
       </div>
       <div class="Xcontent17">
         <p class="Xcontent18">当前价</p>
-        <p class="Xcontent19">¥ <span>{{ c.price }}</span></p>
+        <p class="Xcontent19">¥ <span class="nowprice">{{ c.maxnum }}</span></p>
         <div class="Xcontent20">
           <p class="Xcontent21">估价</p>
           <!--<img src="../img/x12.png"/>-->
-          <p class="Xcontent22">¥ {{ c.price }}</p>
+          <p class="Xcontent22">¥ <span id="pe">{{ c.price }}</span></p>
         </div>
         <div class="Xcontent23">
-          <p class="Xcontent24">保证金{待改}</p>
-          <p class="Xcontent25">¥1000</p>
+          <p class="Xcontent24">保证金</p>
+          <p  class="Xcontent25">¥<span id="bz">{{ c.crinfo.bzprice }}</span></p>
         </div>
       </div>
       <!--<div class="Xcontent26">
@@ -159,7 +159,7 @@
       </div>
       <div class="Xcontent32">
         <p class="Xcontent33">出价</p>
-        <p class="Xcontent34">6次</p>
+        <p class="Xcontent34">{{ c.outcount }}次</p>
       </div>
       <div class="Xcontent35">
         <p class="Xcontent36"></p>
@@ -177,13 +177,27 @@
                   var cc = document.getElementById('c_{{ c.product_id }}');
                   var dd = document.getElementById('d_{{ c.product_id }}');
                   var n = new Date();
-                  var e = new Date('{{ c.time_available }}');
+                  var e = new Date('{{ c.end_available }}');
                   // 转换时间戳
                   var nn = n.getTime()/1000;
+                  var cha = 28800;
                   var ee = e.getTime()/1000;
-                  var ct = ee - nn;
+                  var ct = ee - nn - cha;
                   if(ct<=0){
-                      aj({{ c.product_id }});
+                      $.ajax({
+                          url: 'index.php?route=ebaypro/ebaypro/move_product',
+                          // dataType:'json',
+                          data: { product_id:{{ c.product_id }},end_available:true,endtime:true },
+                          type: 'POST',
+                          success: function(data){
+                              // window.location.reload(true);
+                              console.log(data);
+                          },
+                          error: function(){
+                              alert('请求发送失败了!!!');
+                          },
+                          async: true
+                      });
                       return;
                   }
                   var intDiff = parseInt(ct);//倒计时总秒数量        //
@@ -222,7 +236,6 @@
         <p class="Xcontent39"></p>
         <p class="Xcontent40"></p>
       </div>
-
       <div class="Xcontent42">
         <div class="tb-btn tb-btn-basket theme-login">
           <a id="likbasket" title="" href="#"><i></i>缴纳保证金</a>
@@ -232,6 +245,44 @@
   </ul>
 </div>
 
+<script>
+    var bz_price = parseInt(document.getElementById('bz').innerText);
+    var price = parseInt(document.getElementById('pe').innerText);
+    if(bz_price >= price){
+        document.getElementsByClassName('Xcontent42')[0].innerHTML =
+            '<input class ="aaaaa" type="number" style="color:red;width:170px;height:40px;" value="">'+'&nbsp;'
+            +'<input  style="color:red;width:70px;height:44px;color:#F0F8FF;font-size: 25px;background-color: red;" type="submit" class="mit" value="出价">';
+    }
+    document.getElementsByClassName('mit')[0].onclick = function(){
+        var aaa = document.getElementsByClassName('aaaaa')[0];
+        var np = document.getElementsByClassName('nowprice')[0];
+        if(!np.innerText && !aaa.value){
+            np.innerText = parseInt(price) + 10;
+        }else if(!aaa.value){
+            np.innerText = 1000 + parseInt(np.innerText);
+        }else{
+            np.innerText = parseInt(aaa.value) + parseInt(np.innerText);
+        }
+        var nt = new Date();
+        var ntime = nt.getTime()/1000;
+
+        $.ajax({
+            url: 'index.php?route=ebaypro/ebaypro/outprice',
+            type: 'GET',
+            data: {tel:{{ c.crinfo.telephone }},nowprice:np.innerText,nowtime:ntime,product_id:{{ c.product_id }},uid:{{ c.crinfo.customer_id }},shop_id:{{ c.shop_id }}},
+            // dataType:'json',
+            success: function(data){
+                // window.location.reload(true);
+                // console.log(data);
+            },
+            error: function(){
+                alert('请求发送失败了!!!');
+            },
+            async: true
+        });
+    }
+
+</script>
 <!-- 商品详情、售后 -->
 <div class="img-text">
   <div class="j-nav" id="j-nav">
@@ -243,38 +294,45 @@
       </div>
       <div class="btn" ms-class="@tab===2? 'active':''">
         <div class="tab-btn" ms-click="@toggleTab(2)" avalon-events="click:eclick_0_64toggleTab405041">
-          出价记录
+          <a class="tab-btn" href="#info">出价记录</a>
         </div>
       </div>
       <div class="btn" ms-class="@tab===3? 'active':''">
         <div class="tab-btn" ms-click="@toggleTab(3)" avalon-events="click:eclick_0_64toggleTab405041">
-          拍卖须知
+          <a class="tab-btn" href="#read">拍卖须知</a>
+
         </div>
       </div>
     </div>
   </div>
-
-  <div class="j-contain" >
-    <ul class="productsInformation" >
+  <style>
+    .clearfix span{
+      color:red;
+      width: 100px;
+      height: 21.11px;
+    }
+  </style>
+  <div class="j-contain">
+    <ul class="productsInformation">
       <li class="clearfix">
-        <div >
-          <span>作品名称：</span>
+        <div>
+          <span style="width: 100px;">作品名称：</span>
           <h1>寻山手记 系列之二</h1>
         </div>
         <div>
-              <span>艺&ensp;术&ensp;家：
-                  <span class="justify_fix"></span>
-              </span>
+							<span>艺术家：
+								<span class="justify_fix"></span>
+							</span>
           <a href="#">徐青</a>
         </div>
         <div>
-          <span>材&emsp;质：</span>
+          <span>材质：</span>
           纸本水彩
         </div>
-      </li>
+      </li><br>
       <li class="clearfix">
         <div>
-          <span>尺&emsp;寸：</span>
+          <span>尺寸：</span>
           39×27cm
         </div>
         <div>
@@ -282,24 +340,33 @@
           2017
         </div>
         <div>
-          <span>作品类型：</span>
+          <span style="width: 100px;">作品类型：</span>
           水彩（粉）
         </div>
       </li>
       <li class="clearfix">
         <div>
-          <span>风&emsp;&emsp;格：</span>
+          <span>风格：</span>
           具象表现
         </div>
         <div>
-          <span>题&emsp;&emsp;材：</span>
+          <span>题材：</span>
           风景
         </div>
       </li>
+      <li>
+        <div>
+          <span>描述：</span>
+
+        </div>
+      </li>
     </ul>
+    <div class="tab-content">
+      <div class="tab-pane active" id="tab-description">{{ c.description }}</div>
+    </div>
 
     <div class="details">
-      {% for img in c.pimage %}
+        {% for img in c.pimage %}
       <div class="item">
         <img src="{{ img.image }}" style="display: inline;vertical-align: middle;"/>
       </div>
@@ -307,46 +374,24 @@
 
       <div class="hr">
         <hr>
-      </div>
+      </div><a name="info"></a>
       <div class="morebid cand102" id="cand102" data="102">
-        <h3 class="fonts pubtitle">出价记录</h3>
+        <h3 class="fonts pubtitle info">出价记录</h3>
         <div class="title">
           <div>藏友</div>
           <div class="pirce">出价</div>
           <div>时间</div>
           <div class="last">IP</div>
         </div>
-        <ul>
+        <ul><a id="read"></a>
+          {% for info in c.outinfo %}
           <li>
-            <div>张**</div>
-            <div class="pirce">¥20499</div>
-            <div>2018/03/26  22:33:04</div>
-            <div class="last">218.205.128.*</div>
+            <div>{{ info.name }}</div>
+            <div class="pirce">¥{{ info.nowprice }}</div>
+            <div>{{ info.outtime }}</div>
+            <div class="last">{{ info.ip }}</div>
           </li>
-          <li>
-            <div>张**</div>
-            <div class="pirce">¥18000</div>
-            <div>2018/03/26  22:33:04</div>
-            <div class="last">218.205.128.*</div>
-          </li>
-          <li>
-            <div>张**</div>
-            <div class="pirce">¥15000</div>
-            <div>2018/03/26  22:33:04</div>
-            <div class="last">218.205.128.*</div>
-          </li>
-          <li>
-            <div>张**</div>
-            <div class="pirce">¥1900</div>
-            <div>2018/03/26  22:33:04</div>
-            <div class="last">218.205.128.*</div>
-          </li><a id="read"></a>
-          <li>
-            <div>张**</div>
-            <div class="pirce">¥1700</div>
-            <div>2018/03/26  22:33:04</div>
-            <div class="last">218.205.128.*</div>
-          </li>
+          {% endfor %}
         </ul>
       </div>
       <div class="hr">
@@ -427,95 +472,95 @@
 
 
 <!--右侧-->
-<div class="cndns-right">
-  <div class="cndns-right-meau meau-car">
-    <a href="#" class="cndns-right-btn">
-      <span class="demo-icon">&#xe900;</span>
-      <sup>0</sup>
-    </a>
-  </div>
-  <div class="cndns-right-meau meau-sev">
-    <a href="javascript:" class="cndns-right-btn">
-      <span class="demo-icon">&#xe901;</span>
-      <p>
-        在线<br />
-        客服
-      </p>
-    </a>
-    <div class="cndns-right-box">
-      <div class="box-border">
-        <div class="sev-t">
-          <span class="demo-icon">&#xe901;</span>
-          <p>在线客服<i>服务时间：9:00-24:00</i></p>
-          <div class="clear"></div>
-        </div>
-        <div class="sev-b">
-          <h4>选择下列产品马上在线沟通：</h4>
-          <ul id="zixunUl">
-            <li><a href="javascript:void(0);">购买艺术</a></li>
-            <li><a href="javascript:void(0);">作品征集</a></li>
-            <li><a href="javascript:void(0);">合作伙伴</a></li>
-            <!--<li><a href="javascript:void(0);">代理咨询</a></li>
-            <li><a href="javascript:void(0);">网站推广</a></li>
-            <li><a href="javascript:void(0);">橙云主机</a></li>
+{#<div class="cndns-right">#}
+  {#<div class="cndns-right-meau meau-car">#}
+    {#<a href="#" class="cndns-right-btn">#}
+      {#<span class="demo-icon">&#xe900;</span>#}
+      {#<sup>0</sup>#}
+    {#</a>#}
+  {#</div>#}
+  {#<div class="cndns-right-meau meau-sev">#}
+    {#<a href="javascript:" class="cndns-right-btn">#}
+      {#<span class="demo-icon">&#xe901;</span>#}
+      {#<p>#}
+        {#在线<br />#}
+        {#客服#}
+      {#</p>#}
+    {#</a>#}
+    {#<div class="cndns-right-box">#}
+      {#<div class="box-border">#}
+        {#<div class="sev-t">#}
+          {#<span class="demo-icon">&#xe901;</span>#}
+          {#<p>在线客服<i>服务时间：9:00-24:00</i></p>#}
+          {#<div class="clear"></div>#}
+        {#</div>#}
+        {#<div class="sev-b">#}
+          {#<h4>选择下列产品马上在线沟通：</h4>#}
+          {#<ul id="zixunUl">#}
+            {#<li><a href="javascript:void(0);">购买艺术</a></li>#}
+            {#<li><a href="javascript:void(0);">作品征集</a></li>#}
+            {#<li><a href="javascript:void(0);">合作伙伴</a></li>#}
+            {#<!--<li><a href="javascript:void(0);">代理咨询</a></li>#}
+            {#<li><a href="javascript:void(0);">网站推广</a></li>#}
+            {#<li><a href="javascript:void(0);">橙云主机</a></li>#}
 
-            <li><a href="javascript:void(0);">域名交易</a></li>
+            {#<li><a href="javascript:void(0);">域名交易</a></li>#}
 
-            <li><a href="javascript:void(0);">租用托管(BGP)</a></li>
+            {#<li><a href="javascript:void(0);">租用托管(BGP)</a></li>#}
 
-            <li><a href="javascript:void(0);">其他产品</a></li>-->
-            <div class="clear"></div>
-          </ul>
-        </div>
-        <span class="arrow-right"></span>
-      </div>
-    </div>
-  </div>
-  <div class="cndns-right-meau meau-contact">
-    <a href="javascript:" class="cndns-right-btn">
-      <span class="demo-icon">&#xe902;</span>
-      <p>
-        客服<br />
-        热线
-      </p>
-    </a>
-    <div class="cndns-right-box">
-      <div class="box-border">
-        <div class="sev-t">
-          <span class="demo-icon">&#xe902;</span>
-          <p>400-123-4567<br /><i>7*24小时客服服务热线</i></p>
-          <div class="clear"></div>
-        </div>
-        <span class="arrow-right"></span>
-      </div>
-    </div>
-  </div>
-  <div class="cndns-right-meau meau-code">
-    <a href="javascript:" class="cndns-right-btn">
-      <span class="demo-icon">&#xe903;</span>
-      <p>
-        关注<br />
-        微信
-      </p>
-    </a>
-    <div class="cndns-right-box">
-      <div class="box-border">
-        <div class="sev-t">
-          <img src="/catalog/view/theme/default/img/hongfuerweima.jpg" />
-          <i>关注官方微信</i>
-        </div>
-        <span class="arrow-right"></span>
-      </div>
-    </div>
-  </div>
-  <div class="cndns-right-meau meau-top" id="top-back">
-    <a href="javascript:" class="cndns-right-btn" onclick="topBack()">
-      <span class="demo-icon">&#xe904;</span>
-      <i>顶部</i>
-    </a>
-  </div>
+            {#<li><a href="javascript:void(0);">其他产品</a></li>-->#}
+            {#<div class="clear"></div>#}
+          {#</ul>#}
+        {#</div>#}
+        {#<span class="arrow-right"></span>#}
+      {#</div>#}
+    {#</div>#}
+  {#</div>#}
+  {#<div class="cndns-right-meau meau-contact">#}
+    {#<a href="javascript:" class="cndns-right-btn">#}
+      {#<span class="demo-icon">&#xe902;</span>#}
+      {#<p>#}
+        {#客服<br />#}
+        {#热线#}
+      {#</p>#}
+    {#</a>#}
+    {#<div class="cndns-right-box">#}
+      {#<div class="box-border">#}
+        {#<div class="sev-t">#}
+          {#<span class="demo-icon">&#xe902;</span>#}
+          {#<p>400-123-4567<br /><i>7*24小时客服服务热线</i></p>#}
+          {#<div class="clear"></div>#}
+        {#</div>#}
+        {#<span class="arrow-right"></span>#}
+      {#</div>#}
+    {#</div>#}
+  {#</div>#}
+  {#<div class="cndns-right-meau meau-code">#}
+    {#<a href="javascript:" class="cndns-right-btn">#}
+      {#<span class="demo-icon">&#xe903;</span>#}
+      {#<p>#}
+        {#关注<br />#}
+        {#微信#}
+      {#</p>#}
+    {#</a>#}
+    {#<div class="cndns-right-box">#}
+      {#<div class="box-border">#}
+        {#<div class="sev-t">#}
+          {#<img src="/catalog/view/theme/default/img/hongfuerweima.jpg" />#}
+          {#<i>关注官方微信</i>#}
+        {#</div>#}
+        {#<span class="arrow-right"></span>#}
+      {#</div>#}
+    {#</div>#}
+  {#</div>#}
+  {#<div class="cndns-right-meau meau-top" id="top-back">#}
+    {#<a href="javascript:" class="cndns-right-btn" onclick="topBack()">#}
+      {#<span class="demo-icon">&#xe904;</span>#}
+      {#<i>顶部</i>#}
+    {#</a>#}
+  {#</div>#}
 
-</div>
+{#</div>#}
 
 <script type="text/javascript">
     //置顶图标显示
@@ -542,30 +587,6 @@
         })
     })
 </script>
-<script>
-    function aj(id)
-    {
-        $.ajax({
-            url: 'index.php?route=account/paimai/move_product',
-            // dataType:'json',
-            data: {pid:id,time:1},
-            type: 'POST',
-            success: function(data){
-                var now = new Date();
-                var nno = now.getTime()/1000;
 
-                if(data==(parseInt(nno))){
-                }
-                // window.location.reload(true);
-
-                console.log(data);
-            },
-            error: function(){
-                alert('请求发送失败了!!!');
-            },
-            async: true
-        });
-    }
-</script>
 
 {{ footer }}

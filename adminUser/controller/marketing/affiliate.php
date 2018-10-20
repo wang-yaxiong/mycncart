@@ -58,7 +58,7 @@ class ControllerMarketingAffiliate extends Controller {
 				$url .= '&page=' . $this->request->get['page'];
 			}
 
-			$this->response->redirect($this->url->link('marketing/affiliate', 'user_tokens=' . $this->session->data['user_tokens'] . $url));
+			$this->response->redirect($this->url->link('marketing/affiliate', 'user_token=' . $this->session->data['user_token'] . $url));
 		}
 
 		$this->getForm();
@@ -110,7 +110,7 @@ class ControllerMarketingAffiliate extends Controller {
 				$url .= '&page=' . $this->request->get['page'];
 			}
 
-			$this->response->redirect($this->url->link('marketing/affiliate', 'user_tokens=' . $this->session->data['user_tokens'] . $url));
+			$this->response->redirect($this->url->link('marketing/affiliate', 'user_token=' . $this->session->data['user_token'] . $url));
 		}
 
 		$this->getForm();
@@ -164,7 +164,7 @@ class ControllerMarketingAffiliate extends Controller {
 				$url .= '&page=' . $this->request->get['page'];
 			}
 
-			$this->response->redirect($this->url->link('marketing/affiliate', 'user_tokens=' . $this->session->data['user_tokens'] . $url));
+			$this->response->redirect($this->url->link('marketing/affiliate', 'user_token=' . $this->session->data['user_token'] . $url));
 		}
 
 		$this->getList();
@@ -257,16 +257,16 @@ class ControllerMarketingAffiliate extends Controller {
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_home'),
-			'href' => $this->url->link('common/dashboard', 'user_tokens=' . $this->session->data['user_tokens'])
+			'href' => $this->url->link('common/dashboard', 'user_token=' . $this->session->data['user_token'])
 		);
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('heading_title'),
-			'href' => $this->url->link('marketing/affiliate', 'user_tokens=' . $this->session->data['user_tokens'] . $url)
+			'href' => $this->url->link('marketing/affiliate', 'user_token=' . $this->session->data['user_token'] . $url)
 		);
 
-		$data['add'] = $this->url->link('marketing/affiliate/add', 'user_tokens=' . $this->session->data['user_tokens'] . $url);
-		$data['delete'] = $this->url->link('marketing/affiliate/delete', 'user_tokens=' . $this->session->data['user_tokens'] . $url);
+		$data['add'] = $this->url->link('marketing/affiliate/add', 'user_token=' . $this->session->data['user_token'] . $url);
+		$data['delete'] = $this->url->link('marketing/affiliate/delete', 'user_token=' . $this->session->data['user_token'] . $url);
 
 		$this->load->model('customer/customer');
 
@@ -297,12 +297,12 @@ class ControllerMarketingAffiliate extends Controller {
 				'balance'     => $this->currency->format($this->model_customer_customer->getTransactionTotal($result['customer_id']), $this->config->get('config_currency')),
 				'status'      => ($result['status'] ? $this->language->get('text_enabled') : $this->language->get('text_disabled')),
 				'date_added'  => date($this->language->get('date_format_short'), strtotime($result['date_added'])),
-				'customer'    => $this->url->link('customer/customer/edit', 'user_tokens=' . $this->session->data['user_tokens'] . '&customer_id=' . $result['customer_id']),
-				'edit'        => $this->url->link('marketing/affiliate/edit', 'user_tokens=' . $this->session->data['user_tokens'] . '&customer_id=' . $result['customer_id'] . $url)
+				'customer'    => $this->url->link('customer/customer/edit', 'user_token=' . $this->session->data['user_token'] . '&customer_id=' . $result['customer_id']),
+				'edit'        => $this->url->link('marketing/affiliate/edit', 'user_token=' . $this->session->data['user_token'] . '&customer_id=' . $result['customer_id'] . $url)
 			);
 		}
 
-		$data['user_tokens'] = $this->session->data['user_tokens'];
+		$data['user_token'] = $this->session->data['user_token'];
 
 		if (isset($this->error['warning'])) {
 			$data['error_warning'] = $this->error['warning'];
@@ -356,11 +356,11 @@ class ControllerMarketingAffiliate extends Controller {
 			$url .= '&page=' . $this->request->get['page'];
 		}
 
-		$data['sort_name'] = $this->url->link('marketing/affiliate', 'user_tokens=' . $this->session->data['user_tokens'] . '&sort=name' . $url);
-		$data['sort_tracking'] = $this->url->link('marketing/affiliate', 'user_tokens=' . $this->session->data['user_tokens'] . '&sort=ca.tracking' . $url);
-		$data['sort_commission'] = $this->url->link('marketing/affiliate', 'user_tokens=' . $this->session->data['user_tokens'] . '&sort=ca.commission' . $url);
-		$data['sort_status'] = $this->url->link('marketing/affiliate', 'user_tokens=' . $this->session->data['user_tokens'] . '&sort=ca.status' . $url);
-		$data['sort_date_added'] = $this->url->link('marketing/affiliate', 'user_tokens=' . $this->session->data['user_tokens'] . '&sort=ca.date_added' . $url);
+		$data['sort_name'] = $this->url->link('marketing/affiliate', 'user_token=' . $this->session->data['user_token'] . '&sort=name' . $url);
+		$data['sort_tracking'] = $this->url->link('marketing/affiliate', 'user_token=' . $this->session->data['user_token'] . '&sort=ca.tracking' . $url);
+		$data['sort_commission'] = $this->url->link('marketing/affiliate', 'user_token=' . $this->session->data['user_token'] . '&sort=ca.commission' . $url);
+		$data['sort_status'] = $this->url->link('marketing/affiliate', 'user_token=' . $this->session->data['user_token'] . '&sort=ca.status' . $url);
+		$data['sort_date_added'] = $this->url->link('marketing/affiliate', 'user_token=' . $this->session->data['user_token'] . '&sort=ca.date_added' . $url);
 
 		$url = '';
 
@@ -396,7 +396,7 @@ class ControllerMarketingAffiliate extends Controller {
 		$pagination->total = $affiliate_total;
 		$pagination->page = $page;
 		$pagination->limit = $this->config->get('config_limit_admin');
-		$pagination->url = $this->url->link('marketing/affiliate', 'user_tokens=' . $this->session->data['user_tokens'] . $url . '&page={page}');
+		$pagination->url = $this->url->link('marketing/affiliate', 'user_token=' . $this->session->data['user_token'] . $url . '&page={page}');
 
 		$data['pagination'] = $pagination->render();
 
@@ -421,7 +421,7 @@ class ControllerMarketingAffiliate extends Controller {
 	protected function getForm() {
 		$data['text_form'] = !isset($this->request->get['customer_id']) ? $this->language->get('text_add') : $this->language->get('text_edit');
 
-		$data['user_tokens'] = $this->session->data['user_tokens'];
+		$data['user_token'] = $this->session->data['user_token'];
 
 		if (isset($this->error['warning'])) {
 			$data['error_warning'] = $this->error['warning'];
@@ -497,21 +497,21 @@ class ControllerMarketingAffiliate extends Controller {
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_home'),
-			'href' => $this->url->link('common/dashboard', 'user_tokens=' . $this->session->data['user_tokens'])
+			'href' => $this->url->link('common/dashboard', 'user_token=' . $this->session->data['user_token'])
 		);
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('heading_title'),
-			'href' => $this->url->link('marketing/affiliate', 'user_tokens=' . $this->session->data['user_tokens'] . $url)
+			'href' => $this->url->link('marketing/affiliate', 'user_token=' . $this->session->data['user_token'] . $url)
 		);
 
 		if (!isset($this->request->get['customer_id'])) {
-			$data['action'] = $this->url->link('marketing/affiliate/add', 'user_tokens=' . $this->session->data['user_tokens'] . $url);
+			$data['action'] = $this->url->link('marketing/affiliate/add', 'user_token=' . $this->session->data['user_token'] . $url);
 		} else {
-			$data['action'] = $this->url->link('marketing/affiliate/edit', 'user_tokens=' . $this->session->data['user_tokens'] . '&customer_id=' . $this->request->get['customer_id'] . $url);
+			$data['action'] = $this->url->link('marketing/affiliate/edit', 'user_token=' . $this->session->data['user_token'] . '&customer_id=' . $this->request->get['customer_id'] . $url);
 		}
 
-		$data['cancel'] = $this->url->link('marketing/affiliate', 'user_tokens=' . $this->session->data['user_tokens'] . $url);
+		$data['cancel'] = $this->url->link('marketing/affiliate', 'user_token=' . $this->session->data['user_token'] . $url);
 
 		// Affliate
 		if (isset($this->request->get['customer_id']) && ($this->request->server['REQUEST_METHOD'] != 'POST')) {
@@ -798,7 +798,7 @@ class ControllerMarketingAffiliate extends Controller {
 				'store'      => $store,
 				'country'    => $result['country'],
 				'date_added' => date($this->language->get('datetime_format'), strtotime($result['date_added'])),
-				'filter_ip'  => $this->url->link('customer/customer', 'user_tokens=' . $this->session->data['user_tokens'] . '&filter_ip=' . $result['ip'])
+				'filter_ip'  => $this->url->link('customer/customer', 'user_token=' . $this->session->data['user_token'] . '&filter_ip=' . $result['ip'])
 			);
 		}
 
@@ -808,7 +808,7 @@ class ControllerMarketingAffiliate extends Controller {
 		$pagination->total = $report_total;
 		$pagination->page = $page;
 		$pagination->limit = 10;
-		$pagination->url = $this->url->link('marketing/affiliate/report', 'user_tokens=' . $this->session->data['user_tokens'] . '&customer_id=' . $customer_id . '&page={page}');
+		$pagination->url = $this->url->link('marketing/affiliate/report', 'user_token=' . $this->session->data['user_token'] . '&customer_id=' . $customer_id . '&page={page}');
 
 		$data['pagination'] = $pagination->render();
 

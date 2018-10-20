@@ -38,7 +38,7 @@ class ControllerLocalisationCurrency extends Controller {
 				$url .= '&page=' . $this->request->get['page'];
 			}
 
-			$this->response->redirect($this->url->link('localisation/currency', 'user_tokens=' . $this->session->data['user_tokens'] . $url));
+			$this->response->redirect($this->url->link('localisation/currency', 'user_token=' . $this->session->data['user_token'] . $url));
 		}
 
 		$this->getForm();
@@ -70,7 +70,7 @@ class ControllerLocalisationCurrency extends Controller {
 				$url .= '&page=' . $this->request->get['page'];
 			}
 
-			$this->response->redirect($this->url->link('localisation/currency', 'user_tokens=' . $this->session->data['user_tokens'] . $url));
+			$this->response->redirect($this->url->link('localisation/currency', 'user_token=' . $this->session->data['user_token'] . $url));
 		}
 
 		$this->getForm();
@@ -104,7 +104,7 @@ class ControllerLocalisationCurrency extends Controller {
 				$url .= '&page=' . $this->request->get['page'];
 			}
 
-			$this->response->redirect($this->url->link('localisation/currency', 'user_tokens=' . $this->session->data['user_tokens'] . $url));
+			$this->response->redirect($this->url->link('localisation/currency', 'user_token=' . $this->session->data['user_token'] . $url));
 		}
 
 		$this->getList();
@@ -136,7 +136,7 @@ class ControllerLocalisationCurrency extends Controller {
 				$url .= '&page=' . $this->request->get['page'];
 			}
 
-			$this->response->redirect($this->url->link('localisation/currency', 'user_tokens=' . $this->session->data['user_tokens'] . $url));
+			$this->response->redirect($this->url->link('localisation/currency', 'user_token=' . $this->session->data['user_token'] . $url));
 		}
 
 		$this->getList();
@@ -179,17 +179,17 @@ class ControllerLocalisationCurrency extends Controller {
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_home'),
-			'href' => $this->url->link('common/dashboard', 'user_tokens=' . $this->session->data['user_tokens'])
+			'href' => $this->url->link('common/dashboard', 'user_token=' . $this->session->data['user_token'])
 		);
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('heading_title'),
-			'href' => $this->url->link('localisation/currency', 'user_tokens=' . $this->session->data['user_tokens'] . $url)
+			'href' => $this->url->link('localisation/currency', 'user_token=' . $this->session->data['user_token'] . $url)
 		);
 
-		$data['add'] = $this->url->link('localisation/currency/add', 'user_tokens=' . $this->session->data['user_tokens'] . $url);
-		$data['delete'] = $this->url->link('localisation/currency/delete', 'user_tokens=' . $this->session->data['user_tokens'] . $url);
-		$data['refresh'] = $this->url->link('localisation/currency/refresh', 'user_tokens=' . $this->session->data['user_tokens'] . $url);
+		$data['add'] = $this->url->link('localisation/currency/add', 'user_token=' . $this->session->data['user_token'] . $url);
+		$data['delete'] = $this->url->link('localisation/currency/delete', 'user_token=' . $this->session->data['user_token'] . $url);
+		$data['refresh'] = $this->url->link('localisation/currency/refresh', 'user_token=' . $this->session->data['user_token'] . $url);
 
 		$data['currencies'] = array();
 
@@ -211,7 +211,7 @@ class ControllerLocalisationCurrency extends Controller {
 				'code'          => $result['code'],
 				'value'         => $result['value'],
 				'date_modified' => date($this->language->get('date_format_short'), strtotime($result['date_modified'])),
-				'edit'          => $this->url->link('localisation/currency/edit', 'user_tokens=' . $this->session->data['user_tokens'] . '&currency_id=' . $result['currency_id'] . $url)
+				'edit'          => $this->url->link('localisation/currency/edit', 'user_token=' . $this->session->data['user_token'] . '&currency_id=' . $result['currency_id'] . $url)
 			);
 		}
 
@@ -247,10 +247,10 @@ class ControllerLocalisationCurrency extends Controller {
 			$url .= '&page=' . $this->request->get['page'];
 		}
 
-		$data['sort_title'] = $this->url->link('localisation/currency', 'user_tokens=' . $this->session->data['user_tokens'] . '&sort=title' . $url);
-		$data['sort_code'] = $this->url->link('localisation/currency', 'user_tokens=' . $this->session->data['user_tokens'] . '&sort=code' . $url);
-		$data['sort_value'] = $this->url->link('localisation/currency', 'user_tokens=' . $this->session->data['user_tokens'] . '&sort=value' . $url);
-		$data['sort_date_modified'] = $this->url->link('localisation/currency', 'user_tokens=' . $this->session->data['user_tokens'] . '&sort=date_modified' . $url);
+		$data['sort_title'] = $this->url->link('localisation/currency', 'user_token=' . $this->session->data['user_token'] . '&sort=title' . $url);
+		$data['sort_code'] = $this->url->link('localisation/currency', 'user_token=' . $this->session->data['user_token'] . '&sort=code' . $url);
+		$data['sort_value'] = $this->url->link('localisation/currency', 'user_token=' . $this->session->data['user_token'] . '&sort=value' . $url);
+		$data['sort_date_modified'] = $this->url->link('localisation/currency', 'user_token=' . $this->session->data['user_token'] . '&sort=date_modified' . $url);
 
 		$url = '';
 
@@ -266,7 +266,7 @@ class ControllerLocalisationCurrency extends Controller {
 		$pagination->total = $currency_total;
 		$pagination->page = $page;
 		$pagination->limit = $this->config->get('config_limit_admin');
-		$pagination->url = $this->url->link('localisation/currency', 'user_tokens=' . $this->session->data['user_tokens'] . $url . '&page={page}');
+		$pagination->url = $this->url->link('localisation/currency', 'user_token=' . $this->session->data['user_token'] . $url . '&page={page}');
 
 		$data['pagination'] = $pagination->render();
 
@@ -321,21 +321,21 @@ class ControllerLocalisationCurrency extends Controller {
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_home'),
-			'href' => $this->url->link('common/dashboard', 'user_tokens=' . $this->session->data['user_tokens'])
+			'href' => $this->url->link('common/dashboard', 'user_token=' . $this->session->data['user_token'])
 		);
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('heading_title'),
-			'href' => $this->url->link('localisation/currency', 'user_tokens=' . $this->session->data['user_tokens'] . $url)
+			'href' => $this->url->link('localisation/currency', 'user_token=' . $this->session->data['user_token'] . $url)
 		);
 
 		if (!isset($this->request->get['currency_id'])) {
-			$data['action'] = $this->url->link('localisation/currency/add', 'user_tokens=' . $this->session->data['user_tokens'] . $url);
+			$data['action'] = $this->url->link('localisation/currency/add', 'user_token=' . $this->session->data['user_token'] . $url);
 		} else {
-			$data['action'] = $this->url->link('localisation/currency/edit', 'user_tokens=' . $this->session->data['user_tokens'] . '&currency_id=' . $this->request->get['currency_id'] . $url);
+			$data['action'] = $this->url->link('localisation/currency/edit', 'user_token=' . $this->session->data['user_token'] . '&currency_id=' . $this->request->get['currency_id'] . $url);
 		}
 
-		$data['cancel'] = $this->url->link('localisation/currency', 'user_tokens=' . $this->session->data['user_tokens'] . $url);
+		$data['cancel'] = $this->url->link('localisation/currency', 'user_token=' . $this->session->data['user_token'] . $url);
 
 		if (isset($this->request->get['currency_id']) && ($this->request->server['REQUEST_METHOD'] != 'POST')) {
 			$currency_info = $this->model_localisation_currency->getCurrency($this->request->get['currency_id']);

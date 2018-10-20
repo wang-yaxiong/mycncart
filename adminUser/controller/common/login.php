@@ -7,21 +7,21 @@ class ControllerCommonLogin extends Controller {
 
 		$this->document->setTitle($this->language->get('heading_title'));
 
-		if ($this->user->isLogged() && isset($this->request->get['user_tokens']) && ($this->request->get['user_tokens'] == $this->session->data['user_tokens'])) {
-			$this->response->redirect($this->url->link('common/dashboard', 'user_tokens=' . $this->session->data['user_tokens']));
+		if ($this->user->isLogged() && isset($this->request->get['user_token']) && ($this->request->get['user_token'] == $this->session->data['user_token'])) {
+			$this->response->redirect($this->url->link('common/dashboard', 'user_token=' . $this->session->data['user_token']));
 		}
 
 		if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validate()) {
-			$this->session->data['user_tokens'] = token(32);
+			$this->session->data['user_token'] = token(32);
 			
 			if (isset($this->request->post['redirect']) && (strpos($this->request->post['redirect'], HTTP_SERVER) === 0)) {
-				$this->response->redirect($this->request->post['redirect'] . '&user_tokens=' . $this->session->data['user_tokens']);
+				$this->response->redirect($this->request->post['redirect'] . '&user_token=' . $this->session->data['user_token']);
 			} else {
-				$this->response->redirect($this->url->link('common/dashboard', 'user_tokens=' . $this->session->data['user_tokens']));
+				$this->response->redirect($this->url->link('common/dashboard', 'user_token=' . $this->session->data['user_token']));
 			}
 		}
 
-		if ((isset($this->session->data['user_tokens']) && !isset($this->request->get['user_tokens'])) || ((isset($this->request->get['user_tokens']) && (isset($this->session->data['user_tokens']) && ($this->request->get['user_tokens'] != $this->session->data['user_tokens']))))) {
+		if ((isset($this->session->data['user_token']) && !isset($this->request->get['user_token'])) || ((isset($this->request->get['user_token']) && (isset($this->session->data['user_token']) && ($this->request->get['user_token'] != $this->session->data['user_token']))))) {
 			$this->error['warning'] = $this->language->get('error_token');
 		} elseif (isset($this->error['warning'])) {
 			$data['error_warning'] = $this->error['warning'];
@@ -59,7 +59,7 @@ class ControllerCommonLogin extends Controller {
 			$route = $this->request->get['route'];
 
 			unset($this->request->get['route']);
-			unset($this->request->get['user_tokens']);
+			unset($this->request->get['user_token']);
 
 			$url = '';
 
