@@ -51,10 +51,10 @@
 	}
 	#m-left dl dt{
 	        font-size: 14px;
-	        line-height: 20px;
+	       
 	        color: #666;
 	        width: 106px;
-	        padding: 16px 0 16px 20px;
+	        padding: 16px 10px 16px 10px;
 	        float: left; 
 	}
 	#m-left dl dd{
@@ -69,14 +69,12 @@
 	        height: 36px;
 	        padding: 0;
 	        border: none 0;
-
 	}
 	#m-left .cap-div dl {
 	        width: 340px;
 		float: left;       
 	}
 	#m-right{
-		
 		float:right;
 		padding:30px 20px;
 		width:40%;
@@ -89,8 +87,7 @@
 	}
 	.pwd-div , .tcap-div{
 		clear:both;
-	}
-	 
+	}	 
 	#m-left .pwd-div .pwd{
 		font-size: 14px;
 	        line-height: 36px;
@@ -106,8 +103,24 @@
 		width:473px;
 		height:40px;
 		font-size:20px;
-
 	}
+	#p-ts{	 
+		position:relative;
+		height:33px;
+		z-index:999;
+		width:106px; 
+		float:left; 
+		left:-120px; 
+		top:8px;
+		padding:
+	}
+	img{
+		margin-top:-36px;
+	}
+	#tmcap{
+		visibility:hidden;
+	}
+	 
 </style>
 	<div id='middle'>
 		<div id='mid-left' >
@@ -117,38 +130,33 @@
 				<form method="post" action="index.php?route=common/register/add">
 					<dl>
 						<dt>手机号：</dt><dd><input type="text" id = 'tel' name = 'tel' class='text' placeholder='请输入手机号'></dd>
-						
+						 <dt id='d-ts'></dt>
 					</dl>
 					<div class='cap-div'>
-						<dl>
-							<dt>验证码：</dt><dd><input type="text" name = 'cap' class='text cap100' placeholder='请输入验证码'></dd>
+						<dl id='ts_cap'>
+							<dt>验证码：</dt><dd><input type="text" id = 'cap' class='text cap100' placeholder='请输入验证码'></dd>
 						</dl>
-						<span>
-							{{ captcha }}
-						</span>
+						<dt id='p-ts'></dt>
+						<span>{{ captcha }}</span>
 					</div>
 					<div class='tcap-div'>
 						<dl>
 							<dt>手机验证码：</dt> 
-							<dd><input type="button" name = 'tcap' class='text' value='获取手机验证码' onclick='checkphone()'></dd>
-							<dd><input type="text" name = 'tcap' class='text' placeholder='请输入手机验证码'></dd>
+							<dd><input type="button" id = 'tcap' class='text' value='获取手机验证码' onclick='checkphone()'></dd>
+							<dd><input type="text" id = 'tmcap' class='text' placeholder='请输入手机验证码'></dd>
 						</dl>
 					</div>
 					<div class='pwd-div'>
 						<dl>
-							<dt>密码：</dt><dd><input type="text" name = 'password' class='text pwd' placeholder='请输入密码'></dd>
+							<dt>密码：</dt><dd><input type="password" name = 'password' class='text pwd' placeholder='请输入密码'></dd>
 						</dl> 
 					</div>
 					<div class='cpwd-div'>
 						<dl>
-							<dt>确认密码：</dt><dd><input type="text" name = 'qpwd' class='text cpwd' placeholder='请输入确认密码'></dd>
+							<dt>确认密码：</dt><dd><input type="password" name = 'qpwd' class='text cpwd' placeholder='请输入确认密码'></dd>
 						</dl> 
 					</div>
-					<div>
-						<dl>
-							<dt>邮箱：</dt> <dd><input type="text" name = 'mail' class='text mail' placeholder='可用于找回密码'></dd>
-						</dl>
-					</div>
+					
 					<div class = 'xieyi'>
 						<input type="checkbox" name="xieyi" id='xieyi'><a href="/">《注册协议及隐私政策》</a>
 					</div>
@@ -169,17 +177,122 @@
 {{ footer }}
 
 <script>
-	
+	$("#cap").blur(function (){
+		var captcha = $("#cap").val();
+		if( captcha ==''){
+		     $("#p-ts").html("请输入验证码"); 
+		     $("#p-ts").css("background-color","#ddd549");
+		     $("#p-ts").css("position","relative");
+		     $("#p-ts").css("height","33px");
+		     $("#p-ts").css("line-height","33px");
+		     $("#p-ts").css("left","-120px");
+		     $("#p-ts").css("top","8px");
+		     $("#p-ts").css("z-index","999");
+		     $("#p-ts").css("width","106px");
+		     $("#p-ts").css("padding-left","14px");
+		     return;
+		}
+		 
+	})
+	$("#cap").focus(function (){
+		     $("#p-ts").html(""); 
+		     $("#p-ts").css("background-color","transparent");
+		   
+		
+	})
 	function checkphone (){
 		var phone = $("#tel").val();
 		var reg = /^1[3|4|5|7|8][0-9]{9}$/;  
-                var flag = reg.test(phone);  
-		if(flag){
-			
-		}else{
-		    	
+                var flag = reg.test(phone); 
+		var captcha = $("#cap").val();
+	
+		if( phone==''){
+		     $("#d-ts").html("<span>请输入手机号</span>"); 
+		     $("#d-ts").css("background-color","#ddd549");
+		     $("#d-ts").css("position","relative");
+		     $("#d-ts").css("height","33px");
+		     $("#d-ts").css("line-height","0");
+		     $("#d-ts").css("left","230px");
+		     $("#d-ts").css("top","-28px");
+		     return;
 		}
+		if( captcha ==''){
+		     $("#p-ts").html("请输入验证码"); 
+		     $("#p-ts").css("background-color","#ddd549");
+		     $("#p-ts").css("position","relative");
+		     $("#p-ts").css("height","33px");
+		     $("#p-ts").css("line-height","33px");
+		     $("#p-ts").css("left","-120px");
+		     $("#p-ts").css("top","8px");
+		     $("#p-ts").css("z-index","999");
+		     $("#p-ts").css("width","106px");
+		     $("#p-ts").css("padding-left","14px");
+		     return;
+		}
+		if(!flag){
+		     $("#d-ts").html("<span>格式错误</span>"); 
+		     $("#d-ts").css("background-color","#ddd549");
+		     $("#d-ts").css("position","relative");
+		     $("#d-ts").css("height","33px");
+		     $("#d-ts").css("line-height","0");
+		     $("#d-ts").css("left","230px");
+		     $("#d-ts").css("top","-28px");
+		     return;
+		}
+		$.post("index.php?route=account/register/checkcap",
+			{captcha:captcha},
+			function(result){
+			    if(result == 0){
+				 $("#p-ts").html("验证码错误"); 
+				     $("#p-ts").css("background-color","#ddd549");
+				     $("#p-ts").css("position","relative");
+				     $("#p-ts").css("height","33px");
+				     $("#p-ts").css("line-height","33px");
+				     $("#p-ts").css("left","-120px");
+				     $("#p-ts").css("top","8px");
+				     $("#p-ts").css("z-index","999");
+				     $("#p-ts").css("width","106px");
+				     $("#p-ts").css("padding-left","14px");
+				     return;
+			    }else{
+			    	
+				$("#tcap").hide();
+				$("#tmcap").css("visibility","visible");
+				$("#tmcap").focus();
+			    }
+			}
+		);
 	}
+	$("#tel").blur(function (){
+		var phone = $("#tel").val();
+		var reg = /^1[3|4|5|7|8][0-9]{9}$/;  
+                var flag = reg.test(phone); 
+		
+		if( phone==''){
+		     $("#d-ts").html("<span>请输入手机号</span>"); 
+		     $("#d-ts").css("background-color","#ddd549");
+		     $("#d-ts").css("position","relative");
+		     $("#d-ts").css("height","33px");
+		     $("#d-ts").css("line-height","0");
+		     $("#d-ts").css("left","230px");
+		     $("#d-ts").css("top","-28px");
+		     return;
+		}
+		if(!flag){
+		     $("#d-ts").html("<span>格式错误</span>"); 
+		     $("#d-ts").css("background-color","#ddd549");
+		     $("#d-ts").css("position","relative");
+		     $("#d-ts").css("height","33px");
+		     $("#d-ts").css("line-height","0");
+		     $("#d-ts").css("left","230px");
+		     $("#d-ts").css("top","-28px");
+		     return;
+		} 
+	})
+	$("#tel").focus(function (){	
+		     $("#d-ts").html("<span> </span>"); 
+		     $("#d-ts").css("background-color","transparent");
+	})
 	$('#xieyi').click(function (){
 		var bool =$("#xieyi").is(':checked');
 		if(bool){

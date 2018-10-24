@@ -383,6 +383,15 @@ class ControllerAccountRegister extends Controller {
 		}else{
 			 
 		}
-		//var_dump($num) ;
+		
+	}
+	public function checkcap(){
+		$this->load->language('extension/captcha/basic');
+
+		if (empty($this->session->data['captcha']) || ($this->session->data['captcha'] != $this->request->post['captcha'])) {
+			echo  '0';
+		}else{
+			echo  '1';
+		}
 	}
 }
